@@ -21,3 +21,11 @@ jobs:
       - name: Run tests
         run:
           ./gradlew test
+
+      - name: Publish to Maven Central
+        if: ${{ github.ref == 'refs/heads/main' }}
+        env:
+          SONATYPE_NEXUS_USERNAME: ${{ secrets.SONATYPE_NEXUS_USERNAME }}
+          SONATYPE_NEXUS_PASSWORD: ${{ secrets.SONATYPE_NEXUS_PASSWORD }}
+        run:
+          ./gradlew publish
