@@ -12,9 +12,10 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test-junit"))
+    implementation("io.ktor:ktor-server-netty:1.4.1")
+    implementation("io.ktor:ktor-gson:1.4.1")
 }
 
-tasks.withType<KotlinCompile>() {
+tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
