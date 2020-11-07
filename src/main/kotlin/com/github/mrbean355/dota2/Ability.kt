@@ -26,4 +26,4 @@ data class Ability(
         val ultimate: Boolean
 )
 
-class Abilities internal constructor(c: Collection<Ability>) : ArrayList<Ability>(c)
+class Abilities internal constructor(c: Map<String, List<Ability>>) : HashMap<String, List<Ability>>(c)

@@ -106,3 +106,5 @@ data class Hero(
         val selectedUnit: Boolean?
 
 )
+
+class Heroes internal constructor(c: Map<String, Hero>) : HashMap<String, Hero>(c)

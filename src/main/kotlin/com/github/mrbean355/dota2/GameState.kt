@@ -14,7 +14,7 @@ data class GameState(
         val players: Players?,
 
         @SerializedName("hero")
-        val hero: Hero?,
+        val heroes: Heroes?,
 
         @SerializedName("abilities")
         val abilities: Abilities?,

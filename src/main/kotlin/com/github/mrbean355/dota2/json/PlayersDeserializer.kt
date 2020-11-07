@@ -12,13 +12,15 @@ internal class PlayersDeserializer : JsonDeserializer<Players> {
     override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext): Players {
         val root = json.asJsonObject
         return Players(if (root.has("steamid")) {
-            listOf(context.deserialize(root, Player::class.java))
+            mapOf("player0" to context.deserialize(root, Player::class.java))
         } else {
-            root.entrySet().map { it.value }.flatMap { team ->
-                team.asJsonObject.entrySet().map {
-                    context.deserialize(it.value, Player::class.java)
+            val players = mutableMapOf<String, Player>()
+            root.entrySet().forEach { team ->
+                team.value.asJsonObject.entrySet().forEach { player ->
+                    players += player.key to context.deserialize(player.value, Player::class.java)
                 }
             }
+            players
         })
     }
 }

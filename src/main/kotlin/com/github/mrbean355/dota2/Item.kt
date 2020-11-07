@@ -24,10 +24,12 @@ data class Item(
 
 )
 
-data class Items(
+data class HeroItems(
 
         val inventory: List<Item>,
 
         val stash: List<Item>
 
 )
+
+class Items internal constructor(c: Map<String, HeroItems>) : HashMap<String, HeroItems>(c)

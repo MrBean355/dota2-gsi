@@ -109,4 +109,4 @@ data class Player(
 
 class KillList internal constructor(c: Collection<Int>) : ArrayList<Int>(c)
 
-class Players internal constructor(c: Collection<Player>) : ArrayList<Player>(c)
+class Players internal constructor(c: Map<String, Player>) : HashMap<String, Player>(c)

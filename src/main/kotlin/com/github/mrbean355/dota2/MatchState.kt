@@ -9,7 +9,7 @@ enum class MatchState {
     DISCONNECT,
 
     @SerializedName("DOTA_GAMERULES_STATE_GAME_IN_PROGRESS")
-    IN_PROGRESS,
+    GAME_IN_PROGRESS,
 
     @SerializedName("DOTA_GAMERULES_STATE_HERO_SELECTION")
     HERO_SELECTION,

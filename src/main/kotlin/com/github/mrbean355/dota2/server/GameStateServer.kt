@@ -1,10 +1,7 @@
 package com.github.mrbean355.dota2.server
 
 import com.github.mrbean355.dota2.GameState
-import com.github.mrbean355.dota2.json.AbilitiesDeserializer
-import com.github.mrbean355.dota2.json.ItemsDeserializer
-import com.github.mrbean355.dota2.json.KillListDeserializer
-import com.github.mrbean355.dota2.json.PlayersDeserializer
+import com.github.mrbean355.dota2.json.*
 import com.github.mrbean355.dota2.util.registerTypeAdapter
 import io.ktor.application.*
 import io.ktor.features.*
@@ -20,10 +17,11 @@ class GameStateServer(port: Int, private val onNewGameState: (GameState) -> Unit
     private val server: ApplicationEngine = embeddedServer(Netty, port) {
         install(ContentNegotiation) {
             gson {
-                registerTypeAdapter(PlayersDeserializer())
-                registerTypeAdapter(KillListDeserializer())
                 registerTypeAdapter(AbilitiesDeserializer())
+                registerTypeAdapter(HeroesDeserializer())
+                registerTypeAdapter(KillListDeserializer())
                 registerTypeAdapter(ItemsDeserializer())
+                registerTypeAdapter(PlayersDeserializer())
             }
         }
         routing {
