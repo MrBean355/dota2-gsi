@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.4.21"
     `maven-publish`
+    signing
 }
 
 group = "com.github.mrbean355"
@@ -26,6 +27,7 @@ tasks.withType<KotlinCompile> {
 
 java {
     withSourcesJar()
+    withJavadocJar()
 }
 
 publishing {
@@ -42,14 +44,44 @@ publishing {
         create<MavenPublication>("maven") {
             artifactId = extra["artifactId"].toString()
             from(components["java"])
+            pom {
+                name.set("Dota 2 GSI")
+                description.set("JVM library for receiving game state updates from Dota 2.")
+                url.set("https://github.com/MrBean355/dota2-gsi")
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                        distribution.set("repo")
+                    }
+                }
+                scm {
+                    url.set("https://github.com/MrBean355/dota2-gsi")
+                    connection.set("scm:git:git://github.com/MrBean355/dota2-gsi.git")
+                    developerConnection.set("scm:git:ssh://github.com/MrBean355/dota2-gsi.git")
+                }
+                developers {
+                    developer {
+                        id.set("MrBean355")
+                        name.set("Michael Johnston")
+                    }
+                }
+            }
         }
     }
 }
 
+signing {
+    sign(publishing.publications["maven"])
+    isRequired = isReleaseBuild()
+}
+
+fun isReleaseBuild(): Boolean = !version.toString().endsWith("SNAPSHOT")
+
 fun mavenCentralUrl(): String {
-    return if (version.toString().endsWith("SNAPSHOT")) {
-        "https://oss.sonatype.org/content/repositories/snapshots/"
-    } else {
+    return if (isReleaseBuild()) {
         "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+    } else {
+        "https://oss.sonatype.org/content/repositories/snapshots/"
     }
 }
