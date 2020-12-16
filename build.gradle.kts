@@ -31,7 +31,7 @@ java {
 publishing {
     repositories {
         maven {
-            url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+            url = uri(mavenCentralUrl())
             credentials {
                 username = System.getenv("SONATYPE_NEXUS_USERNAME") ?: ""
                 password = System.getenv("SONATYPE_NEXUS_PASSWORD") ?: ""
@@ -43,5 +43,13 @@ publishing {
             artifactId = extra["artifactId"].toString()
             from(components["java"])
         }
+    }
+}
+
+fun mavenCentralUrl(): String {
+    return if (version.toString().endsWith("SNAPSHOT")) {
+        "https://oss.sonatype.org/content/repositories/snapshots/"
+    } else {
+        "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
     }
 }
