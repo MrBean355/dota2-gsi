@@ -28,12 +28,12 @@ internal class ItemsDeserializer : JsonDeserializer<Items> {
 
     private fun mapItems(root: JsonObject, context: JsonDeserializationContext): HeroItems {
         val inventory = root.entrySet()
-                .filter { it.key.startsWith("slot") }
-                .map { context.deserialize<Item>(it.value, Item::class.java) }
+            .filter { it.key.startsWith("slot") }
+            .map { context.deserialize<Item>(it.value, Item::class.java) }
 
         val stash = root.entrySet()
-                .filter { it.key.startsWith("stash") }
-                .map { context.deserialize<Item>(it.value, Item::class.java) }
+            .filter { it.key.startsWith("stash") }
+            .map { context.deserialize<Item>(it.value, Item::class.java) }
 
         return HeroItems(inventory, stash)
     }
