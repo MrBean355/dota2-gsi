@@ -13,7 +13,10 @@ import io.ktor.routing.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 
-class GameStateServer(port: Int, private val onNewGameState: (GameState) -> Unit) {
+class GameStateServer(
+    port: Int,
+    private val listener: GameStateListener
+) {
     private val server: ApplicationEngine = embeddedServer(Netty, port) {
         install(ContentNegotiation) {
             gson {
@@ -27,7 +30,7 @@ class GameStateServer(port: Int, private val onNewGameState: (GameState) -> Unit
         routing {
             post {
                 try {
-                    onNewGameState(call.receive())
+                    listener(call.receive())
                 } catch (t: Throwable) {
                     log.error("Error receiving game state", t)
                 }
@@ -43,4 +46,8 @@ class GameStateServer(port: Int, private val onNewGameState: (GameState) -> Unit
     fun stop(gracePeriodMillis: Long, timeoutMillis: Long) {
         server.stop(gracePeriodMillis, timeoutMillis)
     }
+}
+
+fun interface GameStateListener {
+    operator fun invoke(gameState: GameState)
 }
