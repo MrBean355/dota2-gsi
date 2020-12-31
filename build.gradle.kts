@@ -17,8 +17,8 @@ repositories {
 }
 
 dependencies {
-    api("io.ktor:ktor-server-netty:1.4.3")
-    api("io.ktor:ktor-gson:1.4.3")
+    api("io.ktor:ktor-server-netty:1.5.0")
+    api("io.ktor:ktor-gson:1.5.0")
 }
 
 tasks.withType<KotlinCompile> {
