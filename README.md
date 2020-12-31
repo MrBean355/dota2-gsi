@@ -15,6 +15,8 @@ Finally, write some code to start receiving game state updates!
 
 ### Add The Dependency
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mrbean355/dota2-gsi/badge.png)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
+
 The library is published to Maven Central. Update your `build.gradle` file as follows. Other build systems (e.g. Maven)
 hopefully have their own way of doing this.
 
@@ -103,10 +105,12 @@ repositories {
 }
 
 dependencies {
-    def gsi_version = // add snapshot version here
-    implementation "com.github.mrbean355:dota2-gsi:$gsi_version"
+    implementation "com.github.mrbean355:dota2-gsi:1.1.0-SNAPSHOT"
 }
 ```
+
+The list of available snapshot versions can be found
+on [Maven Central](https://oss.sonatype.org/content/repositories/snapshots/com/github/mrbean355/dota2-gsi/).
 
 ## Contributing
 
