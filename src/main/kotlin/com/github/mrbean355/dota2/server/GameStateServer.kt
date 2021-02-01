@@ -1,17 +1,41 @@
+/*
+ * Copyright 2021 Michael Johnston
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.github.mrbean355.dota2.server
 
 import com.github.mrbean355.dota2.GameState
-import com.github.mrbean355.dota2.json.*
+import com.github.mrbean355.dota2.json.AbilitiesDeserializer
+import com.github.mrbean355.dota2.json.HeroesDeserializer
+import com.github.mrbean355.dota2.json.ItemsDeserializer
+import com.github.mrbean355.dota2.json.KillListDeserializer
+import com.github.mrbean355.dota2.json.PlayersDeserializer
 import com.github.mrbean355.dota2.util.registerTypeAdapter
-import io.ktor.application.*
-import io.ktor.features.*
-import io.ktor.gson.*
+import io.ktor.application.call
+import io.ktor.application.install
+import io.ktor.application.log
+import io.ktor.features.ContentNegotiation
+import io.ktor.gson.gson
 import io.ktor.http.HttpStatusCode.Companion.OK
-import io.ktor.request.*
-import io.ktor.response.*
-import io.ktor.routing.*
-import io.ktor.server.engine.*
-import io.ktor.server.netty.*
+import io.ktor.request.receive
+import io.ktor.response.respond
+import io.ktor.routing.post
+import io.ktor.routing.routing
+import io.ktor.server.engine.ApplicationEngine
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
 
 class GameStateServer(
     port: Int,
