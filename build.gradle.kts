@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.21"
+    kotlin("jvm") version "1.5.31"
     `maven-publish`
     signing
 }
@@ -17,8 +17,8 @@ repositories {
 }
 
 dependencies {
-    api("io.ktor:ktor-server-netty:1.5.1")
-    api("io.ktor:ktor-gson:1.5.1")
+    api("io.ktor:ktor-server-netty:1.6.4")
+    api("io.ktor:ktor-gson:1.6.4")
 }
 
 tasks.withType<KotlinCompile> {
