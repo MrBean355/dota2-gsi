@@ -37,6 +37,36 @@ import io.ktor.server.engine.ApplicationEngine
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 
+/**
+ * Server which listens for game state updates from Dota 2.
+ *
+ * The Dota client must be configured to send updates to the server.
+ * Create a text file like `gamestate_integration_test.cfg` in the folder:
+ * ```
+ * dota 2 beta/game/dota/cfg/gamestate_integration/
+ * ```
+ * With contents like:
+ * ```
+ * "My GSI test"
+ * {
+ *     "uri"           "http://localhost:44444"
+ *     "timeout"       "5.0"
+ *     "buffer"        "0.1"
+ *     "throttle"      "0.1"
+ *     "heartbeat"     "30.0"
+ *     "data"
+ *     {
+ *         "provider"      "1"
+ *         "map"           "1"
+ *         "player"        "1"
+ *         "hero"          "1"
+ *         "abilities"     "1"
+ *         "items"         "1"
+ *     }
+ * }
+ * ```
+ * Note that the port (`44444`) can be changed to any valid port.
+ */
 class GameStateServer(
     port: Int,
     private val listener: GameStateListener
@@ -63,10 +93,23 @@ class GameStateServer(
         }
     }
 
-    fun start(wait: Boolean) {
+    /**
+     * Starts this server.
+     *
+     * @param wait if true, this function does not return until the server is stopped.
+     * @return this object.
+     */
+    fun start(wait: Boolean): GameStateServer {
         server.start(wait)
+        return this
     }
 
+    /**
+     * Stops this server.
+     *
+     * @param gracePeriodMillis the maximum amount of time for activity to cool down.
+     * @param timeoutMillis the maximum amount of time to wait until server stops gracefully.
+     */
     fun stop(gracePeriodMillis: Long, timeoutMillis: Long) {
         server.stop(gracePeriodMillis, timeoutMillis)
     }
