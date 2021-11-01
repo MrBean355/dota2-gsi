@@ -1,40 +1,39 @@
 {
   "provider": {
-    "name": "Dota 2",
-    "appid": 570,
-    "version": 47,
-    "timestamp": 1604741702
+    "name": "string",
+    "appid": 0,
+    "version": 0,
+    "timestamp": 0
   },
   "map": {
-    "name": "start",
-    "matchid": "0",
-    "game_time": 67,
-    "clock_time": -20,
-    "daytime": true,
+    "name": "string",
+    "matchid": "string",
+    "game_time": 0,
+    "clock_time": 0,
+    "daytime": false,
     "nightstalker_night": false,
-    "game_state": "DOTA_GAMERULES_STATE_PRE_GAME",
+    "game_state": "string",
     "paused": false,
-    "win_team": "none",
-    "customgamename": "",
+    "win_team": "string",
+    "customgamename": "string",
     "ward_purchase_cooldown": 0
   },
   "player": {
-    "steamid": "01234567890123456789",
-    "name": "Mr Bean",
-    "activity": "playing",
+    "steamid": "string",
+    "name": "string",
+    "activity": "string",
     "kills": 0,
     "deaths": 0,
     "assists": 0,
     "last_hits": 0,
     "denies": 0,
     "kill_streak": 0,
-    "commands_issued": 107,
-    "kill_list": {
-    },
-    "team_name": "radiant",
-    "gold": 10,
+    "commands_issued": 0,
+    "kill_list": {},
+    "team_name": "string",
+    "gold": 0,
     "gold_reliable": 0,
-    "gold_unreliable": 10,
+    "gold_unreliable": 0,
     "gold_from_hero_kills": 0,
     "gold_from_creep_kills": 0,
     "gold_from_income": 0,
@@ -43,21 +42,21 @@
     "xpm": 0
   },
   "hero": {
-    "xpos": -6723,
-    "ypos": -4169,
-    "id": 111,
-    "name": "npc_dota_hero_oracle",
-    "level": 1,
-    "alive": true,
+    "xpos": 0,
+    "ypos": 0,
+    "id": 0,
+    "name": "string",
+    "level": 0,
+    "alive": false,
     "respawn_seconds": 0,
-    "buyback_cost": 249,
+    "buyback_cost": 0,
     "buyback_cooldown": 0,
-    "health": 660,
-    "max_health": 660,
-    "health_percent": 100,
-    "mana": 423,
-    "max_mana": 423,
-    "mana_percent": 100,
+    "health": 0,
+    "max_health": 0,
+    "health_percent": 0,
+    "mana": 0,
+    "max_mana": 0,
+    "mana_percent": 0,
     "silenced": false,
     "stunned": false,
     "disarmed": false,
@@ -78,53 +77,53 @@
   },
   "abilities": {
     "ability0": {
-      "name": "oracle_fortunes_end",
-      "level": 1,
-      "can_cast": true,
+      "name": "string",
+      "level": 0,
+      "can_cast": false,
       "passive": false,
-      "ability_active": true,
+      "ability_active": false,
       "cooldown": 0,
       "ultimate": false
     },
     "ability1": {
-      "name": "oracle_fates_edict",
+      "name": "string",
       "level": 0,
       "can_cast": false,
       "passive": false,
-      "ability_active": true,
+      "ability_active": false,
       "cooldown": 0,
       "ultimate": false
     },
     "ability2": {
-      "name": "oracle_purifying_flames",
+      "name": "string",
       "level": 0,
       "can_cast": false,
       "passive": false,
-      "ability_active": true,
+      "ability_active": false,
       "cooldown": 0,
       "ultimate": false
     },
     "ability3": {
-      "name": "oracle_false_promise",
+      "name": "string",
       "level": 0,
       "can_cast": false,
       "passive": false,
-      "ability_active": true,
+      "ability_active": false,
       "cooldown": 0,
-      "ultimate": true
+      "ultimate": false
     }
   },
   "items": {
     "slot0": {
-      "name": "item_clarity",
+      "name": "string",
       "purchaser": 0,
-      "can_cast": true,
+      "can_cast": false,
       "cooldown": 0,
       "passive": false,
-      "charges": 3
+      "charges": 0
     },
     "slot1": {
-      "name": "item_magic_stick",
+      "name": "string",
       "purchaser": 0,
       "can_cast": false,
       "cooldown": 0,
@@ -132,69 +131,69 @@
       "charges": 0
     },
     "slot2": {
-      "name": "item_tango",
+      "name": "string",
       "purchaser": 0,
-      "can_cast": true,
+      "can_cast": false,
       "cooldown": 0,
       "passive": false,
-      "charges": 3
+      "charges": 0
     },
     "slot3": {
-      "name": "item_branches",
+      "name": "string",
       "purchaser": 0,
-      "can_cast": true,
+      "can_cast": false,
       "cooldown": 0,
       "passive": false
     },
     "slot4": {
-      "name": "item_branches",
+      "name": "string",
       "purchaser": 0,
-      "can_cast": true,
+      "can_cast": false,
       "cooldown": 0,
       "passive": false
     },
     "slot5": {
-      "name": "item_branches",
+      "name": "string",
       "purchaser": 0,
-      "can_cast": true,
+      "can_cast": false,
       "cooldown": 0,
       "passive": false
     },
     "slot6": {
-      "name": "empty"
+      "name": "string"
     },
     "slot7": {
-      "name": "empty"
+      "name": "string"
     },
     "slot8": {
-      "name": "empty"
+      "name": "string"
     },
     "stash0": {
-      "name": "empty"
+      "name": "string"
     },
     "stash1": {
-      "name": "empty"
+      "name": "string"
     },
     "stash2": {
-      "name": "empty"
+      "name": "string"
     },
     "stash3": {
-      "name": "empty"
+      "name": "string"
     },
     "stash4": {
-      "name": "empty"
+      "name": "string"
     },
     "stash5": {
-      "name": "empty"
+      "name": "string"
     }
   },
   "previously": {
     "map": {
-      "game_time": 66
+      "game_time": 0
     },
     "hero": {
-      "xpos": -6728,
-      "ypos": -4245
+      "xpos": 0,
+      "ypos": 0
     }
   }
 }

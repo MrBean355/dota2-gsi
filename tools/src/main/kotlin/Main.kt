@@ -16,6 +16,59 @@
 
 package com.github.mrbean355.dota2.tools
 
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonElement
+import com.google.gson.JsonObject
+import com.google.gson.JsonParser
+import com.google.gson.JsonPrimitive
+import java.io.File
+
+/**
+ * Normalises the [Inputs] JSON files; replacing all values with static defaults.
+ * For example, string values will be replaced with "string".
+ * This makes it easier to compare JSON blobs from Dota 2 GSI, to see what's changed
+ * in the JSON structure after Dota updates.
+ */
 fun main() {
-    TODO()
+    Inputs.forEach {
+        val f = File(it)
+        f.writeText(f.normaliseContent())
+        println("Wrote: $it (${f.length()} bytes)")
+    }
+}
+
+private val Inputs = listOf(
+    "tools/src/main/resources/empty.json",
+    "tools/src/main/resources/playing.json",
+    "tools/src/main/resources/spectating.json"
+)
+
+private val gson = GsonBuilder().setPrettyPrinting().create()
+
+private fun File.normaliseContent(): String {
+    check(exists())
+    val json = JsonParser.parseString(readText())
+    return gson.toJson(json.normalise())
+}
+
+private fun JsonElement.normalise(): JsonElement {
+    return when (this) {
+        is JsonPrimitive -> {
+            val p = asJsonPrimitive
+            when {
+                p.isBoolean -> JsonPrimitive(false)
+                p.isNumber -> JsonPrimitive(0)
+                p.isString -> JsonPrimitive("string")
+                else -> error("Unexpected primitive type: $p")
+            }
+        }
+        is JsonObject -> {
+            val obj = JsonObject()
+            asJsonObject.entrySet().forEach { (k, v) ->
+                obj.add(k, v.normalise())
+            }
+            obj
+        }
+        else -> error("Unexpected element type: ${this::class}")
+    }
 }
