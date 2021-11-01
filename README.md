@@ -4,7 +4,7 @@ This library is a Java/Kotlin wrapper for receiving game state updates from Dota
 
 Game State Integration (GSI) is a feature built into Dota 2 that sends JSON data on the current game state. This data
 can be examined to perform the necessary actions. For example, play a notification sound shortly before the bounty runes
-spawn every 5 minutes.
+spawn every 3 minutes.
 
 This is the mechanism that is used to create those fancy overlays seen at the tournaments.
 
@@ -71,26 +71,7 @@ Note that you can change the port number (`44444`) if necessary.
 
 ## Sample Code
 
-Create an instance of `GameStateServer` which listens on the port you specified above.
-
-```kotlin
-fun startServer() {
-    // Start up a server to listen for Dota 2 game state updates:
-    GameStateServer(port = 44444) { gameState ->
-        checkGameState(gameState)
-    }.start(wait = false)
-}
-
-fun checkGameState(gameState: GameState) {
-    val gameTime = gameState.map?.clockTime ?: return // Current time in seconds.
-    val bountyRuneTimer = 5 * 60L // Runes spawn every 5 minutes.
-
-    // Is the current time is a multiple of the rune timer?
-    if (gameTime % bountyRuneTimer == 0L) {
-        println("Bounty runes just spawned! Go pick them up.")
-    }
-}
-```
+Have a look at the simple [demo project](demo/src/main/kotlin/Main.kt) for some sample code.
 
 ## Snapshots
 
