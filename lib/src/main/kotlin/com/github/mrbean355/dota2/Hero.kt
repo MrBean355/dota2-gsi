@@ -35,6 +35,9 @@ data class Hero(
     @SerializedName("level")
     val level: Long,
 
+    @SerializedName("xp")
+    val xp: Long,
+
     @SerializedName("alive")
     val alive: Boolean,
 
@@ -85,6 +88,12 @@ data class Hero(
 
     @SerializedName("break")
     val `break`: Boolean,
+
+    @SerializedName("aghanims_scepter")
+    val aghanimsScepter: Boolean,
+
+    @SerializedName("aghanims_shard")
+    val aghanimsShard: Boolean,
 
     @SerializedName("smoked")
     val smoked: Boolean,
