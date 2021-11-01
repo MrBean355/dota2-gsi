@@ -44,7 +44,11 @@ data class HeroItems(
 
     val inventory: List<Item>,
 
-    val stash: List<Item>
+    val stash: List<Item>,
+
+    val teleport: Item,
+
+    val neutral: Item
 
 )
 

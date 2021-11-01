@@ -51,6 +51,14 @@ internal class ItemsDeserializer : JsonDeserializer<Items> {
             .filter { it.key.startsWith("stash") }
             .map { context.deserialize<Item>(it.value, Item::class.java) }
 
-        return HeroItems(inventory, stash)
+        val teleport = root.entrySet()
+            .first { it.key == "teleport0" }
+            .let { context.deserialize<Item>(it.value, Item::class.java) }
+
+        val neutral = root.entrySet()
+            .first { it.key == "neutral0" }
+            .let { context.deserialize<Item>(it.value, Item::class.java) }
+
+        return HeroItems(inventory, stash, teleport, neutral)
     }
 }
