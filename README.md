@@ -71,26 +71,7 @@ Note that you can change the port number (`44444`) if necessary.
 
 ## Sample Code
 
-Create an instance of `GameStateServer` which listens on the port you specified above.
-
-```kotlin
-fun startServer() {
-    // Start up a server to listen for Dota 2 game state updates:
-    GameStateServer(port = 44444) { gameState ->
-        checkGameState(gameState)
-    }.start(wait = false)
-}
-
-fun checkGameState(gameState: GameState) {
-    val gameTime = gameState.map?.clockTime ?: return // Current time in seconds.
-    val bountyRuneTimer = 3 * 60L // Runes spawn every 3 minutes.
-
-    // Is the current time is a multiple of the rune timer?
-    if (gameTime % bountyRuneTimer == 0L) {
-        println("Bounty runes just spawned! Go pick them up.")
-    }
-}
-```
+Have a look at the simple [demo project](demo/src/main/kotlin/Main.kt) for some sample code.
 
 ## Snapshots
 
