@@ -86,7 +86,7 @@ repositories {
 }
 
 dependencies {
-    implementation "com.github.mrbean355:dota2-gsi:1.1.0-SNAPSHOT"
+    implementation "com.github.mrbean355:dota2-gsi:$latestSnapshotVersion"
 }
 ```
 
