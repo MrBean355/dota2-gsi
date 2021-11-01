@@ -74,7 +74,8 @@
         "kill_streak": 0,
         "commands_issued": 0,
         "kill_list": {
-          "victimid_8": 0
+          "victimid_6": 0,
+          "victimid_9": 0
         },
         "team_name": "string",
         "gold": 0,
@@ -111,7 +112,9 @@
         "kill_streak": 0,
         "commands_issued": 0,
         "kill_list": {
-          "victimid_5": 0
+          "victimid_5": 0,
+          "victimid_6": 0,
+          "victimid_9": 0
         },
         "team_name": "string",
         "gold": 0,
@@ -147,10 +150,7 @@
         "denies": 0,
         "kill_streak": 0,
         "commands_issued": 0,
-        "kill_list": {
-          "victimid_8": 0,
-          "victimid_9": 0
-        },
+        "kill_list": {},
         "team_name": "string",
         "gold": 0,
         "gold_reliable": 0,
@@ -185,7 +185,10 @@
         "denies": 0,
         "kill_streak": 0,
         "commands_issued": 0,
-        "kill_list": {},
+        "kill_list": {
+          "victimid_6": 0,
+          "victimid_8": 0
+        },
         "team_name": "string",
         "gold": 0,
         "gold_reliable": 0,
@@ -223,7 +226,8 @@
         "kill_streak": 0,
         "commands_issued": 0,
         "kill_list": {
-          "victimid_0": 0
+          "victimid_1": 0,
+          "victimid_2": 0
         },
         "team_name": "string",
         "gold": 0,
@@ -249,116 +253,6 @@
         "gold_spent_on_buybacks": 0
       },
       "player6": {
-        "steamid": "string",
-        "name": "string",
-        "activity": "string",
-        "kills": 0,
-        "deaths": 0,
-        "assists": 0,
-        "last_hits": 0,
-        "denies": 0,
-        "kill_streak": 0,
-        "commands_issued": 0,
-        "kill_list": {
-          "victimid_0": 0,
-          "victimid_2": 0
-        },
-        "team_name": "string",
-        "gold": 0,
-        "gold_reliable": 0,
-        "gold_unreliable": 0,
-        "gold_from_hero_kills": 0,
-        "gold_from_creep_kills": 0,
-        "gold_from_income": 0,
-        "gold_from_shared": 0,
-        "gpm": 0,
-        "xpm": 0,
-        "net_worth": 0,
-        "hero_damage": 0,
-        "wards_purchased": 0,
-        "wards_placed": 0,
-        "wards_destroyed": 0,
-        "runes_activated": 0,
-        "camps_stacked": 0,
-        "support_gold_spent": 0,
-        "consumable_gold_spent": 0,
-        "item_gold_spent": 0,
-        "gold_lost_to_death": 0,
-        "gold_spent_on_buybacks": 0
-      },
-      "player7": {
-        "steamid": "string",
-        "name": "string",
-        "activity": "string",
-        "kills": 0,
-        "deaths": 0,
-        "assists": 0,
-        "last_hits": 0,
-        "denies": 0,
-        "kill_streak": 0,
-        "commands_issued": 0,
-        "kill_list": {
-          "victimid_2": 0
-        },
-        "team_name": "string",
-        "gold": 0,
-        "gold_reliable": 0,
-        "gold_unreliable": 0,
-        "gold_from_hero_kills": 0,
-        "gold_from_creep_kills": 0,
-        "gold_from_income": 0,
-        "gold_from_shared": 0,
-        "gpm": 0,
-        "xpm": 0,
-        "net_worth": 0,
-        "hero_damage": 0,
-        "wards_purchased": 0,
-        "wards_placed": 0,
-        "wards_destroyed": 0,
-        "runes_activated": 0,
-        "camps_stacked": 0,
-        "support_gold_spent": 0,
-        "consumable_gold_spent": 0,
-        "item_gold_spent": 0,
-        "gold_lost_to_death": 0,
-        "gold_spent_on_buybacks": 0
-      },
-      "player8": {
-        "steamid": "string",
-        "name": "string",
-        "activity": "string",
-        "kills": 0,
-        "deaths": 0,
-        "assists": 0,
-        "last_hits": 0,
-        "denies": 0,
-        "kill_streak": 0,
-        "commands_issued": 0,
-        "kill_list": {},
-        "team_name": "string",
-        "gold": 0,
-        "gold_reliable": 0,
-        "gold_unreliable": 0,
-        "gold_from_hero_kills": 0,
-        "gold_from_creep_kills": 0,
-        "gold_from_income": 0,
-        "gold_from_shared": 0,
-        "gpm": 0,
-        "xpm": 0,
-        "net_worth": 0,
-        "hero_damage": 0,
-        "wards_purchased": 0,
-        "wards_placed": 0,
-        "wards_destroyed": 0,
-        "runes_activated": 0,
-        "camps_stacked": 0,
-        "support_gold_spent": 0,
-        "consumable_gold_spent": 0,
-        "item_gold_spent": 0,
-        "gold_lost_to_death": 0,
-        "gold_spent_on_buybacks": 0
-      },
-      "player9": {
         "steamid": "string",
         "name": "string",
         "activity": "string",
@@ -394,6 +288,119 @@
         "item_gold_spent": 0,
         "gold_lost_to_death": 0,
         "gold_spent_on_buybacks": 0
+      },
+      "player7": {
+        "steamid": "string",
+        "name": "string",
+        "activity": "string",
+        "kills": 0,
+        "deaths": 0,
+        "assists": 0,
+        "last_hits": 0,
+        "denies": 0,
+        "kill_streak": 0,
+        "commands_issued": 0,
+        "kill_list": {},
+        "team_name": "string",
+        "gold": 0,
+        "gold_reliable": 0,
+        "gold_unreliable": 0,
+        "gold_from_hero_kills": 0,
+        "gold_from_creep_kills": 0,
+        "gold_from_income": 0,
+        "gold_from_shared": 0,
+        "gpm": 0,
+        "xpm": 0,
+        "net_worth": 0,
+        "hero_damage": 0,
+        "wards_purchased": 0,
+        "wards_placed": 0,
+        "wards_destroyed": 0,
+        "runes_activated": 0,
+        "camps_stacked": 0,
+        "support_gold_spent": 0,
+        "consumable_gold_spent": 0,
+        "item_gold_spent": 0,
+        "gold_lost_to_death": 0,
+        "gold_spent_on_buybacks": 0
+      },
+      "player8": {
+        "steamid": "string",
+        "name": "string",
+        "activity": "string",
+        "kills": 0,
+        "deaths": 0,
+        "assists": 0,
+        "last_hits": 0,
+        "denies": 0,
+        "kill_streak": 0,
+        "commands_issued": 0,
+        "kill_list": {
+          "victimid_0": 0,
+          "victimid_1": 0,
+          "victimid_3": 0,
+          "victimid_4": 0
+        },
+        "team_name": "string",
+        "gold": 0,
+        "gold_reliable": 0,
+        "gold_unreliable": 0,
+        "gold_from_hero_kills": 0,
+        "gold_from_creep_kills": 0,
+        "gold_from_income": 0,
+        "gold_from_shared": 0,
+        "gpm": 0,
+        "xpm": 0,
+        "net_worth": 0,
+        "hero_damage": 0,
+        "wards_purchased": 0,
+        "wards_placed": 0,
+        "wards_destroyed": 0,
+        "runes_activated": 0,
+        "camps_stacked": 0,
+        "support_gold_spent": 0,
+        "consumable_gold_spent": 0,
+        "item_gold_spent": 0,
+        "gold_lost_to_death": 0,
+        "gold_spent_on_buybacks": 0
+      },
+      "player9": {
+        "steamid": "string",
+        "name": "string",
+        "activity": "string",
+        "kills": 0,
+        "deaths": 0,
+        "assists": 0,
+        "last_hits": 0,
+        "denies": 0,
+        "kill_streak": 0,
+        "commands_issued": 0,
+        "kill_list": {
+          "victimid_1": 0,
+          "victimid_3": 0
+        },
+        "team_name": "string",
+        "gold": 0,
+        "gold_reliable": 0,
+        "gold_unreliable": 0,
+        "gold_from_hero_kills": 0,
+        "gold_from_creep_kills": 0,
+        "gold_from_income": 0,
+        "gold_from_shared": 0,
+        "gpm": 0,
+        "xpm": 0,
+        "net_worth": 0,
+        "hero_damage": 0,
+        "wards_purchased": 0,
+        "wards_placed": 0,
+        "wards_destroyed": 0,
+        "runes_activated": 0,
+        "camps_stacked": 0,
+        "support_gold_spent": 0,
+        "consumable_gold_spent": 0,
+        "item_gold_spent": 0,
+        "gold_lost_to_death": 0,
+        "gold_spent_on_buybacks": 0
       }
     }
   },
@@ -405,6 +412,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -422,6 +430,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -440,6 +450,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -457,6 +468,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -475,6 +488,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -492,6 +506,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -510,6 +526,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -527,6 +544,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -545,6 +564,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -562,6 +582,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -582,6 +604,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -599,6 +622,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -617,6 +642,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -634,6 +660,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -652,6 +680,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -669,6 +698,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -687,6 +718,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -704,6 +736,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -722,6 +756,7 @@
         "id": 0,
         "name": "string",
         "level": 0,
+        "xp": 0,
         "alive": false,
         "respawn_seconds": 0,
         "buyback_cost": 0,
@@ -739,6 +774,8 @@
         "hexed": false,
         "muted": false,
         "break": false,
+        "aghanims_scepter": false,
+        "aghanims_shard": false,
         "smoked": false,
         "has_debuff": false,
         "selected_unit": false,
@@ -756,290 +793,6 @@
   "abilities": {
     "team2": {
       "player0": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      },
-      "player1": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      },
-      "player2": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      },
-      "player3": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      },
-      "player4": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      }
-    },
-    "team3": {
-      "player5": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      },
-      "player6": {
         "ability0": {
           "name": "string",
           "level": 0,
@@ -1104,101 +857,7 @@
           "ultimate": false
         }
       },
-      "player7": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      },
-      "player8": {
-        "ability0": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability1": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability2": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability3": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        },
-        "ability4": {
-          "name": "string",
-          "level": 0,
-          "can_cast": false,
-          "passive": false,
-          "ability_active": false,
-          "cooldown": 0,
-          "ultimate": false
-        }
-      },
-      "player9": {
+      "player1": {
         "ability0": {
           "name": "string",
           "level": 0,
@@ -1253,6 +912,429 @@
           "cooldown": 0,
           "ultimate": false
         }
+      },
+      "player2": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player3": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player4": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      }
+    },
+    "team3": {
+      "player5": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player6": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player7": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability6": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player8": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player9": {
+        "ability0": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "string",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        }
       }
     }
   },
@@ -1260,64 +1342,9 @@
     "team2": {
       "player0": {
         "slot0": {
-          "name": "string",
-          "purchaser": 0,
-          "passive": false
+          "name": "string"
         },
         "slot1": {
-          "name": "string",
-          "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
-          "passive": false,
-          "charges": 0
-        },
-        "slot2": {
-          "name": "string"
-        },
-        "slot3": {
-          "name": "string"
-        },
-        "slot4": {
-          "name": "string"
-        },
-        "slot5": {
-          "name": "string",
-          "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
-          "passive": false
-        },
-        "slot6": {
-          "name": "string"
-        },
-        "slot7": {
-          "name": "string"
-        },
-        "slot8": {
-          "name": "string"
-        },
-        "stash0": {
-          "name": "string"
-        },
-        "stash1": {
-          "name": "string"
-        },
-        "stash2": {
-          "name": "string"
-        },
-        "stash3": {
-          "name": "string"
-        },
-        "stash4": {
-          "name": "string"
-        },
-        "stash5": {
-          "name": "string"
-        }
-      },
-      "player1": {
-        "slot0": {
           "name": "string",
           "purchaser": 0,
           "contains_rune": "string",
@@ -1326,18 +1353,10 @@
           "passive": false,
           "charges": 0
         },
-        "slot1": {
-          "name": "string",
-          "purchaser": 0,
-          "passive": false
-        },
         "slot2": {
           "name": "string",
           "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
-          "passive": false,
-          "charges": 0
+          "passive": false
         },
         "slot3": {
           "name": "string",
@@ -1349,6 +1368,8 @@
         "slot4": {
           "name": "string",
           "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
           "passive": false
         },
         "slot5": {
@@ -1359,10 +1380,7 @@
         "slot6": {
           "name": "string",
           "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
-          "passive": false,
-          "charges": 0
+          "passive": false
         },
         "slot7": {
           "name": "string",
@@ -1391,9 +1409,24 @@
         },
         "stash5": {
           "name": "string"
+        },
+        "teleport0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         }
       },
-      "player2": {
+      "player1": {
         "slot0": {
           "name": "string",
           "purchaser": 0,
@@ -1407,12 +1440,16 @@
         "slot2": {
           "name": "string",
           "purchaser": 0,
-          "passive": false
+          "passive": false,
+          "charges": 0
         },
         "slot3": {
           "name": "string",
           "purchaser": 0,
-          "passive": false
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
         },
         "slot4": {
           "name": "string",
@@ -1425,13 +1462,101 @@
         "slot5": {
           "name": "string",
           "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot6": {
+          "name": "string"
+        },
+        "slot7": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot8": {
+          "name": "string"
+        },
+        "stash0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "stash1": {
+          "name": "string"
+        },
+        "stash2": {
+          "name": "string"
+        },
+        "stash3": {
+          "name": "string"
+        },
+        "stash4": {
+          "name": "string"
+        },
+        "stash5": {
+          "name": "string"
+        },
+        "teleport0": {
+          "name": "string"
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
+        }
+      },
+      "player2": {
+        "slot0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot1": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot2": {
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
+        },
+        "slot3": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot4": {
+          "name": "string",
+          "purchaser": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot5": {
+          "name": "string",
+          "purchaser": 0,
           "passive": false
         },
         "slot6": {
           "name": "string",
           "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
           "passive": false
         },
         "slot7": {
@@ -1457,6 +1582,19 @@
         },
         "stash5": {
           "name": "string"
+        },
+        "teleport0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         }
       },
       "player3": {
@@ -1470,21 +1608,24 @@
         "slot1": {
           "name": "string",
           "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
           "passive": false
         },
         "slot2": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         },
         "slot3": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         },
         "slot4": {
           "name": "string",
           "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
-          "passive": false,
-          "charges": 0
+          "passive": false
         },
         "slot5": {
           "name": "string",
@@ -1494,7 +1635,11 @@
           "passive": false
         },
         "slot6": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         },
         "slot7": {
           "name": "string"
@@ -1519,6 +1664,19 @@
         },
         "stash5": {
           "name": "string"
+        },
+        "teleport0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         }
       },
       "player4": {
@@ -1531,12 +1689,7 @@
           "charges": 0
         },
         "slot1": {
-          "name": "string",
-          "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
-          "passive": false,
-          "charges": 0
+          "name": "string"
         },
         "slot2": {
           "name": "string",
@@ -1548,19 +1701,18 @@
         "slot3": {
           "name": "string",
           "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
           "passive": false
         },
         "slot4": {
-          "name": "string",
-          "purchaser": 0,
-          "passive": false
+          "name": "string"
         },
         "slot5": {
           "name": "string",
           "purchaser": 0,
-          "passive": false
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
         },
         "slot6": {
           "name": "string"
@@ -1588,6 +1740,19 @@
         },
         "stash5": {
           "name": "string"
+        },
+        "teleport0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         }
       }
     },
@@ -1596,8 +1761,6 @@
         "slot0": {
           "name": "string",
           "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
           "passive": false
         },
         "slot1": {
@@ -1605,10 +1768,15 @@
           "purchaser": 0,
           "can_cast": false,
           "cooldown": 0,
-          "passive": false
+          "passive": false,
+          "charges": 0
         },
         "slot2": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         },
         "slot3": {
           "name": "string",
@@ -1618,30 +1786,28 @@
         "slot4": {
           "name": "string",
           "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
           "passive": false
         },
         "slot5": {
           "name": "string",
           "purchaser": 0,
-          "contains_rune": "string",
-          "can_cast": false,
-          "cooldown": 0,
-          "passive": false,
-          "charges": 0
+          "passive": false
         },
         "slot6": {
-          "name": "string"
-        },
-        "slot7": {
-          "name": "string"
-        },
-        "slot8": {
           "name": "string",
           "purchaser": 0,
           "can_cast": false,
           "cooldown": 0,
           "passive": false,
           "charges": 0
+        },
+        "slot7": {
+          "name": "string"
+        },
+        "slot8": {
+          "name": "string"
         },
         "stash0": {
           "name": "string"
@@ -1659,6 +1825,17 @@
           "name": "string"
         },
         "stash5": {
+          "name": "string"
+        },
+        "teleport0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "neutral0": {
           "name": "string"
         }
       },
@@ -1668,12 +1845,13 @@
           "purchaser": 0,
           "can_cast": false,
           "cooldown": 0,
-          "passive": false,
-          "charges": 0
+          "passive": false
         },
         "slot1": {
           "name": "string",
           "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
           "passive": false
         },
         "slot2": {
@@ -1690,10 +1868,15 @@
         "slot4": {
           "name": "string",
           "purchaser": 0,
-          "passive": false
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
         },
         "slot5": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         },
         "slot6": {
           "name": "string"
@@ -1721,14 +1904,37 @@
         },
         "stash5": {
           "name": "string"
+        },
+        "teleport0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         }
       },
       "player7": {
         "slot0": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         },
         "slot1": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         },
         "slot2": {
           "name": "string",
@@ -1738,12 +1944,12 @@
         "slot3": {
           "name": "string",
           "purchaser": 0,
-          "can_cast": false,
-          "cooldown": 0,
           "passive": false
         },
         "slot4": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         },
         "slot5": {
           "name": "string",
@@ -1751,10 +1957,19 @@
           "passive": false
         },
         "slot6": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         },
         "slot7": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
         },
         "slot8": {
           "name": "string"
@@ -1776,6 +1991,19 @@
         },
         "stash5": {
           "name": "string"
+        },
+        "teleport0": {
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         }
       },
       "player8": {
@@ -1784,15 +2012,9 @@
           "purchaser": 0,
           "can_cast": false,
           "cooldown": 0,
-          "passive": false,
-          "charges": 0
-        },
-        "slot1": {
-          "name": "string",
-          "purchaser": 0,
           "passive": false
         },
-        "slot2": {
+        "slot1": {
           "name": "string",
           "purchaser": 0,
           "can_cast": false,
@@ -1800,19 +2022,29 @@
           "passive": false,
           "charges": 0
         },
+        "slot2": {
+          "name": "string"
+        },
         "slot3": {
           "name": "string",
           "purchaser": 0,
+          "contains_rune": "string",
           "can_cast": false,
           "cooldown": 0,
           "passive": false,
           "charges": 0
         },
         "slot4": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         },
         "slot5": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         },
         "slot6": {
           "name": "string"
@@ -1840,6 +2072,14 @@
         },
         "stash5": {
           "name": "string"
+        },
+        "teleport0": {
+          "name": "string"
+        },
+        "neutral0": {
+          "name": "string",
+          "purchaser": 0,
+          "passive": false
         }
       },
       "player9": {
@@ -1856,14 +2096,16 @@
           "purchaser": 0,
           "can_cast": false,
           "cooldown": 0,
-          "passive": false
+          "passive": false,
+          "charges": 0
         },
         "slot2": {
           "name": "string",
           "purchaser": 0,
           "can_cast": false,
           "cooldown": 0,
-          "passive": false
+          "passive": false,
+          "charges": 0
         },
         "slot3": {
           "name": "string",
@@ -1875,7 +2117,8 @@
           "purchaser": 0,
           "can_cast": false,
           "cooldown": 0,
-          "passive": false
+          "passive": false,
+          "charges": 0
         },
         "slot5": {
           "name": "string"
@@ -1890,7 +2133,11 @@
           "name": "string"
         },
         "stash0": {
-          "name": "string"
+          "name": "string",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false
         },
         "stash1": {
           "name": "string"
@@ -1905,6 +2152,12 @@
           "name": "string"
         },
         "stash5": {
+          "name": "string"
+        },
+        "teleport0": {
+          "name": "string"
+        },
+        "neutral0": {
           "name": "string"
         }
       }

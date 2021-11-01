@@ -7,5 +7,6 @@ repositories {
 }
 
 dependencies {
-    implementation("com.google.code.gson:gson:2.8.9")
+    implementation("io.ktor:ktor-server-netty:1.6.4")
+    implementation("io.ktor:ktor-gson:1.6.4")
 }

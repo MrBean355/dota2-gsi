@@ -32,8 +32,12 @@ import java.io.File
 fun main() {
     Inputs.forEach {
         val f = File(it)
-        f.writeText(f.normaliseContent())
+        check(f.exists())
+        f.writeText(f.readText().normaliseJson())
         println("Wrote: $it (${f.length()} bytes)")
+    }
+    startServer { body ->
+        File("out.json").writeText(body.normaliseJson())
     }
 }
 
@@ -45,9 +49,8 @@ private val Inputs = listOf(
 
 private val gson = GsonBuilder().setPrettyPrinting().create()
 
-private fun File.normaliseContent(): String {
-    check(exists())
-    val json = JsonParser.parseString(readText())
+private fun String.normaliseJson(): String {
+    val json = JsonParser.parseString(this).normalise()
     val normalised = json.normalise() as JsonObject
     normalised.remove("previously")
     return gson.toJson(normalised)

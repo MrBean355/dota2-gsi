@@ -47,6 +47,7 @@
     "id": 0,
     "name": "string",
     "level": 0,
+    "xp": 0,
     "alive": false,
     "respawn_seconds": 0,
     "buyback_cost": 0,
@@ -64,6 +65,8 @@
     "hexed": false,
     "muted": false,
     "break": false,
+    "aghanims_scepter": false,
+    "aghanims_shard": false,
     "smoked": false,
     "has_debuff": false,
     "talent_1": false,
@@ -111,6 +114,24 @@
       "ability_active": false,
       "cooldown": 0,
       "ultimate": false
+    },
+    "ability4": {
+      "name": "string",
+      "level": 0,
+      "can_cast": false,
+      "passive": false,
+      "ability_active": false,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability5": {
+      "name": "string",
+      "level": 0,
+      "can_cast": false,
+      "passive": false,
+      "ability_active": false,
+      "cooldown": 0,
+      "ultimate": false
     }
   },
   "items": {
@@ -119,8 +140,7 @@
       "purchaser": 0,
       "can_cast": false,
       "cooldown": 0,
-      "passive": false,
-      "charges": 0
+      "passive": false
     },
     "slot1": {
       "name": "string",
@@ -135,14 +155,11 @@
       "purchaser": 0,
       "can_cast": false,
       "cooldown": 0,
-      "passive": false,
-      "charges": 0
+      "passive": false
     },
     "slot3": {
       "name": "string",
       "purchaser": 0,
-      "can_cast": false,
-      "cooldown": 0,
       "passive": false
     },
     "slot4": {
@@ -155,36 +172,78 @@
     "slot5": {
       "name": "string",
       "purchaser": 0,
+      "passive": false
+    },
+    "slot6": {
+      "name": "string",
+      "purchaser": 0,
+      "passive": false
+    },
+    "slot7": {
+      "name": "string",
+      "purchaser": 0,
+      "passive": false
+    },
+    "slot8": {
+      "name": "string",
+      "purchaser": 0,
       "can_cast": false,
       "cooldown": 0,
       "passive": false
     },
-    "slot6": {
-      "name": "string"
-    },
-    "slot7": {
-      "name": "string"
-    },
-    "slot8": {
-      "name": "string"
-    },
     "stash0": {
-      "name": "string"
+      "name": "string",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false
     },
     "stash1": {
-      "name": "string"
+      "name": "string",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false
     },
     "stash2": {
-      "name": "string"
+      "name": "string",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false
     },
     "stash3": {
-      "name": "string"
+      "name": "string",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 0
     },
     "stash4": {
-      "name": "string"
+      "name": "string",
+      "purchaser": 0,
+      "passive": false
     },
     "stash5": {
-      "name": "string"
+      "name": "string",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false
+    },
+    "teleport0": {
+      "name": "string",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 0
+    },
+    "neutral0": {
+      "name": "string",
+      "purchaser": 0,
+      "passive": false
     }
   }
 }
