@@ -18,6 +18,7 @@ package com.github.mrbean355.dota2.json
 
 import com.github.mrbean355.dota2.Hero
 import com.github.mrbean355.dota2.Heroes
+import com.github.mrbean355.dota2.util.JsonArray
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
@@ -28,15 +29,27 @@ internal class HeroesDeserializer : JsonDeserializer<Heroes> {
     override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext): Heroes {
         val root = json.asJsonObject
         return Heroes(if (root.has("xpos")) {
+            root.remapTalents()
             mapOf("player0" to context.deserialize(root, Hero::class.java))
         } else {
             val heroes = mutableMapOf<String, Hero>()
             root.entrySet().forEach { team ->
                 team.value.asJsonObject.entrySet().forEach { player ->
+                    player.value.remapTalents()
                     heroes += player.key to context.deserialize(player.value, Hero::class.java)
                 }
             }
             heroes
         })
+    }
+
+    private fun JsonElement.remapTalents() {
+        val obj = asJsonObject
+        val talents = obj.keySet()
+            .filter { it.startsWith("talent_") }
+            .sorted()
+            .map { obj.remove(it).asBoolean }
+
+        obj.add("talents", JsonArray(talents))
     }
 }

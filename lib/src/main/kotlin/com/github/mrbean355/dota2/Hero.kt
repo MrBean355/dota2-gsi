@@ -101,29 +101,8 @@ data class Hero(
     @SerializedName("has_debuff")
     val hasDebuff: Boolean,
 
-    @SerializedName("talent_1")
-    val talent1: Boolean,
-
-    @SerializedName("talent_2")
-    val talent2: Boolean,
-
-    @SerializedName("talent_3")
-    val talent3: Boolean,
-
-    @SerializedName("talent_4")
-    val talent4: Boolean,
-
-    @SerializedName("talent_5")
-    val talent5: Boolean,
-
-    @SerializedName("talent_6")
-    val talent6: Boolean,
-
-    @SerializedName("talent_7")
-    val talent7: Boolean,
-
-    @SerializedName("talent_8")
-    val talent8: Boolean,
+    @SerializedName("talents")
+    val talents: List<Boolean>,
 
     // BEGIN: spectating
 
