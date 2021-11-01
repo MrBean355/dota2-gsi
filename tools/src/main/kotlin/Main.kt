@@ -48,7 +48,9 @@ private val gson = GsonBuilder().setPrettyPrinting().create()
 private fun File.normaliseContent(): String {
     check(exists())
     val json = JsonParser.parseString(readText())
-    return gson.toJson(json.normalise())
+    val normalised = json.normalise() as JsonObject
+    normalised.remove("previously")
+    return gson.toJson(normalised)
 }
 
 private fun JsonElement.normalise(): JsonElement {

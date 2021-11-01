@@ -186,14 +186,5 @@
     "stash5": {
       "name": "string"
     }
-  },
-  "previously": {
-    "map": {
-      "game_time": 0
-    },
-    "hero": {
-      "xpos": 0,
-      "ypos": 0
-    }
   }
 }
