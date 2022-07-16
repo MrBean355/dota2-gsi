@@ -10,7 +10,7 @@ group = "com.github.mrbean355"
 ext {
     set("artifactId", "dota2-gsi")
 }
-version = "1.2.0-SNAPSHOT"
+version = "1.2.0"
 
 dependencies {
     api(libs.ktor.server.netty)
