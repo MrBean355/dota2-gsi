@@ -13,9 +13,9 @@ ext {
 version = "1.2.0-SNAPSHOT"
 
 dependencies {
-    api("io.ktor:ktor-server-netty:2.0.3")
-    api("io.ktor:ktor-server-content-negotiation:2.0.3")
-    api("io.ktor:ktor-serialization-gson:2.0.3")
+    api(libs.ktor.server.netty)
+    api(libs.ktor.server.contentNegotiation)
+    api(libs.ktor.serialization.gson)
 }
 
 tasks.withType<KotlinCompile> {
