@@ -16,14 +16,14 @@
 
 package com.github.mrbean355.dota2.tools
 
-import io.ktor.application.call
 import io.ktor.http.HttpStatusCode.Companion.OK
-import io.ktor.request.receiveText
-import io.ktor.response.respond
-import io.ktor.routing.post
-import io.ktor.routing.routing
+import io.ktor.server.application.call
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import io.ktor.server.request.receiveText
+import io.ktor.server.response.respond
+import io.ktor.server.routing.post
+import io.ktor.server.routing.routing
 
 fun startServer(onUpdate: (String) -> Unit) {
     embeddedServer(Netty, port = 12345) {

@@ -1,12 +1,8 @@
 plugins {
-    kotlin("jvm") version "1.5.31"
-}
-
-repositories {
-    mavenCentral()
+    kotlin("jvm")
 }
 
 dependencies {
-    implementation("io.ktor:ktor-server-netty:1.6.4")
-    implementation("io.ktor:ktor-gson:1.6.4")
+    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.serialization.gson)
 }

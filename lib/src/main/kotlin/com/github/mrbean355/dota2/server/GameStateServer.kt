@@ -23,19 +23,19 @@ import com.github.mrbean355.dota2.json.ItemsDeserializer
 import com.github.mrbean355.dota2.json.KillListDeserializer
 import com.github.mrbean355.dota2.json.PlayersDeserializer
 import com.github.mrbean355.dota2.util.registerTypeAdapter
-import io.ktor.application.call
-import io.ktor.application.install
-import io.ktor.application.log
-import io.ktor.features.ContentNegotiation
-import io.ktor.gson.gson
 import io.ktor.http.HttpStatusCode.Companion.OK
-import io.ktor.request.receive
-import io.ktor.response.respond
-import io.ktor.routing.post
-import io.ktor.routing.routing
+import io.ktor.serialization.gson.gson
+import io.ktor.server.application.call
+import io.ktor.server.application.install
 import io.ktor.server.engine.ApplicationEngine
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.server.request.receive
+import io.ktor.server.response.respond
+import io.ktor.server.routing.post
+import io.ktor.server.routing.routing
+import org.slf4j.LoggerFactory
 
 /**
  * Server which listens for game state updates from Dota 2.
@@ -86,7 +86,7 @@ class GameStateServer(
                 try {
                     listener(call.receive())
                 } catch (t: Throwable) {
-                    log.error("Error receiving game state", t)
+                    LoggerFactory.getLogger("GameStateServer").error("Error receiving game state", t)
                 }
                 call.respond(OK)
             }

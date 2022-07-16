@@ -26,9 +26,18 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.mrbean355:dota2-gsi:1.0.0'
+    // Check the Maven Central badge (above) for the latest stable version. 
+    implementation "com.github.mrbean355:dota2-gsi:$latestVersion"
 }
 ```
+
+The library is built with JDK 8, using these dependencies:
+
+- Ktor
+- Kotlin Standard Library
+
+Check the [settings file](settings.gradle.kts) to see what versions are being used. They will be transitively pulled
+into your project, along with their own dependencies.
 
 ### Set Up Dota 2
 
@@ -86,12 +95,11 @@ repositories {
 }
 
 dependencies {
-    implementation "com.github.mrbean355:dota2-gsi:1.1.0-SNAPSHOT"
+    // Check this Maven Central page for the latest snapshot version:
+    // https://oss.sonatype.org/content/repositories/snapshots/com/github/mrbean355/dota2-gsi/
+    implementation "com.github.mrbean355:dota2-gsi:$latestSnapshotVersion"
 }
 ```
-
-The list of available snapshot versions can be found
-on [Maven Central](https://oss.sonatype.org/content/repositories/snapshots/com/github/mrbean355/dota2-gsi/).
 
 ## Contributing
 

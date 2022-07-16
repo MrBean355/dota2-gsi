@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm")
     `maven-publish`
     signing
 }
@@ -10,15 +10,12 @@ group = "com.github.mrbean355"
 ext {
     set("artifactId", "dota2-gsi")
 }
-version = "1.1.0"
-
-repositories {
-    mavenCentral()
-}
+version = "1.2.0"
 
 dependencies {
-    api("io.ktor:ktor-server-netty:1.6.4")
-    api("io.ktor:ktor-gson:1.6.4")
+    api(libs.ktor.server.netty)
+    api(libs.ktor.server.contentNegotiation)
+    api(libs.ktor.serialization.gson)
 }
 
 tasks.withType<KotlinCompile> {
