@@ -1,10 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm")
     application
-}
-
-repositories {
-    mavenCentral()
 }
 
 dependencies {

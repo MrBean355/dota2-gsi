@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm")
     `maven-publish`
     signing
 }
@@ -12,13 +12,10 @@ ext {
 }
 version = "1.2.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    api("io.ktor:ktor-server-netty:1.6.4")
-    api("io.ktor:ktor-gson:1.6.4")
+    api("io.ktor:ktor-server-netty:2.0.3")
+    api("io.ktor:ktor-server-content-negotiation:2.0.3")
+    api("io.ktor:ktor-serialization-gson:2.0.3")
 }
 
 tasks.withType<KotlinCompile> {
