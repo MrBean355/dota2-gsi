@@ -28,9 +28,7 @@ fun main() {
     GameStateServer(12345)
         // Get notified when Dota sends a new game state.
         // This will only be called when the user is playing a Dota match, NOT spectating.
-        .setPlayingListener {
-            val gameTime = it.map?.clockTime
-        }
+        .setPlayingListener(::onNewGameState)
         // Block the current thread so the program keeps running.
         .start(wait = true)
 }
@@ -50,14 +48,19 @@ private fun onNewGameState(newState: PlayingGameState) {
     // If we have stored the previous state, we can compare some values to see how they are
     // different in the new state:
     previousState?.let { previousState ->
+        val kills = newState.player?.kills ?: 0
+        val previousKills = previousState.player?.kills ?: 0
 
         // The player's current kills are higher than the previous kills:
-        if (newState.player.kills > previousState.player.kills) {
+        if (kills > previousKills) {
             println("You got a kill, congrats!")
         }
 
+        val deaths = newState.player?.deaths ?: 0
+        val previousDeaths = previousState.player?.deaths ?: 0
+
         // The player's current deaths are higher than the previous deaths:
-        if (newState.player.deaths > previousState.player.deaths) {
+        if (deaths > previousDeaths) {
             println("You died, too bad :(")
         }
     }

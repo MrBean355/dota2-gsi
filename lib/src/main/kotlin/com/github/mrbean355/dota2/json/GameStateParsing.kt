@@ -57,7 +57,7 @@ internal fun parseGameState(text: String): GameState {
     val root = Json.parseToJsonElement(text).jsonObject
     var isPlaying = false
 
-    val provider = root.getValue(ProviderKey).jsonObject.let {
+    val provider = root[ProviderKey]?.jsonObject?.let {
         Json.decodeFromJsonElement<ProviderImpl>(it)
     }
 
@@ -131,7 +131,7 @@ internal fun parseGameState(text: String): GameState {
         PlayingGameState(
             provider,
             map as PlayingMap?,
-            player as Player,
+            player as Player?,
             hero as Hero?,
             abilities as List<Ability>?,
             items as Items?
@@ -140,7 +140,7 @@ internal fun parseGameState(text: String): GameState {
         SpectatingGameState(
             provider,
             map as SpectatingMap?,
-            player as Map<String, SpectatedPlayer>,
+            player as Map<String, SpectatedPlayer>?,
             hero as Map<String, SpectatedHero>?,
             abilities as Map<String, List<Ability>>?,
             items as Map<String, Items>?

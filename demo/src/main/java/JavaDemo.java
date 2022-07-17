@@ -54,15 +54,17 @@ public class JavaDemo {
         // If we have stored the previous state, we can compare some values to see how they are
         // different in the new state:
         if (previousState != null) {
+            if (newState.getPlayer() != null && previousState.getPlayer() != null) {
 
-            // The player's current kills are higher than the previous kills:
-            if (newState.getPlayer().getKills() > previousState.getPlayer().getKills()) {
-                System.out.println("You got a kill, congrats!");
-            }
+                // The player's current kills are higher than the previous kills:
+                if (newState.getPlayer().getKills() > previousState.getPlayer().getKills()) {
+                    System.out.println("You got a kill, congrats!");
+                }
 
-            // The player's current deaths are higher than the previous deaths:
-            if (newState.getPlayer().getDeaths() > previousState.getPlayer().getDeaths()) {
-                System.out.println("You died, too bad :(");
+                // The player's current deaths are higher than the previous deaths:
+                if (newState.getPlayer().getDeaths() > previousState.getPlayer().getDeaths()) {
+                    System.out.println("You died, too bad :(");
+                }
             }
         }
 
