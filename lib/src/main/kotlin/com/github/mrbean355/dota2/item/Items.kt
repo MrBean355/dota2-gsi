@@ -16,9 +16,16 @@
 
 package com.github.mrbean355.dota2.item
 
+/**
+ * A collection of item slots that belong to a hero.
+ */
 data class Items(
+    /** Item slots on the hero, including backpack. */
     val inventory: List<Item>,
+    /** Item slots for the hero's stash, at their fountain. */
     val stash: List<Item>,
+    /** Item slot for the hero's teleport scroll. */
     val teleport: Item,
+    /** Item slot for the hero's neutral item. */
     val neutral: Item,
 )

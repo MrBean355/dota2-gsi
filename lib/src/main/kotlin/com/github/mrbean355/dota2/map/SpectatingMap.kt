@@ -16,6 +16,10 @@
 
 package com.github.mrbean355.dota2.map
 
+/**
+ * Some general information about the map when the client is **spectating** the match.
+ * See [DotaMap] for common properties.
+ */
 sealed interface SpectatingMap : DotaMap {
     val radiantWardPurchaseCooldown: Long
     val direWardPurchaseCooldown: Long

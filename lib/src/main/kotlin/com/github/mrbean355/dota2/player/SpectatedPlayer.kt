@@ -16,6 +16,10 @@
 
 package com.github.mrbean355.dota2.player
 
+/**
+ * A player involved in the match when the client is **spectating** the match.
+ * See [Player] for common properties.
+ */
 sealed interface SpectatedPlayer : Player {
     val netWorth: Int
     val heroDamage: Int

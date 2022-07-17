@@ -16,6 +16,9 @@
 
 package com.github.mrbean355.dota2.item
 
+/**
+ * An item slot that belongs to a hero.
+ */
 sealed interface Item {
     val name: String
     val purchaser: Int?

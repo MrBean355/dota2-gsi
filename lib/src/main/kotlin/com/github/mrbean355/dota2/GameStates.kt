@@ -27,11 +27,17 @@ import com.github.mrbean355.dota2.player.Player
 import com.github.mrbean355.dota2.player.SpectatedPlayer
 import com.github.mrbean355.dota2.provider.Provider
 
+/**
+ * The generic state of the match at a point in time.
+ */
 sealed interface GameState {
     val provider: Provider
     val map: DotaMap?
 }
 
+/**
+ * The state of the match at a point in time, when the client is **playing** in the match.
+ */
 data class PlayingGameState(
     override val provider: Provider,
     override val map: PlayingMap?,
@@ -41,6 +47,9 @@ data class PlayingGameState(
     val items: Items?
 ) : GameState
 
+/**
+ * The state of the match at a point in time, when the client is **spectating** the match.
+ */
 data class SpectatingGameState(
     override val provider: Provider,
     override val map: SpectatingMap?,

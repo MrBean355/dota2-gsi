@@ -16,6 +16,9 @@
 
 package com.github.mrbean355.dota2.map
 
+/**
+ * Some general information about the map.
+ */
 sealed interface DotaMap {
     val name: String
     val matchId: String

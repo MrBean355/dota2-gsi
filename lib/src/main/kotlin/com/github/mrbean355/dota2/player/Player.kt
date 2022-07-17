@@ -16,6 +16,9 @@
 
 package com.github.mrbean355.dota2.player
 
+/**
+ * A player involved in the match.
+ */
 sealed interface Player {
     val steamId: String
     val name: String
