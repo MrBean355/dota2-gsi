@@ -41,23 +41,27 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.decodeFromJsonElement
 import kotlinx.serialization.json.jsonObject
 
-private var isPlaying = false
-
+private const val ProviderKey = "provider"
+private const val MapKey = "map"
 private const val MapIdentifier = "ward_purchase_cooldown"
+private const val PlayerKey = "player"
 private const val PlayerIdentifier = "steamid"
+private const val HeroKey = "hero"
 private const val HeroIdentifier = "xpos"
+private const val AbilitiesKey = "abilities"
 private const val AbilitiesIdentifier = "ability0"
+private const val ItemsKey = "items"
 private const val ItemsIdentifier = "slot0"
 
 internal fun parseGameState(text: String): GameState {
     val root = Json.parseToJsonElement(text).jsonObject
-    isPlaying = false
+    var isPlaying = false
 
-    val provider = root.getValue("provider").jsonObject.let {
+    val provider = root.getValue(ProviderKey).jsonObject.let {
         Json.decodeFromJsonElement<ProviderImpl>(it)
     }
 
-    val map = root["map"]?.jsonObject?.let { map ->
+    val map = root[MapKey]?.jsonObject?.let { map ->
         isPlaying = map.containsKey(MapIdentifier)
         if (isPlaying) {
             Json.decodeFromJsonElement<PlayingMapImpl>(map)
@@ -66,7 +70,7 @@ internal fun parseGameState(text: String): GameState {
         }
     }
 
-    val player = root["player"]?.jsonObject?.let { player ->
+    val player = root[PlayerKey]?.jsonObject?.let { player ->
         isPlaying = player.containsKey(PlayerIdentifier)
         if (isPlaying) {
             Json.decodeFromJsonElement<PlayerImpl>(player)
@@ -79,7 +83,7 @@ internal fun parseGameState(text: String): GameState {
         }
     }
 
-    val hero = root["hero"]?.jsonObject?.let { hero ->
+    val hero = root[HeroKey]?.jsonObject?.let { hero ->
         isPlaying = hero.containsKey(HeroIdentifier)
         if (isPlaying) {
             Json.decodeFromJsonElement<HeroImpl>(hero)
@@ -92,7 +96,7 @@ internal fun parseGameState(text: String): GameState {
         }
     }
 
-    val abilities = root["abilities"]?.jsonObject?.let { abilities ->
+    val abilities = root[AbilitiesKey]?.jsonObject?.let { abilities ->
         isPlaying = abilities.containsKey(AbilitiesIdentifier)
         if (isPlaying) {
             abilities.values.map {
@@ -109,7 +113,7 @@ internal fun parseGameState(text: String): GameState {
         }
     }
 
-    val items = root["items"]?.jsonObject?.let { items ->
+    val items = root[ItemsKey]?.jsonObject?.let { items ->
         isPlaying = items.containsKey(ItemsIdentifier)
         if (isPlaying) {
             items.mapItems()
@@ -144,21 +148,26 @@ internal fun parseGameState(text: String): GameState {
     }
 }
 
+private const val SlotKeyPrefix = "slot"
+private const val StashKeyPrefix = "stash"
+private const val TeleportKey = "teleport0"
+private const val NeutralKey = "neutral0"
+
 private fun JsonObject.mapItems(): Items {
     val inventory = entries
-        .filter { it.key.startsWith("slot") }
+        .filter { it.key.startsWith(SlotKeyPrefix) }
         .map { Json.decodeFromJsonElement<ItemImpl>(it.value) }
 
     val stash = entries
-        .filter { it.key.startsWith("stash") }
+        .filter { it.key.startsWith(StashKeyPrefix) }
         .map { Json.decodeFromJsonElement<ItemImpl>(it.value) }
 
     val teleport = entries
-        .first { it.key == "teleport0" }
+        .first { it.key == TeleportKey }
         .let { Json.decodeFromJsonElement<ItemImpl>(it.value) }
 
     val neutral = entries
-        .first { it.key == "neutral0" }
+        .first { it.key == NeutralKey }
         .let { Json.decodeFromJsonElement<ItemImpl>(it.value) }
 
     return Items(inventory, stash, teleport, neutral)
