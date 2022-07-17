@@ -16,43 +16,52 @@
 
 package com.github.mrbean355.dota2.demo
 
-import com.github.mrbean355.dota2.GameState
+import com.github.mrbean355.dota2.PlayingGameState
 import com.github.mrbean355.dota2.server.GameStateServer
 
 /**
  * Start up a server that listens on the given port for data from Dota 2.
  * When Dota sends us a new game state, we can check various properties.
+ * See JavaDemo.java for the Java version.
  */
 fun main() {
-    GameStateServer(12345) { state ->
-        onNewGameState(state)
-    }.start(wait = true)
+    GameStateServer(12345)
+        // Get notified when Dota sends a new game state.
+        // This will only be called when the user is playing a Dota match, NOT spectating.
+        .setPlayingListener {
+            val gameTime = it.map?.clockTime
+        }
+        // Block the current thread so the program keeps running.
+        .start(wait = true)
 }
 
 // Store the previous game state, so we can compare values when a new state comes in:
-private var previousState: GameState? = null
+private var previousState: PlayingGameState? = null
 
-private fun onNewGameState(gameState: GameState) {
+private fun onNewGameState(newState: PlayingGameState) {
     // Current game time (number of seconds since first creeps spawned):
-    val clockTime = gameState.map?.clockTime ?: 0
-    // Bounty runes spawn every 180 seconds (3 minutes):
-    val bountyRuneTimer = 3 * 60
-    // If the current time is a multiple of 3 minutes, the bounties have just spawned:
-    if (clockTime % bountyRuneTimer == 0L) {
+    val clockTime = newState.map?.clockTime ?: 0
+
+    // If the current time is a multiple of 3 minutes, the bounty runes have just spawned:
+    if (clockTime % 180 == 0L) {
         println("Bounty runes just spawned!")
     }
 
-    // If a previous state exists, we can compare some values to see how they are
+    // If we have stored the previous state, we can compare some values to see how they are
     // different in the new state:
-    previousState?.let { previous ->
-        val previousKills = previous.players?.values.orEmpty().first().kills
-        val currentKills = gameState.players?.values.orEmpty().first().kills
-        // If the current kills are higher than in the previous state:
-        if (currentKills > previousKills) {
+    previousState?.let { previousState ->
+
+        // The player's current kills are higher than the previous kills:
+        if (newState.player.kills > previousState.player.kills) {
             println("You got a kill, congrats!")
+        }
+
+        // The player's current deaths are higher than the previous deaths:
+        if (newState.player.deaths > previousState.player.deaths) {
+            println("You died, too bad :(")
         }
     }
 
     // Previous state becomes the current state, for the next time the game state updates:
-    previousState = gameState
+    previousState = newState
 }

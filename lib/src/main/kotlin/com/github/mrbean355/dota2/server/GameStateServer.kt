@@ -17,21 +17,15 @@
 package com.github.mrbean355.dota2.server
 
 import com.github.mrbean355.dota2.GameState
-import com.github.mrbean355.dota2.json.AbilitiesDeserializer
-import com.github.mrbean355.dota2.json.HeroesDeserializer
-import com.github.mrbean355.dota2.json.ItemsDeserializer
-import com.github.mrbean355.dota2.json.KillListDeserializer
-import com.github.mrbean355.dota2.json.PlayersDeserializer
-import com.github.mrbean355.dota2.util.registerTypeAdapter
+import com.github.mrbean355.dota2.PlayingGameState
+import com.github.mrbean355.dota2.SpectatingGameState
+import com.github.mrbean355.dota2.json.parseGameState
 import io.ktor.http.HttpStatusCode.Companion.OK
-import io.ktor.serialization.gson.gson
 import io.ktor.server.application.call
-import io.ktor.server.application.install
 import io.ktor.server.engine.ApplicationEngine
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
-import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.server.request.receive
+import io.ktor.server.request.receiveText
 import io.ktor.server.response.respond
 import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
@@ -41,6 +35,11 @@ import org.slf4j.LoggerFactory
  * Server which listens for game state updates from Dota 2.
  *
  * The Dota client must be configured to send updates to the server.
+ *
+ * Add this launch option to Dota 2 to enable GSI:
+ * ```
+ * -gamestateintegration
+ * ```
  * Create a text file like `gamestate_integration_test.cfg` in the folder:
  * ```
  * dota 2 beta/game/dota/cfg/gamestate_integration/
@@ -66,31 +65,68 @@ import org.slf4j.LoggerFactory
  * }
  * ```
  * Note that the port (`44444`) can be changed to any valid port.
+ *
+ * @param port GSI port number, as configured in the .cfg file.
  */
 class GameStateServer(
-    port: Int,
-    private val listener: GameStateListener
+    port: Int
 ) {
+    private var genericListener: GameStateListener<GameState> = GameStateListener { }
+    private var playingListener: GameStateListener<PlayingGameState> = GameStateListener { }
+    private var spectatingListener: GameStateListener<SpectatingGameState> = GameStateListener { }
+
     private val server: ApplicationEngine = embeddedServer(Netty, port) {
-        install(ContentNegotiation) {
-            gson {
-                registerTypeAdapter(AbilitiesDeserializer())
-                registerTypeAdapter(HeroesDeserializer())
-                registerTypeAdapter(KillListDeserializer())
-                registerTypeAdapter(ItemsDeserializer())
-                registerTypeAdapter(PlayersDeserializer())
-            }
-        }
         routing {
             post {
                 try {
-                    listener(call.receive())
+                    val state = parseGameState(call.receiveText())
+                    genericListener(state)
+                    when (state) {
+                        is PlayingGameState -> playingListener(state)
+                        is SpectatingGameState -> spectatingListener(state)
+                    }
                 } catch (t: Throwable) {
                     LoggerFactory.getLogger("GameStateServer").error("Error receiving game state", t)
                 }
                 call.respond(OK)
             }
         }
+    }
+
+    /**
+     * Set a listener to get called when a "generic" game state update happens.
+     * This will be called when the client is playing or spectating a match.
+     *
+     * @param listener Listener to set.
+     * @return this object.
+     */
+    fun setGenericListener(listener: GameStateListener<GameState>): GameStateServer {
+        genericListener = listener
+        return this
+    }
+
+    /**
+     * Set a listener to get called when a "playing" game state update happens.
+     * This will only be called when the client is playing a match (not when spectating).
+     *
+     * @param listener Listener to set.
+     * @return this object.
+     */
+    fun setPlayingListener(listener: GameStateListener<PlayingGameState>): GameStateServer {
+        playingListener = listener
+        return this
+    }
+
+    /**
+     * Set a listener to get called when a "spectating" game state update happens.
+     * This will only be called when the client is spectating a match (not when playing).
+     *
+     * @param listener Listener to set.
+     * @return this object.
+     */
+    fun setSpectatingListener(listener: GameStateListener<SpectatingGameState>): GameStateServer {
+        spectatingListener = listener
+        return this
     }
 
     /**
@@ -115,6 +151,8 @@ class GameStateServer(
     }
 }
 
-fun interface GameStateListener {
-    operator fun invoke(gameState: GameState)
+fun interface GameStateListener<T : GameState> {
+
+    operator fun invoke(gameState: T)
+
 }

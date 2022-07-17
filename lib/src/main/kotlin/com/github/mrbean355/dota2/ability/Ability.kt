@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Michael Johnston
+ * Copyright 2022 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,14 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2
+package com.github.mrbean355.dota2.ability
 
-import com.google.gson.annotations.SerializedName
-
-data class Provider(
-
-    @SerializedName("name")
-    val name: String,
-
-    @SerializedName("appid")
-    val appId: Int,
-
-    @SerializedName("version")
-    val version: Int,
-
-    @SerializedName("timestamp")
-    val timestamp: Long
-
-)
+sealed interface Ability {
+    val name: String
+    val level: Int
+    val canCast: Boolean
+    val passive: Boolean
+    val abilityActive: Boolean
+    val cooldown: Int
+    val ultimate: Boolean
+}

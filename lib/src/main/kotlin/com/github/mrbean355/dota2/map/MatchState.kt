@@ -14,41 +14,43 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2
+package com.github.mrbean355.dota2.map
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 @Suppress("unused")
 enum class MatchState {
 
-    @SerializedName("DOTA_GAMERULES_STATE_DISCONNECT")
+    @SerialName("DOTA_GAMERULES_STATE_DISCONNECT")
     DISCONNECT,
 
-    @SerializedName("DOTA_GAMERULES_STATE_GAME_IN_PROGRESS")
+    @SerialName("DOTA_GAMERULES_STATE_GAME_IN_PROGRESS")
     GAME_IN_PROGRESS,
 
-    @SerializedName("DOTA_GAMERULES_STATE_HERO_SELECTION")
+    @SerialName("DOTA_GAMERULES_STATE_HERO_SELECTION")
     HERO_SELECTION,
 
-    @SerializedName("DOTA_GAMERULES_STATE_INIT")
+    @SerialName("DOTA_GAMERULES_STATE_INIT")
     INIT,
 
-    @SerializedName("DOTA_GAMERULES_STATE_LAST")
+    @SerialName("DOTA_GAMERULES_STATE_LAST")
     LAST,
 
-    @SerializedName("DOTA_GAMERULES_STATE_POST_GAME")
+    @SerialName("DOTA_GAMERULES_STATE_POST_GAME")
     POST_GAME,
 
-    @SerializedName("DOTA_GAMERULES_STATE_PRE_GAME")
+    @SerialName("DOTA_GAMERULES_STATE_PRE_GAME")
     PRE_GAME,
 
-    @SerializedName("DOTA_GAMERULES_STATE_STRATEGY_TIME")
+    @SerialName("DOTA_GAMERULES_STATE_STRATEGY_TIME")
     STRATEGY_TIME,
 
-    @SerializedName("DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD")
+    @SerialName("DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD")
     WAIT_FOR_PLAYERS_TO_LOAD,
 
-    @SerializedName("DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP")
+    @SerialName("DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP")
     CUSTOM_GAME_SETUP
 
 }

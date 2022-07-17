@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Michael Johnston
+ * Copyright 2022 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,8 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.util
+package com.github.mrbean355.dota2.map
 
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonArray
-import com.google.gson.JsonDeserializer
-
-internal inline fun <reified T> GsonBuilder.registerTypeAdapter(deserializer: JsonDeserializer<T>) {
-    registerTypeAdapter(T::class.java, deserializer)
+sealed interface PlayingMap : DotaMap {
+    val wardPurchaseCooldown: Long
 }
-
-@Suppress("NOTHING_TO_INLINE")
-internal inline fun JsonArray(values: Iterable<Boolean>): JsonArray =
-    JsonArray().apply { values.forEach(::add) }

@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    kotlin("plugin.serialization")
     `maven-publish`
     signing
 }
@@ -10,12 +11,13 @@ group = "com.github.mrbean355"
 ext {
     set("artifactId", "dota2-gsi")
 }
-version = "1.3.0-SNAPSHOT"
+version = "2.0.0-SNAPSHOT"
 
 dependencies {
     api(libs.ktor.server.netty)
     api(libs.ktor.server.contentNegotiation)
-    api(libs.ktor.serialization.gson)
+    api(libs.ktor.serialization.kotlinx.json)
+    api(libs.kotlinx.serialization.json)
 }
 
 tasks.withType<KotlinCompile> {

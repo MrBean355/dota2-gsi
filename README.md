@@ -1,54 +1,39 @@
-# Dota 2 Game State Integration
-
-This library is a Java/Kotlin wrapper for receiving game state updates from Dota 2.
-
-Game State Integration (GSI) is a feature built into Dota 2 that sends JSON data on the current game state. This data
-can be examined to perform the necessary actions. For example, play a notification sound shortly before the bounty runes
-spawn every 3 minutes.
-
-This is the mechanism that is used to create those fancy overlays seen at the tournaments.
-
-## Try It Out
-
-To get started, add a dependency on the library. Next, create a game state integration file in your Dota 2 folder.
-Finally, write some code to start receiving game state updates!
-
-### Add The Dependency
+# Dota 2 - Game State Integration - JVM
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mrbean355/dota2-gsi/badge.png)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
 
-The library is published to Maven Central. Update your `build.gradle` file as follows. Other build systems (e.g. Maven)
-hopefully have their own way of doing this.
+This library is a Java/Kotlin wrapper for receiving game state updates from Dota 2.
 
-```groovy
-repositories {
-    mavenCentral()
-}
+Game State Integration (GSI) is a feature built into Dota 2 that periodically sends JSON data on the current game state.
+This data can be examined to perform the necessary actions. For example, play a notification sound shortly before the
+bounty runes spawn every 3 minutes.
 
-dependencies {
-    // Check the Maven Central badge (above) for the latest stable version. 
-    implementation "com.github.mrbean355:dota2-gsi:$latestVersion"
-}
-```
+This is the mechanism that is used to create those fancy overlays seen at the tournaments. More information can be found
+on [Valve's developer wiki](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration)
+. It is written for CS:GO, but the same applies to Dota 2.
 
-The library is built with JDK 8, using these dependencies:
+## Getting Started
 
-- Ktor
-- Kotlin Standard Library
-
-Check the [settings file](settings.gradle.kts) to see what versions are being used. They will be transitively pulled
-into your project, along with their own dependencies.
+1. **Set up Dota 2**. Set up the Dota 2 client to send game state information to the program.
+2. **Add the dependency**. Add the dependency to the project and start coding!
 
 ### Set Up Dota 2
 
-In order for Dota 2 to send data on the current game state, a simple text file must be created. Navigate to this folder
-within your Dota 2 installation folder, creating folders that don't exist already:
+#### Enable GSI
+
+Add the `-gamestateintegration` Dota 2 [launch option](https://help.steampowered.com/en/faqs/view/7D01-D2DD-D75E-2955)
+to enable GSI.
+
+#### Configure GSI
+
+Navigate to this folder within the Dota 2 installation folder, creating folders that don't exist already:
 
 ```
 dota 2 beta/game/dota/cfg/gamestate_integration
 ```
 
-Next create a new text file inside this folder named `gamestate_integration_*.cfg`, for example:
+Create a new text file inside this folder. The file name must start with `gamestate_integration_`, and have the
+extension `.cfg`. For example:
 
 ```
 gamestate_integration_test.cfg
@@ -76,16 +61,60 @@ Open the file in a text editor and add this content:
 }
 ```
 
-Note that you can change the port number (`44444`) if necessary.
+*Note: the `44444` in the URI can be changed to any valid port number.*
+
+Save & close the file. The setup is now complete!
+
+### Add The Dependency
+
+The library is published to Maven Central; make sure it is added as a repository. Then simply add a dependency on the
+library:
+
+```groovy
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Check this Maven Central page for the latest released version:
+    // https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi/
+    implementation "com.github.mrbean355:dota2-gsi:x.x.x"
+}
+```
+
+The library is built with JDK 8, using these dependencies:
+
+- Ktor
+- KotlinX Serialization (JSON)
+- Kotlin Standard Library
+
+Check the [settings file](settings.gradle.kts) to see what versions are being used. They will be transitively pulled
+into the project, along with their own dependencies.
 
 ## Sample Code
 
-Have a look at the simple [demo project](demo/src/main/kotlin/Main.kt) for some sample code.
+*Note: the library is written in Kotlin, but can be used from Java code as well.*
+
+```kotlin
+fun main() {
+    // Create a server using the same port number from above:
+    GameStateServer(44444)
+        // Get notified when Dota sends a new game state:
+        .setPlayingListener { gameState ->
+            // Inspect the gameState object as desired:
+            val gameTime = it.map?.clockTime
+        }
+        // Block the current thread so the program keeps running:
+        .start(wait = true)
+}
+```
+
+Have a look at the simple [demo project](demo/src/main/java) for some more examples, including Java code.
 
 ## Snapshots
 
-You can try out the latest snapshots (built from the `develop` branch). Note that these are development versions, and
-will likely be unstable. Update your `build.gradle` file to point to the snapshots repository:
+Snapshots of the current in-development release are also published to Maven Central. They can be used in projects as
+well, but are likely to be unstable. Include the snapshot repository and dependency:
 
 ```groovy
 repositories {
@@ -97,11 +126,11 @@ repositories {
 dependencies {
     // Check this Maven Central page for the latest snapshot version:
     // https://oss.sonatype.org/content/repositories/snapshots/com/github/mrbean355/dota2-gsi/
-    implementation "com.github.mrbean355:dota2-gsi:$latestSnapshotVersion"
+    implementation "com.github.mrbean355:dota2-gsi:x.x.x-SNAPSHOT"
 }
 ```
 
 ## Contributing
 
-Contributions are welcome! This includes pull requests as well as suggestions of things you'd like to see in the
-library. Feel free to [create a GitHub issue](https://github.com/MrBean355/dota2-gsi/issues) to provide your feedback.
+Contributions are welcome! This includes bug reports, feature requests and general suggestions. Feel free to
+[create a GitHub issue](https://github.com/MrBean355/dota2-gsi/issues) to provide feedback.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Michael Johnston
+ * Copyright 2022 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,11 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.json
+package com.github.mrbean355.dota2.provider
 
-import com.github.mrbean355.dota2.KillList
-import com.google.gson.JsonDeserializationContext
-import com.google.gson.JsonDeserializer
-import com.google.gson.JsonElement
-import java.lang.reflect.Type
-
-internal class KillListDeserializer : JsonDeserializer<KillList> {
-
-    override fun deserialize(json: JsonElement, typeOfT: Type, context: JsonDeserializationContext): KillList {
-        val root = json.asJsonObject
-        return KillList(root.entrySet().map { it.value.asInt })
-    }
+sealed interface Provider {
+    val name: String
+    val appId: Int
+    val version: Int
+    val timestamp: Long
 }

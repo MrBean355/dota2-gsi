@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Michael Johnston
+ * Copyright 2022 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,8 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2
+package com.github.mrbean355.dota2.hero
 
-import com.google.gson.annotations.SerializedName
-
-data class GameState(
-
-    @SerializedName("provider")
-    val provider: Provider,
-
-    @SerializedName("map")
-    val map: DotaMap?,
-
-    @SerializedName("player")
-    val players: Players?,
-
-    @SerializedName("hero")
-    val heroes: Heroes?,
-
-    @SerializedName("abilities")
-    val abilities: Abilities?,
-
-    @SerializedName("items")
-    val items: Items?
-
-)
+sealed interface SpectatedHero : Hero {
+    val selectedUnit: Boolean
+}

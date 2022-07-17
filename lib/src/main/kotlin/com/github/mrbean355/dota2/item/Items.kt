@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Michael Johnston
+ * Copyright 2022 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,42 +14,11 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2
+package com.github.mrbean355.dota2.item
 
-import com.google.gson.annotations.SerializedName
-
-data class Item(
-
-    @SerializedName("name")
-    val name: String,
-
-    @SerializedName("purchaser")
-    val purchaser: Int?,
-
-    @SerializedName("can_cast")
-    val canCast: Boolean?,
-
-    @SerializedName("cooldown")
-    val cooldown: Int?,
-
-    @SerializedName("passive")
-    val passive: Boolean?,
-
-    @SerializedName("charges")
-    val charges: Int?
-
-)
-
-data class HeroItems(
-
+data class Items(
     val inventory: List<Item>,
-
     val stash: List<Item>,
-
     val teleport: Item,
-
-    val neutral: Item
-
+    val neutral: Item,
 )
-
-class Items internal constructor(c: Map<String, HeroItems>) : HashMap<String, HeroItems>(c)
