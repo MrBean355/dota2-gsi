@@ -40,6 +40,8 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.decodeFromJsonElement
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.long
 
 private const val ProviderKey = "provider"
 private const val MapKey = "map"
@@ -47,7 +49,7 @@ private const val MapIdentifier = "ward_purchase_cooldown"
 private const val PlayerKey = "player"
 private const val PlayerIdentifier = "steamid"
 private const val HeroKey = "hero"
-private const val HeroIdentifier = "xpos"
+private const val HeroIdentifier = "id"
 private const val AbilitiesKey = "abilities"
 private const val AbilitiesIdentifier = "ability0"
 private const val ItemsKey = "items"
@@ -86,11 +88,19 @@ internal fun parseGameState(text: String): GameState {
     val hero = root[HeroKey]?.jsonObject?.let { hero ->
         isPlaying = hero.containsKey(HeroIdentifier)
         if (isPlaying) {
-            Json.decodeFromJsonElement<HeroImpl>(hero)
+            if (hero.getValue("id").jsonPrimitive.long != -1L) {
+                Json.decodeFromJsonElement<HeroImpl>(hero)
+            } else {
+                null
+            }
         } else {
             hero.values.flatMap { teams ->
                 teams.jsonObject.map { playerHero ->
-                    playerHero.key to Json.decodeFromJsonElement<SpectatedHeroImpl>(playerHero.value)
+                    playerHero.key to if (playerHero.value.jsonObject.getValue("id").jsonPrimitive.long != -1L) {
+                        Json.decodeFromJsonElement<SpectatedHeroImpl>(playerHero.value)
+                    } else {
+                        null
+                    }
                 }
             }.toMap()
         }
