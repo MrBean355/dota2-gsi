@@ -41,7 +41,7 @@ private fun onNewGameState(newState: PlayingGameState) {
     val clockTime = newState.map?.clockTime ?: 0
 
     // If the current time is a multiple of 3 minutes, the bounty runes have just spawned:
-    if (clockTime % 180 == 0L) {
+    if (clockTime % 180 == 0) {
         println("Bounty runes just spawned!")
     }
 

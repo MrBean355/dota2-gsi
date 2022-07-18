@@ -20,22 +20,22 @@ package com.github.mrbean355.dota2.hero
  * A hero that is being controlled by a player in the match.
  */
 sealed interface Hero {
-    val xPos: Long
-    val yPos: Long
-    val id: Long
+    val xPos: Int
+    val yPos: Int
+    val id: Int
     val name: String
-    val level: Long
-    val xp: Long
+    val level: Int
+    val xp: Int
     val alive: Boolean
-    val respawnSeconds: Long
-    val buybackCost: Long
-    val buybackCooldown: Long
-    val health: Long
-    val maxHealth: Long
-    val healthPercent: Long
-    val mana: Long
-    val maxMana: Long
-    val manaPercent: Long
+    val respawnSeconds: Int
+    val buybackCost: Int
+    val buybackCooldown: Int
+    val health: Int
+    val maxHealth: Int
+    val healthPercent: Int
+    val mana: Int
+    val maxMana: Int
+    val manaPercent: Int
     val silenced: Boolean
     val stunned: Boolean
     val disarmed: Boolean

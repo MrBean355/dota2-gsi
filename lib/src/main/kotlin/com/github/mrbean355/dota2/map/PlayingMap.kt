@@ -21,5 +21,5 @@ package com.github.mrbean355.dota2.map
  * See [DotaMap] for common properties.
  */
 sealed interface PlayingMap : DotaMap {
-    val wardPurchaseCooldown: Long
+    val wardPurchaseCooldown: Int
 }

@@ -21,9 +21,9 @@ package com.github.mrbean355.dota2.map
  * See [DotaMap] for common properties.
  */
 sealed interface SpectatingMap : DotaMap {
-    val radiantWardPurchaseCooldown: Long
-    val direWardPurchaseCooldown: Long
+    val radiantWardPurchaseCooldown: Int
+    val direWardPurchaseCooldown: Int
     val roshanState: String
-    val roshanStateEndSeconds: Long
-    val radiantWinChance: Long
+    val roshanStateEndSeconds: Int
+    val radiantWinChance: Int
 }

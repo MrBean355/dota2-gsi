@@ -22,8 +22,8 @@ package com.github.mrbean355.dota2.map
 sealed interface DotaMap {
     val name: String
     val matchId: String
-    val gameTime: Long
-    val clockTime: Long
+    val gameTime: Int
+    val clockTime: Int
     val daytime: Boolean
     val nightStalkerNight: Boolean
     val matchState: MatchState

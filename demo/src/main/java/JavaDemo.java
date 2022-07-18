@@ -43,10 +43,10 @@ public class JavaDemo {
     private void onNewGameState(PlayingGameState newState) {
         if (newState.getMap() != null) {
             // Current game time (number of seconds since first creeps spawned):
-            long clockTime = newState.getMap().getClockTime();
+            int clockTime = newState.getMap().getClockTime();
 
             // If the current time is a multiple of 3 minutes, the bounty runes have just spawned:
-            if (clockTime % 180 == 0L) {
+            if (clockTime % 180 == 0) {
                 System.out.println("Bounty runes just spawned!");
             }
         }

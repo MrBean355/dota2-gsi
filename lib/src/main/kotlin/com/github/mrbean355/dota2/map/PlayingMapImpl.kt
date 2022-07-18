@@ -23,13 +23,13 @@ import kotlinx.serialization.Serializable
 internal data class PlayingMapImpl(
     @SerialName("name") override val name: String,
     @SerialName("matchid") override val matchId: String,
-    @SerialName("game_time") override val gameTime: Long,
-    @SerialName("clock_time") override val clockTime: Long,
+    @SerialName("game_time") override val gameTime: Int,
+    @SerialName("clock_time") override val clockTime: Int,
     @SerialName("daytime") override val daytime: Boolean,
     @SerialName("nightstalker_night") override val nightStalkerNight: Boolean,
     @SerialName("game_state") override val matchState: MatchState,
     @SerialName("paused") override val paused: Boolean,
     @SerialName("win_team") override val winningTeam: String,
     @SerialName("customgamename") override val customGameName: String,
-    @SerialName("ward_purchase_cooldown") override val wardPurchaseCooldown: Long,
+    @SerialName("ward_purchase_cooldown") override val wardPurchaseCooldown: Int,
 ) : PlayingMap

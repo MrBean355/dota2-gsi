@@ -39,9 +39,9 @@ import com.github.mrbean355.dota2.provider.ProviderImpl
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.decodeFromJsonElement
+import kotlinx.serialization.json.int
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
-import kotlinx.serialization.json.long
 
 private const val ProviderKey = "provider"
 private const val MapKey = "map"
@@ -88,7 +88,7 @@ internal fun parseGameState(text: String): GameState {
     val hero = root[HeroKey]?.jsonObject?.let { hero ->
         isPlaying = hero.containsKey(HeroIdentifier)
         if (isPlaying) {
-            if (hero.getValue("id").jsonPrimitive.long != -1L) {
+            if (hero.getValue("id").jsonPrimitive.int != -1) {
                 Json.decodeFromJsonElement<HeroImpl>(hero)
             } else {
                 null
@@ -96,7 +96,7 @@ internal fun parseGameState(text: String): GameState {
         } else {
             hero.values.flatMap { teams ->
                 teams.jsonObject.map { playerHero ->
-                    playerHero.key to if (playerHero.value.jsonObject.getValue("id").jsonPrimitive.long != -1L) {
+                    playerHero.key to if (playerHero.value.jsonObject.getValue("id").jsonPrimitive.int != -1) {
                         Json.decodeFromJsonElement<SpectatedHeroImpl>(playerHero.value)
                     } else {
                         null
