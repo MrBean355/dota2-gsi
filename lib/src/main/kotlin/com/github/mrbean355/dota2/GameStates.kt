@@ -20,7 +20,6 @@ import com.github.mrbean355.dota2.ability.Ability
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.SpectatedHero
 import com.github.mrbean355.dota2.item.Items
-import com.github.mrbean355.dota2.map.DotaMap
 import com.github.mrbean355.dota2.map.PlayingMap
 import com.github.mrbean355.dota2.map.SpectatingMap
 import com.github.mrbean355.dota2.player.Player
@@ -28,23 +27,29 @@ import com.github.mrbean355.dota2.player.SpectatedPlayer
 import com.github.mrbean355.dota2.provider.Provider
 
 /**
- * The generic state of the match at a point in time.
+ * A generic game state. See below for possible types.
  */
 sealed interface GameState {
     val provider: Provider?
-    val map: DotaMap?
 }
+
+/**
+ * The state when the client is not in a match (i.e. it is on the main menu).
+ */
+data class IdleGameState(
+    override val provider: Provider?
+) : GameState
 
 /**
  * The state of the match at a point in time, when the client is **playing** in the match.
  */
 data class PlayingGameState(
     override val provider: Provider?,
-    override val map: PlayingMap?,
+    val map: PlayingMap?,
     val player: Player?,
     val hero: Hero?,
     val abilities: List<Ability>?,
-    val items: Items?
+    val items: Items?,
 ) : GameState
 
 /**
@@ -52,7 +57,7 @@ data class PlayingGameState(
  */
 data class SpectatingGameState(
     override val provider: Provider?,
-    override val map: SpectatingMap?,
+    val map: SpectatingMap?,
     val players: Map<String, SpectatedPlayer>?,
     val heroes: Map<String, SpectatedHero>?,
     val abilities: Map<String, List<Ability>>?,

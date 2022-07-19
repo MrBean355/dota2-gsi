@@ -17,6 +17,7 @@
 package com.github.mrbean355.dota2.server
 
 import com.github.mrbean355.dota2.GameState
+import com.github.mrbean355.dota2.IdleGameState
 import com.github.mrbean355.dota2.PlayingGameState
 import com.github.mrbean355.dota2.SpectatingGameState
 import com.github.mrbean355.dota2.json.parseGameState
@@ -74,6 +75,7 @@ class GameStateServer(
     private var genericListener: GameStateListener<GameState> = GameStateListener { }
     private var playingListener: GameStateListener<PlayingGameState> = GameStateListener { }
     private var spectatingListener: GameStateListener<SpectatingGameState> = GameStateListener { }
+    private var idleListener: GameStateListener<IdleGameState> = GameStateListener { }
 
     private val server: ApplicationEngine = embeddedServer(Netty, port) {
         routing {
@@ -84,6 +86,7 @@ class GameStateServer(
                     when (state) {
                         is PlayingGameState -> playingListener(state)
                         is SpectatingGameState -> spectatingListener(state)
+                        is IdleGameState -> idleListener(state)
                     }
                 } catch (t: Throwable) {
                     LoggerFactory.getLogger("GameStateServer").error("Error receiving game state", t)
@@ -126,6 +129,19 @@ class GameStateServer(
      */
     fun setSpectatingListener(listener: GameStateListener<SpectatingGameState>): GameStateServer {
         spectatingListener = listener
+        return this
+    }
+
+    /**
+     * Set a listener to get called when an "idle" game state update happens.
+     * This will only be called when the client is neither playing nor spectating a match.
+     * This usually happens when the client is on the main menu.
+     *
+     * @param listener Listener to set.
+     * @return this object.
+     */
+    fun setIdleListener(listener: GameStateListener<IdleGameState>): GameStateServer {
+        idleListener = listener
         return this
     }
 

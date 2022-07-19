@@ -30,7 +30,7 @@ sealed interface Player {
     val denies: Int
     val killStreak: Int
     val commandsIssued: Int
-    val killList: List<Int>?
+    val killList: List<Int>
     val teamName: String
     val gold: Int
     val goldReliable: Int

@@ -1,6 +1,16 @@
 public abstract interface class com/github/mrbean355/dota2/GameState {
-	public abstract fun getMap ()Lcom/github/mrbean355/dota2/map/DotaMap;
 	public abstract fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
+}
+
+public final class com/github/mrbean355/dota2/IdleGameState : com/github/mrbean355/dota2/GameState {
+	public fun <init> (Lcom/github/mrbean355/dota2/provider/Provider;)V
+	public final fun component1 ()Lcom/github/mrbean355/dota2/provider/Provider;
+	public final fun copy (Lcom/github/mrbean355/dota2/provider/Provider;)Lcom/github/mrbean355/dota2/IdleGameState;
+	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/IdleGameState;Lcom/github/mrbean355/dota2/provider/Provider;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/IdleGameState;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
 }
 
 public final class com/github/mrbean355/dota2/PlayingGameState : com/github/mrbean355/dota2/GameState {
@@ -17,8 +27,7 @@ public final class com/github/mrbean355/dota2/PlayingGameState : com/github/mrbe
 	public final fun getAbilities ()Ljava/util/List;
 	public final fun getHero ()Lcom/github/mrbean355/dota2/hero/Hero;
 	public final fun getItems ()Lcom/github/mrbean355/dota2/item/Items;
-	public synthetic fun getMap ()Lcom/github/mrbean355/dota2/map/DotaMap;
-	public fun getMap ()Lcom/github/mrbean355/dota2/map/PlayingMap;
+	public final fun getMap ()Lcom/github/mrbean355/dota2/map/PlayingMap;
 	public final fun getPlayer ()Lcom/github/mrbean355/dota2/player/Player;
 	public fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
 	public fun hashCode ()I
@@ -39,8 +48,7 @@ public final class com/github/mrbean355/dota2/SpectatingGameState : com/github/m
 	public final fun getAbilities ()Ljava/util/Map;
 	public final fun getHeroes ()Ljava/util/Map;
 	public final fun getItems ()Ljava/util/Map;
-	public synthetic fun getMap ()Lcom/github/mrbean355/dota2/map/DotaMap;
-	public fun getMap ()Lcom/github/mrbean355/dota2/map/SpectatingMap;
+	public final fun getMap ()Lcom/github/mrbean355/dota2/map/SpectatingMap;
 	public final fun getPlayers ()Ljava/util/Map;
 	public fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
 	public fun hashCode ()I
@@ -239,6 +247,7 @@ public abstract interface class com/github/mrbean355/dota2/server/GameStateListe
 public final class com/github/mrbean355/dota2/server/GameStateServer {
 	public fun <init> (I)V
 	public final fun setGenericListener (Lcom/github/mrbean355/dota2/server/GameStateListener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public final fun setIdleListener (Lcom/github/mrbean355/dota2/server/GameStateListener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public final fun setPlayingListener (Lcom/github/mrbean355/dota2/server/GameStateListener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public final fun setSpectatingListener (Lcom/github/mrbean355/dota2/server/GameStateListener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public final fun start (Z)Lcom/github/mrbean355/dota2/server/GameStateServer;
