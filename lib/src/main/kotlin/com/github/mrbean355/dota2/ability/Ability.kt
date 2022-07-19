@@ -27,4 +27,7 @@ sealed interface Ability {
     val abilityActive: Boolean
     val cooldown: Int
     val ultimate: Boolean
+    val charges: Int?
+    val maxCharges: Int?
+    val chargeCooldown: Int?
 }

@@ -28,4 +28,7 @@ internal data class AbilityImpl(
     @SerialName("ability_active") override val abilityActive: Boolean,
     @SerialName("cooldown") override val cooldown: Int,
     @SerialName("ultimate") override val ultimate: Boolean,
+    @SerialName("charges") override val charges: Int? = null,
+    @SerialName("max_charges") override val maxCharges: Int? = null,
+    @SerialName("charge_cooldown") override val chargeCooldown: Int? = null,
 ) : Ability

@@ -50,8 +50,11 @@ public final class com/github/mrbean355/dota2/SpectatingGameState : com/github/m
 public abstract interface class com/github/mrbean355/dota2/ability/Ability {
 	public abstract fun getAbilityActive ()Z
 	public abstract fun getCanCast ()Z
+	public abstract fun getChargeCooldown ()Ljava/lang/Integer;
+	public abstract fun getCharges ()Ljava/lang/Integer;
 	public abstract fun getCooldown ()I
 	public abstract fun getLevel ()I
+	public abstract fun getMaxCharges ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getPassive ()Z
 	public abstract fun getUltimate ()Z
