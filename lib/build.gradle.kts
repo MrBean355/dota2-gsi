@@ -2,6 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    id("jacoco")
+    id("org.sonarqube")
     `maven-publish`
     signing
 }
@@ -20,6 +22,22 @@ dependencies {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.withType(JacocoReport::class.java) {
+    reports.xml.required.set(true)
+}
+
+tasks.withType(org.sonarqube.gradle.SonarQubeTask::class.java) {
+    dependsOn("jacocoTestReport")
+}
+
+sonarqube {
+    properties {
+        property("sonar.projectKey", "MrBean355_dota2-gsi")
+        property("sonar.organization", "mrbean355")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 java {

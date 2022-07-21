@@ -1,5 +1,8 @@
 # Dota 2 Game State Integration
 
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=coverage)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
+
 This library is a Java/Kotlin wrapper for receiving game state updates from Dota 2.
 
 Game State Integration (GSI) is a feature built into Dota 2 that sends JSON data on the current game state. This data
@@ -105,3 +108,5 @@ dependencies {
 
 Contributions are welcome! This includes pull requests as well as suggestions of things you'd like to see in the
 library. Feel free to [create a GitHub issue](https://github.com/MrBean355/dota2-gsi/issues) to provide your feedback.
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
