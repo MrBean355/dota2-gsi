@@ -32,7 +32,7 @@ internal data class SpectatedPlayerImpl(
     @SerialName("denies") override val denies: Int,
     @SerialName("kill_streak") override val killStreak: Int,
     @SerialName("commands_issued") override val commandsIssued: Int,
-    @SerialName("kill_list") @Serializable(with = KillListTransformer::class) override val killList: List<Int>,
+    @SerialName("kill_list") @Serializable(with = KillListTransformer::class) override val killList: List<Int>? = null,
     @SerialName("team_name") override val teamName: String,
     @SerialName("gold") override val gold: Int,
     @SerialName("gold_reliable") override val goldReliable: Int,
