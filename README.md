@@ -1,6 +1,8 @@
 # Dota 2 - Game State Integration - JVM
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mrbean355/dota2-gsi/badge.png)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=coverage)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
 
 This library is a Java/Kotlin wrapper for receiving game state updates from Dota 2.
 
@@ -134,3 +136,5 @@ dependencies {
 
 Contributions are welcome! This includes bug reports, feature requests and general suggestions. Feel free to
 [create a GitHub issue](https://github.com/MrBean355/dota2-gsi/issues) to provide feedback.
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)

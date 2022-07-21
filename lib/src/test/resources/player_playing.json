@@ -1,0 +1,27 @@
+{
+  "player": {
+    "steamid": "2924123062",
+    "name": "Mr_Bean",
+    "activity": "playing",
+    "kills": 0,
+    "deaths": 1,
+    "assists": 2,
+    "last_hits": 3,
+    "denies": 4,
+    "kill_streak": 5,
+    "commands_issued": 6,
+    "kill_list": {
+      "victimid_1": 7
+    },
+    "team_name": "radiant",
+    "gold": 600,
+    "gold_reliable": 8,
+    "gold_unreliable": 550,
+    "gold_from_hero_kills": 9,
+    "gold_from_creep_kills": 10,
+    "gold_from_income": 11,
+    "gold_from_shared": 12,
+    "gpm": 13,
+    "xpm": 14
+  }
+}

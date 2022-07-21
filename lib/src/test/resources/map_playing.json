@@ -1,0 +1,15 @@
+{
+  "map": {
+    "name": "start",
+    "matchid": "6671869265",
+    "game_time": 891,
+    "clock_time": 713,
+    "daytime": true,
+    "nightstalker_night": false,
+    "game_state": "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
+    "paused": false,
+    "win_team": "none",
+    "customgamename": "",
+    "ward_purchase_cooldown": 37
+  }
+}

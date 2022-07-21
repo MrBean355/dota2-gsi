@@ -1,9 +1,9 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm")
     kotlin("plugin.serialization")
     id("org.jetbrains.kotlinx.binary-compatibility-validator")
+    id("jacoco")
+    id("org.sonarqube")
     `maven-publish`
     signing
 }
@@ -19,10 +19,34 @@ dependencies {
     api(libs.ktor.server.contentNegotiation)
     api(libs.ktor.serialization.kotlinx.json)
     api(libs.kotlinx.serialization.json)
+
+    testImplementation(platform(testLibs.junit.bom))
+    testImplementation(testLibs.junit.jupiter)
+    testImplementation(testLibs.mockK)
 }
 
-tasks.withType<KotlinCompile> {
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.withType(JacocoReport::class.java) {
+    reports.xml.required.set(true)
+}
+
+tasks.withType(org.sonarqube.gradle.SonarQubeTask::class.java) {
+    dependsOn("jacocoTestReport")
+}
+
+sonarqube {
+    properties {
+        property("sonar.projectKey", "MrBean355_dota2-gsi")
+        property("sonar.organization", "mrbean355")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 java {
