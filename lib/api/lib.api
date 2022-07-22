@@ -110,10 +110,40 @@ public abstract interface class com/github/mrbean355/dota2/hero/SpectatedHero : 
 	public abstract fun getSelectedUnit ()Z
 }
 
+public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum {
+	public static final field Arcane Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Companion Lcom/github/mrbean355/dota2/item/BottledRune$Companion;
+	public static final field DoubleDamage Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Empty Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Haste Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Illusion Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Invisibility Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Regeneration Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Water Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static fun values ()[Lcom/github/mrbean355/dota2/item/BottledRune;
+}
+
+public final class com/github/mrbean355/dota2/item/BottledRune$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/github/mrbean355/dota2/item/BottledRune$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/item/BottledRune;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/item/BottledRune;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/github/mrbean355/dota2/item/BottledRune$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
 public abstract interface class com/github/mrbean355/dota2/item/Item {
 	public abstract fun getCanCast ()Ljava/lang/Boolean;
 	public abstract fun getCharges ()Ljava/lang/Integer;
-	public abstract fun getContainsRune ()Ljava/lang/String;
+	public abstract fun getContainsRune ()Lcom/github/mrbean355/dota2/item/BottledRune;
 	public abstract fun getCooldown ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getPassive ()Ljava/lang/Boolean;

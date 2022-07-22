@@ -14,17 +14,38 @@
  * limitations under the License.
  */
 
+@file:Suppress("unused")
+
 package com.github.mrbean355.dota2.item
 
-/**
- * An item slot that belongs to a hero.
- */
-sealed interface Item {
-    val name: String
-    val purchaser: Int?
-    val containsRune: BottledRune?
-    val canCast: Boolean?
-    val cooldown: Int?
-    val passive: Boolean?
-    val charges: Int?
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+enum class BottledRune {
+
+    @SerialName("arcane")
+    Arcane,
+
+    @SerialName("double_damage")
+    DoubleDamage,
+
+    @SerialName("empty")
+    Empty,
+
+    @SerialName("haste")
+    Haste,
+
+    @SerialName("illusion")
+    Illusion,
+
+    @SerialName("invis")
+    Invisibility,
+
+    @SerialName("regen")
+    Regeneration,
+
+    @SerialName("water")
+    Water,
+
 }
