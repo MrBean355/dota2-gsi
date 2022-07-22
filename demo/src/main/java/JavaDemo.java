@@ -29,7 +29,7 @@ public class JavaDemo {
      * See KotlinDemo.kt for the Kotlin version.
      */
     private void run() {
-        new GameStateServer(12345)
+        GameStateServer.create(12345)
                 // Get notified when Dota sends a new game state.
                 // This will only be called when the user is playing a Dota match, NOT spectating.
                 .setPlayingListener(this::onNewGameState)

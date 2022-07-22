@@ -20,82 +20,24 @@ import com.github.mrbean355.dota2.GameState
 import com.github.mrbean355.dota2.IdleGameState
 import com.github.mrbean355.dota2.PlayingGameState
 import com.github.mrbean355.dota2.SpectatingGameState
-import com.github.mrbean355.dota2.json.parseGameState
-import io.ktor.http.HttpStatusCode.Companion.OK
-import io.ktor.server.application.call
-import io.ktor.server.engine.ApplicationEngine
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
-import io.ktor.server.request.receiveText
-import io.ktor.server.response.respond
-import io.ktor.server.routing.post
-import io.ktor.server.routing.routing
 
 /**
  * Server which listens for game state updates from Dota 2.
  *
- * The Dota client must be configured to send updates to the server.
+ * Make sure the Dota client is set up to send game state updates.
+ * Find more information here: https://github.com/MrBean355/dota2-gsi
  *
- * Add this launch option to Dota 2 to enable GSI:
+ * Create an instance in Kotlin with the factory function:
  * ```
- * -gamestateintegration
+ * val server = GameStateServer(portNumber)
  * ```
- * Create a text file like `gamestate_integration_test.cfg` in the folder:
+ * Or in Java:
  * ```
- * dota 2 beta/game/dota/cfg/gamestate_integration/
+ * GameStateServer server = GameStateServer.create(portNumber);
  * ```
- * With contents like:
- * ```
- * "My GSI test"
- * {
- *     "uri"           "http://localhost:44444"
- *     "timeout"       "5.0"
- *     "buffer"        "0.1"
- *     "throttle"      "0.1"
- *     "heartbeat"     "30.0"
- *     "data"
- *     {
- *         "provider"      "1"
- *         "map"           "1"
- *         "player"        "1"
- *         "hero"          "1"
- *         "abilities"     "1"
- *         "items"         "1"
- *     }
- * }
- * ```
- * Note that the port (`44444`) can be changed to any valid port.
- *
- * @param port GSI port number, as configured in the .cfg file.
+ * Peruse the below functions to see what is available.
  */
-class GameStateServer(
-    port: Int
-) {
-    private var genericListener: GameStateListener<GameState> = GameStateListener { }
-    private var playingListener: GameStateListener<PlayingGameState> = GameStateListener { }
-    private var spectatingListener: GameStateListener<SpectatingGameState> = GameStateListener { }
-    private var idleListener: GameStateListener<IdleGameState> = GameStateListener { }
-    private var errorHandler: ErrorHandler = ErrorHandler { _, _ -> }
-
-    private val server: ApplicationEngine = embeddedServer(Netty, port) {
-        routing {
-            post {
-                val json = call.receiveText()
-                try {
-                    val state = parseGameState(json)
-                    genericListener(state)
-                    when (state) {
-                        is PlayingGameState -> playingListener(state)
-                        is SpectatingGameState -> spectatingListener(state)
-                        is IdleGameState -> idleListener(state)
-                    }
-                } catch (t: Throwable) {
-                    errorHandler(t, json)
-                }
-                call.respond(OK)
-            }
-        }
-    }
+interface GameStateServer {
 
     /**
      * Set a listener to get called when a "generic" game state update happens.
@@ -104,10 +46,7 @@ class GameStateServer(
      * @param listener Listener to set.
      * @return this object.
      */
-    fun setGenericListener(listener: GameStateListener<GameState>): GameStateServer {
-        genericListener = listener
-        return this
-    }
+    fun setGenericListener(listener: Listener<GameState>): GameStateServer
 
     /**
      * Set a listener to get called when a "playing" game state update happens.
@@ -116,10 +55,7 @@ class GameStateServer(
      * @param listener Listener to set.
      * @return this object.
      */
-    fun setPlayingListener(listener: GameStateListener<PlayingGameState>): GameStateServer {
-        playingListener = listener
-        return this
-    }
+    fun setPlayingListener(listener: Listener<PlayingGameState>): GameStateServer
 
     /**
      * Set a listener to get called when a "spectating" game state update happens.
@@ -128,10 +64,7 @@ class GameStateServer(
      * @param listener Listener to set.
      * @return this object.
      */
-    fun setSpectatingListener(listener: GameStateListener<SpectatingGameState>): GameStateServer {
-        spectatingListener = listener
-        return this
-    }
+    fun setSpectatingListener(listener: Listener<SpectatingGameState>): GameStateServer
 
     /**
      * Set a listener to get called when an "idle" game state update happens.
@@ -141,24 +74,18 @@ class GameStateServer(
      * @param listener Listener to set.
      * @return this object.
      */
-    fun setIdleListener(listener: GameStateListener<IdleGameState>): GameStateServer {
-        idleListener = listener
-        return this
-    }
+    fun setIdleListener(listener: Listener<IdleGameState>): GameStateServer
 
     /**
      * Set a handler to get called when an exception is thrown during JSON deserialization.
      * Errors can happen when the data returned from Dota 2 is in an unexpected format.
-     * Please consider reporting such errors, along with the JSON received in the [ErrorHandler]:
+     * Please consider reporting such errors, along with the JSON received in the [handler]:
      * https://github.com/MrBean355/dota2-gsi/issues
      *
      * @param handler Handler to set.
      * @return this object.
      */
-    fun setErrorHandler(handler: ErrorHandler): GameStateServer {
-        errorHandler = handler
-        return this
-    }
+    fun setErrorHandler(handler: ErrorHandler): GameStateServer
 
     /**
      * Starts this server.
@@ -166,10 +93,7 @@ class GameStateServer(
      * @param wait if true, this function does not return until the server is stopped.
      * @return this object.
      */
-    fun start(wait: Boolean): GameStateServer {
-        server.start(wait)
-        return this
-    }
+    fun start(wait: Boolean): GameStateServer
 
     /**
      * Stops this server.
@@ -177,19 +101,38 @@ class GameStateServer(
      * @param gracePeriodMillis the maximum amount of time for activity to cool down.
      * @param timeoutMillis the maximum amount of time to wait until server stops gracefully.
      */
-    fun stop(gracePeriodMillis: Long, timeoutMillis: Long) {
-        server.stop(gracePeriodMillis, timeoutMillis)
+    fun stop(gracePeriodMillis: Long, timeoutMillis: Long)
+
+    fun interface Listener<T : GameState> {
+
+        /**
+         * @param gameState Deserialized game state, see [GameState] subclasses.
+         */
+        operator fun invoke(gameState: T)
+
     }
-}
 
-fun interface GameStateListener<T : GameState> {
+    fun interface ErrorHandler {
 
-    operator fun invoke(gameState: T)
+        /**
+         * @param throwable The throwable that was thrown.
+         * @param json The JSON blob from Dota that caused the error.
+         */
+        operator fun invoke(throwable: Throwable, json: String)
 
-}
+    }
 
-fun interface ErrorHandler {
+    companion object {
 
-    operator fun invoke(throwable: Throwable, json: String)
-
+        /**
+         * Create a new instance of a [GameStateServer].
+         *
+         * @param port GSI port number, as configured in the .cfg file.
+         */
+        @JvmStatic
+        @JvmName("create")
+        operator fun invoke(port: Int): GameStateServer {
+            return GameStateServerImpl(port)
+        }
+    }
 }
