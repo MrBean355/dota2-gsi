@@ -37,6 +37,13 @@ internal class HeroFactoryTest {
     }
 
     @Test
+    internal fun createForPlayer_EmptyObject_ReturnsNull() {
+        val hero = HeroFactory.createForPlayer("hero_invalid.json".jsonObject)
+
+        assertNull(hero)
+    }
+
+    @Test
     internal fun testCreateForPlayer_IncompleteHero_ReturnsNull() {
         val hero = HeroFactory.createForPlayer("hero_playing_incomplete.json".jsonObject)
 
@@ -91,6 +98,13 @@ internal class HeroFactoryTest {
         val hero = HeroFactory.createForSpectator("empty.json".jsonObject)
 
         assertNull(hero)
+    }
+
+    @Test
+    internal fun createForSpectator_EmptyObject_ReturnsEmptyMap() {
+        val hero = HeroFactory.createForSpectator("hero_invalid.json".jsonObject)!!
+
+        assertTrue(hero.isEmpty())
     }
 
     @Test

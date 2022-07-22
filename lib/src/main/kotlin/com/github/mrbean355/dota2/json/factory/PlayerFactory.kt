@@ -38,8 +38,8 @@ internal object PlayerFactory {
 
     fun createForSpectator(root: JsonObject): Map<String, SpectatedPlayer>? {
         return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
-            teams.jsonObject.map { player ->
-                player.key to Json.decodeFromJsonElement<SpectatedPlayerImpl>(player.value)
+            teams.jsonObject.map { (playerId, player) ->
+                playerId to Json.decodeFromJsonElement<SpectatedPlayerImpl>(player)
             }
         }?.toMap()
     }

@@ -72,6 +72,13 @@ internal class PlayerFactoryTest {
     }
 
     @Test
+    internal fun createForSpectator_EmptyObject_ReturnsEmptyMap() {
+        val player = PlayerFactory.createForSpectator("player_invalid.json".jsonObject)!!
+
+        assertTrue(player.isEmpty())
+    }
+
+    @Test
     internal fun testCreateForSpectator_DeserializesObject() {
         val player = PlayerFactory.createForSpectator("player_spectating.json".jsonObject)!!
 

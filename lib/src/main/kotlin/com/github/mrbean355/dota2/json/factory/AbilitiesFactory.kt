@@ -38,8 +38,8 @@ internal object AbilitiesFactory {
 
     fun createForSpectator(root: JsonObject): Map<String, List<Ability>>? {
         return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
-            teams.jsonObject.map { playerAbilities ->
-                playerAbilities.key to playerAbilities.value.jsonObject.values.map {
+            teams.jsonObject.map { (playerId, playerAbilities) ->
+                playerId to playerAbilities.jsonObject.values.map {
                     Json.decodeFromJsonElement<AbilityImpl>(it)
                 }
             }

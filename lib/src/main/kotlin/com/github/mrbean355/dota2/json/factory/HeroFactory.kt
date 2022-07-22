@@ -38,10 +38,10 @@ internal object HeroFactory {
 
     fun createForSpectator(root: JsonObject): Map<String, SpectatedHero>? {
         return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
-            teams.jsonObject.mapNotNull { playerHero ->
-                val created = maybeCreateHero<SpectatedHeroImpl>(playerHero.value.jsonObject)
+            teams.jsonObject.mapNotNull { (playerId, playerHero) ->
+                val created = maybeCreateHero<SpectatedHeroImpl>(playerHero.jsonObject)
                 if (created != null) {
-                    playerHero.key to created
+                    playerId to created
                 } else {
                     null
                 }

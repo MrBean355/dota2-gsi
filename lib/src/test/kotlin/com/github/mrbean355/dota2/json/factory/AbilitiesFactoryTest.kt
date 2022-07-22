@@ -36,6 +36,13 @@ internal class AbilitiesFactoryTest {
     }
 
     @Test
+    internal fun createForPlayer_EmptyObject_ReturnsEmptyList() {
+        val items = AbilitiesFactory.createForPlayer("abilities_invalid.json".jsonObject)!!
+
+        assertTrue(items.isEmpty())
+    }
+
+    @Test
     internal fun testCreateForPlayer_DeserializesObject() {
         val abilities = AbilitiesFactory.createForPlayer("abilities_playing.json".jsonObject)!!
             .filterIsInstance<AbilityImpl>()
@@ -55,6 +62,13 @@ internal class AbilitiesFactoryTest {
         val abilities = AbilitiesFactory.createForSpectator("empty.json".jsonObject)
 
         assertNull(abilities)
+    }
+
+    @Test
+    internal fun createForSpectator_EmptyObject_ReturnsEmptyMap() {
+        val items = AbilitiesFactory.createForSpectator("abilities_invalid.json".jsonObject)!!
+
+        assertTrue(items.isEmpty())
     }
 
     @Test
