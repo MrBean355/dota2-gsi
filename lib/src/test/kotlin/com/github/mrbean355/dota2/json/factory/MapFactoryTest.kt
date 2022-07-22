@@ -58,9 +58,9 @@ internal class MapFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val provider = MapFactory.createForSpectator("empty.json".jsonObject)
+        val map = MapFactory.createForSpectator("empty.json".jsonObject)
 
-        assertNull(provider)
+        assertNull(map)
     }
 
     @Test

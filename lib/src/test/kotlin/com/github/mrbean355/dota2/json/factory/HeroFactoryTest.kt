@@ -31,23 +31,23 @@ internal class HeroFactoryTest {
 
     @Test
     internal fun createForPlayer_KeyMissing_ReturnsNull() {
-        val map = HeroFactory.createForPlayer("empty.json".jsonObject)
+        val hero = HeroFactory.createForPlayer("empty.json".jsonObject)
 
-        assertNull(map)
+        assertNull(hero)
     }
 
     @Test
     internal fun testCreateForPlayer_IncompleteHero_ReturnsNull() {
-        val map = HeroFactory.createForPlayer("hero_playing_incomplete.json".jsonObject)
+        val hero = HeroFactory.createForPlayer("hero_playing_incomplete.json".jsonObject)
 
-        assertNull(map)
+        assertNull(hero)
     }
 
     @Test
     internal fun testCreateForPlayer_DeserializesObject() {
-        val map = HeroFactory.createForPlayer("hero_playing.json".jsonObject)!!
+        val hero = HeroFactory.createForPlayer("hero_playing.json".jsonObject)!!
 
-        with(map as HeroImpl) {
+        with(hero as HeroImpl) {
             assertEquals(-1664, xPos)
             assertEquals(-1216, yPos)
             assertEquals(111, id)
@@ -88,27 +88,27 @@ internal class HeroFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val map = HeroFactory.createForSpectator("empty.json".jsonObject)
+        val hero = HeroFactory.createForSpectator("empty.json".jsonObject)
 
-        assertNull(map)
+        assertNull(hero)
     }
 
     @Test
     internal fun testCreateForSpectator_IncompleteHero_ReturnsNull() {
-        val map = HeroFactory.createForSpectator("hero_spectating_incomplete.json".jsonObject)!!
+        val hero = HeroFactory.createForSpectator("hero_spectating_incomplete.json".jsonObject)!!
 
-        assertTrue(map.isEmpty())
+        assertTrue(hero.isEmpty())
     }
 
     @Test
     internal fun testCreateForSpectator_DeserializesObject() {
-        val map = HeroFactory.createForSpectator("hero_spectating.json".jsonObject)!!
+        val hero = HeroFactory.createForSpectator("hero_spectating.json".jsonObject)!!
 
-        assertEquals(10, map.size)
+        assertEquals(10, hero.size)
         repeat(10) {
-            assertTrue("player$it" in map)
+            assertTrue("player$it" in hero)
         }
-        with(map.getValue("player6") as SpectatedHeroImpl) {
+        with(hero.getValue("player6") as SpectatedHeroImpl) {
             assertEquals(5630, xPos)
             assertEquals(-5169, yPos)
             assertEquals(33, id)

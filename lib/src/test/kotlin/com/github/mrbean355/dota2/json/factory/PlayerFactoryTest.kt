@@ -30,16 +30,16 @@ internal class PlayerFactoryTest {
 
     @Test
     internal fun createForPlayer_KeyMissing_ReturnsNull() {
-        val map = PlayerFactory.createForPlayer("empty.json".jsonObject)
+        val player = PlayerFactory.createForPlayer("empty.json".jsonObject)
 
-        assertNull(map)
+        assertNull(player)
     }
 
     @Test
     internal fun testCreateForPlayer_DeserializesObject() {
-        val map = PlayerFactory.createForPlayer("player_playing.json".jsonObject)!!
+        val player = PlayerFactory.createForPlayer("player_playing.json".jsonObject)!!
 
-        with(map as PlayerImpl) {
+        with(player as PlayerImpl) {
             assertEquals("2924123062", steamId)
             assertEquals("Mr_Bean", name)
             assertEquals("playing", activity)
@@ -66,20 +66,20 @@ internal class PlayerFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val map = PlayerFactory.createForSpectator("empty.json".jsonObject)
+        val player = PlayerFactory.createForSpectator("empty.json".jsonObject)
 
-        assertNull(map)
+        assertNull(player)
     }
 
     @Test
     internal fun testCreateForSpectator_DeserializesObject() {
-        val map = PlayerFactory.createForSpectator("player_spectating.json".jsonObject)!!
+        val player = PlayerFactory.createForSpectator("player_spectating.json".jsonObject)!!
 
-        assertEquals(10, map.size)
+        assertEquals(10, player.size)
         repeat(10) {
-            assertTrue("player$it" in map)
+            assertTrue("player$it" in player)
         }
-        with(map.getValue("player2") as SpectatedPlayerImpl) {
+        with(player.getValue("player2") as SpectatedPlayerImpl) {
             assertEquals("0524429230", steamId)
             assertEquals("9 subhumans ^_^", name)
             assertEquals("playing", activity)
