@@ -1,0 +1,105 @@
+{
+  "items": {
+    "slot0": {
+      "name": "item_urn_of_shadows",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 0
+    },
+    "slot1": {
+      "name": "item_magic_wand",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 0
+    },
+    "slot2": {
+      "name": "item_aether_lens",
+      "purchaser": 0,
+      "passive": true
+    },
+    "slot3": {
+      "name": "empty"
+    },
+    "slot4": {
+      "name": "item_arcane_boots",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false
+    },
+    "slot5": {
+      "name": "empty"
+    },
+    "slot6": {
+      "name": "item_smoke_of_deceit",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 1
+    },
+    "slot7": {
+      "name": "empty"
+    },
+    "slot8": {
+      "name": "item_bottle",
+      "purchaser": 0,
+      "contains_rune": "regen",
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 3
+    },
+    "stash0": {
+      "name": "item_aeon_disk",
+      "purchaser": 0,
+      "passive": true
+    },
+    "stash1": {
+      "name": "empty"
+    },
+    "stash2": {
+      "name": "item_tome_of_knowledge",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 1
+    },
+    "stash3": {
+      "name": "item_gem",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false
+    },
+    "stash4": {
+      "name": "empty"
+    },
+    "stash5": {
+      "name": "item_ward_sentry",
+      "purchaser": 0,
+      "can_cast": true,
+      "cooldown": 0,
+      "passive": false,
+      "charges": 1
+    },
+    "teleport0": {
+      "name": "item_tpscroll",
+      "purchaser": 0,
+      "can_cast": false,
+      "cooldown": 60,
+      "passive": false,
+      "charges": 1
+    },
+    "neutral0": {
+      "name": "item_keen_optic",
+      "purchaser": -1,
+      "passive": true
+    }
+  }
+}
