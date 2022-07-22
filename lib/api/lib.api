@@ -270,12 +270,17 @@ public abstract interface class com/github/mrbean355/dota2/provider/Provider {
 	public abstract fun getVersion ()I
 }
 
+public abstract interface class com/github/mrbean355/dota2/server/ErrorHandler {
+	public abstract fun invoke (Ljava/lang/Throwable;Ljava/lang/String;)V
+}
+
 public abstract interface class com/github/mrbean355/dota2/server/GameStateListener {
 	public abstract fun invoke (Lcom/github/mrbean355/dota2/GameState;)V
 }
 
 public final class com/github/mrbean355/dota2/server/GameStateServer {
 	public fun <init> (I)V
+	public final fun setErrorHandler (Lcom/github/mrbean355/dota2/server/ErrorHandler;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public final fun setGenericListener (Lcom/github/mrbean355/dota2/server/GameStateListener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public final fun setIdleListener (Lcom/github/mrbean355/dota2/server/GameStateListener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public final fun setPlayingListener (Lcom/github/mrbean355/dota2/server/GameStateListener;)Lcom/github/mrbean355/dota2/server/GameStateServer;

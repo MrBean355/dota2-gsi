@@ -30,7 +30,6 @@ import io.ktor.server.request.receiveText
 import io.ktor.server.response.respond
 import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
-import org.slf4j.LoggerFactory
 
 /**
  * Server which listens for game state updates from Dota 2.
@@ -76,12 +75,14 @@ class GameStateServer(
     private var playingListener: GameStateListener<PlayingGameState> = GameStateListener { }
     private var spectatingListener: GameStateListener<SpectatingGameState> = GameStateListener { }
     private var idleListener: GameStateListener<IdleGameState> = GameStateListener { }
+    private var errorHandler: ErrorHandler = ErrorHandler { _, _ -> }
 
     private val server: ApplicationEngine = embeddedServer(Netty, port) {
         routing {
             post {
+                val json = call.receiveText()
                 try {
-                    val state = parseGameState(call.receiveText())
+                    val state = parseGameState(json)
                     genericListener(state)
                     when (state) {
                         is PlayingGameState -> playingListener(state)
@@ -89,7 +90,7 @@ class GameStateServer(
                         is IdleGameState -> idleListener(state)
                     }
                 } catch (t: Throwable) {
-                    LoggerFactory.getLogger("GameStateServer").error("Error receiving game state", t)
+                    errorHandler(t, json)
                 }
                 call.respond(OK)
             }
@@ -146,6 +147,20 @@ class GameStateServer(
     }
 
     /**
+     * Set a handler to get called when an exception is thrown during JSON deserialization.
+     * Errors can happen when the data returned from Dota 2 is in an unexpected format.
+     * Please consider reporting such errors, along with the JSON received in the [ErrorHandler]:
+     * https://github.com/MrBean355/dota2-gsi/issues
+     *
+     * @param handler Handler to set.
+     * @return this object.
+     */
+    fun setErrorHandler(handler: ErrorHandler): GameStateServer {
+        errorHandler = handler
+        return this
+    }
+
+    /**
      * Starts this server.
      *
      * @param wait if true, this function does not return until the server is stopped.
@@ -170,5 +185,11 @@ class GameStateServer(
 fun interface GameStateListener<T : GameState> {
 
     operator fun invoke(gameState: T)
+
+}
+
+fun interface ErrorHandler {
+
+    operator fun invoke(throwable: Throwable, json: String)
 
 }
