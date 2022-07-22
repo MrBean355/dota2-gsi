@@ -33,9 +33,14 @@ internal object ItemsFactory {
     }
 
     fun createForSpectator(root: JsonObject): Map<String, Items>? {
-        return root[JsonKey]?.jsonObject?.values?.flatMap {
-            it.jsonObject.map { playerItems ->
-                playerItems.key to playerItems.value.jsonObject.mapItems()
+        return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
+            teams.jsonObject.mapNotNull { (playerId, playerItems) ->
+                val created = playerItems.jsonObject.mapItems()
+                if (created != null) {
+                    playerId to created
+                } else {
+                    null
+                }
             }
         }?.toMap()
     }
@@ -50,7 +55,11 @@ internal object ItemsFactory {
         } ?: ClientMode.Unknown
     }
 
-    private fun JsonObject.mapItems(): Items {
+    private fun JsonObject.mapItems(): Items? {
+        if (isEmpty()) {
+            return null
+        }
+
         val inventory = entries
             .filter { it.key.startsWith("slot") }
             .map { Json.decodeFromJsonElement<ItemImpl>(it.value) }

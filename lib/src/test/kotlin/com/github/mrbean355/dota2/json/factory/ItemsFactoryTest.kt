@@ -38,6 +38,13 @@ internal class ItemsFactoryTest {
     }
 
     @Test
+    internal fun createForPlayer_IncompleteObject_ReturnsNull() {
+        val items = ItemsFactory.createForPlayer("items_invalid.json".jsonObject)
+
+        assertNull(items)
+    }
+
+    @Test
     internal fun testCreateForPlayer_DeserializesObject() {
         val items = ItemsFactory.createForPlayer("items_playing.json".jsonObject)!!
 
@@ -72,6 +79,13 @@ internal class ItemsFactoryTest {
         val items = ItemsFactory.createForSpectator("empty.json".jsonObject)
 
         assertNull(items)
+    }
+
+    @Test
+    internal fun createForSpectator_IncompleteObject_ReturnsEmptyMap() {
+        val items = ItemsFactory.createForSpectator("items_invalid.json".jsonObject)!!
+
+        assertTrue(items.isEmpty())
     }
 
     @Test
