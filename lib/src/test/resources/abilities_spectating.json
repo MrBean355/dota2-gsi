@@ -1,0 +1,562 @@
+{
+  "abilities": {
+    "team2": {
+      "player0": {
+        "ability0": {
+          "name": "earth_spirit_boulder_smash",
+          "level": 2,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "earth_spirit_rolling_boulder",
+          "level": 2,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "earth_spirit_geomagnetic_grip",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "earth_spirit_stone_caller",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false,
+          "charges": 6,
+          "max_charges": 7,
+          "charge_cooldown": 12
+        },
+        "ability4": {
+          "name": "earth_spirit_magnetize",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability5": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability6": {
+          "name": "plus_guild_banner",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player1": {
+        "ability0": {
+          "name": "rattletrap_battery_assault",
+          "level": 2,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "rattletrap_power_cogs",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "rattletrap_rocket_flare",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "rattletrap_hookshot",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "plus_guild_banner",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player2": {
+        "ability0": {
+          "name": "chaos_knight_chaos_bolt",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "chaos_knight_reality_rift",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "chaos_knight_chaos_strike",
+          "level": 4,
+          "can_cast": false,
+          "passive": true,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "chaos_knight_phantasm",
+          "level": 1,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 39,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player3": {
+        "ability0": {
+          "name": "shredder_whirling_death",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "shredder_timber_chain",
+          "level": 4,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "shredder_reactive_armor",
+          "level": 3,
+          "can_cast": false,
+          "passive": true,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "shredder_chakram",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player4": {
+        "ability0": {
+          "name": "sven_storm_bolt",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "sven_great_cleave",
+          "level": 4,
+          "can_cast": false,
+          "passive": true,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "sven_warcry",
+          "level": 2,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "sven_gods_strength",
+          "level": 1,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 96,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "plus_guild_banner",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      }
+    },
+    "team3": {
+      "player5": {
+        "ability0": {
+          "name": "lycan_summon_wolves",
+          "level": 3,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 24,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "lycan_howl",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "lycan_feral_impulse",
+          "level": 2,
+          "can_cast": false,
+          "passive": true,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "lycan_shapeshift",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "plus_guild_banner",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player6": {
+        "ability0": {
+          "name": "enigma_malefice",
+          "level": 2,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "enigma_demonic_conversion",
+          "level": 3,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 39,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "enigma_midnight_pulse",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "enigma_black_hole",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player7": {
+        "ability0": {
+          "name": "puck_illusory_orb",
+          "level": 4,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 1,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "puck_waning_rift",
+          "level": 3,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "puck_phase_shift",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "puck_ethereal_jaunt",
+          "level": 4,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": false,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability4": {
+          "name": "puck_dream_coil",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability5": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player8": {
+        "ability0": {
+          "name": "ursa_earthshock",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "ursa_overpower",
+          "level": 1,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 7,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "ursa_fury_swipes",
+          "level": 4,
+          "can_cast": false,
+          "passive": true,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "ursa_enrage",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability5": {
+          "name": "plus_guild_banner",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      },
+      "player9": {
+        "ability0": {
+          "name": "dazzle_poison_touch",
+          "level": 3,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability1": {
+          "name": "dazzle_shallow_grave",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability2": {
+          "name": "dazzle_shadow_wave",
+          "level": 2,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability3": {
+          "name": "dazzle_good_juju",
+          "level": 0,
+          "can_cast": false,
+          "passive": true,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability4": {
+          "name": "dazzle_bad_juju",
+          "level": 0,
+          "can_cast": false,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": true
+        },
+        "ability5": {
+          "name": "plus_high_five",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        },
+        "ability6": {
+          "name": "plus_guild_banner",
+          "level": 1,
+          "can_cast": true,
+          "passive": false,
+          "ability_active": true,
+          "cooldown": 0,
+          "ultimate": false
+        }
+      }
+    }
+  }
+}
