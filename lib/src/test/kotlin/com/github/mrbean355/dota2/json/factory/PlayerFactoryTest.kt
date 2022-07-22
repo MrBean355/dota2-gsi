@@ -16,11 +16,13 @@
 
 package com.github.mrbean355.dota2.json.factory
 
+import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.player.PlayerImpl
 import com.github.mrbean355.dota2.player.SpectatedPlayerImpl
 import com.github.mrbean355.dota2.testutil.jsonObject
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
+import org.junit.jupiter.api.Assertions.assertSame
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
@@ -112,5 +114,33 @@ internal class PlayerFactoryTest {
             assertEquals(52, goldLostToDeath)
             assertEquals(33, goldSpentOnBuybacks)
         }
+    }
+
+    @Test
+    internal fun getClientMode_KeyMissing_ReturnsUnknownMode() {
+        val mode = PlayerFactory.getClientMode("empty.json".jsonObject)
+
+        assertSame(ClientMode.Unknown, mode)
+    }
+
+    @Test
+    internal fun getClientMode_ContainsPlayerKey_ReturnsPlayingMode() {
+        val mode = PlayerFactory.getClientMode("player_playing.json".jsonObject)
+
+        assertSame(ClientMode.Playing, mode)
+    }
+
+    @Test
+    internal fun getClientMode_DoesNotContainPlayerKey_NonEmptyObject_ReturnsSpectatingMode() {
+        val mode = PlayerFactory.getClientMode("player_spectating.json".jsonObject)
+
+        assertSame(ClientMode.Spectating, mode)
+    }
+
+    @Test
+    internal fun getClientMode_DoesNotContainPlayerKey_EmptyObject_ReturnsUnknownMode() {
+        val mode = PlayerFactory.getClientMode("player_invalid.json".jsonObject)
+
+        assertSame(ClientMode.Unknown, mode)
     }
 }
