@@ -19,8 +19,8 @@ package com.github.mrbean355.dota2.json.factory
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.SpectatedHero
 import com.github.mrbean355.dota2.json.ClientMode
-import com.github.mrbean355.dota2.json.HeroImplTransformer
-import com.github.mrbean355.dota2.json.SpectatedHeroImplTransformer
+import com.github.mrbean355.dota2.json.transform.HeroImplTransformer
+import com.github.mrbean355.dota2.json.transform.SpectatedHeroImplTransformer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject

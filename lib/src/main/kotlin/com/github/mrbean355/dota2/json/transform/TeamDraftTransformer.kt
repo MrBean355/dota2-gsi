@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.json
+package com.github.mrbean355.dota2.json.transform
 
 import com.github.mrbean355.dota2.draft.DraftHero
 import com.github.mrbean355.dota2.draft.TeamDraft

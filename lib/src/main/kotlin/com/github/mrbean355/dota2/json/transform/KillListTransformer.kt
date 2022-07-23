@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.json
+package com.github.mrbean355.dota2.json.transform
 
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer

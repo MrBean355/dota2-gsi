@@ -16,7 +16,7 @@
 
 package com.github.mrbean355.dota2.draft
 
-import com.github.mrbean355.dota2.json.TeamDraftTransformer
+import com.github.mrbean355.dota2.json.transform.TeamDraftTransformer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

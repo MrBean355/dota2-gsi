@@ -16,7 +16,7 @@
 
 package com.github.mrbean355.dota2.player
 
-import com.github.mrbean355.dota2.json.KillListTransformer
+import com.github.mrbean355.dota2.json.transform.KillListTransformer
 import com.github.mrbean355.dota2.map.Team
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

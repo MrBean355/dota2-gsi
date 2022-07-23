@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.json
+package com.github.mrbean355.dota2.json.transform
 
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.HeroImpl
