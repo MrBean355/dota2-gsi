@@ -59,11 +59,17 @@ Open the file in a text editor and add this content:
         "hero"          "1"
         "abilities"     "1"
         "items"         "1"
+        "buildings"     "1"
+        "draft"         "1"
+        "wearables"     "1"
     }
 }
 ```
 
-*Note: the `44444` in the URI can be changed to any valid port number.*
+**Note: the `data` section can be configured to return the desired data.** For example, the `buildings` line can be
+removed if building data isn't required. This helps to improve performance as there is less data to process.
+
+**Note: the `44444` in the URI can be changed to any valid port number.**
 
 Save & close the file. The setup is now complete!
 
