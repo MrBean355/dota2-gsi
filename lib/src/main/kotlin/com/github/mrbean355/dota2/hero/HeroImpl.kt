@@ -16,6 +16,7 @@
 
 package com.github.mrbean355.dota2.hero
 
+import com.github.mrbean355.dota2.hero.talent.TalentTreeImpl
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

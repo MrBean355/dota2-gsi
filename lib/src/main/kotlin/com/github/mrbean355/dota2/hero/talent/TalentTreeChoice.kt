@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.hero
+package com.github.mrbean355.dota2.hero.talent
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-
-@Serializable
-internal data class TalentTreeChoiceImpl(
-    @SerialName("hasLeft") override val hasLeft: Boolean,
-    @SerialName("hasRight") override val hasRight: Boolean,
-) : TalentTreeChoice
+/**
+ * The choices of a talent tree level (e.g. level 10).
+ */
+sealed interface TalentTreeChoice {
+    val hasLeft: Boolean
+    val hasRight: Boolean
+}

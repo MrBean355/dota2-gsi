@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.hero
+package com.github.mrbean355.dota2.hero.talent
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

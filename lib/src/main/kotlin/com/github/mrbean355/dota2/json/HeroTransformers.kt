@@ -19,8 +19,8 @@ package com.github.mrbean355.dota2.json
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.HeroImpl
 import com.github.mrbean355.dota2.hero.SpectatedHeroImpl
-import com.github.mrbean355.dota2.hero.TalentTree
-import com.github.mrbean355.dota2.hero.TalentTreeChoice
+import com.github.mrbean355.dota2.hero.talent.TalentTree
+import com.github.mrbean355.dota2.hero.talent.TalentTreeChoice
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive

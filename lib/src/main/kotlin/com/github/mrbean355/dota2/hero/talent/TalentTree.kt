@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.hero
+package com.github.mrbean355.dota2.hero.talent
 
 /**
  * The talent choices of a hero.
