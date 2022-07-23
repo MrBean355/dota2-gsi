@@ -1,0 +1,31 @@
+{
+  "draft": {
+    "activeteam": 2,
+    "pick": true,
+    "activeteam_time_remaining": 10,
+    "radiant_bonus_time": 118,
+    "dire_bonus_time": 117,
+    "team2": {
+      "home_team": false,
+      "pick0_id": 19,
+      "pick0_class": "tiny",
+      "pick1_id": 0,
+      "pick1_class": "",
+      "ban0_id": 135,
+      "ban0_class": "dawnbreaker",
+      "ban1_id": 101,
+      "ban1_class": "skywrath_mage"
+    },
+    "team3": {
+      "home_team": true,
+      "pick0_id": 136,
+      "pick0_class": "marci",
+      "pick1_id": 78,
+      "pick1_class": "brewmaster",
+      "ban0_id": 92,
+      "ban0_class": "visage",
+      "ban1_id": 22,
+      "ban1_class": "zuus"
+    }
+  }
+}

@@ -18,6 +18,7 @@ package com.github.mrbean355.dota2.json
 
 import com.github.mrbean355.dota2.GameState
 import com.github.mrbean355.dota2.json.factory.AbilitiesFactory
+import com.github.mrbean355.dota2.json.factory.DraftFactory
 import com.github.mrbean355.dota2.json.factory.HeroFactory
 import com.github.mrbean355.dota2.json.factory.IdleGameStateFactory
 import com.github.mrbean355.dota2.json.factory.ItemsFactory
@@ -64,6 +65,10 @@ private fun findClientMode(root: JsonObject): ClientMode {
     }
 
     ItemsFactory.getClientMode(root).let {
+        if (it != ClientMode.Unknown) return it
+    }
+
+    DraftFactory.getClientMode(root).let {
         if (it != ClientMode.Unknown) return it
     }
 

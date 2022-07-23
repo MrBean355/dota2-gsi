@@ -18,6 +18,7 @@ package com.github.mrbean355.dota2
 
 import com.github.mrbean355.dota2.ability.Ability
 import com.github.mrbean355.dota2.building.Building
+import com.github.mrbean355.dota2.draft.Draft
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.SpectatedHero
 import com.github.mrbean355.dota2.item.Items
@@ -67,4 +68,5 @@ data class SpectatingGameState(
     val items: Map<String, Items>?,
     val buildings: Map<String, Building>?,
     val wearables: Map<String, List<Int>>?,
+    val draft: Draft?,
 ) : GameState
