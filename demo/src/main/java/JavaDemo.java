@@ -17,6 +17,9 @@
 import com.github.mrbean355.dota2.PlayingGameState;
 import com.github.mrbean355.dota2.server.GameStateServer;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class JavaDemo {
 
     public static void main(String[] args) {
@@ -29,11 +32,23 @@ public class JavaDemo {
      * See KotlinDemo.kt for the Kotlin version.
      */
     private void run() {
+        // Create a server and add various listeners for game state updates.
+        // All listeners are optional; you only need to add the ones you want.
+        // Remember to call start() so that the server actually runs!
+        // Check the documentation of GameStateServer for more info.
         GameStateServer.create(12345)
-                // Get notified when Dota sends a new game state.
-                // This will only be called when the user is playing a Dota match, NOT spectating.
-                .setPlayingListener(this::onNewGameState)
-                // Block the current thread so the program keeps running.
+                .setPlayingListener(state -> {
+                    System.out.println("Playing match " + state.getMap().getMatchId() + ".");
+                    onNewGameState(state);
+                })
+                .setSpectatingListener(state -> System.out.println("Spectating match " + state.getMap().getMatchId() + "."))
+                .setIdleListener(state -> System.out.println("Not in a match."))
+                .setGenericListener(state -> System.out.println("State update: " + state.getClass().getSimpleName() + "."))
+                .setErrorHandler((t, json) -> {
+                    System.out.println("Error processing data: " + t + ".");
+                    // Store the problematic data in a file for a bug report:
+                    writeErrorLog(json);
+                })
                 .start(true);
     }
 
@@ -70,5 +85,15 @@ public class JavaDemo {
 
         // Previous state becomes the current state, for the next time the game state updates:
         previousState = newState;
+    }
+
+    private void writeErrorLog(String json) {
+        try {
+            FileWriter writer = new FileWriter("error.json");
+            writer.write(json);
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Error writing data: " + e + ".");
+        }
     }
 }

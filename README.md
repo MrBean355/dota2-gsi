@@ -48,8 +48,8 @@ Open the file in a text editor and add this content:
 {
     "uri"           "http://localhost:44444"
     "timeout"       "5.0"
-    "buffer"        "0.1"
-    "throttle"      "0.1"
+    "buffer"        "0.5"
+    "throttle"      "0.5"
     "heartbeat"     "30.0"
     "data"
     {
@@ -69,7 +69,7 @@ Open the file in a text editor and add this content:
 **Note: the `data` section can be configured to return the desired data.** For example, the `buildings` line can be
 removed if building data isn't required. This helps to improve performance as there is less data to process.
 
-**Note: the `44444` in the URI can be changed to any valid port number.**
+**Note: the `44444` in the URI can be changed to any valid port.**
 
 Save & close the file. The setup is now complete!
 
@@ -103,16 +103,22 @@ into the project, along with their own dependencies.
 
 *Note: the library is written in Kotlin, but can be used from Java code as well.*
 
+1. Create a `GameStateServer` instance with the same port from the `.cfg` config file above.
+2. Register at least one listener to get called when the game state changes.
+3. Start up the server!
+
+Here's a simple example of how easy it is:
+
 ```kotlin
 fun main() {
-    // Create a server using the same port number from above:
+    // Create a server:
     GameStateServer(44444)
-        // Get notified when Dota sends a new game state:
+        // Register one or more listeners: 
         .setPlayingListener { gameState ->
-            // Inspect the gameState object as desired:
-            val gameTime = it.map?.clockTime
+            // Do something with the received gameState object:
+            val gameTime = gameState.map?.clockTime
         }
-        // Block the current thread so the program keeps running:
+        // Start the server, blocking the thread so the program doesn't immediately exit:
         .start(wait = true)
 }
 ```

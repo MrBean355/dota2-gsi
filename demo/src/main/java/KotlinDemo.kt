@@ -18,6 +18,7 @@ package com.github.mrbean355.dota2.demo
 
 import com.github.mrbean355.dota2.PlayingGameState
 import com.github.mrbean355.dota2.server.GameStateServer
+import java.io.File
 
 /**
  * Start up a server that listens on the given port for data from Dota 2.
@@ -25,11 +26,29 @@ import com.github.mrbean355.dota2.server.GameStateServer
  * See JavaDemo.java for the Java version.
  */
 fun main() {
+    // Create a server and add various listeners for game state updates.
+    // All listeners are optional; you only need to add the ones you want.
+    // Remember to call start() so that the server actually runs!
+    // Check the documentation of GameStateServer for more info.
     GameStateServer(12345)
-        // Get notified when Dota sends a new game state.
-        // This will only be called when the user is playing a Dota match, NOT spectating.
-        .setPlayingListener(::onNewGameState)
-        // Block the current thread so the program keeps running.
+        .setPlayingListener { state ->
+            println("Playing match ${state.map?.matchId}.")
+            onNewGameState(state)
+        }
+        .setSpectatingListener { state ->
+            println("Spectating match ${state.map?.matchId}.")
+        }
+        .setIdleListener {
+            println("Not in a match.")
+        }
+        .setGenericListener { state ->
+            println("State update: ${state::class.simpleName}.")
+        }
+        .setErrorHandler { t, json ->
+            println("Error processing data: $t.")
+            // Store the problematic data in a file for a bug report:
+            File("error.json").writeText(json)
+        }
         .start(wait = true)
 }
 
