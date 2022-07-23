@@ -48,5 +48,5 @@ internal data class HeroImpl(
     @SerialName("aghanims_shard") override val hasAghanimsShard: Boolean,
     @SerialName("smoked") override val isSmoked: Boolean,
     @SerialName("has_debuff") override val hasDebuff: Boolean,
-    @SerialName("talents") override val talents: List<Boolean>,
+    @SerialName("talentTree") override val talentTree: TalentTreeImpl,
 ) : Hero

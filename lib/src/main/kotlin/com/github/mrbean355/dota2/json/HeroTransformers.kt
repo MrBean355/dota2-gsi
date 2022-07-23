@@ -19,11 +19,16 @@ package com.github.mrbean355.dota2.json
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.HeroImpl
 import com.github.mrbean355.dota2.hero.SpectatedHeroImpl
-import kotlinx.serialization.json.JsonArray
+import com.github.mrbean355.dota2.hero.TalentTree
+import com.github.mrbean355.dota2.hero.TalentTreeChoice
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.JsonTransformingSerializer
+import kotlinx.serialization.json.boolean
+import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 
 internal object HeroImplTransformer : JsonTransformingSerializer<HeroImpl>(HeroImpl.serializer()) {
 
@@ -42,19 +47,33 @@ private const val StartIndex = 1
 private const val EndIndex = 8
 
 /**
- * Flattens individual "talent_*" properties into a single list.
+ * Combines the individual "talent_*" properties into a structured object.
  */
 private fun transform(element: JsonElement): JsonElement {
     val root = element.jsonObject
-    val talents = JsonArray(buildList {
+    val talents = buildList {
         for (i in StartIndex..EndIndex) {
-            add(root.getValue("$Prefix$i"))
+            add(root.getValue("$Prefix$i").jsonPrimitive.boolean)
         }
-    })
+    }
+
+    val levels = talents.windowed(size = 2, step = 2).map {
+        buildJsonObject {
+            put(TalentTreeChoice::hasLeft.name, JsonPrimitive(it[1]))
+            put(TalentTreeChoice::hasRight.name, JsonPrimitive(it[0]))
+        }
+    }
+
+    val talentTree = buildJsonObject {
+        put(TalentTree::level10.name, levels[0])
+        put(TalentTree::level15.name, levels[1])
+        put(TalentTree::level20.name, levels[2])
+        put(TalentTree::level25.name, levels[3])
+    }
 
     val transformed = element.jsonObject
         .filterNot { it.key.startsWith(Prefix) }
-        .plus(Hero::talents.name to talents)
+        .plus(Hero::talentTree.name to talentTree)
 
     return JsonObject(transformed)
 }

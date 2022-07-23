@@ -82,7 +82,16 @@ internal class HeroFactoryTest {
             assertFalse(hasAghanimsShard)
             assertTrue(isSmoked)
             assertFalse(hasDebuff)
-            assertEquals(listOf(true, false, true, false, true, false, true, false), talents)
+            with(talentTree) {
+                assertFalse(level10.hasLeft)
+                assertTrue(level10.hasRight)
+                assertFalse(level15.hasLeft)
+                assertTrue(level15.hasRight)
+                assertFalse(level20.hasLeft)
+                assertTrue(level20.hasRight)
+                assertFalse(level25.hasLeft)
+                assertTrue(level25.hasRight)
+            }
         }
     }
 
@@ -144,7 +153,16 @@ internal class HeroFactoryTest {
             assertTrue(isSmoked)
             assertFalse(hasDebuff)
             assertTrue(isSelectedUnit)
-            assertEquals(listOf(false, true, false, true, false, true, false, true), talents)
+            with(talentTree) {
+                assertTrue(level10.hasLeft)
+                assertFalse(level10.hasRight)
+                assertTrue(level15.hasLeft)
+                assertFalse(level15.hasRight)
+                assertTrue(level20.hasLeft)
+                assertFalse(level20.hasRight)
+                assertTrue(level25.hasLeft)
+                assertFalse(level25.hasRight)
+            }
         }
     }
 
