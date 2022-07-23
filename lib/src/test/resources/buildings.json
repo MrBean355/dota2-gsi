@@ -1,0 +1,144 @@
+{
+  "buildings": {
+    "radiant": {
+      "dota_goodguys_tower1_top": {
+        "health": 1795,
+        "max_health": 1800
+      },
+      "dota_goodguys_tower2_top": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_goodguys_tower3_top": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_goodguys_tower1_mid": {
+        "health": 1018,
+        "max_health": 1800
+      },
+      "dota_goodguys_tower2_mid": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_goodguys_tower3_mid": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_goodguys_tower2_bot": {
+        "health": 2192,
+        "max_health": 2500
+      },
+      "dota_goodguys_tower3_bot": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_goodguys_tower4_top": {
+        "health": 2600,
+        "max_health": 2600
+      },
+      "dota_goodguys_tower4_bot": {
+        "health": 2600,
+        "max_health": 2600
+      },
+      "good_rax_melee_top": {
+        "health": 2200,
+        "max_health": 2200
+      },
+      "good_rax_range_top": {
+        "health": 1300,
+        "max_health": 1300
+      },
+      "good_rax_melee_mid": {
+        "health": 2200,
+        "max_health": 2200
+      },
+      "good_rax_range_mid": {
+        "health": 1300,
+        "max_health": 1300
+      },
+      "good_rax_melee_bot": {
+        "health": 2200,
+        "max_health": 2200
+      },
+      "good_rax_range_bot": {
+        "health": 1300,
+        "max_health": 1300
+      },
+      "dota_goodguys_fort": {
+        "health": 4500,
+        "max_health": 4500
+      }
+    },
+    "dire": {
+      "dota_badguys_tower2_top": {
+        "health": 2427,
+        "max_health": 2500
+      },
+      "dota_badguys_tower3_top": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_badguys_tower1_mid": {
+        "health": 1021,
+        "max_health": 1800
+      },
+      "dota_badguys_tower2_mid": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_badguys_tower3_mid": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_badguys_tower1_bot": {
+        "health": 1340,
+        "max_health": 1800
+      },
+      "dota_badguys_tower2_bot": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_badguys_tower3_bot": {
+        "health": 2500,
+        "max_health": 2500
+      },
+      "dota_badguys_tower4_top": {
+        "health": 2600,
+        "max_health": 2600
+      },
+      "dota_badguys_tower4_bot": {
+        "health": 2600,
+        "max_health": 2600
+      },
+      "bad_rax_melee_top": {
+        "health": 2200,
+        "max_health": 2200
+      },
+      "bad_rax_range_top": {
+        "health": 1300,
+        "max_health": 1300
+      },
+      "bad_rax_melee_mid": {
+        "health": 2200,
+        "max_health": 2200
+      },
+      "bad_rax_range_mid": {
+        "health": 1300,
+        "max_health": 1300
+      },
+      "bad_rax_melee_bot": {
+        "health": 2200,
+        "max_health": 2200
+      },
+      "bad_rax_range_bot": {
+        "health": 1300,
+        "max_health": 1300
+      },
+      "dota_badguys_fort": {
+        "health": 4500,
+        "max_health": 4500
+      }
+    }
+  }
+}

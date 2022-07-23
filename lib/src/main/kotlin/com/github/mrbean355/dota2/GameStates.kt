@@ -17,6 +17,7 @@
 package com.github.mrbean355.dota2
 
 import com.github.mrbean355.dota2.ability.Ability
+import com.github.mrbean355.dota2.building.Building
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.SpectatedHero
 import com.github.mrbean355.dota2.item.Items
@@ -50,6 +51,7 @@ data class PlayingGameState(
     val hero: Hero?,
     val abilities: List<Ability>?,
     val items: Items?,
+    val buildings: Map<String, Building>?,
 ) : GameState
 
 /**
@@ -62,4 +64,5 @@ data class SpectatingGameState(
     val heroes: Map<String, SpectatedHero>?,
     val abilities: Map<String, List<Ability>>?,
     val items: Map<String, Items>?,
+    val buildings: Map<String, Building>?,
 ) : GameState
