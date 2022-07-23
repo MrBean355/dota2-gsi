@@ -82,14 +82,7 @@ internal class HeroFactoryTest {
             assertFalse(hasAghanimsShard)
             assertTrue(isSmoked)
             assertFalse(hasDebuff)
-            assertTrue(talent1)
-            assertFalse(talent2)
-            assertTrue(talent3)
-            assertFalse(talent4)
-            assertTrue(talent5)
-            assertFalse(talent6)
-            assertTrue(talent7)
-            assertFalse(talent8)
+            assertEquals(listOf(true, false, true, false, true, false, true, false), talents)
         }
     }
 
@@ -151,14 +144,7 @@ internal class HeroFactoryTest {
             assertTrue(isSmoked)
             assertFalse(hasDebuff)
             assertTrue(isSelectedUnit)
-            assertFalse(talent1)
-            assertTrue(talent2)
-            assertFalse(talent3)
-            assertTrue(talent4)
-            assertFalse(talent5)
-            assertTrue(talent6)
-            assertFalse(talent7)
-            assertTrue(talent8)
+            assertEquals(listOf(false, true, false, true, false, true, false, true), talents)
         }
     }
 

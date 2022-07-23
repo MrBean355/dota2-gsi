@@ -84,14 +84,7 @@ public abstract interface class com/github/mrbean355/dota2/hero/Hero {
 	public abstract fun getMaxMana ()I
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getRespawnTimer ()I
-	public abstract fun getTalent1 ()Z
-	public abstract fun getTalent2 ()Z
-	public abstract fun getTalent3 ()Z
-	public abstract fun getTalent4 ()Z
-	public abstract fun getTalent5 ()Z
-	public abstract fun getTalent6 ()Z
-	public abstract fun getTalent7 ()Z
-	public abstract fun getTalent8 ()Z
+	public abstract fun getTalents ()Ljava/util/List;
 	public abstract fun getXPos ()I
 	public abstract fun getXp ()I
 	public abstract fun getYPos ()I

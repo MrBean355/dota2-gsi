@@ -17,35 +17,37 @@
 package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.hero.Hero
-import com.github.mrbean355.dota2.hero.HeroImpl
 import com.github.mrbean355.dota2.hero.SpectatedHero
-import com.github.mrbean355.dota2.hero.SpectatedHeroImpl
 import com.github.mrbean355.dota2.json.ClientMode
+import com.github.mrbean355.dota2.json.HeroImplTransformer
+import com.github.mrbean355.dota2.json.SpectatedHeroImplTransformer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.decodeFromJsonElement
 import kotlinx.serialization.json.jsonObject
 
 private const val JsonKey = "hero"
 
+/**
+ * If the hero object is missing this property, it means it isn't spawned into the game yet.
+ * In such cases, a null Hero object is returned, instead of an incomplete object.
+ */
+private const val ValidityIndicator = "xpos"
+
 internal object HeroFactory {
 
     fun createForPlayer(root: JsonObject): Hero? {
-        return root[JsonKey]?.jsonObject?.let {
-            maybeCreateHero<HeroImpl>(it)
+        return root[JsonKey]?.jsonObject?.takeIf { ValidityIndicator in it }?.let {
+            Json.decodeFromJsonElement(HeroImplTransformer, it)
         }
     }
 
     fun createForSpectator(root: JsonObject): Map<String, SpectatedHero>? {
         return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
-            teams.jsonObject.mapNotNull { (playerId, playerHero) ->
-                val created = maybeCreateHero<SpectatedHeroImpl>(playerHero.jsonObject)
-                if (created != null) {
-                    playerId to created
-                } else {
-                    null
+            teams.jsonObject
+                .filterValues { ValidityIndicator in it.jsonObject }
+                .map { (playerId, playerHero) ->
+                    playerId to Json.decodeFromJsonElement(SpectatedHeroImplTransformer, playerHero)
                 }
-            }
         }?.toMap()
     }
 
@@ -57,14 +59,5 @@ internal object HeroFactory {
                 else -> ClientMode.Unknown
             }
         } ?: ClientMode.Unknown
-    }
-
-    private inline fun <reified H : Hero> maybeCreateHero(source: JsonObject): H? {
-        return if ("xpos" in source) {
-            Json.decodeFromJsonElement<H>(source)
-        } else {
-            // Hero is not spawned into the game yet, so most of its properties will be missing anyway.
-            null
-        }
     }
 }

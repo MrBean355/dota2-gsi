@@ -47,12 +47,5 @@ sealed interface Hero {
     val hasAghanimsShard: Boolean
     val isSmoked: Boolean
     val hasDebuff: Boolean
-    val talent1: Boolean
-    val talent2: Boolean
-    val talent3: Boolean
-    val talent4: Boolean
-    val talent5: Boolean
-    val talent6: Boolean
-    val talent7: Boolean
-    val talent8: Boolean
+    val talents: List<Boolean>
 }
