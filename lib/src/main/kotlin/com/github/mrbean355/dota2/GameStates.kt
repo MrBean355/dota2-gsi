@@ -21,7 +21,7 @@ import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.SpectatedHero
 import com.github.mrbean355.dota2.item.Items
 import com.github.mrbean355.dota2.map.PlayingMap
-import com.github.mrbean355.dota2.map.SpectatingMap
+import com.github.mrbean355.dota2.map.SpectatedMap
 import com.github.mrbean355.dota2.player.Player
 import com.github.mrbean355.dota2.player.SpectatedPlayer
 import com.github.mrbean355.dota2.provider.Provider
@@ -57,7 +57,7 @@ data class PlayingGameState(
  */
 data class SpectatingGameState(
     override val provider: Provider?,
-    val map: SpectatingMap?,
+    val map: SpectatedMap?,
     val players: Map<String, SpectatedPlayer>?,
     val heroes: Map<String, SpectatedHero>?,
     val abilities: Map<String, List<Ability>>?,

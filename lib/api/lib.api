@@ -35,20 +35,20 @@ public final class com/github/mrbean355/dota2/PlayingGameState : com/github/mrbe
 }
 
 public final class com/github/mrbean355/dota2/SpectatingGameState : com/github/mrbean355/dota2/GameState {
-	public fun <init> (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/SpectatingMap;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
+	public fun <init> (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/SpectatedMap;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V
 	public final fun component1 ()Lcom/github/mrbean355/dota2/provider/Provider;
-	public final fun component2 ()Lcom/github/mrbean355/dota2/map/SpectatingMap;
+	public final fun component2 ()Lcom/github/mrbean355/dota2/map/SpectatedMap;
 	public final fun component3 ()Ljava/util/Map;
 	public final fun component4 ()Ljava/util/Map;
 	public final fun component5 ()Ljava/util/Map;
 	public final fun component6 ()Ljava/util/Map;
-	public final fun copy (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/SpectatingMap;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Lcom/github/mrbean355/dota2/SpectatingGameState;
-	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/SpectatingGameState;Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/SpectatingMap;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/SpectatingGameState;
+	public final fun copy (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/SpectatedMap;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Lcom/github/mrbean355/dota2/SpectatingGameState;
+	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/SpectatingGameState;Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/SpectatedMap;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/SpectatingGameState;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getAbilities ()Ljava/util/Map;
 	public final fun getHeroes ()Ljava/util/Map;
 	public final fun getItems ()Ljava/util/Map;
-	public final fun getMap ()Lcom/github/mrbean355/dota2/map/SpectatingMap;
+	public final fun getMap ()Lcom/github/mrbean355/dota2/map/SpectatedMap;
 	public final fun getPlayers ()Ljava/util/Map;
 	public fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
 	public fun hashCode ()I
@@ -216,7 +216,7 @@ public abstract interface class com/github/mrbean355/dota2/map/PlayingMap : com/
 	public abstract fun getWardPurchaseCooldown ()I
 }
 
-public abstract interface class com/github/mrbean355/dota2/map/SpectatingMap : com/github/mrbean355/dota2/map/DotaMap {
+public abstract interface class com/github/mrbean355/dota2/map/SpectatedMap : com/github/mrbean355/dota2/map/DotaMap {
 	public abstract fun getDireWardPurchaseCooldown ()I
 	public abstract fun getRadiantWardPurchaseCooldown ()I
 	public abstract fun getRadiantWinChance ()I

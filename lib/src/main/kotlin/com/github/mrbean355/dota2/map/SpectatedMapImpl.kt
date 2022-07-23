@@ -20,7 +20,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-internal data class SpectatingMapImpl(
+internal data class SpectatedMapImpl(
     @SerialName("name") override val name: String,
     @SerialName("matchid") override val matchId: String,
     @SerialName("game_time") override val gameTime: Int,
@@ -36,4 +36,4 @@ internal data class SpectatingMapImpl(
     @SerialName("roshan_state") override val roshanState: String,
     @SerialName("roshan_state_end_seconds") override val roshanStateEndTimer: Int,
     @SerialName("radiant_win_chance") override val radiantWinChance: Int,
-) : SpectatingMap
+) : SpectatedMap

@@ -19,8 +19,8 @@ package com.github.mrbean355.dota2.json.factory
 import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.map.PlayingMap
 import com.github.mrbean355.dota2.map.PlayingMapImpl
-import com.github.mrbean355.dota2.map.SpectatingMap
-import com.github.mrbean355.dota2.map.SpectatingMapImpl
+import com.github.mrbean355.dota2.map.SpectatedMap
+import com.github.mrbean355.dota2.map.SpectatedMapImpl
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -36,9 +36,9 @@ internal object MapFactory {
         }
     }
 
-    fun createForSpectator(root: JsonObject): SpectatingMap? {
+    fun createForSpectator(root: JsonObject): SpectatedMap? {
         return root[JsonKey]?.jsonObject?.let {
-            Json.decodeFromJsonElement<SpectatingMapImpl>(it)
+            Json.decodeFromJsonElement<SpectatedMapImpl>(it)
         }
     }
 

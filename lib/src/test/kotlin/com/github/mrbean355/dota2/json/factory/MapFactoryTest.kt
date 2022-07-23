@@ -19,7 +19,7 @@ package com.github.mrbean355.dota2.json.factory
 import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.map.MatchState
 import com.github.mrbean355.dota2.map.PlayingMapImpl
-import com.github.mrbean355.dota2.map.SpectatingMapImpl
+import com.github.mrbean355.dota2.map.SpectatedMapImpl
 import com.github.mrbean355.dota2.testutil.jsonObject
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
@@ -67,7 +67,7 @@ internal class MapFactoryTest {
     internal fun testCreateForSpectator_DeserializesObject() {
         val map = MapFactory.createForSpectator("map_spectating.json".jsonObject)!!
 
-        with(map as SpectatingMapImpl) {
+        with(map as SpectatedMapImpl) {
             assertEquals("start", name)
             assertEquals("6671869265", matchId)
             assertEquals(891, gameTime)
