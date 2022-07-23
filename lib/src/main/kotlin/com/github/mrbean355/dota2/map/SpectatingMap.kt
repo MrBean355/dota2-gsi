@@ -24,6 +24,6 @@ sealed interface SpectatingMap : DotaMap {
     val radiantWardPurchaseCooldown: Int
     val direWardPurchaseCooldown: Int
     val roshanState: String
-    val roshanStateEndSeconds: Int
+    val roshanStateEndTimer: Int
     val radiantWinChance: Int
 }

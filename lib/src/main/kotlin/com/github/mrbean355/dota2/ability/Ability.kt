@@ -23,10 +23,10 @@ sealed interface Ability {
     val name: String
     val level: Int
     val canCast: Boolean
-    val passive: Boolean
-    val abilityActive: Boolean
+    val isPassive: Boolean
+    val isAbilityActive: Boolean
     val cooldown: Int
-    val ultimate: Boolean
+    val isUltimate: Boolean
     val charges: Int?
     val maxCharges: Int?
     val chargeCooldown: Int?

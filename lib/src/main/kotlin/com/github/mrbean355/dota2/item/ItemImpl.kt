@@ -23,9 +23,9 @@ import kotlinx.serialization.Serializable
 internal data class ItemImpl(
     @SerialName("name") override val name: String,
     @SerialName("purchaser") override val purchaser: Int? = null,
-    @SerialName("contains_rune") override val containsRune: BottledRune? = null,
+    @SerialName("contains_rune") override val bottledRune: BottledRune? = null,
     @SerialName("can_cast") override val canCast: Boolean? = null,
     @SerialName("cooldown") override val cooldown: Int? = null,
-    @SerialName("passive") override val passive: Boolean? = null,
+    @SerialName("passive") override val isPassive: Boolean? = null,
     @SerialName("charges") override val charges: Int? = null,
 ) : Item

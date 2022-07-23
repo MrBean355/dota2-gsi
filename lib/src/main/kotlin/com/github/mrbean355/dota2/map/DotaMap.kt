@@ -24,10 +24,10 @@ sealed interface DotaMap {
     val matchId: String
     val gameTime: Int
     val clockTime: Int
-    val daytime: Boolean
-    val nightStalkerNight: Boolean
+    val isDaytime: Boolean
+    val isNightStalkerNight: Boolean
     val matchState: MatchState
-    val paused: Boolean
+    val isPaused: Boolean
     val winningTeam: String
     val customGameName: String
 }

@@ -56,7 +56,6 @@ public final class com/github/mrbean355/dota2/SpectatingGameState : com/github/m
 }
 
 public abstract interface class com/github/mrbean355/dota2/ability/Ability {
-	public abstract fun getAbilityActive ()Z
 	public abstract fun getCanCast ()Z
 	public abstract fun getChargeCooldown ()Ljava/lang/Integer;
 	public abstract fun getCharges ()Ljava/lang/Integer;
@@ -64,35 +63,27 @@ public abstract interface class com/github/mrbean355/dota2/ability/Ability {
 	public abstract fun getLevel ()I
 	public abstract fun getMaxCharges ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
-	public abstract fun getPassive ()Z
-	public abstract fun getUltimate ()Z
+	public abstract fun isAbilityActive ()Z
+	public abstract fun isPassive ()Z
+	public abstract fun isUltimate ()Z
 }
 
 public abstract interface class com/github/mrbean355/dota2/hero/Hero {
-	public abstract fun getAghanimsScepter ()Z
-	public abstract fun getAghanimsShard ()Z
-	public abstract fun getAlive ()Z
-	public abstract fun getBreak ()Z
 	public abstract fun getBuybackCooldown ()I
 	public abstract fun getBuybackCost ()I
-	public abstract fun getDisarmed ()Z
+	public abstract fun getHasAghanimsScepter ()Z
+	public abstract fun getHasAghanimsShard ()Z
 	public abstract fun getHasDebuff ()Z
 	public abstract fun getHealth ()I
 	public abstract fun getHealthPercent ()I
-	public abstract fun getHexed ()Z
 	public abstract fun getId ()I
 	public abstract fun getLevel ()I
-	public abstract fun getMagicImmune ()Z
 	public abstract fun getMana ()I
 	public abstract fun getManaPercent ()I
 	public abstract fun getMaxHealth ()I
 	public abstract fun getMaxMana ()I
-	public abstract fun getMuted ()Z
 	public abstract fun getName ()Ljava/lang/String;
-	public abstract fun getRespawnSeconds ()I
-	public abstract fun getSilenced ()Z
-	public abstract fun getSmoked ()Z
-	public abstract fun getStunned ()Z
+	public abstract fun getRespawnTimer ()I
 	public abstract fun getTalent1 ()Z
 	public abstract fun getTalent2 ()Z
 	public abstract fun getTalent3 ()Z
@@ -104,10 +95,19 @@ public abstract interface class com/github/mrbean355/dota2/hero/Hero {
 	public abstract fun getXPos ()I
 	public abstract fun getXp ()I
 	public abstract fun getYPos ()I
+	public abstract fun isAlive ()Z
+	public abstract fun isBroken ()Z
+	public abstract fun isDisarmed ()Z
+	public abstract fun isHexed ()Z
+	public abstract fun isMagicImmune ()Z
+	public abstract fun isMuted ()Z
+	public abstract fun isSilenced ()Z
+	public abstract fun isSmoked ()Z
+	public abstract fun isStunned ()Z
 }
 
 public abstract interface class com/github/mrbean355/dota2/hero/SpectatedHero : com/github/mrbean355/dota2/hero/Hero {
-	public abstract fun getSelectedUnit ()Z
+	public abstract fun isSelectedUnit ()Z
 }
 
 public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum {
@@ -141,13 +141,13 @@ public final class com/github/mrbean355/dota2/item/BottledRune$Companion {
 }
 
 public abstract interface class com/github/mrbean355/dota2/item/Item {
+	public abstract fun getBottledRune ()Lcom/github/mrbean355/dota2/item/BottledRune;
 	public abstract fun getCanCast ()Ljava/lang/Boolean;
 	public abstract fun getCharges ()Ljava/lang/Integer;
-	public abstract fun getContainsRune ()Lcom/github/mrbean355/dota2/item/BottledRune;
 	public abstract fun getCooldown ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
-	public abstract fun getPassive ()Ljava/lang/Boolean;
 	public abstract fun getPurchaser ()Ljava/lang/Integer;
+	public abstract fun isPassive ()Ljava/lang/Boolean;
 }
 
 public final class com/github/mrbean355/dota2/item/Items {
@@ -170,28 +170,28 @@ public final class com/github/mrbean355/dota2/item/Items {
 public abstract interface class com/github/mrbean355/dota2/map/DotaMap {
 	public abstract fun getClockTime ()I
 	public abstract fun getCustomGameName ()Ljava/lang/String;
-	public abstract fun getDaytime ()Z
 	public abstract fun getGameTime ()I
 	public abstract fun getMatchId ()Ljava/lang/String;
 	public abstract fun getMatchState ()Lcom/github/mrbean355/dota2/map/MatchState;
 	public abstract fun getName ()Ljava/lang/String;
-	public abstract fun getNightStalkerNight ()Z
-	public abstract fun getPaused ()Z
 	public abstract fun getWinningTeam ()Ljava/lang/String;
+	public abstract fun isDaytime ()Z
+	public abstract fun isNightStalkerNight ()Z
+	public abstract fun isPaused ()Z
 }
 
 public final class com/github/mrbean355/dota2/map/MatchState : java/lang/Enum {
-	public static final field CUSTOM_GAME_SETUP Lcom/github/mrbean355/dota2/map/MatchState;
 	public static final field Companion Lcom/github/mrbean355/dota2/map/MatchState$Companion;
-	public static final field DISCONNECT Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field GAME_IN_PROGRESS Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field HERO_SELECTION Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field INIT Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field LAST Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field POST_GAME Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field PRE_GAME Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field STRATEGY_TIME Lcom/github/mrbean355/dota2/map/MatchState;
-	public static final field WAIT_FOR_PLAYERS_TO_LOAD Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field CustomGameSetup Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field Disconnect Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field GameInProgress Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field HeroSelection Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field Init Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field Last Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field PostGame Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field PreGame Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field StrategyTime Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field WaitForPlayersToLoad Lcom/github/mrbean355/dota2/map/MatchState;
 	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/map/MatchState;
 	public static fun values ()[Lcom/github/mrbean355/dota2/map/MatchState;
 }
@@ -221,7 +221,7 @@ public abstract interface class com/github/mrbean355/dota2/map/SpectatingMap : c
 	public abstract fun getRadiantWardPurchaseCooldown ()I
 	public abstract fun getRadiantWinChance ()I
 	public abstract fun getRoshanState ()Ljava/lang/String;
-	public abstract fun getRoshanStateEndSeconds ()I
+	public abstract fun getRoshanStateEndTimer ()I
 }
 
 public abstract interface class com/github/mrbean355/dota2/player/Player {

@@ -14,43 +14,44 @@
  * limitations under the License.
  */
 
+@file:Suppress("unused")
+
 package com.github.mrbean355.dota2.map
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-@Suppress("unused")
 enum class MatchState {
 
     @SerialName("DOTA_GAMERULES_STATE_DISCONNECT")
-    DISCONNECT,
+    Disconnect,
 
     @SerialName("DOTA_GAMERULES_STATE_GAME_IN_PROGRESS")
-    GAME_IN_PROGRESS,
+    GameInProgress,
 
     @SerialName("DOTA_GAMERULES_STATE_HERO_SELECTION")
-    HERO_SELECTION,
+    HeroSelection,
 
     @SerialName("DOTA_GAMERULES_STATE_INIT")
-    INIT,
+    Init,
 
     @SerialName("DOTA_GAMERULES_STATE_LAST")
-    LAST,
+    Last,
 
     @SerialName("DOTA_GAMERULES_STATE_POST_GAME")
-    POST_GAME,
+    PostGame,
 
     @SerialName("DOTA_GAMERULES_STATE_PRE_GAME")
-    PRE_GAME,
+    PreGame,
 
     @SerialName("DOTA_GAMERULES_STATE_STRATEGY_TIME")
-    STRATEGY_TIME,
+    StrategyTime,
 
     @SerialName("DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD")
-    WAIT_FOR_PLAYERS_TO_LOAD,
+    WaitForPlayersToLoad,
 
     @SerialName("DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP")
-    CUSTOM_GAME_SETUP
+    CustomGameSetup,
 
 }

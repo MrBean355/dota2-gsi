@@ -21,5 +21,5 @@ package com.github.mrbean355.dota2.hero
  * See [Hero] for common properties.
  */
 sealed interface SpectatedHero : Hero {
-    val selectedUnit: Boolean
+    val isSelectedUnit: Boolean
 }

@@ -26,8 +26,8 @@ sealed interface Hero {
     val name: String
     val level: Int
     val xp: Int
-    val alive: Boolean
-    val respawnSeconds: Int
+    val isAlive: Boolean
+    val respawnTimer: Int
     val buybackCost: Int
     val buybackCooldown: Int
     val health: Int
@@ -36,16 +36,16 @@ sealed interface Hero {
     val mana: Int
     val maxMana: Int
     val manaPercent: Int
-    val silenced: Boolean
-    val stunned: Boolean
-    val disarmed: Boolean
-    val magicImmune: Boolean
-    val hexed: Boolean
-    val muted: Boolean
-    val `break`: Boolean
-    val aghanimsScepter: Boolean
-    val aghanimsShard: Boolean
-    val smoked: Boolean
+    val isSilenced: Boolean
+    val isStunned: Boolean
+    val isDisarmed: Boolean
+    val isMagicImmune: Boolean
+    val isHexed: Boolean
+    val isMuted: Boolean
+    val isBroken: Boolean
+    val hasAghanimsScepter: Boolean
+    val hasAghanimsShard: Boolean
+    val isSmoked: Boolean
     val hasDebuff: Boolean
     val talent1: Boolean
     val talent2: Boolean

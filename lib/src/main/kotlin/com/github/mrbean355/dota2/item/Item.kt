@@ -22,9 +22,9 @@ package com.github.mrbean355.dota2.item
 sealed interface Item {
     val name: String
     val purchaser: Int?
-    val containsRune: BottledRune?
+    val bottledRune: BottledRune?
     val canCast: Boolean?
     val cooldown: Int?
-    val passive: Boolean?
+    val isPassive: Boolean?
     val charges: Int?
 }
