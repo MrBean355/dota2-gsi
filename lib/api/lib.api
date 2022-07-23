@@ -179,7 +179,7 @@ public abstract interface class com/github/mrbean355/dota2/map/DotaMap {
 	public abstract fun getMatchId ()Ljava/lang/String;
 	public abstract fun getMatchState ()Lcom/github/mrbean355/dota2/map/MatchState;
 	public abstract fun getName ()Ljava/lang/String;
-	public abstract fun getWinningTeam ()Ljava/lang/String;
+	public abstract fun getWinningTeam ()Lcom/github/mrbean355/dota2/map/Team;
 	public abstract fun isDaytime ()Z
 	public abstract fun isNightStalkerNight ()Z
 	public abstract fun isPaused ()Z
@@ -229,6 +229,32 @@ public abstract interface class com/github/mrbean355/dota2/map/SpectatedMap : co
 	public abstract fun getRoshanStateEndTimer ()I
 }
 
+public final class com/github/mrbean355/dota2/map/Team : java/lang/Enum {
+	public static final field Companion Lcom/github/mrbean355/dota2/map/Team$Companion;
+	public static final field Dire Lcom/github/mrbean355/dota2/map/Team;
+	public static final field None Lcom/github/mrbean355/dota2/map/Team;
+	public static final field Radiant Lcom/github/mrbean355/dota2/map/Team;
+	public static final field Spectator Lcom/github/mrbean355/dota2/map/Team;
+	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/map/Team;
+	public static fun values ()[Lcom/github/mrbean355/dota2/map/Team;
+}
+
+public final class com/github/mrbean355/dota2/map/Team$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/github/mrbean355/dota2/map/Team$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/map/Team;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/map/Team;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/github/mrbean355/dota2/map/Team$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
 public abstract interface class com/github/mrbean355/dota2/player/Player {
 	public abstract fun getActivity ()Ljava/lang/String;
 	public abstract fun getAssists ()I
@@ -249,7 +275,7 @@ public abstract interface class com/github/mrbean355/dota2/player/Player {
 	public abstract fun getLastHits ()I
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getSteamId ()Ljava/lang/String;
-	public abstract fun getTeamName ()Ljava/lang/String;
+	public abstract fun getTeam ()Lcom/github/mrbean355/dota2/map/Team;
 	public abstract fun getXpm ()I
 }
 

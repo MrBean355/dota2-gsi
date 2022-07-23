@@ -17,6 +17,7 @@
 package com.github.mrbean355.dota2.player
 
 import com.github.mrbean355.dota2.json.KillListTransformer
+import com.github.mrbean355.dota2.map.Team
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -33,7 +34,7 @@ internal data class SpectatedPlayerImpl(
     @SerialName("kill_streak") override val killStreak: Int,
     @SerialName("commands_issued") override val commandsIssued: Int,
     @SerialName("kill_list") @Serializable(with = KillListTransformer::class) override val killList: List<Int>? = null,
-    @SerialName("team_name") override val teamName: String,
+    @SerialName("team_name") override val team: Team,
     @SerialName("gold") override val gold: Int,
     @SerialName("gold_reliable") override val goldReliable: Int,
     @SerialName("gold_unreliable") override val goldUnreliable: Int,

@@ -29,7 +29,7 @@ internal data class PlayingMapImpl(
     @SerialName("nightstalker_night") override val isNightStalkerNight: Boolean,
     @SerialName("game_state") override val matchState: MatchState,
     @SerialName("paused") override val isPaused: Boolean,
-    @SerialName("win_team") override val winningTeam: String,
+    @SerialName("win_team") override val winningTeam: Team,
     @SerialName("customgamename") override val customGameName: String,
     @SerialName("ward_purchase_cooldown") override val wardPurchaseCooldown: Int,
 ) : PlayingMap

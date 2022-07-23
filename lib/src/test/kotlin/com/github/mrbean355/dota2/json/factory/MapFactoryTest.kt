@@ -20,6 +20,7 @@ import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.map.MatchState
 import com.github.mrbean355.dota2.map.PlayingMapImpl
 import com.github.mrbean355.dota2.map.SpectatedMapImpl
+import com.github.mrbean355.dota2.map.Team
 import com.github.mrbean355.dota2.testutil.jsonObject
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
@@ -50,7 +51,7 @@ internal class MapFactoryTest {
             assertFalse(isNightStalkerNight)
             assertSame(MatchState.GameInProgress, matchState)
             assertFalse(isPaused)
-            assertEquals("none", winningTeam)
+            assertSame(Team.None, winningTeam)
             assertEquals("", customGameName)
             assertEquals(37, wardPurchaseCooldown)
         }
@@ -76,7 +77,7 @@ internal class MapFactoryTest {
             assertFalse(isNightStalkerNight)
             assertSame(MatchState.GameInProgress, matchState)
             assertFalse(isPaused)
-            assertEquals("none", winningTeam)
+            assertSame(Team.None, winningTeam)
             assertEquals("", customGameName)
             assertEquals(1, radiantWardPurchaseCooldown)
             assertEquals(2, direWardPurchaseCooldown)

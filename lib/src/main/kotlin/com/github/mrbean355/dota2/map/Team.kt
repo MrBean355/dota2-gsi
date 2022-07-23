@@ -14,20 +14,26 @@
  * limitations under the License.
  */
 
+@file:Suppress("unused")
+
 package com.github.mrbean355.dota2.map
 
-/**
- * Some general information about the map.
- */
-sealed interface DotaMap {
-    val name: String
-    val matchId: String
-    val gameTime: Int
-    val clockTime: Int
-    val isDaytime: Boolean
-    val isNightStalkerNight: Boolean
-    val matchState: MatchState
-    val isPaused: Boolean
-    val winningTeam: Team
-    val customGameName: String
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+enum class Team {
+
+    @SerialName("radiant")
+    Radiant,
+
+    @SerialName("dire")
+    Dire,
+
+    @SerialName("spectator")
+    Spectator,
+
+    @SerialName("none")
+    None,
+
 }

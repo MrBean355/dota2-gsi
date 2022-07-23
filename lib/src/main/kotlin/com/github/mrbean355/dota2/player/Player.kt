@@ -16,6 +16,8 @@
 
 package com.github.mrbean355.dota2.player
 
+import com.github.mrbean355.dota2.map.Team
+
 /**
  * A player involved in the match.
  */
@@ -31,7 +33,7 @@ sealed interface Player {
     val killStreak: Int
     val commandsIssued: Int
     val killList: List<Int>?
-    val teamName: String
+    val team: Team
     val gold: Int
     val goldReliable: Int
     val goldUnreliable: Int

@@ -29,7 +29,7 @@ internal data class SpectatedMapImpl(
     @SerialName("nightstalker_night") override val isNightStalkerNight: Boolean,
     @SerialName("game_state") override val matchState: MatchState,
     @SerialName("paused") override val isPaused: Boolean,
-    @SerialName("win_team") override val winningTeam: String,
+    @SerialName("win_team") override val winningTeam: Team,
     @SerialName("customgamename") override val customGameName: String,
     @SerialName("radiant_ward_purchase_cooldown") override val radiantWardPurchaseCooldown: Int,
     @SerialName("dire_ward_purchase_cooldown") override val direWardPurchaseCooldown: Int,

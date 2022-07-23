@@ -17,6 +17,7 @@
 package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.json.ClientMode
+import com.github.mrbean355.dota2.map.Team
 import com.github.mrbean355.dota2.player.PlayerImpl
 import com.github.mrbean355.dota2.player.SpectatedPlayerImpl
 import com.github.mrbean355.dota2.testutil.jsonObject
@@ -51,7 +52,7 @@ internal class PlayerFactoryTest {
             assertEquals(5, killStreak)
             assertEquals(6, commandsIssued)
             assertEquals(listOf(7), killList)
-            assertEquals("radiant", teamName)
+            assertSame(Team.Radiant, team)
             assertEquals(600, gold)
             assertEquals(8, goldReliable)
             assertEquals(550, goldUnreliable)
@@ -98,7 +99,7 @@ internal class PlayerFactoryTest {
             assertEquals(2, killStreak)
             assertEquals(3170, commandsIssued)
             assertEquals(listOf(2, 1), killList)
-            assertEquals("radiant", teamName)
+            assertEquals(Team.Radiant, team)
             assertEquals(1396, gold)
             assertEquals(441, goldReliable)
             assertEquals(955, goldUnreliable)
