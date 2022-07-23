@@ -30,6 +30,7 @@ internal object PlayingGameStateFactory {
             abilities = AbilitiesFactory.createForPlayer(root),
             items = ItemsFactory.createForPlayer(root),
             buildings = BuildingsFactory.create(root),
+            wearables = WearablesFactory.createForPlayer(root),
         )
     }
 }

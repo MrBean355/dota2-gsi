@@ -52,6 +52,7 @@ data class PlayingGameState(
     val abilities: List<Ability>?,
     val items: Items?,
     val buildings: Map<String, Building>?,
+    val wearables: List<Int>?,
 ) : GameState
 
 /**
@@ -65,4 +66,5 @@ data class SpectatingGameState(
     val abilities: Map<String, List<Ability>>?,
     val items: Map<String, Items>?,
     val buildings: Map<String, Building>?,
+    val wearables: Map<String, List<Int>>?,
 ) : GameState

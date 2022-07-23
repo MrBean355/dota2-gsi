@@ -1,0 +1,140 @@
+{
+  "wearables": {
+    "team2": {
+      "player0": {
+        "wearable0": 18506,
+        "wearable1": 18507,
+        "wearable2": 9167,
+        "wearable3": 553,
+        "wearable4": 792,
+        "wearable5": 14912,
+        "wearable6": 647
+      },
+      "player1": {
+        "wearable0": 777,
+        "wearable1": 778,
+        "wearable2": 780,
+        "wearable3": 779,
+        "wearable4": 8632,
+        "wearable5": 14912
+      },
+      "player2": {
+        "wearable0": 639,
+        "wearable1": 8632,
+        "wearable2": 536,
+        "wearable3": 14912
+      },
+      "player3": {
+        "wearable0": 6620,
+        "wearable1": 9460,
+        "wearable2": 7817,
+        "wearable3": 22789,
+        "wearable4": 9302,
+        "wearable5": 8632,
+        "wearable6": 127,
+        "wearable7": 790,
+        "wearable8": 791,
+        "wearable9": 792,
+        "wearable10": 793,
+        "wearable11": 14912,
+        "wearable12": 647
+      },
+      "player4": {
+        "wearable0": 8010,
+        "wearable1": 6293,
+        "style1": 3,
+        "wearable2": 259,
+        "wearable3": 6294,
+        "wearable4": 5295,
+        "wearable5": 258,
+        "wearable6": 4997,
+        "wearable7": 6299,
+        "wearable8": 391,
+        "wearable9": 733,
+        "wearable10": 790,
+        "wearable11": 791,
+        "wearable12": 792,
+        "wearable13": 793,
+        "wearable14": 709,
+        "wearable15": 14912
+      }
+    },
+    "team3": {
+      "player5": {
+        "wearable0": 19187,
+        "wearable1": 17951,
+        "wearable2": 19190,
+        "wearable3": 7466,
+        "wearable4": 19186,
+        "wearable5": 8632,
+        "wearable6": 724,
+        "wearable7": 792,
+        "wearable8": 793,
+        "wearable9": 14912
+      },
+      "player6": {
+        "wearable0": 13523,
+        "wearable1": 7581,
+        "wearable2": 6521,
+        "wearable3": 6523,
+        "wearable4": 6524,
+        "wearable5": 6519,
+        "wearable6": 400,
+        "wearable7": 8632,
+        "wearable8": 537,
+        "wearable9": 791,
+        "wearable10": 793,
+        "wearable11": 14912,
+        "wearable12": 647
+      },
+      "player7": {
+        "wearable0": 6625,
+        "wearable1": 5491,
+        "wearable2": 98,
+        "wearable3": 6624,
+        "wearable4": 6623,
+        "wearable5": 6627,
+        "wearable6": 6622,
+        "wearable7": 8632,
+        "wearable8": 790,
+        "wearable9": 791,
+        "wearable10": 792,
+        "wearable11": 793,
+        "wearable12": 794,
+        "wearable13": 795,
+        "wearable14": 796,
+        "wearable15": 797,
+        "wearable16": 798,
+        "wearable17": 683,
+        "wearable18": 14912
+      },
+      "player8": {
+        "wearable0": 7459,
+        "wearable1": 6857,
+        "wearable2": 12690,
+        "wearable3": 12686,
+        "wearable4": 12688,
+        "wearable5": 7602,
+        "wearable6": 721,
+        "wearable7": 790,
+        "wearable8": 792,
+        "wearable9": 14912
+      },
+      "player9": {
+        "wearable0": 7425,
+        "wearable1": 9241,
+        "style1": 0,
+        "wearable2": 7426,
+        "wearable3": 8836,
+        "wearable4": 8838,
+        "wearable5": 9660,
+        "wearable6": 6650,
+        "wearable7": 8632,
+        "wearable8": 739,
+        "wearable9": 792,
+        "wearable10": 790,
+        "wearable11": 14912
+      }
+    }
+  }
+}
