@@ -78,6 +78,9 @@ public abstract interface class com/github/mrbean355/dota2/ability/Ability {
 	public abstract fun isUltimate ()Z
 }
 
+public abstract interface annotation class com/github/mrbean355/dota2/annotation/ExperimentalGameState : java/lang/annotation/Annotation {
+}
+
 public abstract interface class com/github/mrbean355/dota2/building/Building {
 	public abstract fun getHealth ()I
 	public abstract fun getMaxHealth ()I

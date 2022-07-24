@@ -14,20 +14,11 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.draft
+package com.github.mrbean355.dota2.annotation
 
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
-
-/**
- * The in-progress draft of the match being spectated.
- */
-@ExperimentalGameState
-sealed interface Draft {
-    val activeTeam: Int
-    val isPick: Boolean
-    val activeTeamTimeRemaining: Int
-    val radiantBonusTime: Int
-    val direBonusTime: Int
-    val radiantDraft: TeamDraft
-    val direDraft: TeamDraft
-}
+@RequiresOptIn(
+    message = "This API is experimental; use at your own risk",
+    level = RequiresOptIn.Level.WARNING
+)
+@Retention(AnnotationRetention.BINARY)
+annotation class ExperimentalGameState
