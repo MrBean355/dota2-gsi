@@ -10,9 +10,7 @@ plugins {
 }
 
 group = "com.github.mrbean355"
-ext {
-    set("artifactId", "dota2-gsi")
-}
+val artifactId by extra("dota2-gsi")
 version = "2.0.0-SNAPSHOT"
 
 dependencies {
@@ -29,6 +27,14 @@ dependencies {
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
     kotlinOptions.freeCompilerArgs += "-opt-in=com.github.mrbean355.dota2.annotation.ExperimentalGameState"
+}
+
+tasks.withType<Jar> {
+    archiveBaseName.set(artifactId)
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask> {
+    moduleName.set(artifactId)
 }
 
 tasks.test {
@@ -53,7 +59,6 @@ sonarqube {
 
 java {
     withSourcesJar()
-    withJavadocJar()
 }
 
 publishing {
