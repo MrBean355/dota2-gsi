@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package com.github.mrbean355.dota2.demo;
+
 import com.github.mrbean355.dota2.gamestate.PlayingGameState;
 import com.github.mrbean355.dota2.server.GameStateServer;
 

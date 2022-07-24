@@ -123,7 +123,8 @@ fun main() {
 }
 ```
 
-Have a look at the simple [demo project](demo/src/main/java) for some more examples, including Java code.
+Have a look at the simple [demo project](demo/src/main/java/com/github/mrbean355/dota2/demo) for some more examples,
+including Java code.
 
 ## Snapshots
 
