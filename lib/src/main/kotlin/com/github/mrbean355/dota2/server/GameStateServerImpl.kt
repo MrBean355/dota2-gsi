@@ -79,8 +79,13 @@ internal class GameStateServerImpl(
         return this
     }
 
-    override fun start(wait: Boolean): GameStateServer {
-        server.start(wait)
+    override fun start(): GameStateServer {
+        server.start(wait = true)
+        return this
+    }
+
+    override fun startAsync(): GameStateServer {
+        server.start(wait = false)
         return this
     }
 

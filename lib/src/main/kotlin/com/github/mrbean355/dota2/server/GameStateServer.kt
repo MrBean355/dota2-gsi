@@ -88,12 +88,20 @@ interface GameStateServer {
     fun setErrorHandler(handler: ErrorHandler): GameStateServer
 
     /**
-     * Starts this server.
+     * Starts this server, blocking the current thread until the server is stopped.
+     * **This function will NOT return until [stop] is called.**
      *
-     * @param wait if true, this function does not return until the server is stopped.
      * @return this object.
      */
-    fun start(wait: Boolean): GameStateServer
+    fun start(): GameStateServer
+
+    /**
+     * Starts this server without blocking the current thread.
+     * **This function will return immediately.**
+     *
+     * @return this object.
+     */
+    fun startAsync(): GameStateServer
 
     /**
      * Stops this server.

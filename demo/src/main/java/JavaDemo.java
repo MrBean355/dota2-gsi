@@ -34,7 +34,7 @@ public class JavaDemo {
     private void run() {
         // Create a server and add various listeners for game state updates.
         // All listeners are optional; you only need to add the ones you want.
-        // Remember to call start() so that the server actually runs!
+        // Remember to call start() or startAsync() so that the server actually runs!
         // Check the documentation of GameStateServer for more info.
         GameStateServer.create(12345)
                 .setPlayingListener(state -> {
@@ -49,7 +49,7 @@ public class JavaDemo {
                     // Store the problematic data in a file for a bug report:
                     writeErrorLog(json);
                 })
-                .start(true);
+                .start();
     }
 
     // Store the previous game state, so we can compare values when a new state comes in:

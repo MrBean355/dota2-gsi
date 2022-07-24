@@ -119,7 +119,7 @@ fun main() {
             val gameTime = gameState.map?.clockTime
         }
         // Start the server, blocking the thread so the program doesn't immediately exit:
-        .start(wait = true)
+        .start() // Alternatively startAsync() will not block the thread.
 }
 ```
 

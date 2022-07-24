@@ -345,7 +345,8 @@ public abstract interface class com/github/mrbean355/dota2/server/GameStateServe
 	public abstract fun setIdleListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun setPlayingListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun setSpectatingListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
-	public abstract fun start (Z)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun start ()Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun startAsync ()Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun stop (JJ)V
 }
 
