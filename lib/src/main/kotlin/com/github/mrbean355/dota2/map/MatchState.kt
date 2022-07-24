@@ -48,6 +48,9 @@ enum class MatchState {
     @SerialName("DOTA_GAMERULES_STATE_STRATEGY_TIME")
     StrategyTime,
 
+    @SerialName("DOTA_GAMERULES_STATE_TEAM_SHOWCASE")
+    TeamShowcase,
+
     @SerialName("DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD")
     WaitForPlayersToLoad,
 

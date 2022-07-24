@@ -235,6 +235,7 @@ public final class com/github/mrbean355/dota2/map/MatchState : java/lang/Enum {
 	public static final field PostGame Lcom/github/mrbean355/dota2/map/MatchState;
 	public static final field PreGame Lcom/github/mrbean355/dota2/map/MatchState;
 	public static final field StrategyTime Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field TeamShowcase Lcom/github/mrbean355/dota2/map/MatchState;
 	public static final field WaitForPlayersToLoad Lcom/github/mrbean355/dota2/map/MatchState;
 	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/map/MatchState;
 	public static fun values ()[Lcom/github/mrbean355/dota2/map/MatchState;
