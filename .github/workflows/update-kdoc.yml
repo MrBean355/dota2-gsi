@@ -1,0 +1,44 @@
+name: Update KDoc
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Generate KDoc
+        run: |
+          chmod +x gradlew
+          ./gradlew clean dokkaHtml
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: kdoc
+          path: lib/build/dokka/html
+          if-no-files-found: error
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: kdoc
+
+      - name: Commit & push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Add the latest KDoc files

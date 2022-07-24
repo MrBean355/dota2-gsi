@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm")
+    id("org.jetbrains.dokka")
     id("jacoco")
     id("org.sonarqube")
     `maven-publish`
