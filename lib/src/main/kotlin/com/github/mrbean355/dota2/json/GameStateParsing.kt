@@ -16,7 +16,7 @@
 
 package com.github.mrbean355.dota2.json
 
-import com.github.mrbean355.dota2.GameState
+import com.github.mrbean355.dota2.gamestate.GameState
 import com.github.mrbean355.dota2.json.factory.AbilitiesFactory
 import com.github.mrbean355.dota2.json.factory.DraftFactory
 import com.github.mrbean355.dota2.json.factory.HeroFactory

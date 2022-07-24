@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.json.factory
+package com.github.mrbean355.dota2.gamestate
 
-import com.github.mrbean355.dota2.gamestate.IdleGameState
-import kotlinx.serialization.json.JsonObject
+import com.github.mrbean355.dota2.provider.Provider
 
-internal object IdleGameStateFactory {
-
-    fun create(root: JsonObject): IdleGameState {
-        return IdleGameState(
-            provider = ProviderFactory.create(root)
-        )
-    }
+/**
+ * Base type for the various game state implementations.
+ */
+sealed interface GameState {
+    val provider: Provider?
 }

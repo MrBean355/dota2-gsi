@@ -14,47 +14,16 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2
+package com.github.mrbean355.dota2.gamestate
 
 import com.github.mrbean355.dota2.ability.Ability
 import com.github.mrbean355.dota2.building.Building
 import com.github.mrbean355.dota2.draft.Draft
-import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.hero.SpectatedHero
 import com.github.mrbean355.dota2.item.Items
-import com.github.mrbean355.dota2.map.PlayingMap
 import com.github.mrbean355.dota2.map.SpectatedMap
-import com.github.mrbean355.dota2.player.Player
 import com.github.mrbean355.dota2.player.SpectatedPlayer
 import com.github.mrbean355.dota2.provider.Provider
-
-/**
- * A generic game state. See below for possible types.
- */
-sealed interface GameState {
-    val provider: Provider?
-}
-
-/**
- * The state when the client is not in a match (i.e. it is on the main menu).
- */
-data class IdleGameState(
-    override val provider: Provider?
-) : GameState
-
-/**
- * The state of the match at a point in time, when the client is **playing** in the match.
- */
-data class PlayingGameState(
-    override val provider: Provider?,
-    val map: PlayingMap?,
-    val player: Player?,
-    val hero: Hero?,
-    val abilities: List<Ability>?,
-    val items: Items?,
-    val buildings: Map<String, Building>?,
-    val wearables: List<Int>?,
-) : GameState
 
 /**
  * The state of the match at a point in time, when the client is **spectating** the match.

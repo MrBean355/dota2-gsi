@@ -16,7 +16,7 @@
 
 package com.github.mrbean355.dota2.json.factory
 
-import com.github.mrbean355.dota2.PlayingGameState
+import com.github.mrbean355.dota2.gamestate.PlayingGameState
 import kotlinx.serialization.json.JsonObject
 
 internal object PlayingGameStateFactory {

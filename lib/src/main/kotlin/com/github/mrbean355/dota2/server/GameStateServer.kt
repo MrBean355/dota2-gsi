@@ -16,10 +16,10 @@
 
 package com.github.mrbean355.dota2.server
 
-import com.github.mrbean355.dota2.GameState
-import com.github.mrbean355.dota2.IdleGameState
-import com.github.mrbean355.dota2.PlayingGameState
-import com.github.mrbean355.dota2.SpectatingGameState
+import com.github.mrbean355.dota2.gamestate.GameState
+import com.github.mrbean355.dota2.gamestate.IdleGameState
+import com.github.mrbean355.dota2.gamestate.PlayingGameState
+import com.github.mrbean355.dota2.gamestate.SpectatingGameState
 
 /**
  * Server which listens for game state updates from Dota 2.

@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.json.factory
+package com.github.mrbean355.dota2.gamestate
 
-import com.github.mrbean355.dota2.gamestate.IdleGameState
-import kotlinx.serialization.json.JsonObject
+import com.github.mrbean355.dota2.provider.Provider
 
-internal object IdleGameStateFactory {
-
-    fun create(root: JsonObject): IdleGameState {
-        return IdleGameState(
-            provider = ProviderFactory.create(root)
-        )
-    }
-}
+/**
+ * The state when the client is not in a match (i.e. it is on the main menu).
+ */
+data class IdleGameState(
+    override val provider: Provider?
+) : GameState

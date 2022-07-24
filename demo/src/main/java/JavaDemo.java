@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import com.github.mrbean355.dota2.PlayingGameState;
+import com.github.mrbean355.dota2.gamestate.PlayingGameState;
 import com.github.mrbean355.dota2.server.GameStateServer;
 
 import java.io.FileWriter;
