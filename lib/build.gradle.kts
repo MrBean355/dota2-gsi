@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm")
     kotlin("plugin.serialization")
+    id("org.jetbrains.dokka")
     id("org.jetbrains.kotlinx.binary-compatibility-validator")
     id("jacoco")
     id("org.sonarqube")
