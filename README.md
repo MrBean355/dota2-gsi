@@ -1,6 +1,7 @@
 # Dota 2 - Game State Integration - JVM
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mrbean355/dota2-gsi/badge.png)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
+[![Documentation](https://img.shields.io/badge/KDoc-GitHub%20Pages-B125EA)](https://mrbean355.github.io/dota2-gsi)
 [![Build project](https://github.com/MrBean355/dota2-gsi/actions/workflows/build-project.yml/badge.svg?branch=main)](https://github.com/MrBean355/dota2-gsi/actions/workflows/build-project.yml)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=coverage)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
@@ -17,64 +18,11 @@ on [Valve's developer wiki](https://developer.valvesoftware.com/wiki/Counter-Str
 
 ## Getting Started
 
-1. **Set up Dota 2**. Set up the Dota 2 client to send game state information to the program.
+1. [**Set up the Dota 2 client**](https://github.com/MrBean355/dota2-gsi/wiki/Dota-2-Setup) to send game state
+   information to the program.
 2. **Add the dependency**. Add the dependency to the project and start coding!
 
-### Set Up Dota 2
-
-#### Enable GSI
-
-Add the `-gamestateintegration` Dota 2 [launch option](https://help.steampowered.com/en/faqs/view/7D01-D2DD-D75E-2955)
-to enable GSI.
-
-#### Configure GSI
-
-Navigate to this folder within the Dota 2 installation folder, creating folders that don't exist already:
-
-```
-dota 2 beta/game/dota/cfg/gamestate_integration
-```
-
-Create a new text file inside this folder. The file name must start with `gamestate_integration_`, and have the
-extension `.cfg`. For example:
-
-```
-gamestate_integration_test.cfg
-```
-
-Open the file in a text editor and add this content:
-
-```
-"My GSI test"
-{
-    "uri"           "http://localhost:44444"
-    "timeout"       "5.0"
-    "buffer"        "0.5"
-    "throttle"      "0.5"
-    "heartbeat"     "30.0"
-    "data"
-    {
-        "provider"      "1"
-        "map"           "1"
-        "player"        "1"
-        "hero"          "1"
-        "abilities"     "1"
-        "items"         "1"
-        "buildings"     "1"
-        "draft"         "1"
-        "wearables"     "1"
-    }
-}
-```
-
-**Note: the `data` section can be configured to return the desired data.** For example, the `buildings` line can be
-removed if building data isn't required. This helps to improve performance as there is less data to process.
-
-**Note: the `44444` in the URI can be changed to any valid port.**
-
-Save & close the file. The setup is now complete!
-
-### Add The Dependency
+### Adding the Dependency
 
 The library is published to Maven Central; make sure it is added as a repository. Then simply add a dependency on the
 library:
@@ -91,20 +39,13 @@ dependencies {
 }
 ```
 
-The library is built with JDK 8, using these dependencies:
-
-- Ktor
-- KotlinX Serialization (JSON)
-- Kotlin Standard Library
-
-Check the [settings file](settings.gradle.kts) to see what versions are being used. They will be transitively pulled
-into the project, along with their own dependencies.
-
 ## Sample Code
 
 *Note: the library is written in Kotlin, but can be used from Java code as well.*
 
-1. Create a `GameStateServer` instance with the same port from the `.cfg` config file above.
+0. **Important**: Dota 2 must be set up first! See [the Wiki](https://github.com/MrBean355/dota2-gsi/wiki/Dota-2-Setup)
+   for more information.
+1. Create a `GameStateServer` instance with the _same port_ that was used when setting up Dota.
 2. Register at least one listener to get called when the game state changes.
 3. Start up the server!
 
@@ -126,6 +67,8 @@ fun main() {
 
 Have a look at the simple [demo project](demo/src/main/java/com/github/mrbean355/dota2/demo) for some more examples,
 including Java code.
+
+The [KDoc/Javadoc](https://mrbean355.github.io/dota2-gsi) is also available online for browsing.
 
 ## Snapshots
 
