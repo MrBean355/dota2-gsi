@@ -21,6 +21,9 @@ package com.github.mrbean355.dota2.map
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+/**
+ * A team that players in the match belong to.
+ */
 @Serializable
 enum class Team {
 

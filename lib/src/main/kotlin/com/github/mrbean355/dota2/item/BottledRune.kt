@@ -21,6 +21,9 @@ package com.github.mrbean355.dota2.item
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+/**
+ * A rune that is contained inside a Bottle.
+ */
 @Serializable
 enum class BottledRune {
 

@@ -16,6 +16,9 @@
 
 package com.github.mrbean355.dota2.annotation
 
+/**
+ * Indicates that the annotated element is experimental and may be unstable.
+ */
 @RequiresOptIn(
     message = "This API is experimental; use at your own risk",
     level = RequiresOptIn.Level.WARNING
