@@ -26,13 +26,9 @@ import com.github.mrbean355.dota2.json.factory.MapFactory
 import com.github.mrbean355.dota2.json.factory.PlayerFactory
 import com.github.mrbean355.dota2.json.factory.PlayingGameStateFactory
 import com.github.mrbean355.dota2.json.factory.SpectatingGameStateFactory
-import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.jsonObject
 
-internal fun parseGameState(text: String): GameState {
-    val root = Json.parseToJsonElement(text).jsonObject
-
+internal fun parseGameState(root: JsonObject): GameState {
     return when (findClientMode(root)) {
         ClientMode.Playing -> PlayingGameStateFactory.create(root)
         ClientMode.Spectating -> SpectatingGameStateFactory.create(root)

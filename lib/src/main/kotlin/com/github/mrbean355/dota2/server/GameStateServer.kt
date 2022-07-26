@@ -88,6 +88,34 @@ interface GameStateServer {
     fun setErrorHandler(handler: ErrorHandler): GameStateServer
 
     /**
+     * Optionally authenticate data coming from the Dota client using the `auth` section in
+     * the Game State Integration config file. If data is received without the expected
+     * authentication, it will be ignored and the error handler will be notified.
+     *
+     * There can be any number of keys and values inside the `auth` block. The keys and values
+     * can be any valid strings (wrapped in double quotes).
+     *
+     * For example, in the config file:
+     * ```
+     * "auth"
+     * {
+     *   "token1" "2ec6f84406fb"
+     *   "token2" "18156144b841"
+     * }
+     * ```
+     * When creating the server:
+     * ```
+     * GameStateServer(port).requireAuthentication(
+     *     mapOf(
+     *         "token1" to "2ec6f84406fb",
+     *         "token2" to "18156144b841"
+     *     )
+     * )
+     * ```
+     */
+    fun requireAuthentication(auth: Map<String, String>): GameStateServer
+
+    /**
      * Starts this server, blocking the current thread until the server is stopped.
      * **This function will NOT return until [stop] is called.**
      *

@@ -32,6 +32,10 @@ import io.ktor.server.response.respond
 import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
 import io.ktor.util.pipeline.PipelineContext
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 
 /**
  * Not for direct use; see [GameStateServer].
@@ -40,6 +44,7 @@ internal class GameStateServerImpl(
     port: Int
 ) : GameStateServer {
 
+    private var authentication: Map<String, String> = emptyMap()
     private var genericListener: GameStateServer.Listener<GameState> = GameStateServer.Listener { }
     private var playingListener: GameStateServer.Listener<PlayingGameState> = GameStateServer.Listener { }
     private var spectatingListener: GameStateServer.Listener<SpectatingGameState> = GameStateServer.Listener { }
@@ -52,6 +57,12 @@ internal class GameStateServerImpl(
                 handleGameStateRequest()
             }
         }
+    }
+
+    override fun requireAuthentication(auth: Map<String, String>): GameStateServer {
+        require(auth.isNotEmpty()) { "Map must not be empty" }
+        authentication = auth
+        return this
     }
 
     override fun setGenericListener(listener: GameStateServer.Listener<GameState>): GameStateServer {
@@ -96,7 +107,10 @@ internal class GameStateServerImpl(
     private suspend fun PipelineContext<Unit, ApplicationCall>.handleGameStateRequest() {
         val json = call.receiveText()
         try {
-            val state = parseGameState(json)
+            val state = Json.parseToJsonElement(json).jsonObject.let {
+                authenticate(it)
+                parseGameState(it)
+            }
             genericListener(state)
             when (state) {
                 is PlayingGameState -> playingListener(state)
@@ -107,5 +121,25 @@ internal class GameStateServerImpl(
             errorHandler(t, json)
         }
         call.respond(HttpStatusCode.OK)
+    }
+
+    private fun authenticate(root: JsonObject) {
+        val received = root["auth"] as JsonObject?
+        if (received == null || received.isEmpty()) {
+            check(authentication.isEmpty()) {
+                "Unauthorized request, auth=$received"
+            }
+            return
+        }
+
+        check(received.size == authentication.size) {
+            "Unauthorized request, auth=$received"
+        }
+
+        authentication.forEach { (key, value) ->
+            check(received[key]?.jsonPrimitive?.content == value) {
+                "Unauthorized request, auth=$received"
+            }
+        }
     }
 }
