@@ -17,10 +17,10 @@
 package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.json.ClientMode
+import com.github.mrbean355.dota2.json.transform.SpectatedPlayerTransformer
 import com.github.mrbean355.dota2.player.Player
 import com.github.mrbean355.dota2.player.PlayerImpl
 import com.github.mrbean355.dota2.player.SpectatedPlayer
-import com.github.mrbean355.dota2.player.SpectatedPlayerImpl
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.decodeFromJsonElement
@@ -36,12 +36,10 @@ internal object PlayerFactory {
         }
     }
 
-    fun createForSpectator(root: JsonObject): Map<String, SpectatedPlayer>? {
-        return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
-            teams.jsonObject.map { (playerId, player) ->
-                playerId to Json.decodeFromJsonElement<SpectatedPlayerImpl>(player)
-            }
-        }?.toMap()
+    fun createForSpectator(root: JsonObject): Map<String, List<SpectatedPlayer>>? {
+        return root[JsonKey]?.jsonObject?.mapValues { (_, players) ->
+            Json.decodeFromJsonElement(SpectatedPlayerTransformer, players)
+        }
     }
 
     fun getClientMode(root: JsonObject): ClientMode {

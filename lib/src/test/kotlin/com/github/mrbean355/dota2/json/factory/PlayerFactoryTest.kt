@@ -83,11 +83,11 @@ internal class PlayerFactoryTest {
     internal fun testCreateForSpectator_DeserializesObject() {
         val player = PlayerFactory.createForSpectator("player_spectating.json".jsonObject)!!
 
-        assertEquals(10, player.size)
-        repeat(10) {
-            assertTrue("player$it" in player)
-        }
-        with(player.getValue("player2") as SpectatedPlayerImpl) {
+        assertEquals(2, player.size)
+        assertTrue("team2" in player)
+        assertTrue("team3" in player)
+
+        with(player.getValue("team2")[2] as SpectatedPlayerImpl) {
             assertEquals("0524429230", steamId)
             assertEquals("9 subhumans ^_^", name)
             assertEquals("playing", activity)
@@ -109,6 +109,7 @@ internal class PlayerFactoryTest {
             assertEquals(158, goldFromShared)
             assertEquals(417, gpm)
             assertEquals(368, xpm)
+            assertEquals("player2", id)
             assertEquals(4596, netWorth)
             assertEquals(3240, heroDamage)
             assertEquals(0, wardsPurchased)

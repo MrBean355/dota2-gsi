@@ -326,6 +326,7 @@ public abstract interface class com/github/mrbean355/dota2/player/SpectatedPlaye
 	public abstract fun getGoldLostToDeath ()I
 	public abstract fun getGoldSpentOnBuybacks ()I
 	public abstract fun getHeroDamage ()I
+	public abstract fun getId ()Ljava/lang/String;
 	public abstract fun getItemGoldSpent ()I
 	public abstract fun getNetWorth ()I
 	public abstract fun getRunesActivated ()I

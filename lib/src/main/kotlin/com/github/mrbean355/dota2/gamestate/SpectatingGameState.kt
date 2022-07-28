@@ -31,11 +31,17 @@ import com.github.mrbean355.dota2.provider.Provider
 data class SpectatingGameState(
     override val provider: Provider?,
     val map: SpectatedMap?,
-    val players: Map<String, SpectatedPlayer>?,
+    /** Map of team name to their players. */
+    val players: Map<String, List<SpectatedPlayer>>?,
+    /** Map of player ID to their hero. */
     val heroes: Map<String, SpectatedHero>?,
+    /** Map of player ID to their hero's abilities. */
     val abilities: Map<String, List<Ability>>?,
+    /** Map of player ID to their hero's items. */
     val items: Map<String, Items>?,
+    /** Map of team name to their buildings. */
     val buildings: Map<String, List<Building>>?,
+    /** Map of player ID to their hero's wearable IDs. */
     val wearables: Map<String, List<Int>>?,
     val draft: Draft?,
 ) : GameState

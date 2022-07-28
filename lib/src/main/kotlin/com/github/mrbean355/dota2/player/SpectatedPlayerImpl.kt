@@ -44,6 +44,7 @@ internal data class SpectatedPlayerImpl(
     @SerialName("gold_from_shared") override val goldFromShared: Int,
     @SerialName("gpm") override val gpm: Int,
     @SerialName("xpm") override val xpm: Int,
+    @SerialName("id") override val id: String,
     @SerialName("net_worth") override val netWorth: Int,
     @SerialName("hero_damage") override val heroDamage: Int,
     @SerialName("wards_purchased") override val wardsPurchased: Int,

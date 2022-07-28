@@ -21,6 +21,7 @@ package com.github.mrbean355.dota2.player
  * See [Player] for common properties.
  */
 sealed interface SpectatedPlayer : Player {
+    val id: String
     val netWorth: Int
     val heroDamage: Int
     val wardsPurchased: Int
