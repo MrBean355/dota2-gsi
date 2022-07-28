@@ -23,9 +23,9 @@ dependencyResolutionManagement {
             library("kotlinx-serialization-json", "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
         }
         create("testLibs") {
-            library("junit-bom", "org.junit:junit-bom:5.8.2")
+            library("junit-bom", "org.junit:junit-bom:5.9.0")
             library("junit-jupiter", "org.junit.jupiter", "junit-jupiter").withoutVersion()
-            library("mockK", "io.mockk:mockk:1.12.4")
+            library("mockK", "io.mockk:mockk:1.12.5")
         }
     }
 }
