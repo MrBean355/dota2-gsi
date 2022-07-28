@@ -17,21 +17,24 @@
 package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.building.Building
-import com.github.mrbean355.dota2.building.BuildingImpl
+import com.github.mrbean355.dota2.json.transform.BuildingsTransformer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.decodeFromJsonElement
 import kotlinx.serialization.json.jsonObject
 
 private const val JsonKey = "buildings"
 
 internal object BuildingsFactory {
 
-    fun create(root: JsonObject): Map<String, Building>? {
-        return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
-            teams.jsonObject.map { (buildingId, building) ->
-                buildingId to Json.decodeFromJsonElement<BuildingImpl>(building)
-            }
-        }?.toMap()
+    fun createForPlayer(root: JsonObject): List<Building>? {
+        val teamBuildings = createForSpectator(root) ?: return null
+        val team = teamBuildings.keys.firstOrNull() ?: return emptyList()
+        return teamBuildings[team]
+    }
+
+    fun createForSpectator(root: JsonObject): Map<String, List<Building>>? {
+        return root[JsonKey]?.jsonObject?.mapValues { (_, buildings) ->
+            Json.decodeFromJsonElement(BuildingsTransformer, buildings)
+        }
     }
 }

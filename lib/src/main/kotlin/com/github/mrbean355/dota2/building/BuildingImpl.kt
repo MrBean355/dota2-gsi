@@ -21,6 +21,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 internal data class BuildingImpl(
+    @SerialName("name") override val name: String,
     @SerialName("health") override val health: Int,
     @SerialName("max_health") override val maxHealth: Int
 ) : Building

@@ -29,7 +29,7 @@ internal object SpectatingGameStateFactory {
             heroes = HeroFactory.createForSpectator(root),
             abilities = AbilitiesFactory.createForSpectator(root),
             items = ItemsFactory.createForSpectator(root),
-            buildings = BuildingsFactory.create(root),
+            buildings = BuildingsFactory.createForSpectator(root),
             wearables = WearablesFactory.createForSpectator(root),
             draft = DraftFactory.createForSpectator(root),
         )

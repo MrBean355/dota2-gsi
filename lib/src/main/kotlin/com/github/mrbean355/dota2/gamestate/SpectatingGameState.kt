@@ -35,7 +35,7 @@ data class SpectatingGameState(
     val heroes: Map<String, SpectatedHero>?,
     val abilities: Map<String, List<Ability>>?,
     val items: Map<String, Items>?,
-    val buildings: Map<String, Building>?,
+    val buildings: Map<String, List<Building>>?,
     val wearables: Map<String, List<Int>>?,
     val draft: Draft?,
 ) : GameState

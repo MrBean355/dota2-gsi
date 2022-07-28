@@ -17,6 +17,7 @@ public abstract interface annotation class com/github/mrbean355/dota2/annotation
 public abstract interface class com/github/mrbean355/dota2/building/Building {
 	public abstract fun getHealth ()I
 	public abstract fun getMaxHealth ()I
+	public abstract fun getName ()Ljava/lang/String;
 }
 
 public abstract interface class com/github/mrbean355/dota2/draft/Draft {
@@ -56,20 +57,20 @@ public final class com/github/mrbean355/dota2/gamestate/IdleGameState : com/gith
 }
 
 public final class com/github/mrbean355/dota2/gamestate/PlayingGameState : com/github/mrbean355/dota2/gamestate/GameState {
-	public fun <init> (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/PlayingMap;Lcom/github/mrbean355/dota2/player/Player;Lcom/github/mrbean355/dota2/hero/Hero;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Items;Ljava/util/Map;Ljava/util/List;)V
+	public fun <init> (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/PlayingMap;Lcom/github/mrbean355/dota2/player/Player;Lcom/github/mrbean355/dota2/hero/Hero;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Items;Ljava/util/List;Ljava/util/List;)V
 	public final fun component1 ()Lcom/github/mrbean355/dota2/provider/Provider;
 	public final fun component2 ()Lcom/github/mrbean355/dota2/map/PlayingMap;
 	public final fun component3 ()Lcom/github/mrbean355/dota2/player/Player;
 	public final fun component4 ()Lcom/github/mrbean355/dota2/hero/Hero;
 	public final fun component5 ()Ljava/util/List;
 	public final fun component6 ()Lcom/github/mrbean355/dota2/item/Items;
-	public final fun component7 ()Ljava/util/Map;
+	public final fun component7 ()Ljava/util/List;
 	public final fun component8 ()Ljava/util/List;
-	public final fun copy (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/PlayingMap;Lcom/github/mrbean355/dota2/player/Player;Lcom/github/mrbean355/dota2/hero/Hero;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Items;Ljava/util/Map;Ljava/util/List;)Lcom/github/mrbean355/dota2/gamestate/PlayingGameState;
-	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/gamestate/PlayingGameState;Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/PlayingMap;Lcom/github/mrbean355/dota2/player/Player;Lcom/github/mrbean355/dota2/hero/Hero;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Items;Ljava/util/Map;Ljava/util/List;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/gamestate/PlayingGameState;
+	public final fun copy (Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/PlayingMap;Lcom/github/mrbean355/dota2/player/Player;Lcom/github/mrbean355/dota2/hero/Hero;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Items;Ljava/util/List;Ljava/util/List;)Lcom/github/mrbean355/dota2/gamestate/PlayingGameState;
+	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/gamestate/PlayingGameState;Lcom/github/mrbean355/dota2/provider/Provider;Lcom/github/mrbean355/dota2/map/PlayingMap;Lcom/github/mrbean355/dota2/player/Player;Lcom/github/mrbean355/dota2/hero/Hero;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Items;Ljava/util/List;Ljava/util/List;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/gamestate/PlayingGameState;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getAbilities ()Ljava/util/List;
-	public final fun getBuildings ()Ljava/util/Map;
+	public final fun getBuildings ()Ljava/util/List;
 	public final fun getHero ()Lcom/github/mrbean355/dota2/hero/Hero;
 	public final fun getItems ()Lcom/github/mrbean355/dota2/item/Items;
 	public final fun getMap ()Lcom/github/mrbean355/dota2/map/PlayingMap;

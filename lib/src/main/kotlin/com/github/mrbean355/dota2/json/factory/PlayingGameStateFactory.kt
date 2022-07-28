@@ -29,7 +29,7 @@ internal object PlayingGameStateFactory {
             hero = HeroFactory.createForPlayer(root),
             abilities = AbilitiesFactory.createForPlayer(root),
             items = ItemsFactory.createForPlayer(root),
-            buildings = BuildingsFactory.create(root),
+            buildings = BuildingsFactory.createForPlayer(root),
             wearables = WearablesFactory.createForPlayer(root),
         )
     }

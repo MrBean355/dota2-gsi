@@ -34,6 +34,6 @@ data class PlayingGameState(
     val hero: Hero?,
     val abilities: List<Ability>?,
     val items: Items?,
-    val buildings: Map<String, Building>?,
+    val buildings: List<Building>?,
     val wearables: List<Int>?,
 ) : GameState

@@ -23,6 +23,7 @@ import com.github.mrbean355.dota2.annotation.ExperimentalGameState
  */
 @ExperimentalGameState
 sealed interface Building {
+    val name: String
     val health: Int
     val maxHealth: Int
 }
