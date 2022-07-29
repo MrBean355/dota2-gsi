@@ -25,7 +25,7 @@ internal data class AbilityImpl(
     @SerialName("level") override val level: Int,
     @SerialName("can_cast") override val canCast: Boolean,
     @SerialName("passive") override val isPassive: Boolean,
-    @SerialName("ability_active") override val isAbilityActive: Boolean,
+    @SerialName("ability_active") override val isEnabled: Boolean,
     @SerialName("cooldown") override val cooldown: Int,
     @SerialName("ultimate") override val isUltimate: Boolean,
     @SerialName("charges") override val charges: Int? = null,

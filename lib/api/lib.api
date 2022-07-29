@@ -6,7 +6,7 @@ public abstract interface class com/github/mrbean355/dota2/ability/Ability {
 	public abstract fun getLevel ()I
 	public abstract fun getMaxCharges ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
-	public abstract fun isAbilityActive ()Z
+	public abstract fun isEnabled ()Z
 	public abstract fun isPassive ()Z
 	public abstract fun isUltimate ()Z
 }
