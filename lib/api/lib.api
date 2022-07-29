@@ -310,7 +310,7 @@ public abstract interface class com/github/mrbean355/dota2/player/Player {
 	public abstract fun getGoldReliable ()I
 	public abstract fun getGoldUnreliable ()I
 	public abstract fun getGpm ()I
-	public abstract fun getKillList ()Ljava/util/List;
+	public abstract fun getKillList ()Ljava/util/Map;
 	public abstract fun getKillStreak ()I
 	public abstract fun getKills ()I
 	public abstract fun getLastHits ()I
