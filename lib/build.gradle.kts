@@ -16,14 +16,19 @@ val artifactId by extra("dota2-gsi")
 version = "2.0.0-SNAPSHOT"
 
 dependencies {
-    api(libs.ktor.server.netty)
-    api(libs.ktor.server.contentNegotiation)
-    api(libs.ktor.serialization.kotlinx.json)
-    api(libs.kotlinx.serialization.json)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.contentNegotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.kotlinx.serialization.json)
 
     testImplementation(platform(testLibs.junit.bom))
     testImplementation(testLibs.junit.jupiter)
     testImplementation(testLibs.mockK)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
