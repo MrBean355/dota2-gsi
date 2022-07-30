@@ -22,7 +22,7 @@ import com.github.mrbean355.dota2.annotation.ExperimentalGameState
  * The in-progress draft of the match being spectated.
  */
 @ExperimentalGameState
-sealed interface Draft {
+interface Draft {
     val activeTeam: Int
     val isPick: Boolean
     val activeTeamTimeRemaining: Int

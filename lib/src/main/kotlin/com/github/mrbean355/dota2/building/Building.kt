@@ -22,7 +22,7 @@ import com.github.mrbean355.dota2.annotation.ExperimentalGameState
  * A building that is owned by a team in the match.
  */
 @ExperimentalGameState
-sealed interface Building {
+interface Building {
     val name: String
     val health: Int
     val maxHealth: Int

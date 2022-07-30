@@ -18,8 +18,9 @@ package com.github.mrbean355.dota2.hero
 
 /**
  * A hero that is being controlled by a player when the client is **spectating** the match.
- * See [Hero] for common properties.
+ *
+ * @see Hero
  */
-sealed interface SpectatedHero : Hero {
+interface SpectatedHero : Hero {
     val isSelectedUnit: Boolean
 }

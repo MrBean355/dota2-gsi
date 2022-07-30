@@ -22,7 +22,7 @@ import com.github.mrbean355.dota2.annotation.ExperimentalGameState
  * A hero that has been picked or banned during the draft.
  */
 @ExperimentalGameState
-sealed interface DraftHero {
+interface DraftHero {
     val id: Int
     val name: String
 }

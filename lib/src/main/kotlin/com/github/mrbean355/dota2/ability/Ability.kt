@@ -19,7 +19,7 @@ package com.github.mrbean355.dota2.ability
 /**
  * An ability slot that belongs to a hero.
  */
-sealed interface Ability {
+interface Ability {
     val name: String
     val level: Int
     val canCast: Boolean

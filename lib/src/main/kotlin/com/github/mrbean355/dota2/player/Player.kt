@@ -21,7 +21,7 @@ import com.github.mrbean355.dota2.map.Team
 /**
  * A player involved in the match.
  */
-sealed interface Player {
+interface Player {
     val steamId: String
     val name: String
     val activity: String

@@ -22,7 +22,7 @@ import com.github.mrbean355.dota2.annotation.ExperimentalGameState
  * The talent choices of a hero.
  */
 @ExperimentalGameState
-sealed interface TalentTree {
+interface TalentTree {
     val level10: TalentTreeChoice
     val level15: TalentTreeChoice
     val level20: TalentTreeChoice

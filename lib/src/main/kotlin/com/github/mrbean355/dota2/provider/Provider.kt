@@ -19,7 +19,7 @@ package com.github.mrbean355.dota2.provider
 /**
  * General information about the Dota 2 client.
  */
-sealed interface Provider {
+interface Provider {
     val name: String
     val appId: Int
     val version: Int

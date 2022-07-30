@@ -19,10 +19,10 @@ package com.github.mrbean355.dota2.draft
 import com.github.mrbean355.dota2.annotation.ExperimentalGameState
 
 /**
- * The in-progress draft of a team in the match being spectated..
+ * The in-progress draft of a team in the match being spectated.
  */
 @ExperimentalGameState
-sealed interface TeamDraft {
+interface TeamDraft {
     val isHomeTeam: Boolean
     val picks: List<DraftHero>
     val bans: List<DraftHero>
