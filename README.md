@@ -87,6 +87,14 @@ dependencies {
     // https://oss.sonatype.org/content/repositories/snapshots/com/github/mrbean355/dota2-gsi/
     implementation "com.github.mrbean355:dota2-gsi:x.x.x-SNAPSHOT"
 }
+
+// This is needed to tell Gradle to always check for new uploads of the snapshot.
+// Without this, Gradle will only check once per day.
+configurations.configureEach {
+    resolutionStrategy {
+        cacheChangingModulesFor(0, "seconds")
+    }
+}
 ```
 
 ## Contributing
