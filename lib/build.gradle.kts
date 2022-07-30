@@ -44,6 +44,7 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask> {
     moduleName.set(artifactId)
     dokkaSourceSets.named("main") {
         displayName.set("JVM")
+        includes.from("docs/module.md")
         sourceLink {
             localDirectory.set(file("src/main/kotlin"))
             remoteUrl.set(URL("https://github.com/MrBean355/dota2-gsi/blob/main/${project.name}/src/main/kotlin"))

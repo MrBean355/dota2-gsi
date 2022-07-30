@@ -53,12 +53,13 @@ Here's a simple example of how easy it is:
 
 ```kotlin
 fun main() {
-    // Create a server:
+    // Create a server which listens on the port configured during Dota setup:
     GameStateServer(44444)
         // Register one or more listeners: 
         .setPlayingListener { gameState ->
             // Do something with the received gameState object:
-            val gameTime = gameState.map?.clockTime
+            val clockTime = gameState.map?.clockTime
+            println("The clock time is $clockTime seconds.")
         }
         // Start the server, blocking the thread so the program doesn't immediately exit:
         .start() // Alternatively startAsync() will not block the thread.
