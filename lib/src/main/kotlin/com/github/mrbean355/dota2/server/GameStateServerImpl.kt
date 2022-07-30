@@ -36,6 +36,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
+import org.slf4j.LoggerFactory
 
 /**
  * Not for direct use; see [GameStateServer].
@@ -45,11 +46,14 @@ internal class GameStateServerImpl(
 ) : GameStateServer {
 
     private var authentication: Map<String, String> = emptyMap()
-    private var genericListener: GameStateServer.Listener<GameState> = GameStateServer.Listener { }
-    private var playingListener: GameStateServer.Listener<PlayingGameState> = GameStateServer.Listener { }
-    private var spectatingListener: GameStateServer.Listener<SpectatingGameState> = GameStateServer.Listener { }
-    private var idleListener: GameStateServer.Listener<IdleGameState> = GameStateServer.Listener { }
-    private var errorHandler: GameStateServer.ErrorHandler = GameStateServer.ErrorHandler { _, _ -> }
+    private var genericListener: GameStateServer.Listener<GameState>? = null
+    private var playingListener: GameStateServer.Listener<PlayingGameState>? = null
+    private var spectatingListener: GameStateServer.Listener<SpectatingGameState>? = null
+    private var idleListener: GameStateServer.Listener<IdleGameState>? = null
+    private var errorHandler: GameStateServer.ErrorHandler = GameStateServer.ErrorHandler { t, _ ->
+        LoggerFactory.getLogger(GameStateServerImpl::class.java)
+            .error("Error parsing game state! Set a custom error handler with setErrorHandler().", t)
+    }
 
     private val server: ApplicationEngine = embeddedServer(Netty, port) {
         routing {
@@ -111,11 +115,11 @@ internal class GameStateServerImpl(
                 authenticate(it)
                 parseGameState(it)
             }
-            genericListener(state)
+            genericListener?.invoke(state)
             when (state) {
-                is PlayingGameState -> playingListener(state)
-                is SpectatingGameState -> spectatingListener(state)
-                is IdleGameState -> idleListener(state)
+                is PlayingGameState -> playingListener?.invoke(state)
+                is SpectatingGameState -> spectatingListener?.invoke(state)
+                is IdleGameState -> idleListener?.invoke(state)
             }
         } catch (t: Throwable) {
             errorHandler(t, json)
