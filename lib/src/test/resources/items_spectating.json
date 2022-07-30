@@ -1,0 +1,825 @@
+{
+  "items": {
+    "team2": {
+      "player0": {
+        "slot0": {
+          "name": "item_urn_of_shadows",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 2
+        },
+        "slot1": {
+          "name": "item_branches",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot2": {
+          "name": "item_boots",
+          "purchaser": 0,
+          "passive": true
+        },
+        "slot3": {
+          "name": "item_magic_stick",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 5
+        },
+        "slot4": {
+          "name": "item_branches",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot5": {
+          "name": "item_wind_lace",
+          "purchaser": 0,
+          "passive": true
+        },
+        "slot6": {
+          "name": "empty"
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "empty"
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "empty"
+        },
+        "neutral0": {
+          "name": "empty"
+        }
+      },
+      "player1": {
+        "slot0": {
+          "name": "item_magic_wand",
+          "purchaser": 1,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot1": {
+          "name": "item_tranquil_boots",
+          "purchaser": 1,
+          "passive": true
+        },
+        "slot2": {
+          "name": "item_ring_of_basilius",
+          "purchaser": 1,
+          "passive": true
+        },
+        "slot3": {
+          "name": "item_ward_sentry",
+          "purchaser": 1,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "slot4": {
+          "name": "item_buckler",
+          "purchaser": 1,
+          "passive": true
+        },
+        "slot5": {
+          "name": "item_fluffy_hat",
+          "purchaser": 1,
+          "passive": true
+        },
+        "slot6": {
+          "name": "item_enchanted_mango",
+          "purchaser": 1,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "empty"
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "item_tpscroll",
+          "purchaser": 1,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 2
+        },
+        "neutral0": {
+          "name": "empty"
+        }
+      },
+      "player2": {
+        "slot0": {
+          "name": "item_branches",
+          "purchaser": 2,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot1": {
+          "name": "item_blades_of_attack",
+          "purchaser": 2,
+          "passive": true
+        },
+        "slot2": {
+          "name": "item_power_treads",
+          "purchaser": 2,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot3": {
+          "name": "item_gloves",
+          "purchaser": 2,
+          "passive": true
+        },
+        "slot4": {
+          "name": "item_blight_stone",
+          "purchaser": 2,
+          "passive": true
+        },
+        "slot5": {
+          "name": "item_magic_wand",
+          "purchaser": 2,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot6": {
+          "name": "item_branches",
+          "purchaser": 2,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot7": {
+          "name": "item_branches",
+          "purchaser": 2,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "empty"
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "empty"
+        },
+        "neutral0": {
+          "name": "empty"
+        }
+      },
+      "player3": {
+        "slot0": {
+          "name": "item_magic_wand",
+          "purchaser": 3,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 5
+        },
+        "slot1": {
+          "name": "item_soul_ring",
+          "purchaser": 3,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot2": {
+          "name": "item_arcane_boots",
+          "purchaser": 3,
+          "can_cast": false,
+          "cooldown": 40,
+          "passive": false
+        },
+        "slot3": {
+          "name": "empty"
+        },
+        "slot4": {
+          "name": "item_infused_raindrop",
+          "purchaser": 3,
+          "passive": true,
+          "charges": 3
+        },
+        "slot5": {
+          "name": "item_bracer",
+          "purchaser": 3,
+          "passive": true
+        },
+        "slot6": {
+          "name": "empty"
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "item_arcane_ring",
+          "purchaser": -1,
+          "can_cast": false,
+          "cooldown": 41,
+          "passive": false
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "empty"
+        },
+        "neutral0": {
+          "name": "empty"
+        }
+      },
+      "player4": {
+        "slot0": {
+          "name": "item_quelling_blade",
+          "purchaser": 4,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot1": {
+          "name": "item_wind_lace",
+          "purchaser": 4,
+          "passive": true
+        },
+        "slot2": {
+          "name": "item_mask_of_madness",
+          "purchaser": 4,
+          "can_cast": false,
+          "cooldown": 2,
+          "passive": false
+        },
+        "slot3": {
+          "name": "item_power_treads",
+          "purchaser": 4,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot4": {
+          "name": "empty"
+        },
+        "slot5": {
+          "name": "empty"
+        },
+        "slot6": {
+          "name": "empty"
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "empty"
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "item_tpscroll",
+          "purchaser": 4,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "neutral0": {
+          "name": "item_ocean_heart",
+          "purchaser": -1,
+          "passive": true
+        }
+      }
+    },
+    "team3": {
+      "player5": {
+        "slot0": {
+          "name": "item_quelling_blade",
+          "purchaser": 5,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot1": {
+          "name": "empty"
+        },
+        "slot2": {
+          "name": "item_buckler",
+          "purchaser": 5,
+          "passive": true
+        },
+        "slot3": {
+          "name": "item_ring_of_basilius",
+          "purchaser": 5,
+          "passive": true
+        },
+        "slot4": {
+          "name": "item_branches",
+          "purchaser": 5,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot5": {
+          "name": "empty"
+        },
+        "slot6": {
+          "name": "item_unstable_wand",
+          "purchaser": -1,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "item_lifesteal",
+          "purchaser": 5,
+          "passive": true
+        },
+        "stash1": {
+          "name": "item_blades_of_attack",
+          "purchaser": 5,
+          "passive": true
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "item_tpscroll",
+          "purchaser": 5,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "neutral0": {
+          "name": "item_broom_handle",
+          "purchaser": -1,
+          "passive": true
+        }
+      },
+      "player6": {
+        "slot0": {
+          "name": "empty"
+        },
+        "slot1": {
+          "name": "item_magic_stick",
+          "purchaser": 6,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 6
+        },
+        "slot2": {
+          "name": "item_soul_ring",
+          "purchaser": 6,
+          "can_cast": false,
+          "cooldown": 18,
+          "passive": false
+        },
+        "slot3": {
+          "name": "item_boots",
+          "purchaser": 6,
+          "passive": true
+        },
+        "slot4": {
+          "name": "item_wind_lace",
+          "purchaser": 6,
+          "passive": true
+        },
+        "slot5": {
+          "name": "item_smoke_of_deceit",
+          "purchaser": 6,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "slot6": {
+          "name": "empty"
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "empty"
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "item_tpscroll",
+          "purchaser": 6,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "neutral0": {
+          "name": "empty"
+        }
+      },
+      "player7": {
+        "slot0": {
+          "name": "item_faerie_fire",
+          "purchaser": 7,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot1": {
+          "name": "item_boots",
+          "purchaser": 7,
+          "passive": true
+        },
+        "slot2": {
+          "name": "item_bottle",
+          "purchaser": 7,
+          "contains_rune": "empty",
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot3": {
+          "name": "item_robe",
+          "purchaser": 7,
+          "passive": true
+        },
+        "slot4": {
+          "name": "item_blitz_knuckles",
+          "purchaser": 7,
+          "passive": true
+        },
+        "slot5": {
+          "name": "item_branches",
+          "purchaser": 7,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot6": {
+          "name": "item_branches",
+          "purchaser": 7,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "empty"
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "item_tpscroll",
+          "purchaser": 7,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "neutral0": {
+          "name": "empty"
+        }
+      },
+      "player8": {
+        "slot0": {
+          "name": "item_magic_stick",
+          "purchaser": 8,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot1": {
+          "name": "item_phase_boots",
+          "purchaser": 8,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot2": {
+          "name": "item_infused_raindrop",
+          "purchaser": 8,
+          "passive": true,
+          "charges": 3
+        },
+        "slot3": {
+          "name": "item_branches",
+          "purchaser": 8,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot4": {
+          "name": "item_lifesteal",
+          "purchaser": 8,
+          "passive": true
+        },
+        "slot5": {
+          "name": "item_quelling_blade",
+          "purchaser": 8,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot6": {
+          "name": "item_ward_sentry",
+          "purchaser": 8,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "slot7": {
+          "name": "item_branches",
+          "purchaser": 8,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot8": {
+          "name": "empty"
+        },
+        "stash0": {
+          "name": "empty"
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "empty"
+        },
+        "stash3": {
+          "name": "empty"
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "empty"
+        },
+        "teleport0": {
+          "name": "item_tpscroll",
+          "purchaser": 8,
+          "can_cast": false,
+          "cooldown": 14,
+          "passive": false,
+          "charges": 1
+        },
+        "neutral0": {
+          "name": "item_possessed_mask",
+          "purchaser": -1,
+          "passive": true
+        }
+      },
+      "player9": {
+        "slot0": {
+          "name": "item_urn_of_shadows",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot1": {
+          "name": "item_magic_wand",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 0
+        },
+        "slot2": {
+          "name": "item_aether_lens",
+          "purchaser": 0,
+          "passive": true
+        },
+        "slot3": {
+          "name": "empty"
+        },
+        "slot4": {
+          "name": "item_arcane_boots",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "slot5": {
+          "name": "empty"
+        },
+        "slot6": {
+          "name": "item_smoke_of_deceit",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "slot7": {
+          "name": "empty"
+        },
+        "slot8": {
+          "name": "item_bottle",
+          "purchaser": 0,
+          "contains_rune": "regen",
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 3
+        },
+        "stash0": {
+          "name": "item_aeon_disk",
+          "purchaser": 0,
+          "passive": true
+        },
+        "stash1": {
+          "name": "empty"
+        },
+        "stash2": {
+          "name": "item_tome_of_knowledge",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "stash3": {
+          "name": "item_gem",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false
+        },
+        "stash4": {
+          "name": "empty"
+        },
+        "stash5": {
+          "name": "item_ward_sentry",
+          "purchaser": 0,
+          "can_cast": true,
+          "cooldown": 0,
+          "passive": false,
+          "charges": 1
+        },
+        "teleport0": {
+          "name": "item_tpscroll",
+          "purchaser": 0,
+          "can_cast": false,
+          "cooldown": 60,
+          "passive": false,
+          "charges": 1
+        },
+        "neutral0": {
+          "name": "item_keen_optic",
+          "purchaser": -1,
+          "passive": true
+        }
+      }
+    }
+  }
+}

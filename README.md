@@ -1,112 +1,91 @@
-# Dota 2 Game State Integration
+# Dota 2 - Game State Integration - JVM
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mrbean355/dota2-gsi/badge.png)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
+[![Documentation](https://img.shields.io/badge/KDoc-GitHub%20Pages-B125EA)](https://mrbean355.github.io/dota2-gsi)
+[![Build project](https://github.com/MrBean355/dota2-gsi/actions/workflows/build-project.yml/badge.svg?branch=main)](https://github.com/MrBean355/dota2-gsi/actions/workflows/build-project.yml)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=coverage)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
 
-This library is a Java/Kotlin wrapper for receiving game state updates from Dota 2.
+This is a JVM library that **aims to make working with Dota 2's Game State Integration simple**. Game State
+Integration (GSI) is a feature built into Dota 2 that allows us to ask Dota to periodically send us information on the
+current game state. You can find more information
+on [Valve's Developer Wiki for CS:GO](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration)
+(the same applies to Dota 2).
 
-Game State Integration (GSI) is a feature built into Dota 2 that sends JSON data on the current game state. This data
-can be examined to perform the necessary actions. For example, play a notification sound shortly before the bounty runes
-spawn every 3 minutes.
+In the simplest terms, the library starts up a local server which listens for game state information from the Dota 2
+client. It then deserializes this JSON data into type-safe objects for developers to work with.
 
-This is the mechanism that is used to create those fancy overlays seen at the tournaments.
+**Why use a library for this?** The JSON data that Dota sends can vary significantly in structure, which makes simple
+parsing very tricky. Specifically, the structure is different when the Dota client is playing a match compared to when
+it is spectating a match. This library aims to remove this worry from the developer, and simply exposes type-safe
+objects to work with.
 
-## Try It Out
+## Getting Set Up
 
-To get started, add a dependency on the library. Next, create a game state integration file in your Dota 2 folder.
-Finally, write some code to start receiving game state updates!
-
-### Add The Dependency
-
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mrbean355/dota2-gsi/badge.png)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
-
-The library is published to Maven Central. Update your `build.gradle` file as follows. Other build systems (e.g. Maven)
-hopefully have their own way of doing this.
-
-```groovy
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    // Check the Maven Central badge (above) for the latest stable version. 
-    implementation "com.github.mrbean355:dota2-gsi:$latestVersion"
-}
-```
-
-The library is built with JDK 8, using these dependencies:
-
-- Ktor
-- Kotlin Standard Library
-
-Check the [settings file](settings.gradle.kts) to see what versions are being used. They will be transitively pulled
-into your project, along with their own dependencies.
-
-### Set Up Dota 2
-
-In order for Dota 2 to send data on the current game state, a simple text file must be created. Navigate to this folder
-within your Dota 2 installation folder, creating folders that don't exist already:
-
-```
-dota 2 beta/game/dota/cfg/gamestate_integration
-```
-
-Next create a new text file inside this folder named `gamestate_integration_*.cfg`, for example:
-
-```
-gamestate_integration_test.cfg
-```
-
-Open the file in a text editor and add this content:
-
-```
-"My GSI test"
-{
-    "uri"           "http://localhost:44444"
-    "timeout"       "5.0"
-    "buffer"        "0.1"
-    "throttle"      "0.1"
-    "heartbeat"     "30.0"
-    "data"
-    {
-        "provider"      "1"
-        "map"           "1"
-        "player"        "1"
-        "hero"          "1"
-        "abilities"     "1"
-        "items"         "1"
-    }
-}
-```
-
-Note that you can change the port number (`44444`) if necessary.
+1. [**Set up your Dota 2 client**](https://github.com/MrBean355/dota2-gsi/wiki/Dota-2-Setup) to send game state
+   information to your program.
+2. [**Add the dependency**](https://github.com/MrBean355/dota2-gsi/wiki/Library-Guide#add-the-dependency) to your
+   project.
 
 ## Sample Code
 
-Have a look at the simple [demo project](demo/src/main/kotlin/Main.kt) for some sample code.
+### Kotlin
 
-## Snapshots
-
-You can try out the latest snapshots (built from the `develop` branch). Note that these are development versions, and
-will likely be unstable. Update your `build.gradle` file to point to the snapshots repository:
-
-```groovy
-repositories {
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
-}
-
-dependencies {
-    // Check this Maven Central page for the latest snapshot version:
-    // https://oss.sonatype.org/content/repositories/snapshots/com/github/mrbean355/dota2-gsi/
-    implementation "com.github.mrbean355:dota2-gsi:$latestSnapshotVersion"
+```kotlin
+fun main() {
+    // Create a server which listens on the port configured during Dota setup:
+    GameStateServer(44444)
+        // Register one or more listeners: 
+        .setPlayingListener { gameState ->
+            // Do something with the received gameState object:
+            val clockTime = gameState.map?.clockTime
+            println("The clock time is $clockTime seconds.")
+        }
+        // Start the server, blocking the thread so the program doesn't immediately exit:
+        .start() // Alternatively startAsync() will not block the thread.
 }
 ```
 
-## Contributing
+### Java
 
-Contributions are welcome! This includes pull requests as well as suggestions of things you'd like to see in the
-library. Feel free to [create a GitHub issue](https://github.com/MrBean355/dota2-gsi/issues) to provide your feedback.
+```java
+public class GsiDemo {
+
+    public static void main(String[] args) {
+        // Create a server which listens on the port configured during Dota setup:
+        GameStateServer.create(44444)
+                // Register one or more listeners: 
+                .setPlayingListener(gameState -> {
+                    // Do something with the received gameState object:
+                    if (gameState.getMap() != null) {
+                        int clockTime = gameState.getMap().getClockTime();
+                        System.out.println("The clock time is " + clockTime + " seconds.");
+                    }
+                })
+                // Start the server, blocking the thread so the program doesn't immediately exit:
+                .start(); // Alternatively startAsync() will not block the thread.
+    }
+}
+```
+
+## Additional Resources
+
+- The project's [Wiki](https://github.com/MrBean355/dota2-gsi/wiki).
+- The full [API reference](https://mrbean355.github.io/dota2-gsi).
+- The
+  [demo project](https://github.com/MrBean355/dota2-gsi/tree/main/demo/src/main/java/com/github/mrbean355/dota2/demo)
+  has some more involved examples.
+
+## Snapshots
+
+Snapshots of the current in-development release are also published to Maven Central. You can use them in your project as
+well, but are likely to be unstable. You can find
+[more information on the Wiki](https://github.com/MrBean355/dota2-gsi/wiki/Library-Guide#snapshots).
+
+## Feedback
+
+Feedback on the library is always welcomed and appreciated! Whether it's bug reports, suggestions, or even just
+questions, please let me know by creating an [issue](https://github.com/MrBean355/dota2-gsi/issues) or
+[discussion](https://github.com/MrBean355/dota2-gsi/discussions) on this GitHub repository.
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)

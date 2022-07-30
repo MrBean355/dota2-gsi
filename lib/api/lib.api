@@ -1,0 +1,334 @@
+public abstract interface class com/github/mrbean355/dota2/ability/Ability {
+	public abstract fun getCanCast ()Z
+	public abstract fun getChargeCooldown ()Ljava/lang/Integer;
+	public abstract fun getCharges ()Ljava/lang/Integer;
+	public abstract fun getCooldown ()I
+	public abstract fun getLevel ()I
+	public abstract fun getMaxCharges ()Ljava/lang/Integer;
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun isEnabled ()Z
+	public abstract fun isPassive ()Z
+	public abstract fun isUltimate ()Z
+}
+
+public abstract interface annotation class com/github/mrbean355/dota2/annotation/ExperimentalGameState : java/lang/annotation/Annotation {
+}
+
+public abstract interface class com/github/mrbean355/dota2/building/Building {
+	public abstract fun getHealth ()I
+	public abstract fun getMaxHealth ()I
+	public abstract fun getName ()Ljava/lang/String;
+}
+
+public abstract interface class com/github/mrbean355/dota2/draft/Draft {
+	public abstract fun getActiveTeam ()I
+	public abstract fun getActiveTeamTimeRemaining ()I
+	public abstract fun getDireBonusTime ()I
+	public abstract fun getDireDraft ()Lcom/github/mrbean355/dota2/draft/TeamDraft;
+	public abstract fun getRadiantBonusTime ()I
+	public abstract fun getRadiantDraft ()Lcom/github/mrbean355/dota2/draft/TeamDraft;
+	public abstract fun isPick ()Z
+}
+
+public abstract interface class com/github/mrbean355/dota2/draft/DraftHero {
+	public abstract fun getId ()I
+	public abstract fun getName ()Ljava/lang/String;
+}
+
+public abstract interface class com/github/mrbean355/dota2/draft/TeamDraft {
+	public abstract fun getBans ()Ljava/util/List;
+	public abstract fun getPicks ()Ljava/util/List;
+	public abstract fun isHomeTeam ()Z
+}
+
+public abstract interface class com/github/mrbean355/dota2/gamestate/GameState {
+}
+
+public abstract interface class com/github/mrbean355/dota2/gamestate/IdleGameState : com/github/mrbean355/dota2/gamestate/GameState {
+	public abstract fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
+}
+
+public abstract interface class com/github/mrbean355/dota2/gamestate/PlayingGameState : com/github/mrbean355/dota2/gamestate/GameState {
+	public abstract fun getAbilities ()Ljava/util/List;
+	public abstract fun getBuildings ()Ljava/util/List;
+	public abstract fun getHero ()Lcom/github/mrbean355/dota2/hero/Hero;
+	public abstract fun getItems ()Lcom/github/mrbean355/dota2/item/Items;
+	public abstract fun getMap ()Lcom/github/mrbean355/dota2/map/PlayingMap;
+	public abstract fun getPlayer ()Lcom/github/mrbean355/dota2/player/Player;
+	public abstract fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
+	public abstract fun getWearables ()Ljava/util/List;
+}
+
+public abstract interface class com/github/mrbean355/dota2/gamestate/SpectatingGameState : com/github/mrbean355/dota2/gamestate/GameState {
+	public abstract fun getAbilities ()Ljava/util/Map;
+	public abstract fun getBuildings ()Ljava/util/Map;
+	public abstract fun getDraft ()Lcom/github/mrbean355/dota2/draft/Draft;
+	public abstract fun getHeroes ()Ljava/util/Map;
+	public abstract fun getItems ()Ljava/util/Map;
+	public abstract fun getMap ()Lcom/github/mrbean355/dota2/map/SpectatedMap;
+	public abstract fun getPlayers ()Ljava/util/Map;
+	public abstract fun getProvider ()Lcom/github/mrbean355/dota2/provider/Provider;
+	public abstract fun getWearables ()Ljava/util/Map;
+}
+
+public abstract interface class com/github/mrbean355/dota2/hero/Hero {
+	public abstract fun getBuybackCooldown ()I
+	public abstract fun getBuybackCost ()I
+	public abstract fun getHasAghanimsScepter ()Z
+	public abstract fun getHasAghanimsShard ()Z
+	public abstract fun getHasDebuff ()Z
+	public abstract fun getHealth ()I
+	public abstract fun getHealthPercent ()I
+	public abstract fun getId ()I
+	public abstract fun getLevel ()I
+	public abstract fun getMana ()I
+	public abstract fun getManaPercent ()I
+	public abstract fun getMaxHealth ()I
+	public abstract fun getMaxMana ()I
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getRespawnTimer ()I
+	public abstract fun getTalentTree ()Lcom/github/mrbean355/dota2/hero/talent/TalentTree;
+	public abstract fun getXPos ()I
+	public abstract fun getXp ()I
+	public abstract fun getYPos ()I
+	public abstract fun isAlive ()Z
+	public abstract fun isBroken ()Z
+	public abstract fun isDisarmed ()Z
+	public abstract fun isHexed ()Z
+	public abstract fun isMagicImmune ()Z
+	public abstract fun isMuted ()Z
+	public abstract fun isSilenced ()Z
+	public abstract fun isSmoked ()Z
+	public abstract fun isStunned ()Z
+}
+
+public abstract interface class com/github/mrbean355/dota2/hero/SpectatedHero : com/github/mrbean355/dota2/hero/Hero {
+	public abstract fun isSelectedUnit ()Z
+}
+
+public abstract interface class com/github/mrbean355/dota2/hero/talent/TalentTree {
+	public abstract fun getLevel10 ()Lcom/github/mrbean355/dota2/hero/talent/TalentTreeChoice;
+	public abstract fun getLevel15 ()Lcom/github/mrbean355/dota2/hero/talent/TalentTreeChoice;
+	public abstract fun getLevel20 ()Lcom/github/mrbean355/dota2/hero/talent/TalentTreeChoice;
+	public abstract fun getLevel25 ()Lcom/github/mrbean355/dota2/hero/talent/TalentTreeChoice;
+}
+
+public abstract interface class com/github/mrbean355/dota2/hero/talent/TalentTreeChoice {
+	public abstract fun getHasLeft ()Z
+	public abstract fun getHasRight ()Z
+}
+
+public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum {
+	public static final field Arcane Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Companion Lcom/github/mrbean355/dota2/item/BottledRune$Companion;
+	public static final field DoubleDamage Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Empty Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Haste Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Illusion Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Invisibility Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Regeneration Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Water Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static fun values ()[Lcom/github/mrbean355/dota2/item/BottledRune;
+}
+
+public final class com/github/mrbean355/dota2/item/BottledRune$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/github/mrbean355/dota2/item/BottledRune$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/item/BottledRune;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/item/BottledRune;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/github/mrbean355/dota2/item/BottledRune$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class com/github/mrbean355/dota2/item/Item {
+	public abstract fun getBottledRune ()Lcom/github/mrbean355/dota2/item/BottledRune;
+	public abstract fun getCanCast ()Ljava/lang/Boolean;
+	public abstract fun getCharges ()Ljava/lang/Integer;
+	public abstract fun getCooldown ()Ljava/lang/Integer;
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getPurchaser ()Ljava/lang/Integer;
+	public abstract fun isPassive ()Ljava/lang/Boolean;
+}
+
+public final class com/github/mrbean355/dota2/item/Items {
+	public fun <init> (Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;)V
+	public final fun component1 ()Ljava/util/List;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Lcom/github/mrbean355/dota2/item/Item;
+	public final fun component4 ()Lcom/github/mrbean355/dota2/item/Item;
+	public final fun copy (Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;)Lcom/github/mrbean355/dota2/item/Items;
+	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/item/Items;Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/item/Items;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getInventory ()Ljava/util/List;
+	public final fun getNeutral ()Lcom/github/mrbean355/dota2/item/Item;
+	public final fun getStash ()Ljava/util/List;
+	public final fun getTeleport ()Lcom/github/mrbean355/dota2/item/Item;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/github/mrbean355/dota2/map/DotaMap {
+	public abstract fun getClockTime ()I
+	public abstract fun getCustomGameName ()Ljava/lang/String;
+	public abstract fun getGameTime ()I
+	public abstract fun getMatchId ()Ljava/lang/String;
+	public abstract fun getMatchState ()Lcom/github/mrbean355/dota2/map/MatchState;
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getWinningTeam ()Lcom/github/mrbean355/dota2/map/Team;
+	public abstract fun isDaytime ()Z
+	public abstract fun isNightStalkerNight ()Z
+	public abstract fun isPaused ()Z
+}
+
+public final class com/github/mrbean355/dota2/map/MatchState : java/lang/Enum {
+	public static final field Companion Lcom/github/mrbean355/dota2/map/MatchState$Companion;
+	public static final field CustomGameSetup Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field Disconnect Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field GameInProgress Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field HeroSelection Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field Init Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field Last Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field PostGame Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field PreGame Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field StrategyTime Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field TeamShowcase Lcom/github/mrbean355/dota2/map/MatchState;
+	public static final field WaitForPlayersToLoad Lcom/github/mrbean355/dota2/map/MatchState;
+	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/map/MatchState;
+	public static fun values ()[Lcom/github/mrbean355/dota2/map/MatchState;
+}
+
+public final class com/github/mrbean355/dota2/map/MatchState$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/github/mrbean355/dota2/map/MatchState$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/map/MatchState;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/map/MatchState;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/github/mrbean355/dota2/map/MatchState$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class com/github/mrbean355/dota2/map/PlayingMap : com/github/mrbean355/dota2/map/DotaMap {
+	public abstract fun getWardPurchaseCooldown ()I
+}
+
+public abstract interface class com/github/mrbean355/dota2/map/SpectatedMap : com/github/mrbean355/dota2/map/DotaMap {
+	public abstract fun getDireWardPurchaseCooldown ()I
+	public abstract fun getRadiantWardPurchaseCooldown ()I
+	public abstract fun getRadiantWinChance ()I
+	public abstract fun getRoshanState ()Ljava/lang/String;
+	public abstract fun getRoshanStateEndTimer ()I
+}
+
+public final class com/github/mrbean355/dota2/map/Team : java/lang/Enum {
+	public static final field Companion Lcom/github/mrbean355/dota2/map/Team$Companion;
+	public static final field Dire Lcom/github/mrbean355/dota2/map/Team;
+	public static final field None Lcom/github/mrbean355/dota2/map/Team;
+	public static final field Radiant Lcom/github/mrbean355/dota2/map/Team;
+	public static final field Spectator Lcom/github/mrbean355/dota2/map/Team;
+	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/map/Team;
+	public static fun values ()[Lcom/github/mrbean355/dota2/map/Team;
+}
+
+public final class com/github/mrbean355/dota2/map/Team$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Lcom/github/mrbean355/dota2/map/Team$$serializer;
+	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/map/Team;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/map/Team;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class com/github/mrbean355/dota2/map/Team$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class com/github/mrbean355/dota2/player/Player {
+	public abstract fun getActivity ()Ljava/lang/String;
+	public abstract fun getAssists ()I
+	public abstract fun getCommandsIssued ()I
+	public abstract fun getDeaths ()I
+	public abstract fun getDenies ()I
+	public abstract fun getGold ()I
+	public abstract fun getGoldFromCreepKills ()I
+	public abstract fun getGoldFromHeroKills ()I
+	public abstract fun getGoldFromIncome ()I
+	public abstract fun getGoldFromShared ()I
+	public abstract fun getGoldReliable ()I
+	public abstract fun getGoldUnreliable ()I
+	public abstract fun getGpm ()I
+	public abstract fun getKillList ()Ljava/util/Map;
+	public abstract fun getKillStreak ()I
+	public abstract fun getKills ()I
+	public abstract fun getLastHits ()I
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getSteamId ()Ljava/lang/String;
+	public abstract fun getTeam ()Lcom/github/mrbean355/dota2/map/Team;
+	public abstract fun getXpm ()I
+}
+
+public abstract interface class com/github/mrbean355/dota2/player/SpectatedPlayer : com/github/mrbean355/dota2/player/Player {
+	public abstract fun getCampsStacked ()I
+	public abstract fun getConsumableGoldSpent ()I
+	public abstract fun getGoldLostToDeath ()I
+	public abstract fun getGoldSpentOnBuybacks ()I
+	public abstract fun getHeroDamage ()I
+	public abstract fun getId ()Ljava/lang/String;
+	public abstract fun getItemGoldSpent ()I
+	public abstract fun getNetWorth ()I
+	public abstract fun getRunesActivated ()I
+	public abstract fun getSupportGoldSpent ()I
+	public abstract fun getWardsDestroyed ()I
+	public abstract fun getWardsPlaced ()I
+	public abstract fun getWardsPurchased ()I
+}
+
+public abstract interface class com/github/mrbean355/dota2/provider/Provider {
+	public abstract fun getAppId ()I
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getTimestamp ()J
+	public abstract fun getVersion ()I
+}
+
+public abstract interface class com/github/mrbean355/dota2/server/GameStateServer {
+	public static final field Companion Lcom/github/mrbean355/dota2/server/GameStateServer$Companion;
+	public static fun create (I)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun requireAuthentication (Ljava/util/Map;)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun setErrorHandler (Lcom/github/mrbean355/dota2/server/GameStateServer$ErrorHandler;)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun setGenericListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun setIdleListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun setPlayingListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun setSpectatingListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun start ()Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun startAsync ()Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun stop (JJ)V
+}
+
+public final class com/github/mrbean355/dota2/server/GameStateServer$Companion {
+	public final fun create (I)Lcom/github/mrbean355/dota2/server/GameStateServer;
+}
+
+public abstract interface class com/github/mrbean355/dota2/server/GameStateServer$ErrorHandler {
+	public abstract fun invoke (Ljava/lang/Throwable;Ljava/lang/String;)V
+}
+
+public abstract interface class com/github/mrbean355/dota2/server/GameStateServer$Listener {
+	public abstract fun invoke (Lcom/github/mrbean355/dota2/gamestate/GameState;)V
+}
+

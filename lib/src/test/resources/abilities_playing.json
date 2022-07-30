@@ -1,0 +1,70 @@
+{
+  "abilities": {
+    "ability0": {
+      "name": "earth_spirit_boulder_smash",
+      "level": 2,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": true,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability1": {
+      "name": "earth_spirit_rolling_boulder",
+      "level": 2,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": true,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability2": {
+      "name": "earth_spirit_geomagnetic_grip",
+      "level": 1,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": true,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability3": {
+      "name": "earth_spirit_stone_caller",
+      "level": 1,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": true,
+      "cooldown": 0,
+      "ultimate": false,
+      "charges": 6,
+      "max_charges": 7,
+      "charge_cooldown": 12
+    },
+    "ability4": {
+      "name": "earth_spirit_magnetize",
+      "level": 1,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": true,
+      "cooldown": 0,
+      "ultimate": true
+    },
+    "ability5": {
+      "name": "plus_high_five",
+      "level": 1,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": true,
+      "cooldown": 0,
+      "ultimate": false
+    },
+    "ability6": {
+      "name": "plus_guild_banner",
+      "level": 1,
+      "can_cast": true,
+      "passive": false,
+      "ability_active": true,
+      "cooldown": 0,
+      "ultimate": false
+    }
+  }
+}

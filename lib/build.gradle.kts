@@ -1,8 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.net.URL
 
 plugins {
     kotlin("jvm")
+    kotlin("plugin.serialization")
     id("org.jetbrains.dokka")
+    id("org.jetbrains.kotlinx.binary-compatibility-validator")
     id("jacoco")
     id("org.sonarqube")
     `maven-publish`
@@ -10,19 +12,49 @@ plugins {
 }
 
 group = "com.github.mrbean355"
-ext {
-    set("artifactId", "dota2-gsi")
-}
-version = "1.2.0"
+val artifactId by extra("dota2-gsi")
+version = "2.0.0"
 
 dependencies {
-    api(libs.ktor.server.netty)
-    api(libs.ktor.server.contentNegotiation)
-    api(libs.ktor.serialization.gson)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.contentNegotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.kotlinx.serialization.json)
+
+    testImplementation(platform(testLibs.junit.bom))
+    testImplementation(testLibs.junit.jupiter)
+    testImplementation(testLibs.mockK)
 }
 
-tasks.withType<KotlinCompile> {
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.freeCompilerArgs += "-opt-in=com.github.mrbean355.dota2.annotation.ExperimentalGameState"
+}
+
+tasks.withType<Jar> {
+    archiveBaseName.set(artifactId)
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask> {
+    moduleName.set(artifactId)
+    dokkaSourceSets.named("main") {
+        displayName.set("JVM")
+        includes.from("docs/module.md")
+        sourceLink {
+            localDirectory.set(file("src/main/kotlin"))
+            remoteUrl.set(URL("https://github.com/MrBean355/dota2-gsi/blob/main/${project.name}/src/main/kotlin"))
+            remoteLineSuffix.set("#L")
+        }
+    }
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 tasks.withType(JacocoReport::class.java) {
@@ -43,7 +75,6 @@ sonarqube {
 
 java {
     withSourcesJar()
-    withJavadocJar()
 }
 
 publishing {
@@ -67,7 +98,7 @@ publishing {
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
-                        url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
                         distribution.set("repo")
                     }
                 }

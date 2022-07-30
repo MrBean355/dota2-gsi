@@ -1,11 +1,11 @@
 /*
- * Copyright 2021 Michael Johnston
+ * Copyright 2022 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *    https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,93 +16,120 @@
 
 package com.github.mrbean355.dota2.server
 
-import com.github.mrbean355.dota2.GameState
-import com.github.mrbean355.dota2.json.AbilitiesDeserializer
-import com.github.mrbean355.dota2.json.HeroesDeserializer
-import com.github.mrbean355.dota2.json.ItemsDeserializer
-import com.github.mrbean355.dota2.json.KillListDeserializer
-import com.github.mrbean355.dota2.json.PlayersDeserializer
-import com.github.mrbean355.dota2.util.registerTypeAdapter
-import io.ktor.http.HttpStatusCode.Companion.OK
-import io.ktor.serialization.gson.gson
-import io.ktor.server.application.call
-import io.ktor.server.application.install
-import io.ktor.server.engine.ApplicationEngine
-import io.ktor.server.engine.embeddedServer
-import io.ktor.server.netty.Netty
-import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.server.request.receive
-import io.ktor.server.response.respond
-import io.ktor.server.routing.post
-import io.ktor.server.routing.routing
-import org.slf4j.LoggerFactory
+import com.github.mrbean355.dota2.gamestate.GameState
+import com.github.mrbean355.dota2.gamestate.IdleGameState
+import com.github.mrbean355.dota2.gamestate.PlayingGameState
+import com.github.mrbean355.dota2.gamestate.SpectatingGameState
 
 /**
  * Server which listens for game state updates from Dota 2.
  *
- * The Dota client must be configured to send updates to the server.
- * Create a text file like `gamestate_integration_test.cfg` in the folder:
+ * Make sure the Dota client is set up to send game state updates.
+ * Find more information [here](https://github.com/MrBean355/dota2-gsi).
+ *
+ * Create an instance in Kotlin with the factory function:
  * ```
- * dota 2 beta/game/dota/cfg/gamestate_integration/
+ * val server = GameStateServer(portNumber)
  * ```
- * With contents like:
+ * Or in Java:
  * ```
- * "My GSI test"
- * {
- *     "uri"           "http://localhost:44444"
- *     "timeout"       "5.0"
- *     "buffer"        "0.1"
- *     "throttle"      "0.1"
- *     "heartbeat"     "30.0"
- *     "data"
- *     {
- *         "provider"      "1"
- *         "map"           "1"
- *         "player"        "1"
- *         "hero"          "1"
- *         "abilities"     "1"
- *         "items"         "1"
- *     }
- * }
+ * GameStateServer server = GameStateServer.create(portNumber);
  * ```
- * Note that the port (`44444`) can be changed to any valid port.
+ * Peruse the below functions to see what is available.
  */
-class GameStateServer(
-    port: Int,
-    private val listener: GameStateListener
-) {
-    private val server: ApplicationEngine = embeddedServer(Netty, port) {
-        install(ContentNegotiation) {
-            gson {
-                registerTypeAdapter(AbilitiesDeserializer())
-                registerTypeAdapter(HeroesDeserializer())
-                registerTypeAdapter(KillListDeserializer())
-                registerTypeAdapter(ItemsDeserializer())
-                registerTypeAdapter(PlayersDeserializer())
-            }
-        }
-        routing {
-            post {
-                try {
-                    listener(call.receive())
-                } catch (t: Throwable) {
-                    LoggerFactory.getLogger("GameStateServer").error("Error receiving game state", t)
-                }
-                call.respond(OK)
-            }
-        }
-    }
+interface GameStateServer {
 
     /**
-     * Starts this server.
+     * Set a listener to get called when a "generic" game state update happens.
+     * This will be called when the client is playing or spectating a match.
      *
-     * @param wait if true, this function does not return until the server is stopped.
+     * @param listener Listener to set.
      * @return this object.
      */
-    fun start(wait: Boolean): GameStateServer {
-        server.start(wait)
-        return this
-    }
+    fun setGenericListener(listener: Listener<GameState>): GameStateServer
+
+    /**
+     * Set a listener to get called when a "playing" game state update happens.
+     * This will only be called when the client is playing a match (not when spectating).
+     *
+     * @param listener Listener to set.
+     * @return this object.
+     */
+    fun setPlayingListener(listener: Listener<PlayingGameState>): GameStateServer
+
+    /**
+     * Set a listener to get called when a "spectating" game state update happens.
+     * This will only be called when the client is spectating a match (not when playing).
+     *
+     * @param listener Listener to set.
+     * @return this object.
+     */
+    fun setSpectatingListener(listener: Listener<SpectatingGameState>): GameStateServer
+
+    /**
+     * Set a listener to get called when an "idle" game state update happens.
+     * This will only be called when the client is neither playing nor spectating a match.
+     * This usually happens when the client is on the main menu.
+     *
+     * @param listener Listener to set.
+     * @return this object.
+     */
+    fun setIdleListener(listener: Listener<IdleGameState>): GameStateServer
+
+    /**
+     * Set a handler to get called when an exception is thrown during JSON deserialization.
+     * Errors can happen when the data returned from Dota 2 is in an unexpected format.
+     * Please consider [reporting such errors](https://github.com/MrBean355/dota2-gsi/issues),
+     * along with the JSON received in the [handler].
+     *
+     * @param handler Handler to set.
+     * @return this object.
+     */
+    fun setErrorHandler(handler: ErrorHandler): GameStateServer
+
+    /**
+     * Optionally authenticate data coming from the Dota client using the `auth` section in
+     * the Game State Integration config file. If data is received without the expected
+     * authentication, it will be ignored and the error handler will be notified.
+     *
+     * There can be any number of keys and values inside the `auth` block. The keys and values
+     * can be any valid strings (wrapped in double quotes).
+     *
+     * For example, in the config file:
+     * ```
+     * "auth"
+     * {
+     *   "token1" "2ec6f84406fb"
+     *   "token2" "18156144b841"
+     * }
+     * ```
+     * When creating the server:
+     * ```
+     * GameStateServer(port).requireAuthentication(
+     *     mapOf(
+     *         "token1" to "2ec6f84406fb",
+     *         "token2" to "18156144b841"
+     *     )
+     * )
+     * ```
+     */
+    fun requireAuthentication(auth: Map<String, String>): GameStateServer
+
+    /**
+     * Starts this server, blocking the current thread until the server is stopped.
+     * **This function will NOT return until [stop] is called.**
+     *
+     * @return this object.
+     */
+    fun start(): GameStateServer
+
+    /**
+     * Starts this server without blocking the current thread.
+     * **This function will return immediately.**
+     *
+     * @return this object.
+     */
+    fun startAsync(): GameStateServer
 
     /**
      * Stops this server.
@@ -110,11 +137,38 @@ class GameStateServer(
      * @param gracePeriodMillis the maximum amount of time for activity to cool down.
      * @param timeoutMillis the maximum amount of time to wait until server stops gracefully.
      */
-    fun stop(gracePeriodMillis: Long, timeoutMillis: Long) {
-        server.stop(gracePeriodMillis, timeoutMillis)
-    }
-}
+    fun stop(gracePeriodMillis: Long, timeoutMillis: Long)
 
-fun interface GameStateListener {
-    operator fun invoke(gameState: GameState)
+    fun interface Listener<T : GameState> {
+
+        /**
+         * @param gameState Deserialized game state, see [GameState] subclasses.
+         */
+        operator fun invoke(gameState: T)
+
+    }
+
+    fun interface ErrorHandler {
+
+        /**
+         * @param throwable The throwable that was thrown.
+         * @param json The JSON blob from Dota that caused the error.
+         */
+        operator fun invoke(throwable: Throwable, json: String)
+
+    }
+
+    companion object {
+
+        /**
+         * Create a new instance of a [GameStateServer].
+         *
+         * @param port GSI port number, as configured in the .cfg file.
+         */
+        @JvmStatic
+        @JvmName("create")
+        operator fun invoke(port: Int): GameStateServer {
+            return GameStateServerImpl(port)
+        }
+    }
 }

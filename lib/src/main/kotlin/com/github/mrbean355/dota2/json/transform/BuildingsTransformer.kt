@@ -1,0 +1,70 @@
+/*
+ * Copyright 2022 Michael Johnston
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.github.mrbean355.dota2.json.transform
+
+import com.github.mrbean355.dota2.building.Building
+import com.github.mrbean355.dota2.building.BuildingImpl
+import kotlinx.serialization.builtins.ListSerializer
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.JsonTransformingSerializer
+import kotlinx.serialization.json.buildJsonArray
+import kotlinx.serialization.json.jsonObject
+
+/**
+ * Converts an object representing a team's buildings:
+ * ```
+ * {
+ *   "dota_goodguys_tower1_top": {
+ *     "health": 1795,
+ *     "max_health": 1800
+ *   },
+ *   "dota_goodguys_tower2_top": {
+ *     "health": 2500,
+ *     "max_health": 2500
+ *   }
+ * }
+ * ```
+ * Into an array:
+ * ```
+ * [
+ *   {
+ *     "name": "dota_goodguys_tower1_top",
+ *     "health": 1795,
+ *     "max_health": 1800,
+ *   },
+ *   {
+ *     "name": "dota_goodguys_tower2_top",
+ *     "health": 2500,
+ *     "max_health": 2500,
+ *   }
+ * ]
+ * ```
+ */
+internal object BuildingsTransformer : JsonTransformingSerializer<List<BuildingImpl>>(ListSerializer(BuildingImpl.serializer())) {
+
+    override fun transformDeserialize(element: JsonElement): JsonElement {
+        return buildJsonArray {
+            element.jsonObject.forEach { (buildingName, data) ->
+                add(
+                    JsonObject(data.jsonObject.plus(Building::name.name to JsonPrimitive(buildingName)))
+                )
+            }
+        }
+    }
+}
