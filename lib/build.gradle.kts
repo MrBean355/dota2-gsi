@@ -75,6 +75,7 @@ sonarqube {
 
 java {
     withSourcesJar()
+    withJavadocJar()
 }
 
 publishing {
