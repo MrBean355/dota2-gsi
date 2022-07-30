@@ -17,6 +17,7 @@
 package com.github.mrbean355.dota2.gamestate
 
 import com.github.mrbean355.dota2.ability.Ability
+import com.github.mrbean355.dota2.annotation.ExperimentalGameState
 import com.github.mrbean355.dota2.building.Building
 import com.github.mrbean355.dota2.draft.Draft
 import com.github.mrbean355.dota2.hero.SpectatedHero
@@ -47,11 +48,14 @@ interface SpectatingGameState : GameState {
     val items: Map<String, Items>?
 
     /** Map of team name to their buildings. */
+    @ExperimentalGameState
     val buildings: Map<String, List<Building>>?
 
     /** Map of player ID to their hero's wearable IDs. */
+    @ExperimentalGameState
     val wearables: Map<String, List<Int>>?
 
+    @ExperimentalGameState
     val draft: Draft?
 
 }

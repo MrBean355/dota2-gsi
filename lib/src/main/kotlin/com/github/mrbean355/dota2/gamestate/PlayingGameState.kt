@@ -17,6 +17,7 @@
 package com.github.mrbean355.dota2.gamestate
 
 import com.github.mrbean355.dota2.ability.Ability
+import com.github.mrbean355.dota2.annotation.ExperimentalGameState
 import com.github.mrbean355.dota2.building.Building
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.item.Items
@@ -41,8 +42,10 @@ interface PlayingGameState : GameState {
 
     val items: Items?
 
+    @ExperimentalGameState
     val buildings: List<Building>?
 
+    @ExperimentalGameState
     val wearables: List<Int>?
 
 }
