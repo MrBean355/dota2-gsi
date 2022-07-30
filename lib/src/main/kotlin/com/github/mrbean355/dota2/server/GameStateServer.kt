@@ -25,7 +25,7 @@ import com.github.mrbean355.dota2.gamestate.SpectatingGameState
  * Server which listens for game state updates from Dota 2.
  *
  * Make sure the Dota client is set up to send game state updates.
- * Find more information here: https://github.com/MrBean355/dota2-gsi
+ * Find more information [here](https://github.com/MrBean355/dota2-gsi).
  *
  * Create an instance in Kotlin with the factory function:
  * ```
@@ -79,8 +79,8 @@ interface GameStateServer {
     /**
      * Set a handler to get called when an exception is thrown during JSON deserialization.
      * Errors can happen when the data returned from Dota 2 is in an unexpected format.
-     * Please consider reporting such errors, along with the JSON received in the [handler]:
-     * https://github.com/MrBean355/dota2-gsi/issues
+     * Please consider [reporting such errors](https://github.com/MrBean355/dota2-gsi/issues),
+     * along with the JSON received in the [handler].
      *
      * @param handler Handler to set.
      * @return this object.
