@@ -17,12 +17,13 @@
 package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.gamestate.SpectatingGameState
+import com.github.mrbean355.dota2.gamestate.SpectatingGameStateImpl
 import kotlinx.serialization.json.JsonObject
 
 internal object SpectatingGameStateFactory {
 
     fun create(root: JsonObject): SpectatingGameState {
-        return SpectatingGameState(
+        return SpectatingGameStateImpl(
             provider = ProviderFactory.create(root),
             map = MapFactory.createForSpectator(root),
             players = PlayerFactory.createForSpectator(root),

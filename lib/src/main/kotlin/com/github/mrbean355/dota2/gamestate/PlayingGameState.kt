@@ -27,13 +27,22 @@ import com.github.mrbean355.dota2.provider.Provider
 /**
  * The state of the match at a point in time, when the client is **playing** in the match.
  */
-data class PlayingGameState(
-    override val provider: Provider?,
-    val map: PlayingMap?,
-    val player: Player?,
-    val hero: Hero?,
-    val abilities: List<Ability>?,
-    val items: Items?,
-    val buildings: List<Building>?,
-    val wearables: List<Int>?,
-) : GameState
+interface PlayingGameState : GameState {
+
+    val provider: Provider?
+
+    val map: PlayingMap?
+
+    val player: Player?
+
+    val hero: Hero?
+
+    val abilities: List<Ability>?
+
+    val items: Items?
+
+    val buildings: List<Building>?
+
+    val wearables: List<Int>?
+
+}

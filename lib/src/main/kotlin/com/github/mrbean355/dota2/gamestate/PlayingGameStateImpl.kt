@@ -16,13 +16,21 @@
 
 package com.github.mrbean355.dota2.gamestate
 
+import com.github.mrbean355.dota2.ability.Ability
+import com.github.mrbean355.dota2.building.Building
+import com.github.mrbean355.dota2.hero.Hero
+import com.github.mrbean355.dota2.item.Items
+import com.github.mrbean355.dota2.map.PlayingMap
+import com.github.mrbean355.dota2.player.Player
 import com.github.mrbean355.dota2.provider.Provider
 
-/**
- * The state when the client is not in a match (i.e. it is on the main menu).
- */
-interface IdleGameState : GameState {
-
-    val provider: Provider?
-
-}
+internal data class PlayingGameStateImpl(
+    override val provider: Provider?,
+    override val map: PlayingMap?,
+    override val player: Player?,
+    override val hero: Hero?,
+    override val abilities: List<Ability>?,
+    override val items: Items?,
+    override val buildings: List<Building>?,
+    override val wearables: List<Int>?,
+) : PlayingGameState

@@ -25,33 +25,14 @@ import com.github.mrbean355.dota2.map.SpectatedMap
 import com.github.mrbean355.dota2.player.SpectatedPlayer
 import com.github.mrbean355.dota2.provider.Provider
 
-/**
- * The state of the match at a point in time, when the client is **spectating** the match.
- */
-interface SpectatingGameState : GameState {
-
-    val provider: Provider?
-
-    val map: SpectatedMap?
-
-    /** Map of team name to their players. */
-    val players: Map<String, List<SpectatedPlayer>>?
-
-    /** Map of player ID to their hero. */
-    val heroes: Map<String, SpectatedHero>?
-
-    /** Map of player ID to their hero's abilities. */
-    val abilities: Map<String, List<Ability>>?
-
-    /** Map of player ID to their hero's items. */
-    val items: Map<String, Items>?
-
-    /** Map of team name to their buildings. */
-    val buildings: Map<String, List<Building>>?
-
-    /** Map of player ID to their hero's wearable IDs. */
-    val wearables: Map<String, List<Int>>?
-
-    val draft: Draft?
-
-}
+internal data class SpectatingGameStateImpl(
+    override val provider: Provider?,
+    override val map: SpectatedMap?,
+    override val players: Map<String, List<SpectatedPlayer>>?,
+    override val heroes: Map<String, SpectatedHero>?,
+    override val abilities: Map<String, List<Ability>>?,
+    override val items: Map<String, Items>?,
+    override val buildings: Map<String, List<Building>>?,
+    override val wearables: Map<String, List<Int>>?,
+    override val draft: Draft?,
+) : SpectatingGameState

@@ -16,11 +16,11 @@
 
 package com.github.mrbean355.dota2.gamestate
 
-import com.github.mrbean355.dota2.provider.Provider
-
 /**
  * Base type for the various game state implementations.
+ *
+ * @see IdleGameState
+ * @see PlayingGameState
+ * @see SpectatingGameState
  */
-sealed interface GameState {
-    val provider: Provider?
-}
+sealed interface GameState
