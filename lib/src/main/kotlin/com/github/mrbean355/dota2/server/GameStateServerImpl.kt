@@ -129,7 +129,7 @@ internal class GameStateServerImpl(
 
     private fun authenticate(root: JsonObject) {
         val received = root["auth"] as JsonObject?
-        if (received == null || received.isEmpty()) {
+        if (received.isNullOrEmpty()) {
             check(authentication.isEmpty()) {
                 "Unauthorized request, auth=$received"
             }
