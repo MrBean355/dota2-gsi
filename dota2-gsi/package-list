@@ -102,6 +102,7 @@ $dokka.location:com.github.mrbean355.dota2.hero/SpectatedHero///PointingToDeclar
 $dokka.location:com.github.mrbean355.dota2.hero/SpectatedHero/isSelectedUnit/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-spectated-hero/is-selected-unit.html
 $dokka.location:com.github.mrbean355.dota2.item////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Arcane///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-arcane/index.html
+$dokka.location:com.github.mrbean355.dota2.item/BottledRune.Bounty///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-bounty/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.DoubleDamage///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-double-damage/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Empty///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-empty/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Haste///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-haste/index.html
@@ -128,6 +129,7 @@ $dokka.location:com.github.mrbean355.dota2.map////PointingToDeclaration/dota2-g
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/index.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/clockTime/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/clock-time.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/customGameName/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/custom-game-name.html
+$dokka.location:com.github.mrbean355.dota2.map/DotaMap/direScore/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/dire-score.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/gameTime/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/game-time.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/isDaytime/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/is-daytime.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/isNightStalkerNight/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/is-night-stalker-night.html
@@ -135,6 +137,7 @@ $dokka.location:com.github.mrbean355.dota2.map/DotaMap/isPaused/#/PointingToDecl
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/matchId/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/match-id.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/matchState/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/match-state.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/name/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/name.html
+$dokka.location:com.github.mrbean355.dota2.map/DotaMap/radiantScore/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/radiant-score.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/winningTeam/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/winning-team.html
 $dokka.location:com.github.mrbean355.dota2.map/MatchState.CustomGameSetup///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-match-state/-custom-game-setup/index.html
 $dokka.location:com.github.mrbean355.dota2.map/MatchState.Disconnect///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-match-state/-disconnect/index.html
