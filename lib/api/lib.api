@@ -120,6 +120,7 @@ public abstract interface class com/github/mrbean355/dota2/hero/talent/TalentTre
 
 public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum {
 	public static final field Arcane Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Bounty Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Companion Lcom/github/mrbean355/dota2/item/BottledRune$Companion;
 	public static final field DoubleDamage Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Empty Lcom/github/mrbean355/dota2/item/BottledRune;
