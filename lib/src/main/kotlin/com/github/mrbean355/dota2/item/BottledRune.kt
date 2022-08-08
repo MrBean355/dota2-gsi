@@ -30,6 +30,9 @@ enum class BottledRune {
     @SerialName("arcane")
     Arcane,
 
+    @SerialName("bounty")
+    Bounty,
+
     @SerialName("double_damage")
     DoubleDamage,
 

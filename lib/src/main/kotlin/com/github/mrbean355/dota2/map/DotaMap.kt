@@ -26,6 +26,8 @@ interface DotaMap {
     val clockTime: Int
     val isDaytime: Boolean
     val isNightStalkerNight: Boolean
+    val radiantScore: Int
+    val direScore: Int
     val matchState: MatchState
     val isPaused: Boolean
     val winningTeam: Team

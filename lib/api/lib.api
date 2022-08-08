@@ -120,6 +120,7 @@ public abstract interface class com/github/mrbean355/dota2/hero/talent/TalentTre
 
 public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum {
 	public static final field Arcane Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Bounty Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Companion Lcom/github/mrbean355/dota2/item/BottledRune$Companion;
 	public static final field DoubleDamage Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Empty Lcom/github/mrbean355/dota2/item/BottledRune;
@@ -178,10 +179,12 @@ public final class com/github/mrbean355/dota2/item/Items {
 public abstract interface class com/github/mrbean355/dota2/map/DotaMap {
 	public abstract fun getClockTime ()I
 	public abstract fun getCustomGameName ()Ljava/lang/String;
+	public abstract fun getDireScore ()I
 	public abstract fun getGameTime ()I
 	public abstract fun getMatchId ()Ljava/lang/String;
 	public abstract fun getMatchState ()Lcom/github/mrbean355/dota2/map/MatchState;
 	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getRadiantScore ()I
 	public abstract fun getWinningTeam ()Lcom/github/mrbean355/dota2/map/Team;
 	public abstract fun isDaytime ()Z
 	public abstract fun isNightStalkerNight ()Z
