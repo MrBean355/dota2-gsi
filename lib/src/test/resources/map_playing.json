@@ -6,6 +6,8 @@
     "clock_time": 713,
     "daytime": true,
     "nightstalker_night": false,
+    "radiant_score": 12,
+    "dire_score": 24,
     "game_state": "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
     "paused": false,
     "win_team": "none",

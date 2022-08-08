@@ -27,6 +27,8 @@ internal data class PlayingMapImpl(
     @SerialName("clock_time") override val clockTime: Int,
     @SerialName("daytime") override val isDaytime: Boolean,
     @SerialName("nightstalker_night") override val isNightStalkerNight: Boolean,
+    @SerialName("radiant_score") override val radiantScore: Int,
+    @SerialName("dire_score") override val direScore: Int,
     @SerialName("game_state") override val matchState: MatchState,
     @SerialName("paused") override val isPaused: Boolean,
     @SerialName("win_team") override val winningTeam: Team,
