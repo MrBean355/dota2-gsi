@@ -72,6 +72,7 @@ public abstract interface class com/github/mrbean355/dota2/gamestate/SpectatingG
 }
 
 public abstract interface class com/github/mrbean355/dota2/hero/Hero {
+	public abstract fun getAttributesLevel ()I
 	public abstract fun getBuybackCooldown ()I
 	public abstract fun getBuybackCost ()I
 	public abstract fun getHasAghanimsScepter ()Z
@@ -133,18 +134,6 @@ public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum 
 	public static fun values ()[Lcom/github/mrbean355/dota2/item/BottledRune;
 }
 
-public final class com/github/mrbean355/dota2/item/BottledRune$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Lcom/github/mrbean355/dota2/item/BottledRune$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/item/BottledRune;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/item/BottledRune;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
 public final class com/github/mrbean355/dota2/item/BottledRune$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
@@ -154,6 +143,7 @@ public abstract interface class com/github/mrbean355/dota2/item/Item {
 	public abstract fun getCanCast ()Ljava/lang/Boolean;
 	public abstract fun getCharges ()Ljava/lang/Integer;
 	public abstract fun getCooldown ()Ljava/lang/Integer;
+	public abstract fun getLevel ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getPurchaser ()Ljava/lang/Integer;
 	public abstract fun isPassive ()Ljava/lang/Boolean;
@@ -208,18 +198,6 @@ public final class com/github/mrbean355/dota2/map/MatchState : java/lang/Enum {
 	public static fun values ()[Lcom/github/mrbean355/dota2/map/MatchState;
 }
 
-public final class com/github/mrbean355/dota2/map/MatchState$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Lcom/github/mrbean355/dota2/map/MatchState$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/map/MatchState;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/map/MatchState;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
 public final class com/github/mrbean355/dota2/map/MatchState$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
@@ -246,23 +224,12 @@ public final class com/github/mrbean355/dota2/map/Team : java/lang/Enum {
 	public static fun values ()[Lcom/github/mrbean355/dota2/map/Team;
 }
 
-public final class com/github/mrbean355/dota2/map/Team$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
-	public static final field INSTANCE Lcom/github/mrbean355/dota2/map/Team$$serializer;
-	public static final synthetic field descriptor Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun childSerializers ()[Lkotlinx/serialization/KSerializer;
-	public fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Lcom/github/mrbean355/dota2/map/Team;
-	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
-	public fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
-	public fun serialize (Lkotlinx/serialization/encoding/Encoder;Lcom/github/mrbean355/dota2/map/Team;)V
-	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
-	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
-}
-
 public final class com/github/mrbean355/dota2/map/Team$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
 }
 
 public abstract interface class com/github/mrbean355/dota2/player/Player {
+	public abstract fun getAccountId ()Ljava/lang/String;
 	public abstract fun getActivity ()Ljava/lang/String;
 	public abstract fun getAssists ()I
 	public abstract fun getCommandsIssued ()I
@@ -281,8 +248,10 @@ public abstract interface class com/github/mrbean355/dota2/player/Player {
 	public abstract fun getKills ()I
 	public abstract fun getLastHits ()I
 	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getPlayerSlot ()I
 	public abstract fun getSteamId ()Ljava/lang/String;
 	public abstract fun getTeam ()Lcom/github/mrbean355/dota2/map/Team;
+	public abstract fun getTeamSlot ()I
 	public abstract fun getXpm ()I
 }
 
@@ -292,11 +261,13 @@ public abstract interface class com/github/mrbean355/dota2/player/SpectatedPlaye
 	public abstract fun getGoldLostToDeath ()I
 	public abstract fun getGoldSpentOnBuybacks ()I
 	public abstract fun getHeroDamage ()I
+	public abstract fun getHeroHealing ()I
 	public abstract fun getId ()Ljava/lang/String;
 	public abstract fun getItemGoldSpent ()I
 	public abstract fun getNetWorth ()I
 	public abstract fun getRunesActivated ()I
 	public abstract fun getSupportGoldSpent ()I
+	public abstract fun getTowerDamage ()I
 	public abstract fun getWardsDestroyed ()I
 	public abstract fun getWardsPlaced ()I
 	public abstract fun getWardsPurchased ()I

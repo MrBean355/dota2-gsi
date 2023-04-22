@@ -25,6 +25,8 @@ interface SpectatedPlayer : Player {
     val id: String
     val netWorth: Int
     val heroDamage: Int
+    val heroHealing: Int
+    val towerDamage: Int
     val wardsPurchased: Int
     val wardsPlaced: Int
     val wardsDestroyed: Int

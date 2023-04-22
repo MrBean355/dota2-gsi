@@ -22,6 +22,7 @@ package com.github.mrbean355.dota2.item
 interface Item {
     val name: String
     val purchaser: Int?
+    val level: Int?
     val bottledRune: BottledRune?
     val canCast: Boolean?
     val cooldown: Int?

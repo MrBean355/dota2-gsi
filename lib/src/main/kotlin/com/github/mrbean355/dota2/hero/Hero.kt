@@ -53,4 +53,5 @@ interface Hero {
 
     @ExperimentalGameState
     val talentTree: TalentTree
+    val attributesLevel: Int
 }

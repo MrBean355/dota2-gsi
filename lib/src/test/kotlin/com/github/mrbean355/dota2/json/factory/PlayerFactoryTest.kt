@@ -42,6 +42,7 @@ internal class PlayerFactoryTest {
 
         with(player as PlayerImpl) {
             assertEquals("2924123062", steamId)
+            assertEquals("123456789", accountId)
             assertEquals("Mr_Bean", name)
             assertEquals("playing", activity)
             assertEquals(0, kills)
@@ -53,6 +54,8 @@ internal class PlayerFactoryTest {
             assertEquals(6, commandsIssued)
             assertEquals(mapOf("victimid_1" to 7), killList)
             assertSame(Team.Radiant, team)
+            assertEquals(15, playerSlot)
+            assertEquals(16, teamSlot)
             assertEquals(600, gold)
             assertEquals(8, goldReliable)
             assertEquals(550, goldUnreliable)
@@ -89,6 +92,7 @@ internal class PlayerFactoryTest {
 
         with(player.getValue("team2")[2] as SpectatedPlayerImpl) {
             assertEquals("0524429230", steamId)
+            assertEquals("0329244250", accountId)
             assertEquals("9 subhumans ^_^", name)
             assertEquals("playing", activity)
             assertEquals(3, kills)
@@ -100,6 +104,8 @@ internal class PlayerFactoryTest {
             assertEquals(3170, commandsIssued)
             assertEquals(mapOf("victimid_8" to 2, "victimid_9" to 1), killList)
             assertEquals(Team.Radiant, team)
+            assertEquals(3, playerSlot)
+            assertEquals(3, teamSlot)
             assertEquals(1396, gold)
             assertEquals(441, goldReliable)
             assertEquals(955, goldUnreliable)
@@ -112,6 +118,8 @@ internal class PlayerFactoryTest {
             assertEquals("player2", id)
             assertEquals(4596, netWorth)
             assertEquals(3240, heroDamage)
+            assertEquals(324, heroHealing)
+            assertEquals(240, towerDamage)
             assertEquals(0, wardsPurchased)
             assertEquals(6, wardsPlaced)
             assertEquals(2, wardsDestroyed)

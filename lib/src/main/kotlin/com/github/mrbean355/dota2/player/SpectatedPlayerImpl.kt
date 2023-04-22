@@ -23,6 +23,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 internal data class SpectatedPlayerImpl(
     @SerialName("steamid") override val steamId: String,
+    @SerialName("accountid") override val accountId: String,
     @SerialName("name") override val name: String,
     @SerialName("activity") override val activity: String,
     @SerialName("kills") override val kills: Int,
@@ -34,6 +35,8 @@ internal data class SpectatedPlayerImpl(
     @SerialName("commands_issued") override val commandsIssued: Int,
     @SerialName("kill_list") override val killList: Map<String, Int>? = null,
     @SerialName("team_name") override val team: Team,
+    @SerialName("player_slot") override val playerSlot: Int,
+    @SerialName("team_slot") override val teamSlot: Int,
     @SerialName("gold") override val gold: Int,
     @SerialName("gold_reliable") override val goldReliable: Int,
     @SerialName("gold_unreliable") override val goldUnreliable: Int,
@@ -46,6 +49,8 @@ internal data class SpectatedPlayerImpl(
     @SerialName("id") override val id: String,
     @SerialName("net_worth") override val netWorth: Int,
     @SerialName("hero_damage") override val heroDamage: Int,
+    @SerialName("hero_healing") override val heroHealing: Int,
+    @SerialName("tower_damage") override val towerDamage: Int,
     @SerialName("wards_purchased") override val wardsPurchased: Int,
     @SerialName("wards_placed") override val wardsPlaced: Int,
     @SerialName("wards_destroyed") override val wardsDestroyed: Int,

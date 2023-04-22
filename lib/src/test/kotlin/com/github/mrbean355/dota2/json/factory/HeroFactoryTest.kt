@@ -92,6 +92,7 @@ internal class HeroFactoryTest {
                 assertFalse(level25.hasLeft)
                 assertTrue(level25.hasRight)
             }
+            assertEquals(2, attributesLevel)
         }
     }
 
@@ -163,6 +164,7 @@ internal class HeroFactoryTest {
                 assertTrue(level25.hasLeft)
                 assertFalse(level25.hasRight)
             }
+            assertEquals(7, attributesLevel)
         }
     }
 

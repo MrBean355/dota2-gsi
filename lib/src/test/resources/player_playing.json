@@ -1,6 +1,7 @@
 {
   "player": {
     "steamid": "2924123062",
+    "accountid": "123456789",
     "name": "Mr_Bean",
     "activity": "playing",
     "kills": 0,
@@ -14,6 +15,8 @@
       "victimid_1": 7
     },
     "team_name": "radiant",
+    "player_slot": 15,
+    "team_slot": 16,
     "gold": 600,
     "gold_reliable": 8,
     "gold_unreliable": 550,

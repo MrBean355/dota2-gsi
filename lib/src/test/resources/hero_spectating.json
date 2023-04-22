@@ -37,7 +37,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 1
       },
       "player1": {
         "xpos": 4142,
@@ -75,7 +76,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 2
       },
       "player2": {
         "xpos": -1399,
@@ -113,7 +115,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 3
       },
       "player3": {
         "xpos": -2142,
@@ -151,7 +154,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 4
       },
       "player4": {
         "xpos": -1790,
@@ -189,7 +193,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 5
       }
     },
     "team3": {
@@ -229,7 +234,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 6
       },
       "player6": {
         "xpos": 5630,
@@ -267,7 +273,8 @@
         "talent_5": false,
         "talent_6": true,
         "talent_7": false,
-        "talent_8": true
+        "talent_8": true,
+        "attributes_level": 7
       },
       "player7": {
         "xpos": 1439,
@@ -305,7 +312,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 8
       },
       "player8": {
         "xpos": -1498,
@@ -343,7 +351,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 9
       },
       "player9": {
         "xpos": 427,
@@ -381,7 +390,8 @@
         "talent_5": false,
         "talent_6": false,
         "talent_7": false,
-        "talent_8": false
+        "talent_8": false,
+        "attributes_level": 10
       }
     }
   }
