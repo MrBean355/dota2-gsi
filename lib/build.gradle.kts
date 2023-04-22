@@ -61,7 +61,7 @@ tasks.withType(JacocoReport::class.java) {
     reports.xml.required.set(true)
 }
 
-tasks.withType(org.sonarqube.gradle.SonarQubeTask::class.java) {
+tasks.withType(org.sonarqube.gradle.SonarTask::class.java) {
     dependsOn("jacocoTestReport")
 }
 
