@@ -72,6 +72,7 @@ public abstract interface class com/github/mrbean355/dota2/gamestate/SpectatingG
 }
 
 public abstract interface class com/github/mrbean355/dota2/hero/Hero {
+	public abstract fun getAttributesLevel ()I
 	public abstract fun getBuybackCooldown ()I
 	public abstract fun getBuybackCost ()I
 	public abstract fun getHasAghanimsScepter ()Z
@@ -142,6 +143,7 @@ public abstract interface class com/github/mrbean355/dota2/item/Item {
 	public abstract fun getCanCast ()Ljava/lang/Boolean;
 	public abstract fun getCharges ()Ljava/lang/Integer;
 	public abstract fun getCooldown ()Ljava/lang/Integer;
+	public abstract fun getLevel ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getPurchaser ()Ljava/lang/Integer;
 	public abstract fun isPassive ()Ljava/lang/Boolean;
@@ -227,6 +229,7 @@ public final class com/github/mrbean355/dota2/map/Team$Companion {
 }
 
 public abstract interface class com/github/mrbean355/dota2/player/Player {
+	public abstract fun getAccountId ()Ljava/lang/String;
 	public abstract fun getActivity ()Ljava/lang/String;
 	public abstract fun getAssists ()I
 	public abstract fun getCommandsIssued ()I
@@ -245,8 +248,10 @@ public abstract interface class com/github/mrbean355/dota2/player/Player {
 	public abstract fun getKills ()I
 	public abstract fun getLastHits ()I
 	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getPlayerSlot ()I
 	public abstract fun getSteamId ()Ljava/lang/String;
 	public abstract fun getTeam ()Lcom/github/mrbean355/dota2/map/Team;
+	public abstract fun getTeamSlot ()I
 	public abstract fun getXpm ()I
 }
 
@@ -256,11 +261,13 @@ public abstract interface class com/github/mrbean355/dota2/player/SpectatedPlaye
 	public abstract fun getGoldLostToDeath ()I
 	public abstract fun getGoldSpentOnBuybacks ()I
 	public abstract fun getHeroDamage ()I
+	public abstract fun getHeroHealing ()I
 	public abstract fun getId ()Ljava/lang/String;
 	public abstract fun getItemGoldSpent ()I
 	public abstract fun getNetWorth ()I
 	public abstract fun getRunesActivated ()I
 	public abstract fun getSupportGoldSpent ()I
+	public abstract fun getTowerDamage ()I
 	public abstract fun getWardsDestroyed ()I
 	public abstract fun getWardsPlaced ()I
 	public abstract fun getWardsPurchased ()I

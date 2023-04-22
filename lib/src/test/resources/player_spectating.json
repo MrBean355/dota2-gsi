@@ -3,6 +3,7 @@
     "team2": {
       "player0": {
         "steamid": "3595440291",
+        "accountid": "1920445953",
         "name": "I just love dota 1",
         "activity": "playing",
         "kills": 1,
@@ -16,6 +17,8 @@
           "victimid_8": 1
         },
         "team_name": "radiant",
+        "player_slot": 1,
+        "team_slot": 1,
         "gold": 391,
         "gold_reliable": 332,
         "gold_unreliable": 59,
@@ -27,6 +30,8 @@
         "xpm": 229,
         "net_worth": 2321,
         "hero_damage": 4905,
+        "hero_healing": 490,
+        "tower_damage": 905,
         "wards_purchased": 6,
         "wards_placed": 4,
         "wards_destroyed": 1,
@@ -40,6 +45,7 @@
       },
       "player1": {
         "steamid": "1383723995",
+        "accountid": "5993273831",
         "name": "NotTheChosenOne",
         "activity": "playing",
         "kills": 1,
@@ -53,6 +59,8 @@
           "victimid_6": 1
         },
         "team_name": "radiant",
+        "player_slot": 2,
+        "team_slot": 2,
         "gold": 56,
         "gold_reliable": 56,
         "gold_unreliable": 0,
@@ -64,6 +72,8 @@
         "xpm": 164,
         "net_worth": 2746,
         "hero_damage": 1871,
+        "hero_healing": 187,
+        "tower_damage": 871,
         "wards_purchased": 3,
         "wards_placed": 1,
         "wards_destroyed": 0,
@@ -77,6 +87,7 @@
       },
       "player2": {
         "steamid": "0524429230",
+        "accountid": "0329244250",
         "name": "9 subhumans ^_^",
         "activity": "playing",
         "kills": 3,
@@ -91,6 +102,8 @@
           "victimid_9": 1
         },
         "team_name": "radiant",
+        "player_slot": 3,
+        "team_slot": 3,
         "gold": 1396,
         "gold_reliable": 441,
         "gold_unreliable": 955,
@@ -102,6 +115,8 @@
         "xpm": 368,
         "net_worth": 4596,
         "hero_damage": 3240,
+        "hero_healing": 324,
+        "tower_damage": 240,
         "wards_purchased": 0,
         "wards_placed": 6,
         "wards_destroyed": 2,
@@ -115,6 +130,7 @@
       },
       "player3": {
         "steamid": "0085857260",
+        "accountid": "0627585800",
         "name": "PETUSHARA",
         "activity": "playing",
         "kills": 1,
@@ -128,6 +144,8 @@
           "victimid_9": 1
         },
         "team_name": "radiant",
+        "player_slot": 4,
+        "team_slot": 4,
         "gold": 419,
         "gold_reliable": 313,
         "gold_unreliable": 106,
@@ -139,6 +157,8 @@
         "xpm": 481,
         "net_worth": 4699,
         "hero_damage": 3954,
+        "hero_healing": 395,
+        "tower_damage": 954,
         "wards_purchased": 2,
         "wards_placed": 2,
         "wards_destroyed": 0,
@@ -152,6 +172,7 @@
       },
       "player4": {
         "steamid": "5570934882",
+        "accountid": "2884390755",
         "name": "skiter",
         "activity": "playing",
         "kills": 0,
@@ -164,6 +185,8 @@
         "kill_list": {
         },
         "team_name": "radiant",
+        "player_slot": 5,
+        "team_slot": 5,
         "gold": 388,
         "gold_reliable": 162,
         "gold_unreliable": 226,
@@ -175,6 +198,8 @@
         "xpm": 393,
         "net_worth": 4013,
         "hero_damage": 2859,
+        "hero_healing": 285,
+        "tower_damage": 859,
         "wards_purchased": 0,
         "wards_placed": 0,
         "wards_destroyed": 0,
@@ -190,6 +215,7 @@
     "team3": {
       "player5": {
         "steamid": "3151408074",
+        "accountid": "4708041513",
         "name": "33",
         "activity": "playing",
         "kills": 0,
@@ -202,6 +228,8 @@
         "kill_list": {
         },
         "team_name": "dire",
+        "player_slot": 6,
+        "team_slot": 1,
         "gold": 159,
         "gold_reliable": 43,
         "gold_unreliable": 116,
@@ -213,6 +241,8 @@
         "xpm": 184,
         "net_worth": 2609,
         "hero_damage": 2759,
+        "hero_healing": 275,
+        "tower_damage": 759,
         "wards_purchased": 0,
         "wards_placed": 0,
         "wards_destroyed": 0,
@@ -226,6 +256,7 @@
       },
       "player6": {
         "steamid": "4297320020",
+        "accountid": "0200237924",
         "name": "OFF",
         "activity": "playing",
         "kills": 1,
@@ -239,6 +270,8 @@
           "victimid_1": 1
         },
         "team_name": "dire",
+        "player_slot": 7,
+        "team_slot": 2,
         "gold": 402,
         "gold_reliable": 280,
         "gold_unreliable": 122,
@@ -250,6 +283,8 @@
         "xpm": 263,
         "net_worth": 2727,
         "hero_damage": 3533,
+        "hero_healing": 353,
+        "tower_damage": 533,
         "wards_purchased": 7,
         "wards_placed": 3,
         "wards_destroyed": 0,
@@ -263,6 +298,7 @@
       },
       "player7": {
         "steamid": "5795209746",
+        "accountid": "6479025975",
         "name": "бесстрашный торч",
         "activity": "playing",
         "kills": 2,
@@ -277,6 +313,8 @@
           "victimid_1": 1
         },
         "team_name": "dire",
+        "player_slot": 8,
+        "team_slot": 3,
         "gold": 260,
         "gold_reliable": 48,
         "gold_unreliable": 212,
@@ -288,6 +326,8 @@
         "xpm": 469,
         "net_worth": 4305,
         "hero_damage": 2731,
+        "hero_healing": 273,
+        "tower_damage": 731,
         "wards_purchased": 4,
         "wards_placed": 3,
         "wards_destroyed": 0,
@@ -301,6 +341,7 @@
       },
       "player8": {
         "steamid": "2561898686",
+        "accountid": "6868981652",
         "name": "YATOROGOD",
         "activity": "playing",
         "kills": 1,
@@ -314,6 +355,8 @@
           "victimid_2": 1
         },
         "team_name": "dire",
+        "player_slot": 9,
+        "team_slot": 4,
         "gold": 553,
         "gold_reliable": 249,
         "gold_unreliable": 304,
@@ -325,6 +368,8 @@
         "xpm": 326,
         "net_worth": 3728,
         "hero_damage": 2650,
+        "hero_healing": 265,
+        "tower_damage": 650,
         "wards_purchased": 4,
         "wards_placed": 2,
         "wards_destroyed": 0,
@@ -338,6 +383,7 @@
       },
       "player9": {
         "steamid": "5534370702",
+        "accountid": "2070734355",
         "name": "好斗的孩子",
         "activity": "playing",
         "kills": 0,
@@ -350,6 +396,8 @@
         "kill_list": {
         },
         "team_name": "dire",
+        "player_slot": 10,
+        "team_slot": 5,
         "gold": 121,
         "gold_reliable": 66,
         "gold_unreliable": 55,
@@ -361,6 +409,8 @@
         "xpm": 168,
         "net_worth": 1611,
         "hero_damage": 3211,
+        "hero_healing": 321,
+        "tower_damage": 211,
         "wards_purchased": 11,
         "wards_placed": 3,
         "wards_destroyed": 0,

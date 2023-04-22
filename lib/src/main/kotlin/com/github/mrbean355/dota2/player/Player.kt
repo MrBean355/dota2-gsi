@@ -23,6 +23,7 @@ import com.github.mrbean355.dota2.map.Team
  */
 interface Player {
     val steamId: String
+    val accountId: String
     val name: String
     val activity: String
     val kills: Int
@@ -34,6 +35,8 @@ interface Player {
     val commandsIssued: Int
     val killList: Map<String, Int>?
     val team: Team
+    val playerSlot: Int
+    val teamSlot: Int
     val gold: Int
     val goldReliable: Int
     val goldUnreliable: Int

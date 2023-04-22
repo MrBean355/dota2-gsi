@@ -50,4 +50,5 @@ internal data class HeroImpl(
     @SerialName("smoked") override val isSmoked: Boolean,
     @SerialName("has_debuff") override val hasDebuff: Boolean,
     @SerialName("talentTree") override val talentTree: TalentTreeImpl,
+    @SerialName("attributes_level") override val attributesLevel: Int,
 ) : Hero
