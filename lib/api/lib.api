@@ -129,7 +129,9 @@ public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum 
 	public static final field Illusion Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Invisibility Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Regeneration Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Shield Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Water Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static final field Wisdom Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static fun values ()[Lcom/github/mrbean355/dota2/item/BottledRune;
 }
