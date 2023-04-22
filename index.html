@@ -6,10 +6,18 @@
     <link href="images/logo-icon.svg" rel="icon" type="image/svg">
     <script>var pathToRoot = "";</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
 <script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
 <link href="styles/style.css" rel="Stylesheet">
 <link href="styles/jetbrains-mono.css" rel="Stylesheet">
@@ -21,6 +29,7 @@ if(savedDarkMode === true){
 <script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
 <div class="navigation-wrapper" id="navigation-wrapper">
@@ -31,8 +40,11 @@ if(savedDarkMode === true){
             </a>
     </div>
     <div>
-2.1.0    </div>
+2.2.0    </div>
     <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":lib:dokkaHtml/main">JVM</button>
+        </div>
         <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
     </div>
@@ -46,7 +58,7 @@ if(savedDarkMode === true){
   <div class="breadcrumbs"></div>
   <div class="cover ">
     <h1 class="cover"><span><span>dota2-gsi</span></span></h1>
-    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><p class="paragraph">This is a JVM library that <strong>aims to make working with Dota 2's Game State Integration simple</strong>. Game State Integration (GSI) is a feature built into Dota 2 that allows us to ask Dota to periodically send us information on the current game state. You can find more information on <a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration">Valve's Developer Wiki for CS:GO</a> (the same applies to Dota 2).</p><p class="paragraph">In the simplest terms, the library starts up a local server which listens for game state information from the Dota 2 client. It then deserializes this JSON data into type-safe objects for developers to work with.</p><p class="paragraph"><strong>Why use a library for this?</strong> The JSON data that Dota sends can vary significantly in structure, which makes simple parsing very tricky. Specifically, the structure is different when the Dota client is playing a match compared to when it is spectating a match. This library aims to remove this worry from the developer, and simply exposes type-safe objects to work with.</p><h2 class=""> Getting Set Up</h2><ol><li><p class="paragraph"><a href="https://github.com/MrBean355/dota2-gsi/wiki/Dota-2-Setup"><strong>Set up your Dota 2 client</strong></a> to send game state    information to your program.</p></li><li><p class="paragraph"><a href="https://github.com/MrBean355/dota2-gsi/wiki/Library-Guide#add-the-dependency"><strong>Add the dependency</strong></a> to your    project.</p></li></ol><h2 class=""> Sample Code</h2><h3 class=""> Kotlin</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">fun main() {<br>    // Create a server which listens on the port configured during Dota setup:<br>    GameStateServer(44444)<br>        // Register one or more listeners: <br>        .setPlayingListener { gameState -&gt;<br>            // Do something with the received gameState object:<br>            val clockTime = gameState.map?.clockTime<br>            println(&quot;The clock time is $clockTime seconds.&quot;)<br>        }<br>        // Start the server, blocking the thread so the program doesn't immediately exit:<br>        .start() // Alternatively startAsync() will not block the thread.<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class=""> Java</h3><div class="sample-container"><pre><code class="block lang-java" theme="idea">public class GsiDemo {<br><br>    public static void main(String[] args) {<br>        // Create a server which listens on the port configured during Dota setup:<br>        GameStateServer.create(44444)<br>                // Register one or more listeners: <br>                .setPlayingListener(gameState -&gt; {<br>                    // Do something with the received gameState object:<br>                    if (gameState.getMap() != null) {<br>                        int clockTime = gameState.getMap().getClockTime();<br>                        System.out.println(&quot;The clock time is &quot; + clockTime + &quot; seconds.&quot;);<br>                    }<br>                })<br>                // Start the server, blocking the thread so the program doesn't immediately exit:<br>                .start(); // Alternatively startAsync() will not block the thread.<br>    }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class=""> Additional Resources</h2><ul><li><p class="paragraph">The project's <a href="https://github.com/MrBean355/dota2-gsi/wiki">Wiki</a>.</p></li><li><p class="paragraph">The full <a href="https://mrbean355.github.io/dota2-gsi">API reference</a>.</p></li><li><p class="paragraph">The   <a href="https://github.com/MrBean355/dota2-gsi/tree/main/demo/src/main/java/com/github/mrbean355/dota2/demo">demo project</a>   has some more involved examples.</p></li></ul><h2 class=""> Exploring</h2><p class="paragraph">To see what classes and functions are available, you can get started here:</p><ul><li><p class="paragraph"><a href="dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/index.html">GameStateServer</a></p></li><li><p class="paragraph"><a href="dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/index.html">PlayingGameState</a></p></li><li><p class="paragraph"><a href="dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/index.html">SpectatingGameState</a></p></li></ul></div></div>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><p class="paragraph">This is a JVM library that <strong>aims to make working with Dota 2's Game State Integration simple</strong>. Game State Integration (GSI) is a feature built into Dota 2 that allows us to ask Dota to periodically send us information on the current game state. You can find more information on <a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration">Valve's Developer Wiki for CS:GO</a> (the same applies to Dota 2).</p><p class="paragraph">In the simplest terms, the library starts up a local server which listens for game state information from the Dota 2 client. It then deserializes this JSON data into type-safe objects for developers to work with.</p><p class="paragraph"><strong>Why use a library for this?</strong> The JSON data that Dota sends can vary significantly in structure, which makes simple parsing very tricky. Specifically, the structure is different when the Dota client is playing a match compared to when it is spectating a match. This library aims to remove this worry from the developer, and simply exposes type-safe objects to work with.</p><h2 class=""> Getting Set Up</h2><ol><li><p class="paragraph"><a href="https://github.com/MrBean355/dota2-gsi/wiki/Dota-2-Setup"><strong>Set up your Dota 2 client</strong></a> to send game state    information to your program.</p></li><li><p class="paragraph"><a href="https://github.com/MrBean355/dota2-gsi/wiki/Library-Guide#add-the-dependency"><strong>Add the dependency</strong></a> to your    project.</p></li></ol><h2 class=""> Sample Code</h2><h3 class=""> Kotlin</h3><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">fun main() {<br>    // Create a server which listens on the port configured during Dota setup:<br>    GameStateServer(44444)<br>        // Register one or more listeners: <br>        .setPlayingListener { gameState -&gt;<br>            // Do something with the received gameState object:<br>            val clockTime = gameState.map?.clockTime<br>            println(&quot;The clock time is $clockTime seconds.&quot;)<br>        }<br>        // Start the server, blocking the thread so the program doesn't immediately exit:<br>        .start() // Alternatively startAsync() will not block the thread.<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class=""> Java</h3><div class="sample-container"><pre><code class="block lang-java" theme="idea">public class GsiDemo {<br><br>    public static void main(String[] args) {<br>        // Create a server which listens on the port configured during Dota setup:<br>        GameStateServer.create(44444)<br>                // Register one or more listeners: <br>                .setPlayingListener(gameState -&gt; {<br>                    // Do something with the received gameState object:<br>                    if (gameState.getMap() != null) {<br>                        int clockTime = gameState.getMap().getClockTime();<br>                        System.out.println(&quot;The clock time is &quot; + clockTime + &quot; seconds.&quot;);<br>                    }<br>                })<br>                // Start the server, blocking the thread so the program doesn't immediately exit:<br>                .start(); // Alternatively startAsync() will not block the thread.<br>    }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class=""> Additional Resources</h2><ul><li><p class="paragraph">The project's <a href="https://github.com/MrBean355/dota2-gsi/wiki">Wiki</a>.</p></li><li><p class="paragraph">The full <a href="https://mrbean355.github.io/dota2-gsi">API reference</a>.</p></li><li><p class="paragraph">The   <a href="https://github.com/MrBean355/dota2-gsi/tree/main/demo/src/main/java/com/github/mrbean355/dota2/demo">demo project</a>   has some more involved examples.</p></li></ul><h2 class=""> Exploring</h2><p class="paragraph">To see what classes and functions are available, you can get started here:</p><ul><li><p class="paragraph"><a href="dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/index.html">GameStateServer</a></p></li><li><p class="paragraph"><a href="dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/index.html">PlayingGameState</a></p></li><li><p class="paragraph"><a href="dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/index.html">SpectatingGameState</a></p></li></ul></div></div>
   </div>
   <h2 class="">Packages</h2>
   <div class="table"><a data-name="1333661514%2FPackages%2F2083360698" anchor-label="com.github.mrbean355.dota2.ability" id="1333661514%2FPackages%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
@@ -58,7 +70,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1333661514%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -72,7 +88,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1597090605%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -86,7 +106,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="415819928%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -100,7 +124,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1761997953%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -114,7 +142,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1900632639%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -128,7 +160,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2074561374%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -142,7 +178,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="37637376%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -156,7 +196,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="985848119%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -170,7 +214,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="852087804%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -184,7 +232,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="249363205%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -198,7 +250,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="757733781%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -212,7 +268,11 @@ if(savedDarkMode === true){
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1533544217%2FPackages%2F2083360698"></span>
                 <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
               </span></span></div>
-          <div class="pull-right"></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">JVM</div>
+            </div>
+          </div>
         </div>
         <div></div>
       </div>
@@ -220,7 +280,7 @@ if(savedDarkMode === true){
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
                 class="pull-right"><span>Generated by </span><a
                 href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
