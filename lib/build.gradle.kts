@@ -13,7 +13,7 @@ plugins {
 
 group = "com.github.mrbean355"
 val artifactId by extra("dota2-gsi")
-version = "2.2.0"
+version = "2.2.1"
 
 dependencies {
     implementation(libs.ktor.server.netty)

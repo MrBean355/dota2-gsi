@@ -51,7 +51,13 @@ enum class BottledRune {
     @SerialName("regen")
     Regeneration,
 
+    @SerialName("shield")
+    Shield,
+
     @SerialName("water")
     Water,
+
+    @SerialName("xp")
+    Wisdom,
 
 }
