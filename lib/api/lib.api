@@ -285,6 +285,7 @@ public abstract interface class com/github/mrbean355/dota2/provider/Provider {
 public abstract interface class com/github/mrbean355/dota2/server/GameStateServer {
 	public static final field Companion Lcom/github/mrbean355/dota2/server/GameStateServer$Companion;
 	public static fun create (I)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun enableStrictDeserialization ()Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun requireAuthentication (Ljava/util/Map;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun setErrorHandler (Lcom/github/mrbean355/dota2/server/GameStateServer$ErrorHandler;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun setGenericListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;
