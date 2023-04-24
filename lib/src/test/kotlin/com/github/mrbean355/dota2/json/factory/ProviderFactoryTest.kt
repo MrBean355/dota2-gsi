@@ -18,6 +18,7 @@ package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.provider.ProviderImpl
 import com.github.mrbean355.dota2.testutil.jsonObject
+import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Test
@@ -26,14 +27,14 @@ internal class ProviderFactoryTest {
 
     @Test
     internal fun testCreate_KeyMissing_ReturnsNull() {
-        val provider = ProviderFactory.create("empty.json".jsonObject)
+        val provider = ProviderFactory.create("empty.json".jsonObject, Json)
 
         assertNull(provider)
     }
 
     @Test
     internal fun testCreate_DeserializesObject() {
-        val provider = ProviderFactory.create("provider.json".jsonObject)!!
+        val provider = ProviderFactory.create("provider.json".jsonObject, Json)!!
 
         with(provider as ProviderImpl) {
             assertEquals("Dota 2", name)

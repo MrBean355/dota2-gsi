@@ -18,13 +18,14 @@ package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.gamestate.IdleGameState
 import com.github.mrbean355.dota2.gamestate.IdleGameStateImpl
+import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 
 internal object IdleGameStateFactory {
 
-    fun create(root: JsonObject): IdleGameState {
+    fun create(root: JsonObject, json: Json): IdleGameState {
         return IdleGameStateImpl(
-            provider = ProviderFactory.create(root)
+            provider = ProviderFactory.create(root, json)
         )
     }
 }

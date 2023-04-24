@@ -30,15 +30,15 @@ private const val JsonKey = "player"
 
 internal object PlayerFactory {
 
-    fun createForPlayer(root: JsonObject): Player? {
+    fun createForPlayer(root: JsonObject, json: Json): Player? {
         return root[JsonKey]?.jsonObject?.let {
-            Json.decodeFromJsonElement<PlayerImpl>(it)
+            json.decodeFromJsonElement<PlayerImpl>(it)
         }
     }
 
-    fun createForSpectator(root: JsonObject): Map<String, List<SpectatedPlayer>>? {
+    fun createForSpectator(root: JsonObject, json: Json): Map<String, List<SpectatedPlayer>>? {
         return root[JsonKey]?.jsonObject?.mapValues { (_, players) ->
-            Json.decodeFromJsonElement(SpectatedPlayerTransformer, players)
+            json.decodeFromJsonElement(SpectatedPlayerTransformer, players)
         }
     }
 

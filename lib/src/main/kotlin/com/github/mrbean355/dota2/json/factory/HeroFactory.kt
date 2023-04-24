@@ -35,18 +35,18 @@ private const val ValidityIndicator = "xpos"
 
 internal object HeroFactory {
 
-    fun createForPlayer(root: JsonObject): Hero? {
+    fun createForPlayer(root: JsonObject, json: Json): Hero? {
         return root[JsonKey]?.jsonObject?.takeIf { ValidityIndicator in it }?.let {
-            Json.decodeFromJsonElement(HeroImplTransformer, it)
+            json.decodeFromJsonElement(HeroImplTransformer, it)
         }
     }
 
-    fun createForSpectator(root: JsonObject): Map<String, SpectatedHero>? {
+    fun createForSpectator(root: JsonObject, json: Json): Map<String, SpectatedHero>? {
         return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
             teams.jsonObject
                 .filterValues { ValidityIndicator in it.jsonObject }
                 .map { (playerId, playerHero) ->
-                    playerId to Json.decodeFromJsonElement(SpectatedHeroImplTransformer, playerHero)
+                    playerId to json.decodeFromJsonElement(SpectatedHeroImplTransformer, playerHero)
                 }
         }?.toMap()
     }

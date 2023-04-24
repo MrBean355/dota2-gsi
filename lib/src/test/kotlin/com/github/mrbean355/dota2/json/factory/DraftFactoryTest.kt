@@ -18,6 +18,8 @@ package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.testutil.jsonObject
+import kotlinx.serialization.json.Json
+
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull
@@ -29,21 +31,21 @@ internal class DraftFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val draft = DraftFactory.createForSpectator("empty.json".jsonObject)
+        val draft = DraftFactory.createForSpectator("empty.json".jsonObject, Json)
 
         assertNull(draft)
     }
 
     @Test
     internal fun createForSpectator_EmptyObject_ReturnsNull() {
-        val draft = DraftFactory.createForSpectator("draft_invalid.json".jsonObject)
+        val draft = DraftFactory.createForSpectator("draft_invalid.json".jsonObject, Json)
 
         assertNull(draft)
     }
 
     @Test
     internal fun createForSpectator_DeserializesObject() {
-        val draft = DraftFactory.createForSpectator("draft_spectator.json".jsonObject)!!
+        val draft = DraftFactory.createForSpectator("draft_spectator.json".jsonObject, Json)!!
 
         with(draft) {
             assertEquals(2, activeTeam)

@@ -18,19 +18,20 @@ package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.gamestate.PlayingGameState
 import com.github.mrbean355.dota2.gamestate.PlayingGameStateImpl
+import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 
 internal object PlayingGameStateFactory {
 
-    fun create(root: JsonObject): PlayingGameState {
+    fun create(root: JsonObject, json: Json): PlayingGameState {
         return PlayingGameStateImpl(
-            provider = ProviderFactory.create(root),
-            map = MapFactory.createForPlayer(root),
-            player = PlayerFactory.createForPlayer(root),
-            hero = HeroFactory.createForPlayer(root),
-            abilities = AbilitiesFactory.createForPlayer(root),
-            items = ItemsFactory.createForPlayer(root),
-            buildings = BuildingsFactory.createForPlayer(root),
+            provider = ProviderFactory.create(root, json),
+            map = MapFactory.createForPlayer(root, json),
+            player = PlayerFactory.createForPlayer(root, json),
+            hero = HeroFactory.createForPlayer(root, json),
+            abilities = AbilitiesFactory.createForPlayer(root, json),
+            items = ItemsFactory.createForPlayer(root, json),
+            buildings = BuildingsFactory.createForPlayer(root, json),
             wearables = WearablesFactory.createForPlayer(root),
         )
     }

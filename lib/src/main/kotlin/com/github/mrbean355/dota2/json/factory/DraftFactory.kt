@@ -28,10 +28,10 @@ private const val JsonKey = "draft"
 
 internal object DraftFactory {
 
-    fun createForSpectator(root: JsonObject): Draft? {
+    fun createForSpectator(root: JsonObject, json: Json): Draft? {
         val draft = root[JsonKey]?.jsonObject ?: return null
         return if (draft.isNotEmpty()) {
-            Json.decodeFromJsonElement<DraftImpl>(draft)
+            json.decodeFromJsonElement<DraftImpl>(draft)
         } else {
             return null
         }

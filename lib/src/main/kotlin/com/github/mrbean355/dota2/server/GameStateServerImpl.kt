@@ -113,7 +113,7 @@ internal class GameStateServerImpl(
         try {
             val state = Json.parseToJsonElement(json).jsonObject.let {
                 authenticate(it)
-                parseGameState(it)
+                parseGameState(it, Json)
             }
             genericListener?.invoke(state)
             when (state) {

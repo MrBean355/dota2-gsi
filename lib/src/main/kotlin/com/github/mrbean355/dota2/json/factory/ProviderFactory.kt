@@ -27,9 +27,9 @@ private const val JsonKey = "provider"
 
 internal object ProviderFactory {
 
-    fun create(root: JsonObject): Provider? {
+    fun create(root: JsonObject, json: Json): Provider? {
         return root[JsonKey]?.jsonObject?.let {
-            Json.decodeFromJsonElement<ProviderImpl>(it)
+            json.decodeFromJsonElement<ProviderImpl>(it)
         }
     }
 }

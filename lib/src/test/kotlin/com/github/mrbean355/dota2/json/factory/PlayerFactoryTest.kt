@@ -21,6 +21,7 @@ import com.github.mrbean355.dota2.map.Team
 import com.github.mrbean355.dota2.player.PlayerImpl
 import com.github.mrbean355.dota2.player.SpectatedPlayerImpl
 import com.github.mrbean355.dota2.testutil.jsonObject
+import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertSame
@@ -31,14 +32,14 @@ internal class PlayerFactoryTest {
 
     @Test
     internal fun createForPlayer_KeyMissing_ReturnsNull() {
-        val player = PlayerFactory.createForPlayer("empty.json".jsonObject)
+        val player = PlayerFactory.createForPlayer("empty.json".jsonObject, Json)
 
         assertNull(player)
     }
 
     @Test
     internal fun testCreateForPlayer_DeserializesObject() {
-        val player = PlayerFactory.createForPlayer("player_playing.json".jsonObject)!!
+        val player = PlayerFactory.createForPlayer("player_playing.json".jsonObject, Json)!!
 
         with(player as PlayerImpl) {
             assertEquals("2924123062", steamId)
@@ -70,21 +71,21 @@ internal class PlayerFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val player = PlayerFactory.createForSpectator("empty.json".jsonObject)
+        val player = PlayerFactory.createForSpectator("empty.json".jsonObject, Json)
 
         assertNull(player)
     }
 
     @Test
     internal fun createForSpectator_EmptyObject_ReturnsEmptyMap() {
-        val player = PlayerFactory.createForSpectator("player_invalid.json".jsonObject)!!
+        val player = PlayerFactory.createForSpectator("player_invalid.json".jsonObject, Json)!!
 
         assertTrue(player.isEmpty())
     }
 
     @Test
     internal fun testCreateForSpectator_DeserializesObject() {
-        val player = PlayerFactory.createForSpectator("player_spectating.json".jsonObject)!!
+        val player = PlayerFactory.createForSpectator("player_spectating.json".jsonObject, Json)!!
 
         assertEquals(2, player.size)
         assertTrue("team2" in player)

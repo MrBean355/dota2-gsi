@@ -30,15 +30,15 @@ private const val JsonKey = "map"
 
 internal object MapFactory {
 
-    fun createForPlayer(root: JsonObject): PlayingMap? {
+    fun createForPlayer(root: JsonObject, json: Json): PlayingMap? {
         return root[JsonKey]?.jsonObject?.let {
-            Json.decodeFromJsonElement<PlayingMapImpl>(it)
+            json.decodeFromJsonElement<PlayingMapImpl>(it)
         }
     }
 
-    fun createForSpectator(root: JsonObject): SpectatedMap? {
+    fun createForSpectator(root: JsonObject, json: Json): SpectatedMap? {
         return root[JsonKey]?.jsonObject?.let {
-            Json.decodeFromJsonElement<SpectatedMapImpl>(it)
+            json.decodeFromJsonElement<SpectatedMapImpl>(it)
         }
     }
 

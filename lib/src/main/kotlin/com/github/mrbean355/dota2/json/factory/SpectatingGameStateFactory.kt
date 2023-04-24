@@ -18,21 +18,22 @@ package com.github.mrbean355.dota2.json.factory
 
 import com.github.mrbean355.dota2.gamestate.SpectatingGameState
 import com.github.mrbean355.dota2.gamestate.SpectatingGameStateImpl
+import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 
 internal object SpectatingGameStateFactory {
 
-    fun create(root: JsonObject): SpectatingGameState {
+    fun create(root: JsonObject, json: Json): SpectatingGameState {
         return SpectatingGameStateImpl(
-            provider = ProviderFactory.create(root),
-            map = MapFactory.createForSpectator(root),
-            players = PlayerFactory.createForSpectator(root),
-            heroes = HeroFactory.createForSpectator(root),
-            abilities = AbilitiesFactory.createForSpectator(root),
-            items = ItemsFactory.createForSpectator(root),
-            buildings = BuildingsFactory.createForSpectator(root),
+            provider = ProviderFactory.create(root, json),
+            map = MapFactory.createForSpectator(root, json),
+            players = PlayerFactory.createForSpectator(root, json),
+            heroes = HeroFactory.createForSpectator(root, json),
+            abilities = AbilitiesFactory.createForSpectator(root, json),
+            items = ItemsFactory.createForSpectator(root, json),
+            buildings = BuildingsFactory.createForSpectator(root, json),
             wearables = WearablesFactory.createForSpectator(root),
-            draft = DraftFactory.createForSpectator(root),
+            draft = DraftFactory.createForSpectator(root, json),
         )
     }
 }

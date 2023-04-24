@@ -28,14 +28,14 @@ private const val JsonKey = "items"
 
 internal object ItemsFactory {
 
-    fun createForPlayer(root: JsonObject): Items? {
-        return root[JsonKey]?.jsonObject?.mapItems()
+    fun createForPlayer(root: JsonObject, json: Json): Items? {
+        return root[JsonKey]?.jsonObject?.mapItems(json)
     }
 
-    fun createForSpectator(root: JsonObject): Map<String, Items>? {
+    fun createForSpectator(root: JsonObject, json: Json): Map<String, Items>? {
         return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
             teams.jsonObject.mapNotNull { (playerId, playerItems) ->
-                val created = playerItems.jsonObject.mapItems()
+                val created = playerItems.jsonObject.mapItems(json)
                 if (created != null) {
                     playerId to created
                 } else {
@@ -55,26 +55,26 @@ internal object ItemsFactory {
         } ?: ClientMode.Unknown
     }
 
-    private fun JsonObject.mapItems(): Items? {
+    private fun JsonObject.mapItems(json: Json): Items? {
         if (isEmpty()) {
             return null
         }
 
         val inventory = entries
             .filter { it.key.startsWith("slot") }
-            .map { Json.decodeFromJsonElement<ItemImpl>(it.value) }
+            .map { json.decodeFromJsonElement<ItemImpl>(it.value) }
 
         val stash = entries
             .filter { it.key.startsWith("stash") }
-            .map { Json.decodeFromJsonElement<ItemImpl>(it.value) }
+            .map { json.decodeFromJsonElement<ItemImpl>(it.value) }
 
         val teleport = entries
             .first { it.key == "teleport0" }
-            .let { Json.decodeFromJsonElement<ItemImpl>(it.value) }
+            .let { json.decodeFromJsonElement<ItemImpl>(it.value) }
 
         val neutral = entries
             .first { it.key == "neutral0" }
-            .let { Json.decodeFromJsonElement<ItemImpl>(it.value) }
+            .let { json.decodeFromJsonElement<ItemImpl>(it.value) }
 
         return Items(inventory, stash, teleport, neutral)
     }

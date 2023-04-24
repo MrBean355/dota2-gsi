@@ -22,6 +22,7 @@ import com.github.mrbean355.dota2.map.PlayingMapImpl
 import com.github.mrbean355.dota2.map.SpectatedMapImpl
 import com.github.mrbean355.dota2.map.Team
 import com.github.mrbean355.dota2.testutil.jsonObject
+import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull
@@ -33,14 +34,14 @@ internal class MapFactoryTest {
 
     @Test
     internal fun createForPlayer_KeyMissing_ReturnsNull() {
-        val map = MapFactory.createForPlayer("empty.json".jsonObject)
+        val map = MapFactory.createForPlayer("empty.json".jsonObject, Json)
 
         assertNull(map)
     }
 
     @Test
     internal fun testCreateForPlayer_DeserializesObject() {
-        val map = MapFactory.createForPlayer("map_playing.json".jsonObject)!!
+        val map = MapFactory.createForPlayer("map_playing.json".jsonObject, Json)!!
 
         with(map as PlayingMapImpl) {
             assertEquals("start", name)
@@ -61,14 +62,14 @@ internal class MapFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val map = MapFactory.createForSpectator("empty.json".jsonObject)
+        val map = MapFactory.createForSpectator("empty.json".jsonObject, Json)
 
         assertNull(map)
     }
 
     @Test
     internal fun testCreateForSpectator_DeserializesObject() {
-        val map = MapFactory.createForSpectator("map_spectating.json".jsonObject)!!
+        val map = MapFactory.createForSpectator("map_spectating.json".jsonObject, Json)!!
 
         with(map as SpectatedMapImpl) {
             assertEquals("start", name)

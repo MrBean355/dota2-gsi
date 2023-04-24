@@ -20,6 +20,8 @@ import com.github.mrbean355.dota2.hero.HeroImpl
 import com.github.mrbean355.dota2.hero.SpectatedHeroImpl
 import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.testutil.jsonObject
+import kotlinx.serialization.json.Json
+
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull
@@ -31,28 +33,28 @@ internal class HeroFactoryTest {
 
     @Test
     internal fun createForPlayer_KeyMissing_ReturnsNull() {
-        val hero = HeroFactory.createForPlayer("empty.json".jsonObject)
+        val hero = HeroFactory.createForPlayer("empty.json".jsonObject, Json)
 
         assertNull(hero)
     }
 
     @Test
     internal fun createForPlayer_EmptyObject_ReturnsNull() {
-        val hero = HeroFactory.createForPlayer("hero_invalid.json".jsonObject)
+        val hero = HeroFactory.createForPlayer("hero_invalid.json".jsonObject, Json)
 
         assertNull(hero)
     }
 
     @Test
     internal fun testCreateForPlayer_IncompleteHero_ReturnsNull() {
-        val hero = HeroFactory.createForPlayer("hero_playing_incomplete.json".jsonObject)
+        val hero = HeroFactory.createForPlayer("hero_playing_incomplete.json".jsonObject, Json)
 
         assertNull(hero)
     }
 
     @Test
     internal fun testCreateForPlayer_DeserializesObject() {
-        val hero = HeroFactory.createForPlayer("hero_playing.json".jsonObject)!!
+        val hero = HeroFactory.createForPlayer("hero_playing.json".jsonObject, Json)!!
 
         with(hero as HeroImpl) {
             assertEquals(-1664, xPos)
@@ -98,28 +100,28 @@ internal class HeroFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val hero = HeroFactory.createForSpectator("empty.json".jsonObject)
+        val hero = HeroFactory.createForSpectator("empty.json".jsonObject, Json)
 
         assertNull(hero)
     }
 
     @Test
     internal fun createForSpectator_EmptyObject_ReturnsEmptyMap() {
-        val hero = HeroFactory.createForSpectator("hero_invalid.json".jsonObject)!!
+        val hero = HeroFactory.createForSpectator("hero_invalid.json".jsonObject, Json)!!
 
         assertTrue(hero.isEmpty())
     }
 
     @Test
     internal fun testCreateForSpectator_IncompleteHero_ReturnsNull() {
-        val hero = HeroFactory.createForSpectator("hero_spectating_incomplete.json".jsonObject)!!
+        val hero = HeroFactory.createForSpectator("hero_spectating_incomplete.json".jsonObject, Json)!!
 
         assertTrue(hero.isEmpty())
     }
 
     @Test
     internal fun testCreateForSpectator_DeserializesObject() {
-        val hero = HeroFactory.createForSpectator("hero_spectating.json".jsonObject)!!
+        val hero = HeroFactory.createForSpectator("hero_spectating.json".jsonObject, Json)!!
 
         assertEquals(10, hero.size)
         repeat(10) {
