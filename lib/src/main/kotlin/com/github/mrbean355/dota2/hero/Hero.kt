@@ -16,7 +16,6 @@
 
 package com.github.mrbean355.dota2.hero
 
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
 import com.github.mrbean355.dota2.hero.talent.TalentTree
 
 /**
@@ -51,7 +50,6 @@ interface Hero {
     val isSmoked: Boolean
     val hasDebuff: Boolean
 
-    @ExperimentalGameState
     val talentTree: TalentTree
     val attributesLevel: Int
 }

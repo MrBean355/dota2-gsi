@@ -16,12 +16,9 @@
 
 package com.github.mrbean355.dota2.draft
 
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
-
 /**
  * A hero that has been picked or banned during the draft.
  */
-@ExperimentalGameState
 interface DraftHero {
     val id: Int
     val name: String

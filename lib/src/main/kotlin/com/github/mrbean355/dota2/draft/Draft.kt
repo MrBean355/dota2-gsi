@@ -16,12 +16,9 @@
 
 package com.github.mrbean355.dota2.draft
 
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
-
 /**
  * The in-progress draft of the match being spectated.
  */
-@ExperimentalGameState
 interface Draft {
     val activeTeam: Int
     val isPick: Boolean

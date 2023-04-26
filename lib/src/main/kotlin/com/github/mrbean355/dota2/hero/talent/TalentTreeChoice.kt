@@ -16,12 +16,9 @@
 
 package com.github.mrbean355.dota2.hero.talent
 
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
-
 /**
  * The choices of a talent tree level (e.g. level 10).
  */
-@ExperimentalGameState
 interface TalentTreeChoice {
     val hasLeft: Boolean
     val hasRight: Boolean
