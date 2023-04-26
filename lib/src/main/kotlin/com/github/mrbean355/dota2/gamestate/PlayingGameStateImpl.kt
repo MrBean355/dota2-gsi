@@ -18,6 +18,7 @@ package com.github.mrbean355.dota2.gamestate
 
 import com.github.mrbean355.dota2.ability.Ability
 import com.github.mrbean355.dota2.building.Building
+import com.github.mrbean355.dota2.event.DotaEvent
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.item.Items
 import com.github.mrbean355.dota2.map.PlayingMap
@@ -33,4 +34,5 @@ internal data class PlayingGameStateImpl(
     override val items: Items?,
     override val buildings: List<Building>?,
     override val wearables: List<Int>?,
+    override val events: List<DotaEvent>?
 ) : PlayingGameState

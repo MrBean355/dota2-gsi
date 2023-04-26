@@ -33,6 +33,7 @@ internal object PlayingGameStateFactory {
             items = ItemsFactory.createForPlayer(root, json),
             buildings = BuildingsFactory.createForPlayer(root, json),
             wearables = WearablesFactory.createForPlayer(root),
+            events = EventsFactory.create(root),
         )
     }
 }

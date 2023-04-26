@@ -1,0 +1,23 @@
+{
+  "events": [
+    {
+      "game_time": 2334,
+      "event_type": "aegis_picked_up",
+      "player_id": 1,
+      "snatched": false
+    },
+    {
+      "game_time": 2333,
+      "event_type": "roshan_killed",
+      "killed_by_team": "dire",
+      "killer_player_id": 1
+    },
+    {
+      "game_time": 2542,
+      "event_type": "tip",
+      "sender_player_id": 3,
+      "receiver_player_id": 0,
+      "tip_amount": 50
+    }
+  ]
+}

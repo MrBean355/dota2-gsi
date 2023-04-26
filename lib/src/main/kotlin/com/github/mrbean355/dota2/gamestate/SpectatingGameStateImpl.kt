@@ -19,6 +19,7 @@ package com.github.mrbean355.dota2.gamestate
 import com.github.mrbean355.dota2.ability.Ability
 import com.github.mrbean355.dota2.building.Building
 import com.github.mrbean355.dota2.draft.Draft
+import com.github.mrbean355.dota2.event.DotaEvent
 import com.github.mrbean355.dota2.hero.SpectatedHero
 import com.github.mrbean355.dota2.item.Items
 import com.github.mrbean355.dota2.map.SpectatedMap
@@ -34,5 +35,6 @@ internal data class SpectatingGameStateImpl(
     override val items: Map<String, Items>?,
     override val buildings: Map<String, List<Building>>?,
     override val wearables: Map<String, List<Int>>?,
+    override val events: List<DotaEvent>?,
     override val draft: Draft?,
 ) : SpectatingGameState
