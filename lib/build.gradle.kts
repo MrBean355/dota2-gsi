@@ -66,7 +66,7 @@ tasks.withType(org.sonarqube.gradle.SonarTask::class.java) {
     dependsOn("jacocoTestReport")
 }
 
-sonarqube {
+sonar {
     properties {
         property("sonar.projectKey", "MrBean355_dota2-gsi")
         property("sonar.organization", "mrbean355")
