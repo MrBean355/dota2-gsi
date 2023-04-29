@@ -35,6 +35,11 @@ $dokka.location:com.github.mrbean355.dota2.draft/TeamDraft///PointingToDeclarati
 $dokka.location:com.github.mrbean355.dota2.draft/TeamDraft/bans/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.draft/-team-draft/bans.html
 $dokka.location:com.github.mrbean355.dota2.draft/TeamDraft/isHomeTeam/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.draft/-team-draft/is-home-team.html
 $dokka.location:com.github.mrbean355.dota2.draft/TeamDraft/picks/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.draft/-team-draft/picks.html
+$dokka.location:com.github.mrbean355.dota2.event////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.event/index.html
+$dokka.location:com.github.mrbean355.dota2.event/DotaEvent///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.event/-dota-event/index.html
+$dokka.location:com.github.mrbean355.dota2.event/DotaEvent/eventType/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.event/-dota-event/event-type.html
+$dokka.location:com.github.mrbean355.dota2.event/DotaEvent/gameTime/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.event/-dota-event/game-time.html
+$dokka.location:com.github.mrbean355.dota2.event/DotaEvent/payload/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.event/-dota-event/payload.html
 $dokka.location:com.github.mrbean355.dota2.gamestate////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/index.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/GameState///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-game-state/index.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/IdleGameState///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-idle-game-state/index.html
@@ -42,6 +47,7 @@ $dokka.location:com.github.mrbean355.dota2.gamestate/IdleGameState/provider/#/Po
 $dokka.location:com.github.mrbean355.dota2.gamestate/PlayingGameState///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/index.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/PlayingGameState/abilities/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/abilities.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/PlayingGameState/buildings/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/buildings.html
+$dokka.location:com.github.mrbean355.dota2.gamestate/PlayingGameState/events/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/events.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/PlayingGameState/hero/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/hero.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/PlayingGameState/items/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/items.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/PlayingGameState/map/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-playing-game-state/map.html
@@ -52,6 +58,7 @@ $dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState///Point
 $dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState/abilities/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/abilities.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState/buildings/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/buildings.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState/draft/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/draft.html
+$dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState/events/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/events.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState/heroes/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/heroes.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState/items/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/items.html
 $dokka.location:com.github.mrbean355.dota2.gamestate/SpectatingGameState/map/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.gamestate/-spectating-game-state/map.html
@@ -230,6 +237,7 @@ $dokka.location:com.github.mrbean355.dota2.server/GameStateServer.ErrorHandler/i
 $dokka.location:com.github.mrbean355.dota2.server/GameStateServer.Listener///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/-listener/index.html
 $dokka.location:com.github.mrbean355.dota2.server/GameStateServer.Listener/invoke/#TypeParam(bounds=[com.github.mrbean355.dota2.gamestate.GameState])/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/-listener/invoke.html
 $dokka.location:com.github.mrbean355.dota2.server/GameStateServer///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/index.html
+$dokka.location:com.github.mrbean355.dota2.server/GameStateServer/enableStrictDeserialization/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/enable-strict-deserialization.html
 $dokka.location:com.github.mrbean355.dota2.server/GameStateServer/requireAuthentication/#kotlin.collections.Map[kotlin.String,kotlin.String]/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/require-authentication.html
 $dokka.location:com.github.mrbean355.dota2.server/GameStateServer/setErrorHandler/#com.github.mrbean355.dota2.server.GameStateServer.ErrorHandler/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/set-error-handler.html
 $dokka.location:com.github.mrbean355.dota2.server/GameStateServer/setGenericListener/#com.github.mrbean355.dota2.server.GameStateServer.Listener[com.github.mrbean355.dota2.gamestate.GameState]/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.server/-game-state-server/set-generic-listener.html
@@ -243,6 +251,7 @@ com.github.mrbean355.dota2.ability
 com.github.mrbean355.dota2.annotation
 com.github.mrbean355.dota2.building
 com.github.mrbean355.dota2.draft
+com.github.mrbean355.dota2.event
 com.github.mrbean355.dota2.gamestate
 com.github.mrbean355.dota2.hero
 com.github.mrbean355.dota2.hero.talent
