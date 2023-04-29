@@ -49,7 +49,6 @@ interface Hero {
     val hasAghanimsShard: Boolean
     val isSmoked: Boolean
     val hasDebuff: Boolean
-
     val talentTree: TalentTree
     val attributesLevel: Int
 }
