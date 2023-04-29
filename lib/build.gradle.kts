@@ -19,7 +19,7 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.contentNegotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.kotlinx.serialization.json)
+    api(libs.kotlinx.serialization.json)
 
     testImplementation(platform(testLibs.junit.bom))
     testImplementation(testLibs.junit.jupiter)
