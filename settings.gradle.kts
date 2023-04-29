@@ -1,7 +1,7 @@
 pluginManagement {
     plugins {
-        kotlin("jvm") version "1.8.20"
-        kotlin("plugin.serialization") version "1.8.20"
+        kotlin("jvm") version "1.8.21"
+        kotlin("plugin.serialization") version "1.8.21"
         id("org.jetbrains.dokka") version "1.8.10"
         id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.1"
         id("org.sonarqube") version "4.0.0.2929"
@@ -25,7 +25,7 @@ dependencyResolutionManagement {
         create("testLibs") {
             library("junit-bom", "org.junit:junit-bom:5.9.2")
             library("junit-jupiter", "org.junit.jupiter", "junit-jupiter").withoutVersion()
-            library("mockK", "io.mockk:mockk:1.13.4")
+            library("mockK", "io.mockk:mockk:1.13.5")
         }
     }
 }

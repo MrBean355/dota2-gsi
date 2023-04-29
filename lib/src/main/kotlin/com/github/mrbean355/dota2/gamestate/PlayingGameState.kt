@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 package com.github.mrbean355.dota2.gamestate
 
 import com.github.mrbean355.dota2.ability.Ability
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
 import com.github.mrbean355.dota2.building.Building
+import com.github.mrbean355.dota2.event.DotaEvent
 import com.github.mrbean355.dota2.hero.Hero
 import com.github.mrbean355.dota2.item.Items
 import com.github.mrbean355.dota2.map.PlayingMap
@@ -42,10 +42,10 @@ interface PlayingGameState : GameState {
 
     val items: Items?
 
-    @ExperimentalGameState
     val buildings: List<Building>?
 
-    @ExperimentalGameState
     val wearables: List<Int>?
+
+    val events: List<DotaEvent>?
 
 }

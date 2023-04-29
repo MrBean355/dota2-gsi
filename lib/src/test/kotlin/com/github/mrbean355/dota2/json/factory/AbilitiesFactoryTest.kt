@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.github.mrbean355.dota2.json.factory
 import com.github.mrbean355.dota2.ability.AbilityImpl
 import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.testutil.jsonObject
+import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull
@@ -30,21 +31,21 @@ internal class AbilitiesFactoryTest {
 
     @Test
     internal fun createForPlayer_KeyMissing_ReturnsNull() {
-        val abilities = AbilitiesFactory.createForPlayer("empty.json".jsonObject)
+        val abilities = AbilitiesFactory.createForPlayer("empty.json".jsonObject, Json)
 
         assertNull(abilities)
     }
 
     @Test
     internal fun createForPlayer_EmptyObject_ReturnsEmptyList() {
-        val items = AbilitiesFactory.createForPlayer("abilities_invalid.json".jsonObject)!!
+        val items = AbilitiesFactory.createForPlayer("abilities_invalid.json".jsonObject, Json)!!
 
         assertTrue(items.isEmpty())
     }
 
     @Test
     internal fun testCreateForPlayer_DeserializesObject() {
-        val abilities = AbilitiesFactory.createForPlayer("abilities_playing.json".jsonObject)!!
+        val abilities = AbilitiesFactory.createForPlayer("abilities_playing.json".jsonObject, Json)!!
             .filterIsInstance<AbilityImpl>()
 
         assertEquals(7, abilities.size)
@@ -59,21 +60,21 @@ internal class AbilitiesFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val abilities = AbilitiesFactory.createForSpectator("empty.json".jsonObject)
+        val abilities = AbilitiesFactory.createForSpectator("empty.json".jsonObject, Json)
 
         assertNull(abilities)
     }
 
     @Test
     internal fun createForSpectator_EmptyObject_ReturnsEmptyMap() {
-        val items = AbilitiesFactory.createForSpectator("abilities_invalid.json".jsonObject)!!
+        val items = AbilitiesFactory.createForSpectator("abilities_invalid.json".jsonObject, Json)!!
 
         assertTrue(items.isEmpty())
     }
 
     @Test
     internal fun testCreateForSpectator_DeserializesObject() {
-        val abilities = AbilitiesFactory.createForSpectator("abilities_spectating.json".jsonObject)!!
+        val abilities = AbilitiesFactory.createForSpectator("abilities_spectating.json".jsonObject, Json)!!
 
         assertEquals(10, abilities.size)
         repeat(10) {

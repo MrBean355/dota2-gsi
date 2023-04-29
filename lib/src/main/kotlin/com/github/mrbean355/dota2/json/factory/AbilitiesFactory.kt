@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,19 +28,19 @@ private const val JsonKey = "abilities"
 
 internal object AbilitiesFactory {
 
-    fun createForPlayer(root: JsonObject): List<Ability>? {
+    fun createForPlayer(root: JsonObject, json: Json): List<Ability>? {
         return root[JsonKey]?.jsonObject?.let { obj ->
             obj.values.map {
-                Json.decodeFromJsonElement<AbilityImpl>(it)
+                json.decodeFromJsonElement<AbilityImpl>(it)
             }
         }
     }
 
-    fun createForSpectator(root: JsonObject): Map<String, List<Ability>>? {
+    fun createForSpectator(root: JsonObject, json: Json): Map<String, List<Ability>>? {
         return root[JsonKey]?.jsonObject?.values?.flatMap { teams ->
             teams.jsonObject.map { (playerId, playerAbilities) ->
                 playerId to playerAbilities.jsonObject.values.map {
-                    Json.decodeFromJsonElement<AbilityImpl>(it)
+                    json.decodeFromJsonElement<AbilityImpl>(it)
                 }
             }
         }?.toMap()

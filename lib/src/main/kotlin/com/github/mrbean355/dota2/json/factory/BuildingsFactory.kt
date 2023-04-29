@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,15 +26,15 @@ private const val JsonKey = "buildings"
 
 internal object BuildingsFactory {
 
-    fun createForPlayer(root: JsonObject): List<Building>? {
-        val teamBuildings = createForSpectator(root) ?: return null
+    fun createForPlayer(root: JsonObject, json: Json): List<Building>? {
+        val teamBuildings = createForSpectator(root, json) ?: return null
         val team = teamBuildings.keys.firstOrNull() ?: return emptyList()
         return teamBuildings[team]
     }
 
-    fun createForSpectator(root: JsonObject): Map<String, List<Building>>? {
+    fun createForSpectator(root: JsonObject, json: Json): Map<String, List<Building>>? {
         return root[JsonKey]?.jsonObject?.mapValues { (_, buildings) ->
-            Json.decodeFromJsonElement(BuildingsTransformer, buildings)
+            json.decodeFromJsonElement(BuildingsTransformer, buildings)
         }
     }
 }

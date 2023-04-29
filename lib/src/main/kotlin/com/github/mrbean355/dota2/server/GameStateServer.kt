@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,6 +86,16 @@ interface GameStateServer {
      * @return this object.
      */
     fun setErrorHandler(handler: ErrorHandler): GameStateServer
+
+    /**
+     * Enable strict deserialization of the JSON data coming from Dota 2, causing an error to
+     * be thrown when the library encounters an unexpected object property.
+     * For example, if Dota 2 starts sending a new property in the `Player` object, an error
+     * will be thrown since the library does not expect it.
+     * This is **not recommended**, because when Valve adds new properties to the JSON data
+     * in a Dota update, existing consumers will break and require a new version of this library.
+     */
+    fun enableStrictDeserialization(): GameStateServer
 
     /**
      * Optionally authenticate data coming from the Dota client using the `auth` section in

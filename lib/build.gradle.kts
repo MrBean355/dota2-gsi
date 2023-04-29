@@ -13,13 +13,13 @@ plugins {
 
 group = "com.github.mrbean355"
 val artifactId by extra("dota2-gsi")
-version = "2.2.2"
+version = "2.3.0"
 
 dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.contentNegotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.kotlinx.serialization.json)
+    api(libs.kotlinx.serialization.json)
 
     testImplementation(platform(testLibs.junit.bom))
     testImplementation(testLibs.junit.jupiter)
@@ -38,6 +38,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 
 tasks.withType<Jar> {
     archiveBaseName.set(artifactId)
+    dependsOn("apiCheck")
 }
 
 tasks.withType<org.jetbrains.dokka.gradle.DokkaTask> {
@@ -65,7 +66,7 @@ tasks.withType(org.sonarqube.gradle.SonarTask::class.java) {
     dependsOn("jacocoTestReport")
 }
 
-sonarqube {
+sonar {
     properties {
         property("sonar.projectKey", "MrBean355_dota2-gsi")
         property("sonar.organization", "mrbean355")

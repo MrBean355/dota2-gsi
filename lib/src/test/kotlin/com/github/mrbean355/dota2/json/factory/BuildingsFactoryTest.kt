@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ package com.github.mrbean355.dota2.json.factory
 import com.github.mrbean355.dota2.building.Building
 import com.github.mrbean355.dota2.building.BuildingImpl
 import com.github.mrbean355.dota2.testutil.jsonObject
+import kotlinx.serialization.json.Json
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.Assertions.assertTrue
@@ -28,21 +29,21 @@ internal class BuildingsFactoryTest {
 
     @Test
     internal fun createForPlayer_KeyMissing_ReturnsNull() {
-        val buildings = BuildingsFactory.createForPlayer("empty.json".jsonObject)
+        val buildings = BuildingsFactory.createForPlayer("empty.json".jsonObject, Json)
 
         assertNull(buildings)
     }
 
     @Test
     internal fun createForPlayer_EmptyObject_ReturnsEmptyList() {
-        val buildings = BuildingsFactory.createForPlayer("buildings_invalid.json".jsonObject)!!
+        val buildings = BuildingsFactory.createForPlayer("buildings_invalid.json".jsonObject, Json)!!
 
         assertTrue(buildings.isEmpty())
     }
 
     @Test
     internal fun createForPlayer_DeserializesObject() {
-        val buildings = BuildingsFactory.createForPlayer("buildings_playing.json".jsonObject)!!
+        val buildings = BuildingsFactory.createForPlayer("buildings_playing.json".jsonObject, Json)!!
 
         with(buildings) {
             assertEquals(17, size)
@@ -71,21 +72,21 @@ internal class BuildingsFactoryTest {
 
     @Test
     internal fun createForSpectator_KeyMissing_ReturnsNull() {
-        val buildings = BuildingsFactory.createForSpectator("empty.json".jsonObject)
+        val buildings = BuildingsFactory.createForSpectator("empty.json".jsonObject, Json)
 
         assertNull(buildings)
     }
 
     @Test
     internal fun createForSpectator_EmptyObject_ReturnsEmptyList() {
-        val buildings = BuildingsFactory.createForSpectator("buildings_invalid.json".jsonObject)!!
+        val buildings = BuildingsFactory.createForSpectator("buildings_invalid.json".jsonObject, Json)!!
 
         assertTrue(buildings.isEmpty())
     }
 
     @Test
     internal fun createForSpectator_DeserializesObject() {
-        val buildings = BuildingsFactory.createForSpectator("buildings_spectating.json".jsonObject)!!
+        val buildings = BuildingsFactory.createForSpectator("buildings_spectating.json".jsonObject, Json)!!
 
         assertEquals(2, buildings.size)
         assertTrue("radiant" in buildings)

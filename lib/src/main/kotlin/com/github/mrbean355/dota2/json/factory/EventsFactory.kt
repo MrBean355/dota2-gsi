@@ -16,20 +16,26 @@
 
 package com.github.mrbean355.dota2.json.factory
 
-import com.github.mrbean355.dota2.provider.Provider
-import com.github.mrbean355.dota2.provider.ProviderImpl
-import kotlinx.serialization.json.Json
+import com.github.mrbean355.dota2.event.DotaEvent
+import com.github.mrbean355.dota2.event.DotaEventImpl
 import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.decodeFromJsonElement
+import kotlinx.serialization.json.int
+import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 
-private const val JsonKey = "provider"
+private const val JsonKey = "events"
 
-internal object ProviderFactory {
+internal object EventsFactory {
 
-    fun create(root: JsonObject, json: Json): Provider? {
-        return root[JsonKey]?.jsonObject?.let {
-            json.decodeFromJsonElement<ProviderImpl>(it)
+    fun create(root: JsonObject): List<DotaEvent>? {
+        return root[JsonKey]?.jsonArray?.map {
+            val obj = it.jsonObject
+            DotaEventImpl(
+                gameTime = obj.getValue("game_time").jsonPrimitive.int,
+                eventType = obj.getValue("event_type").jsonPrimitive.content,
+                payload = obj.minus(listOf("game_time", "event_type"))
+            )
         }
     }
 }

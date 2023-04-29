@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,6 @@ internal class GameStateServerImpl(
     port: Int
 ) : GameStateServer {
 
-    private var authentication: Map<String, String> = emptyMap()
     private var genericListener: GameStateServer.Listener<GameState>? = null
     private var playingListener: GameStateServer.Listener<PlayingGameState>? = null
     private var spectatingListener: GameStateServer.Listener<SpectatingGameState>? = null
@@ -54,6 +53,8 @@ internal class GameStateServerImpl(
         LoggerFactory.getLogger(GameStateServerImpl::class.java)
             .error("Error parsing game state! Set a custom error handler with setErrorHandler().", t)
     }
+    private var authentication: Map<String, String> = emptyMap()
+    private var json = createJson()
 
     private val server: ApplicationEngine = embeddedServer(Netty, port) {
         routing {
@@ -61,12 +62,6 @@ internal class GameStateServerImpl(
                 handleGameStateRequest()
             }
         }
-    }
-
-    override fun requireAuthentication(auth: Map<String, String>): GameStateServer {
-        require(auth.isNotEmpty()) { "Map must not be empty" }
-        authentication = auth
-        return this
     }
 
     override fun setGenericListener(listener: GameStateServer.Listener<GameState>): GameStateServer {
@@ -94,6 +89,17 @@ internal class GameStateServerImpl(
         return this
     }
 
+    override fun enableStrictDeserialization(): GameStateServer {
+        json = createJson(lenient = false)
+        return this
+    }
+
+    override fun requireAuthentication(auth: Map<String, String>): GameStateServer {
+        require(auth.isNotEmpty()) { "Map must not be empty" }
+        authentication = auth
+        return this
+    }
+
     override fun start(): GameStateServer {
         server.start(wait = true)
         return this
@@ -108,12 +114,16 @@ internal class GameStateServerImpl(
         server.stop(gracePeriodMillis, timeoutMillis)
     }
 
+    private fun createJson(lenient: Boolean = true): Json {
+        return Json { ignoreUnknownKeys = lenient }
+    }
+
     private suspend fun PipelineContext<Unit, ApplicationCall>.handleGameStateRequest() {
-        val json = call.receiveText()
+        val text = call.receiveText()
         try {
-            val state = Json.parseToJsonElement(json).jsonObject.let {
+            val state = json.parseToJsonElement(text).jsonObject.let {
                 authenticate(it)
-                parseGameState(it)
+                parseGameState(it, json)
             }
             genericListener?.invoke(state)
             when (state) {
@@ -122,7 +132,7 @@ internal class GameStateServerImpl(
                 is IdleGameState -> idleListener?.invoke(state)
             }
         } catch (t: Throwable) {
-            errorHandler(t, json)
+            errorHandler(t, text)
         }
         call.respond(HttpStatusCode.OK)
     }

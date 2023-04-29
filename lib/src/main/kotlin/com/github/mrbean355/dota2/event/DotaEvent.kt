@@ -14,20 +14,15 @@
  * limitations under the License.
  */
 
-package com.github.mrbean355.dota2.ability
+package com.github.mrbean355.dota2.event
+
+import kotlinx.serialization.json.JsonElement
 
 /**
- * An ability slot that belongs to a hero.
+ * A generic event that has recently happened during the match.
  */
-interface Ability {
-    val name: String
-    val level: Int
-    val canCast: Boolean
-    val isPassive: Boolean
-    val isEnabled: Boolean
-    val cooldown: Int
-    val isUltimate: Boolean
-    val charges: Int?
-    val maxCharges: Int?
-    val chargeCooldown: Int?
+interface DotaEvent {
+    val gameTime: Int
+    val eventType: String
+    val payload: Map<String, JsonElement>
 }

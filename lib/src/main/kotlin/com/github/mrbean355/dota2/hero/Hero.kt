@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package com.github.mrbean355.dota2.hero
 
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
 import com.github.mrbean355.dota2.hero.talent.TalentTree
 
 /**
@@ -50,8 +49,6 @@ interface Hero {
     val hasAghanimsShard: Boolean
     val isSmoked: Boolean
     val hasDebuff: Boolean
-
-    @ExperimentalGameState
     val talentTree: TalentTree
     val attributesLevel: Int
 }

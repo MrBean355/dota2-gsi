@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,10 +28,10 @@ private const val JsonKey = "draft"
 
 internal object DraftFactory {
 
-    fun createForSpectator(root: JsonObject): Draft? {
+    fun createForSpectator(root: JsonObject, json: Json): Draft? {
         val draft = root[JsonKey]?.jsonObject ?: return null
         return if (draft.isNotEmpty()) {
-            Json.decodeFromJsonElement<DraftImpl>(draft)
+            json.decodeFromJsonElement<DraftImpl>(draft)
         } else {
             return null
         }

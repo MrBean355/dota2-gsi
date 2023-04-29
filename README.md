@@ -76,6 +76,23 @@ public class GsiDemo {
   [demo project](https://github.com/MrBean355/dota2-gsi/tree/main/demo/src/main/java/com/github/mrbean355/dota2/demo)
   has some more involved examples.
 
+## Compatibility
+
+The library requires at least **Java 8** to compile.
+
+Additionally, the library depends on a few third party dependencies. If you use older versions of these dependencies in
+your project, they will probably be transitively upgraded to the version used by this library, so beware.
+
+| Library version | Kotlin version | Ktor version | KotlinX Serialization version |
+|-----------------|----------------|--------------|-------------------------------|
+| 2.3.x           | 1.8.21         | 2.3.0        | 1.5.0                         |
+| 2.2.x           | 1.8.20         | 2.3.0        | 1.5.0                         |
+| 2.1.x           | 1.7.10         | 2.0.3        | 1.3.3                         |
+| 2.0.x           | 1.7.10         | 2.0.3        | 1.3.3                         |
+| 1.2.x           | 1.7.10         | 2.0.3        | -                             |
+| 1.1.x           | 1.5.31         | 1.6.4        | -                             |
+| 1.0.x           | 1.4.21         | 1.4.3        | -                             |
+
 ## Snapshots
 
 Snapshots of the current in-development release are also published to Maven Central. You can use them in your project as

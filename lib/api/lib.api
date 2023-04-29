@@ -41,6 +41,12 @@ public abstract interface class com/github/mrbean355/dota2/draft/TeamDraft {
 	public abstract fun isHomeTeam ()Z
 }
 
+public abstract interface class com/github/mrbean355/dota2/event/DotaEvent {
+	public abstract fun getEventType ()Ljava/lang/String;
+	public abstract fun getGameTime ()I
+	public abstract fun getPayload ()Ljava/util/Map;
+}
+
 public abstract interface class com/github/mrbean355/dota2/gamestate/GameState {
 }
 
@@ -51,6 +57,7 @@ public abstract interface class com/github/mrbean355/dota2/gamestate/IdleGameSta
 public abstract interface class com/github/mrbean355/dota2/gamestate/PlayingGameState : com/github/mrbean355/dota2/gamestate/GameState {
 	public abstract fun getAbilities ()Ljava/util/List;
 	public abstract fun getBuildings ()Ljava/util/List;
+	public abstract fun getEvents ()Ljava/util/List;
 	public abstract fun getHero ()Lcom/github/mrbean355/dota2/hero/Hero;
 	public abstract fun getItems ()Lcom/github/mrbean355/dota2/item/Items;
 	public abstract fun getMap ()Lcom/github/mrbean355/dota2/map/PlayingMap;
@@ -63,6 +70,7 @@ public abstract interface class com/github/mrbean355/dota2/gamestate/SpectatingG
 	public abstract fun getAbilities ()Ljava/util/Map;
 	public abstract fun getBuildings ()Ljava/util/Map;
 	public abstract fun getDraft ()Lcom/github/mrbean355/dota2/draft/Draft;
+	public abstract fun getEvents ()Ljava/util/List;
 	public abstract fun getHeroes ()Ljava/util/Map;
 	public abstract fun getItems ()Ljava/util/Map;
 	public abstract fun getMap ()Lcom/github/mrbean355/dota2/map/SpectatedMap;
@@ -286,6 +294,7 @@ public abstract interface class com/github/mrbean355/dota2/provider/Provider {
 public abstract interface class com/github/mrbean355/dota2/server/GameStateServer {
 	public static final field Companion Lcom/github/mrbean355/dota2/server/GameStateServer$Companion;
 	public static fun create (I)Lcom/github/mrbean355/dota2/server/GameStateServer;
+	public abstract fun enableStrictDeserialization ()Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun requireAuthentication (Ljava/util/Map;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun setErrorHandler (Lcom/github/mrbean355/dota2/server/GameStateServer$ErrorHandler;)Lcom/github/mrbean355/dota2/server/GameStateServer;
 	public abstract fun setGenericListener (Lcom/github/mrbean355/dota2/server/GameStateServer$Listener;)Lcom/github/mrbean355/dota2/server/GameStateServer;

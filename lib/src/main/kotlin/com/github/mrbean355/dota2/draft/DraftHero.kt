@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,9 @@
 
 package com.github.mrbean355.dota2.draft
 
-import com.github.mrbean355.dota2.annotation.ExperimentalGameState
-
 /**
  * A hero that has been picked or banned during the draft.
  */
-@ExperimentalGameState
 interface DraftHero {
     val id: Int
     val name: String

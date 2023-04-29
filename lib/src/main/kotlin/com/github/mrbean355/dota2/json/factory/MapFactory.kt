@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Michael Johnston
+ * Copyright 2023 Michael Johnston
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,15 +30,15 @@ private const val JsonKey = "map"
 
 internal object MapFactory {
 
-    fun createForPlayer(root: JsonObject): PlayingMap? {
+    fun createForPlayer(root: JsonObject, json: Json): PlayingMap? {
         return root[JsonKey]?.jsonObject?.let {
-            Json.decodeFromJsonElement<PlayingMapImpl>(it)
+            json.decodeFromJsonElement<PlayingMapImpl>(it)
         }
     }
 
-    fun createForSpectator(root: JsonObject): SpectatedMap? {
+    fun createForSpectator(root: JsonObject, json: Json): SpectatedMap? {
         return root[JsonKey]?.jsonObject?.let {
-            Json.decodeFromJsonElement<SpectatedMapImpl>(it)
+            json.decodeFromJsonElement<SpectatedMapImpl>(it)
         }
     }
 
