@@ -13,7 +13,7 @@ plugins {
 
 group = "com.github.mrbean355"
 val artifactId by extra("dota2-gsi")
-version = "2.3.0"
+version = "2.4.0"
 
 dependencies {
     implementation(libs.ktor.server.netty)
@@ -56,6 +56,10 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask> {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = "0.8.11"
 }
 
 tasks.withType(JacocoReport::class.java) {
