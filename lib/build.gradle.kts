@@ -58,6 +58,10 @@ tasks.test {
     useJUnitPlatform()
 }
 
+jacoco {
+    toolVersion = "0.8.11"
+}
+
 tasks.withType(JacocoReport::class.java) {
     reports.xml.required.set(true)
 }
