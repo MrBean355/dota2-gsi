@@ -120,6 +120,7 @@ $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Shield///PointingToD
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Water///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-water/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Wisdom///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-wisdom/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/index.html
+$dokka.location:com.github.mrbean355.dota2.item/BottledRune/entries/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/entries.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune/valueOf/#kotlin.String/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/value-of.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune/values/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/values.html
 $dokka.location:com.github.mrbean355.dota2.item/Item///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/index.html
@@ -164,6 +165,7 @@ $dokka.location:com.github.mrbean355.dota2.map/MatchState.TeamShowcase///Pointin
 $dokka.location:com.github.mrbean355.dota2.map/MatchState.WaitForMapToLoad///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-match-state/-wait-for-map-to-load/index.html
 $dokka.location:com.github.mrbean355.dota2.map/MatchState.WaitForPlayersToLoad///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-match-state/-wait-for-players-to-load/index.html
 $dokka.location:com.github.mrbean355.dota2.map/MatchState///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-match-state/index.html
+$dokka.location:com.github.mrbean355.dota2.map/MatchState/entries/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-match-state/entries.html
 $dokka.location:com.github.mrbean355.dota2.map/MatchState/valueOf/#kotlin.String/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-match-state/value-of.html
 $dokka.location:com.github.mrbean355.dota2.map/MatchState/values/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-match-state/values.html
 $dokka.location:com.github.mrbean355.dota2.map/PlayingMap///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-playing-map/index.html
@@ -179,6 +181,7 @@ $dokka.location:com.github.mrbean355.dota2.map/Team.None///PointingToDeclaration
 $dokka.location:com.github.mrbean355.dota2.map/Team.Radiant///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-team/-radiant/index.html
 $dokka.location:com.github.mrbean355.dota2.map/Team.Spectator///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-team/-spectator/index.html
 $dokka.location:com.github.mrbean355.dota2.map/Team///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-team/index.html
+$dokka.location:com.github.mrbean355.dota2.map/Team/entries/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-team/entries.html
 $dokka.location:com.github.mrbean355.dota2.map/Team/valueOf/#kotlin.String/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-team/value-of.html
 $dokka.location:com.github.mrbean355.dota2.map/Team/values/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-team/values.html
 $dokka.location:com.github.mrbean355.dota2.player////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/index.html
