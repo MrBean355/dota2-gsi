@@ -9,5 +9,5 @@ dependencies {
     implementation(project(":lib"))
 
     // Logger implementation so we can see logs coming through:
-    implementation("ch.qos.logback:logback-classic:1.4.11")
+    implementation("ch.qos.logback:logback-classic:1.5.16")
 }
