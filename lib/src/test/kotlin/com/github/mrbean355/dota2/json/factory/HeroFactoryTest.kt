@@ -57,6 +57,7 @@ internal class HeroFactoryTest {
         val hero = HeroFactory.createForPlayer("hero_playing.json".jsonObject, Json)!!
 
         with(hero as HeroImpl) {
+            assertEquals(2, facet)
             assertEquals(-1664, xPos)
             assertEquals(-1216, yPos)
             assertEquals(111, id)
@@ -128,6 +129,7 @@ internal class HeroFactoryTest {
             assertTrue("player$it" in hero)
         }
         with(hero.getValue("player6") as SpectatedHeroImpl) {
+            assertEquals(3, facet)
             assertEquals(5630, xPos)
             assertEquals(-5169, yPos)
             assertEquals(33, id)

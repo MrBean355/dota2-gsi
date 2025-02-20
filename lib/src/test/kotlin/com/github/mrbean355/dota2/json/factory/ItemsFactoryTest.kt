@@ -65,13 +65,15 @@ internal class ItemsFactoryTest {
 
             verifyAeonDisk()
             stash.verifyEmptySlot(1)
-            verifyTomeOfKnowledge()
+            verifyHandOfMidas()
             verifyGemOfTrueSight()
             stash.verifyEmptySlot(4)
             verifySentryWard()
 
             verifyTeleport()
             verifyNeutral()
+            verifyNeutralEnchantment()
+            verifyPreservedNeutrals()
         }
     }
 
@@ -110,13 +112,15 @@ internal class ItemsFactoryTest {
 
             verifyAeonDisk()
             stash.verifyEmptySlot(1)
-            verifyTomeOfKnowledge()
+            verifyHandOfMidas()
             verifyGemOfTrueSight()
             stash.verifyEmptySlot(4)
             verifySentryWard()
 
             verifyTeleport()
             verifyNeutral()
+            verifyNeutralEnchantment()
+            verifyPreservedNeutrals()
         }
     }
 
@@ -152,10 +156,15 @@ internal class ItemsFactoryTest {
         with(inventory[0]) {
             assertEquals("item_urn_of_shadows", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertFalse(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertEquals(0, charges)
         }
     }
@@ -164,10 +173,15 @@ internal class ItemsFactoryTest {
         with(inventory[1]) {
             assertEquals("item_magic_wand", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertFalse(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertEquals(0, charges)
         }
     }
@@ -176,10 +190,15 @@ internal class ItemsFactoryTest {
         with(inventory[2]) {
             assertEquals("item_aether_lens", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertNull(canCast)
             assertNull(cooldown)
             assertTrue(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertNull(charges)
         }
     }
@@ -188,10 +207,15 @@ internal class ItemsFactoryTest {
         with(get(index)) {
             assertEquals("empty", name)
             assertNull(purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertNull(canCast)
             assertNull(cooldown)
             assertNull(isPassive)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertNull(charges)
         }
     }
@@ -200,10 +224,15 @@ internal class ItemsFactoryTest {
         with(inventory[4]) {
             assertEquals("item_arcane_boots", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertTrue(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertNull(charges)
         }
     }
@@ -212,10 +241,15 @@ internal class ItemsFactoryTest {
         with(inventory[6]) {
             assertEquals("item_smoke_of_deceit", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertTrue(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertEquals(1, charges)
         }
     }
@@ -224,10 +258,15 @@ internal class ItemsFactoryTest {
         with(inventory[8]) {
             assertEquals("item_bottle", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertSame(BottledRune.Regeneration, bottledRune)
             assertTrue(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertEquals(3, charges)
         }
     }
@@ -236,22 +275,32 @@ internal class ItemsFactoryTest {
         with(stash[0]) {
             assertEquals("item_aeon_disk", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertNull(canCast)
             assertNull(cooldown)
             assertTrue(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertNull(charges)
         }
     }
 
-    private fun Items.verifyTomeOfKnowledge() {
+    private fun Items.verifyHandOfMidas() {
         with(stash[2]) {
-            assertEquals("item_tome_of_knowledge", name)
+            assertEquals("item_hand_of_midas", name)
             assertEquals(0, purchaser)
+            assertEquals(1, level)
             assertNull(bottledRune)
             assertTrue(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertEquals(1, itemCharges)
+            assertEquals(3, abilityCharges)
+            assertEquals(2, maxCharges)
+            assertEquals(50, chargeCooldown)
             assertEquals(1, charges)
         }
     }
@@ -260,10 +309,15 @@ internal class ItemsFactoryTest {
         with(stash[3]) {
             assertEquals("item_gem", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertTrue(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertNull(charges)
         }
     }
@@ -272,10 +326,15 @@ internal class ItemsFactoryTest {
         with(stash[5]) {
             assertEquals("item_ward_sentry", name)
             assertEquals(0, purchaser)
+            assertNull(level)
             assertNull(bottledRune)
             assertTrue(canCast!!)
             assertEquals(0, cooldown)
             assertFalse(isPassive!!)
+            assertNull(itemCharges)
+            assertNull(abilityCharges)
+            assertNull(maxCharges)
+            assertNull(chargeCooldown)
             assertEquals(1, charges)
         }
     }
@@ -283,20 +342,64 @@ internal class ItemsFactoryTest {
     private fun Items.verifyTeleport() {
         assertEquals("item_tpscroll", teleport.name)
         assertEquals(0, teleport.purchaser)
+        assertNull(teleport.level)
         assertNull(teleport.bottledRune)
         assertFalse(teleport.canCast!!)
         assertEquals(60, teleport.cooldown)
         assertFalse(teleport.isPassive!!)
+        assertNull(teleport.itemCharges)
+        assertNull(teleport.abilityCharges)
+        assertNull(teleport.maxCharges)
+        assertNull(teleport.chargeCooldown)
         assertEquals(1, teleport.charges)
     }
 
     private fun Items.verifyNeutral() {
         assertEquals("item_keen_optic", neutral.name)
         assertEquals(-1, neutral.purchaser)
+        assertNull(neutral.level)
         assertNull(neutral.bottledRune)
         assertNull(neutral.canCast)
         assertNull(neutral.cooldown)
         assertTrue(neutral.isPassive!!)
+        assertNull(neutral.itemCharges)
+        assertNull(neutral.abilityCharges)
+        assertNull(neutral.maxCharges)
+        assertNull(neutral.chargeCooldown)
         assertNull(neutral.charges)
+    }
+
+    private fun Items.verifyNeutralEnchantment() {
+        assertEquals("item_enhancement_keen_eyed", neutralEnchantment.name)
+        assertEquals(-1, neutralEnchantment.purchaser)
+        assertNull(neutralEnchantment.level)
+        assertNull(neutralEnchantment.bottledRune)
+        assertNull(neutralEnchantment.canCast)
+        assertNull(neutralEnchantment.cooldown)
+        assertTrue(neutralEnchantment.isPassive!!)
+        assertNull(neutralEnchantment.itemCharges)
+        assertNull(neutralEnchantment.abilityCharges)
+        assertNull(neutralEnchantment.maxCharges)
+        assertNull(neutralEnchantment.chargeCooldown)
+        assertNull(neutralEnchantment.charges)
+    }
+
+    private fun Items.verifyPreservedNeutrals() {
+        assertEquals(5, preservedNeutrals.size)
+
+        preservedNeutrals.forEach { item ->
+            assertEquals("empty", item.name)
+            assertNull(item.purchaser)
+            assertNull(item.level)
+            assertNull(item.bottledRune)
+            assertNull(item.canCast)
+            assertNull(item.cooldown)
+            assertNull(item.isPassive)
+            assertNull(item.itemCharges)
+            assertNull(item.abilityCharges)
+            assertNull(item.maxCharges)
+            assertNull(item.chargeCooldown)
+            assertNull(item.charges)
+        }
     }
 }

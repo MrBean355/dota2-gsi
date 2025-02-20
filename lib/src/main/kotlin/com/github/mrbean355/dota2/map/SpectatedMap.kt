@@ -26,5 +26,7 @@ interface SpectatedMap : DotaMap {
     val direWardPurchaseCooldown: Int
     val roshanState: String
     val roshanStateEndTimer: Int
-    val radiantWinChance: Int
+
+    /** Probably requires Dota Plus and will be null if it's not owned. */
+    val radiantWinChance: Int?
 }

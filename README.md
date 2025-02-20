@@ -85,6 +85,7 @@ your project, they will probably be transitively upgraded to the version used by
 
 | Library version | Kotlin version | Ktor version | KotlinX Serialization version |
 |-----------------|----------------|--------------|-------------------------------|
+| 2.5.x           | 1.9.25         | 2.3.13       | 1.6.3                         |
 | 2.4.x           | 1.8.22         | 2.3.5        | 1.5.1                         |
 | 2.3.x           | 1.8.21         | 2.3.0        | 1.5.0                         |
 | 2.2.x           | 1.8.20         | 2.3.0        | 1.5.0                         |

@@ -37,5 +37,5 @@ internal data class SpectatedMapImpl(
     @SerialName("dire_ward_purchase_cooldown") override val direWardPurchaseCooldown: Int,
     @SerialName("roshan_state") override val roshanState: String,
     @SerialName("roshan_state_end_seconds") override val roshanStateEndTimer: Int,
-    @SerialName("radiant_win_chance") override val radiantWinChance: Int,
+    @SerialName("radiant_win_chance") override val radiantWinChance: Int? = null,
 ) : SpectatedMap

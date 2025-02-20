@@ -22,6 +22,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 internal data class SpectatedHeroImpl(
+    @SerialName("facet") override val facet: Int,
     @SerialName("xpos") override val xPos: Int,
     @SerialName("ypos") override val yPos: Int,
     @SerialName("id") override val id: Int,

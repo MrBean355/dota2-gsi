@@ -76,6 +76,14 @@ internal object ItemsFactory {
             .first { it.key == "neutral0" }
             .let { json.decodeFromJsonElement<ItemImpl>(it.value) }
 
-        return Items(inventory, stash, teleport, neutral)
+        val neutralEnchantment = entries
+            .first { it.key == "neutral1" }
+            .let { json.decodeFromJsonElement<ItemImpl>(it.value) }
+
+        val preservedNeutrals = entries
+            .filter { it.key.startsWith("preserved_neutral") }
+            .map { json.decodeFromJsonElement<ItemImpl>(it.value) }
+
+        return Items(inventory, stash, teleport, neutral, neutralEnchantment, preservedNeutrals)
     }
 }

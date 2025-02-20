@@ -83,6 +83,7 @@ public abstract interface class com/github/mrbean355/dota2/hero/Hero {
 	public abstract fun getAttributesLevel ()I
 	public abstract fun getBuybackCooldown ()I
 	public abstract fun getBuybackCost ()I
+	public abstract fun getFacet ()I
 	public abstract fun getHasAghanimsScepter ()Z
 	public abstract fun getHasAghanimsShard ()Z
 	public abstract fun getHasDebuff ()Z
@@ -128,10 +129,10 @@ public abstract interface class com/github/mrbean355/dota2/hero/talent/TalentTre
 }
 
 public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum {
+	public static final field AmplifyDamage Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Arcane Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Bounty Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Companion Lcom/github/mrbean355/dota2/item/BottledRune$Companion;
-	public static final field DoubleDamage Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Empty Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Haste Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Illusion Lcom/github/mrbean355/dota2/item/BottledRune;
@@ -139,7 +140,7 @@ public final class com/github/mrbean355/dota2/item/BottledRune : java/lang/Enum 
 	public static final field Regeneration Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Shield Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static final field Water Lcom/github/mrbean355/dota2/item/BottledRune;
-	public static final field Wisdom Lcom/github/mrbean355/dota2/item/BottledRune;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/item/BottledRune;
 	public static fun values ()[Lcom/github/mrbean355/dota2/item/BottledRune;
 }
@@ -149,27 +150,35 @@ public final class com/github/mrbean355/dota2/item/BottledRune$Companion {
 }
 
 public abstract interface class com/github/mrbean355/dota2/item/Item {
+	public abstract fun getAbilityCharges ()Ljava/lang/Integer;
 	public abstract fun getBottledRune ()Lcom/github/mrbean355/dota2/item/BottledRune;
 	public abstract fun getCanCast ()Ljava/lang/Boolean;
+	public abstract fun getChargeCooldown ()Ljava/lang/Integer;
 	public abstract fun getCharges ()Ljava/lang/Integer;
 	public abstract fun getCooldown ()Ljava/lang/Integer;
+	public abstract fun getItemCharges ()Ljava/lang/Integer;
 	public abstract fun getLevel ()Ljava/lang/Integer;
+	public abstract fun getMaxCharges ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getPurchaser ()Ljava/lang/Integer;
 	public abstract fun isPassive ()Ljava/lang/Boolean;
 }
 
 public final class com/github/mrbean355/dota2/item/Items {
-	public fun <init> (Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;)V
+	public fun <init> (Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;Ljava/util/List;)V
 	public final fun component1 ()Ljava/util/List;
 	public final fun component2 ()Ljava/util/List;
 	public final fun component3 ()Lcom/github/mrbean355/dota2/item/Item;
 	public final fun component4 ()Lcom/github/mrbean355/dota2/item/Item;
-	public final fun copy (Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;)Lcom/github/mrbean355/dota2/item/Items;
-	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/item/Items;Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/item/Items;
+	public final fun component5 ()Lcom/github/mrbean355/dota2/item/Item;
+	public final fun component6 ()Ljava/util/List;
+	public final fun copy (Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;Ljava/util/List;)Lcom/github/mrbean355/dota2/item/Items;
+	public static synthetic fun copy$default (Lcom/github/mrbean355/dota2/item/Items;Ljava/util/List;Ljava/util/List;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;Lcom/github/mrbean355/dota2/item/Item;Ljava/util/List;ILjava/lang/Object;)Lcom/github/mrbean355/dota2/item/Items;
 	public fun equals (Ljava/lang/Object;)Z
 	public final fun getInventory ()Ljava/util/List;
 	public final fun getNeutral ()Lcom/github/mrbean355/dota2/item/Item;
+	public final fun getNeutralEnchantment ()Lcom/github/mrbean355/dota2/item/Item;
+	public final fun getPreservedNeutrals ()Ljava/util/List;
 	public final fun getStash ()Ljava/util/List;
 	public final fun getTeleport ()Lcom/github/mrbean355/dota2/item/Item;
 	public fun hashCode ()I
@@ -205,6 +214,7 @@ public final class com/github/mrbean355/dota2/map/MatchState : java/lang/Enum {
 	public static final field TeamShowcase Lcom/github/mrbean355/dota2/map/MatchState;
 	public static final field WaitForMapToLoad Lcom/github/mrbean355/dota2/map/MatchState;
 	public static final field WaitForPlayersToLoad Lcom/github/mrbean355/dota2/map/MatchState;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/map/MatchState;
 	public static fun values ()[Lcom/github/mrbean355/dota2/map/MatchState;
 }
@@ -220,7 +230,7 @@ public abstract interface class com/github/mrbean355/dota2/map/PlayingMap : com/
 public abstract interface class com/github/mrbean355/dota2/map/SpectatedMap : com/github/mrbean355/dota2/map/DotaMap {
 	public abstract fun getDireWardPurchaseCooldown ()I
 	public abstract fun getRadiantWardPurchaseCooldown ()I
-	public abstract fun getRadiantWinChance ()I
+	public abstract fun getRadiantWinChance ()Ljava/lang/Integer;
 	public abstract fun getRoshanState ()Ljava/lang/String;
 	public abstract fun getRoshanStateEndTimer ()I
 }
@@ -231,6 +241,7 @@ public final class com/github/mrbean355/dota2/map/Team : java/lang/Enum {
 	public static final field None Lcom/github/mrbean355/dota2/map/Team;
 	public static final field Radiant Lcom/github/mrbean355/dota2/map/Team;
 	public static final field Spectator Lcom/github/mrbean355/dota2/map/Team;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Lcom/github/mrbean355/dota2/map/Team;
 	public static fun values ()[Lcom/github/mrbean355/dota2/map/Team;
 }

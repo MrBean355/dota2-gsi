@@ -22,6 +22,7 @@ import com.github.mrbean355.dota2.hero.talent.TalentTree
  * A hero that is being controlled by a player in the match.
  */
 interface Hero {
+    val facet: Int
     val xPos: Int
     val yPos: Int
     val id: Int

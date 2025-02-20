@@ -27,14 +27,14 @@ import kotlinx.serialization.Serializable
 @Serializable
 enum class BottledRune {
 
+    @SerialName("double_damage")
+    AmplifyDamage,
+
     @SerialName("arcane")
     Arcane,
 
     @SerialName("bounty")
     Bounty,
-
-    @SerialName("double_damage")
-    DoubleDamage,
 
     @SerialName("empty")
     Empty,
@@ -56,8 +56,5 @@ enum class BottledRune {
 
     @SerialName("water")
     Water,
-
-    @SerialName("xp")
-    Wisdom,
 
 }
