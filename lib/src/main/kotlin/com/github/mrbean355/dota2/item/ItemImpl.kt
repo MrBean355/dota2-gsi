@@ -28,5 +28,9 @@ internal data class ItemImpl(
     @SerialName("can_cast") override val canCast: Boolean? = null,
     @SerialName("cooldown") override val cooldown: Int? = null,
     @SerialName("passive") override val isPassive: Boolean? = null,
+    @SerialName("item_charges") override val itemCharges: Int? = null,
+    @SerialName("ability_charges") override val abilityCharges: Int? = null,
+    @SerialName("max_charges") override val maxCharges: Int? = null,
+    @SerialName("charge_cooldown") override val chargeCooldown: Int? = null,
     @SerialName("charges") override val charges: Int? = null,
 ) : Item

@@ -63,11 +63,16 @@
       "name": "empty"
     },
     "stash2": {
-      "name": "item_tome_of_knowledge",
+      "name": "item_hand_of_midas",
       "purchaser": 0,
+      "item_level": 1,
       "can_cast": true,
       "cooldown": 0,
       "passive": false,
+      "item_charges": 1,
+      "ability_charges": 3,
+      "max_charges": 2,
+      "charge_cooldown": 50,
       "charges": 1
     },
     "stash3": {
@@ -100,6 +105,26 @@
       "name": "item_keen_optic",
       "purchaser": -1,
       "passive": true
+    },
+    "neutral1": {
+      "name": "item_enhancement_keen_eyed",
+      "purchaser": -1,
+      "passive": true
+    },
+    "preserved_neutral6": {
+      "name": "empty"
+    },
+    "preserved_neutral7": {
+      "name": "empty"
+    },
+    "preserved_neutral8": {
+      "name": "empty"
+    },
+    "preserved_neutral9": {
+      "name": "empty"
+    },
+    "preserved_neutral10": {
+      "name": "empty"
     }
   }
 }

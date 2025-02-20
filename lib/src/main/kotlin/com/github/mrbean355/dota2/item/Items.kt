@@ -28,4 +28,6 @@ data class Items(
     val teleport: Item,
     /** Item slot for the hero's neutral item. */
     val neutral: Item,
+    val neutralEnchantment: Item,
+    val preservedNeutrals: List<Item>,
 )

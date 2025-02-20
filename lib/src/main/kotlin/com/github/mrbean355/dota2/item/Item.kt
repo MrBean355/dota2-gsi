@@ -27,5 +27,9 @@ interface Item {
     val canCast: Boolean?
     val cooldown: Int?
     val isPassive: Boolean?
+    val itemCharges: Int?
+    val abilityCharges: Int?
+    val maxCharges: Int?
+    val chargeCooldown: Int?
     val charges: Int?
 }

@@ -2,6 +2,7 @@
   "hero": {
     "team2": {
       "player0": {
+        "facet": 1,
         "xpos": 250,
         "ypos": -2802,
         "id": 9,
@@ -41,6 +42,7 @@
         "attributes_level": 1
       },
       "player1": {
+        "facet": 2,
         "xpos": 4142,
         "ypos": 175,
         "id": 51,
@@ -80,6 +82,7 @@
         "attributes_level": 2
       },
       "player2": {
+        "facet": 2,
         "xpos": -1399,
         "ypos": 2247,
         "id": 81,
@@ -119,6 +122,7 @@
         "attributes_level": 3
       },
       "player3": {
+        "facet": 2,
         "xpos": -2142,
         "ypos": 996,
         "id": 98,
@@ -158,6 +162,7 @@
         "attributes_level": 4
       },
       "player4": {
+        "facet": 2,
         "xpos": -1790,
         "ypos": -3995,
         "id": 18,
@@ -199,6 +204,7 @@
     },
     "team3": {
       "player5": {
+        "facet": 1,
         "xpos": 2638,
         "ypos": -3871,
         "id": 77,
@@ -238,6 +244,7 @@
         "attributes_level": 6
       },
       "player6": {
+        "facet": 3,
         "xpos": 5630,
         "ypos": -5169,
         "id": 33,
@@ -277,6 +284,7 @@
         "attributes_level": 7
       },
       "player7": {
+        "facet": 3,
         "xpos": 1439,
         "ypos": -250,
         "id": 13,
@@ -316,6 +324,7 @@
         "attributes_level": 8
       },
       "player8": {
+        "facet": 2,
         "xpos": -1498,
         "ypos": 6036,
         "id": 70,
@@ -355,6 +364,7 @@
         "attributes_level": 9
       },
       "player9": {
+        "facet": 2,
         "xpos": 427,
         "ypos": -271,
         "id": 50,
