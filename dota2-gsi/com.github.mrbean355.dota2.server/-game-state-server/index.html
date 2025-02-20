@@ -26,93 +26,136 @@
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
 <link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
 <script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
 <script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
     <div class="root">
-<nav class="navigation" id="navigation-wrapper">
-    <div class="navigation--inner">
-        <div class="navigation-title">
-            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
-            <div class="library-name">
-                    <a class="library-name--link" href="../../../index.html">
-                            dota2-gsi
-                    </a>
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    dota2-gsi
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+2.5.0        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":lib/main">JVM</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":lib/main"
+                                       data-filter=":lib/main"/>
+                                <span class="checkbox--icon"></span>
+                                JVM
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div class="library-version">
-2.4.0            </div>
         </div>
-        <div class="filter-section" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":lib:dokkaHtml/main">JVM</button>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
         </div>
-    </div>
-    <div class="navigation-controls">
-        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
-        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
-    </div>
-</nav>
+    </nav>
         <div id="container">
             <div class="sidebar" id="leftColumn">
-                <div class="sidebar--inner" id="sideMenu"></div>
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    dota2-gsi
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
             </div>
             <div id="main">
-<div class="main-content" data-page-type="classlike" id="content" pageIds="dota2-gsi::com.github.mrbean355.dota2.server/GameStateServer///PointingToDeclaration//2083360698">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="dota2-gsi::com.github.mrbean355.dota2.server/GameStateServer///PointingToDeclaration//-1253304749">
   <div class="breadcrumbs"><a href="../../../index.html">dota2-gsi</a><span class="delimiter">/</span><a href="../index.html">com.github.mrbean355.dota2.server</a><span class="delimiter">/</span><span class="current">GameStateServer</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Game</span><wbr></wbr><span>State</span><wbr></wbr><span><span>Server</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">GameStateServer</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/server/GameStateServer.kt#L40">source</a>)</span></span></div><p class="paragraph">Server which listens for game state updates from Dota 2.</p><p class="paragraph">Make sure the Dota client is set up to send game state updates. Find more information <a href="https://github.com/MrBean355/dota2-gsi">here</a>.</p><p class="paragraph">Create an instance in Kotlin with the factory function:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val server = GameStateServer(portNumber)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Or in Java:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">GameStateServer server = GameStateServer.create(portNumber);</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Peruse the below functions to see what is available.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">GameStateServer</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/server/GameStateServer.kt#L40">source</a>)</span></span></div><p class="paragraph">Server which listens for game state updates from Dota 2.</p><p class="paragraph">Make sure the Dota client is set up to send game state updates. Find more information <a href="https://github.com/MrBean355/dota2-gsi">here</a>.</p><p class="paragraph">Create an instance in Kotlin with the factory function:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val server = GameStateServer(portNumber)</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Or in Java:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">GameStateServer server = GameStateServer.create(portNumber);</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Peruse the below functions to see what is available.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="TYPE">
         <h2 class="">Types</h2>
-        <div class="table"><a data-name="540459131%2FClasslikes%2F2083360698" anchor-label="Companion" id="540459131%2FClasslikes%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+        <div class="table"><a data-name="540459131%2FClasslikes%2F-1253304749" anchor-label="Companion" id="540459131%2FClasslikes%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="540459131%2FClasslikes%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="540459131%2FClasslikes%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1889696953%2FClasslikes%2F2083360698" anchor-label="ErrorHandler" id="1889696953%2FClasslikes%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="1889696953%2FClasslikes%2F-1253304749" anchor-label="ErrorHandler" id="1889696953%2FClasslikes%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-error-handler/index.html"><span>Error</span><wbr></wbr><span><span>Handler</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1889696953%2FClasslikes%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1889696953%2FClasslikes%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-error-handler/index.html">ErrorHandler</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-error-handler/index.html">ErrorHandler</a></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="251930983%2FClasslikes%2F2083360698" anchor-label="Listener" id="251930983%2FClasslikes%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="251930983%2FClasslikes%2F-1253304749" anchor-label="Listener" id="251930983%2FClasslikes%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="-listener/index.html"><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="251930983%2FClasslikes%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="251930983%2FClasslikes%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-listener/index.html">Listener</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-listener/index.html">T</a><span class="token operator"> : </span><a href="../../com.github.mrbean355.dota2.gamestate/-game-state/index.html">GameState</a><span class="token operator">&gt;</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token keyword">interface </span><a href="-listener/index.html">Listener</a><span class="token operator">&lt;</span><a href="-listener/index.html">T</a><span class="token operator"> : </span><a href="../../com.github.mrbean355.dota2.gamestate/-game-state/index.html">GameState</a><span class="token operator">&gt;</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -121,152 +164,152 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="1421799313%2FFunctions%2F2083360698" anchor-label="enableStrictDeserialization" id="1421799313%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+        <div class="table"><a data-name="1421799313%2FFunctions%2F-1253304749" anchor-label="enableStrictDeserialization" id="1421799313%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="enable-strict-deserialization.html"><span>enable</span><wbr></wbr><span>Strict</span><wbr></wbr><span><span>Deserialization</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1421799313%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1421799313%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="enable-strict-deserialization.html"><span class="token function">enableStrictDeserialization</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Enable strict deserialization of the JSON data coming from Dota 2, causing an error to be thrown when the library encounters an unexpected object property. For example, if Dota 2 starts sending a new property in the <code class="lang-kotlin">Player</code> object, an error will be thrown since the library does not expect it. This is <strong>not recommended</strong>, because when Valve adds new properties to the JSON data in a Dota update, existing consumers will break and require a new version of this library.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="enable-strict-deserialization.html"><span class="token function">enableStrictDeserialization</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Enable strict deserialization of the JSON data coming from Dota 2, causing an error to be thrown when the library encounters an unexpected object property. For example, if Dota 2 starts sending a new property in the <code class="lang-kotlin">Player</code> object, an error will be thrown since the library does not expect it. This is <strong>not recommended</strong>, because when Valve adds new properties to the JSON data in a Dota update, existing consumers will break and require a new version of this library.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="864631513%2FFunctions%2F2083360698" anchor-label="requireAuthentication" id="864631513%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="864631513%2FFunctions%2F-1253304749" anchor-label="requireAuthentication" id="864631513%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="require-authentication.html"><span>require</span><wbr></wbr><span><span>Authentication</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="864631513%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="864631513%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="require-authentication.html"><span class="token function">requireAuthentication</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">auth<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Optionally authenticate data coming from the Dota client using the <code class="lang-kotlin">auth</code> section in the Game State Integration config file. If data is received without the expected authentication, it will be ignored and the error handler will be notified.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="require-authentication.html"><span class="token function">requireAuthentication</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">auth<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Optionally authenticate data coming from the Dota client using the <code class="lang-kotlin">auth</code> section in the Game State Integration config file. If data is received without the expected authentication, it will be ignored and the error handler will be notified.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="588055225%2FFunctions%2F2083360698" anchor-label="setErrorHandler" id="588055225%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="588055225%2FFunctions%2F-1253304749" anchor-label="setErrorHandler" id="588055225%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-error-handler.html"><span>set</span><wbr></wbr><span>Error</span><wbr></wbr><span><span>Handler</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="588055225%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="588055225%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-error-handler.html"><span class="token function">setErrorHandler</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">handler<span class="token operator">: </span><a href="-error-handler/index.html">GameStateServer.ErrorHandler</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a handler to get called when an exception is thrown during JSON deserialization. Errors can happen when the data returned from Dota 2 is in an unexpected format. Please consider <a href="https://github.com/MrBean355/dota2-gsi/issues">reporting such errors</a>, along with the JSON received in the <a href="set-error-handler.html">handler</a>.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="set-error-handler.html"><span class="token function">setErrorHandler</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">handler<span class="token operator">: </span><a href="-error-handler/index.html">GameStateServer.ErrorHandler</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a handler to get called when an exception is thrown during JSON deserialization. Errors can happen when the data returned from Dota 2 is in an unexpected format. Please consider <a href="https://github.com/MrBean355/dota2-gsi/issues">reporting such errors</a>, along with the JSON received in the <a href="set-error-handler.html">handler</a>.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="1350537440%2FFunctions%2F2083360698" anchor-label="setGenericListener" id="1350537440%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="1350537440%2FFunctions%2F-1253304749" anchor-label="setGenericListener" id="1350537440%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-generic-listener.html"><span>set</span><wbr></wbr><span>Generic</span><wbr></wbr><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1350537440%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1350537440%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-generic-listener.html"><span class="token function">setGenericListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.github.mrbean355.dota2.gamestate/-game-state/index.html">GameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when a &quot;generic&quot; game state update happens. This will be called when the client is playing or spectating a match.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="set-generic-listener.html"><span class="token function">setGenericListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><a href="../../com.github.mrbean355.dota2.gamestate/-game-state/index.html">GameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when a &quot;generic&quot; game state update happens. This will be called when the client is playing or spectating a match.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1263674919%2FFunctions%2F2083360698" anchor-label="setIdleListener" id="-1263674919%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="-1263674919%2FFunctions%2F-1253304749" anchor-label="setIdleListener" id="-1263674919%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-idle-listener.html"><span>set</span><wbr></wbr><span>Idle</span><wbr></wbr><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1263674919%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1263674919%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-idle-listener.html"><span class="token function">setIdleListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.github.mrbean355.dota2.gamestate/-idle-game-state/index.html">IdleGameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when an &quot;idle&quot; game state update happens. This will only be called when the client is neither playing nor spectating a match. This usually happens when the client is on the main menu.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="set-idle-listener.html"><span class="token function">setIdleListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><a href="../../com.github.mrbean355.dota2.gamestate/-idle-game-state/index.html">IdleGameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when an &quot;idle&quot; game state update happens. This will only be called when the client is neither playing nor spectating a match. This usually happens when the client is on the main menu.</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1577593297%2FFunctions%2F2083360698" anchor-label="setPlayingListener" id="-1577593297%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="-1577593297%2FFunctions%2F-1253304749" anchor-label="setPlayingListener" id="-1577593297%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-playing-listener.html"><span>set</span><wbr></wbr><span>Playing</span><wbr></wbr><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1577593297%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1577593297%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-playing-listener.html"><span class="token function">setPlayingListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.github.mrbean355.dota2.gamestate/-playing-game-state/index.html">PlayingGameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when a &quot;playing&quot; game state update happens. This will only be called when the client is playing a match (not when spectating).</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="set-playing-listener.html"><span class="token function">setPlayingListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><a href="../../com.github.mrbean355.dota2.gamestate/-playing-game-state/index.html">PlayingGameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when a &quot;playing&quot; game state update happens. This will only be called when the client is playing a match (not when spectating).</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1983470827%2FFunctions%2F2083360698" anchor-label="setSpectatingListener" id="-1983470827%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="-1983470827%2FFunctions%2F-1253304749" anchor-label="setSpectatingListener" id="-1983470827%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="set-spectating-listener.html"><span>set</span><wbr></wbr><span>Spectating</span><wbr></wbr><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1983470827%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1983470827%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-spectating-listener.html"><span class="token function">setSpectatingListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.github.mrbean355.dota2.gamestate/-spectating-game-state/index.html">SpectatingGameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when a &quot;spectating&quot; game state update happens. This will only be called when the client is spectating a match (not when playing).</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="set-spectating-listener.html"><span class="token function">setSpectatingListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">GameStateServer.Listener</a><span class="token operator">&lt;</span><a href="../../com.github.mrbean355.dota2.gamestate/-spectating-game-state/index.html">SpectatingGameState</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Set a listener to get called when a &quot;spectating&quot; game state update happens. This will only be called when the client is spectating a match (not when playing).</p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1658072942%2FFunctions%2F2083360698" anchor-label="start" id="-1658072942%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="-1658072942%2FFunctions%2F-1253304749" anchor-label="start" id="-1658072942%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="start.html"><span><span>start</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1658072942%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1658072942%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="start.html"><span class="token function">start</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Starts this server, blocking the current thread until the server is stopped. <strong>This function will NOT return until </strong><a href="stop.html"><strong>stop</strong></a><strong> is called.</strong></p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="start.html"><span class="token function">start</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Starts this server, blocking the current thread until the server is stopped. <strong>This function will NOT return until </strong><a href="stop.html"><strong>stop</strong></a><strong> is called.</strong></p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-2128658132%2FFunctions%2F2083360698" anchor-label="startAsync" id="-2128658132%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="-2128658132%2FFunctions%2F-1253304749" anchor-label="startAsync" id="-2128658132%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="start-async.html"><span>start</span><wbr></wbr><span><span>Async</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2128658132%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2128658132%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="start-async.html"><span class="token function">startAsync</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Starts this server without blocking the current thread. <strong>This function will return immediately.</strong></p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="start-async.html"><span class="token function">startAsync</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">GameStateServer</a></div><div class="brief "><p class="paragraph">Starts this server without blocking the current thread. <strong>This function will return immediately.</strong></p></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-1247138705%2FFunctions%2F2083360698" anchor-label="stop" id="-1247138705%2FFunctions%2F2083360698" data-filterable-set=":lib:dokkaHtml/main"></a>
-          <div class="table-row" data-filterable-current=":lib:dokkaHtml/main" data-filterable-set=":lib:dokkaHtml/main">
+<a data-name="-1247138705%2FFunctions%2F-1253304749" anchor-label="stop" id="-1247138705%2FFunctions%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="stop.html"><span><span>stop</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1247138705%2FFunctions%2F2083360698"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1247138705%2FFunctions%2F-1253304749"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="stop.html"><span class="token function">stop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">gracePeriodMillis<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">timeoutMillis<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Stops this server.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">fun </span><a href="stop.html"><span class="token function">stop</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">gracePeriodMillis<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a><span class="token punctuation">, </span></span><span class="parameter ">timeoutMillis<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Stops this server.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -276,11 +319,16 @@
     </div>
   </div>
 </div>
-      <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
-                class="pull-right"><span>Generated by </span><a
-                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
-      </div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
             </div>
         </div>
     </div>

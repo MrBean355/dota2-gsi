@@ -79,6 +79,7 @@ $dokka.location:com.github.mrbean355.dota2.hero/Hero///PointingToDeclaration/do
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/attributesLevel/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/attributes-level.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/buybackCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/buyback-cooldown.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/buybackCost/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/buyback-cost.html
+$dokka.location:com.github.mrbean355.dota2.hero/Hero/facet/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/facet.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/hasAghanimsScepter/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/has-aghanims-scepter.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/hasAghanimsShard/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/has-aghanims-shard.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/hasDebuff/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/has-debuff.html
@@ -108,9 +109,9 @@ $dokka.location:com.github.mrbean355.dota2.hero/Hero/yPos/#/PointingToDeclaratio
 $dokka.location:com.github.mrbean355.dota2.hero/SpectatedHero///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-spectated-hero/index.html
 $dokka.location:com.github.mrbean355.dota2.hero/SpectatedHero/isSelectedUnit/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-spectated-hero/is-selected-unit.html
 $dokka.location:com.github.mrbean355.dota2.item////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/index.html
+$dokka.location:com.github.mrbean355.dota2.item/BottledRune.AmplifyDamage///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-amplify-damage/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Arcane///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-arcane/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Bounty///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-bounty/index.html
-$dokka.location:com.github.mrbean355.dota2.item/BottledRune.DoubleDamage///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-double-damage/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Empty///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-empty/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Haste///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-haste/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Illusion///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-illusion/index.html
@@ -118,24 +119,29 @@ $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Invisibility///Point
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Regeneration///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-regeneration/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Shield///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-shield/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune.Water///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-water/index.html
-$dokka.location:com.github.mrbean355.dota2.item/BottledRune.Wisdom///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/-wisdom/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/index.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune/entries/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/entries.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune/valueOf/#kotlin.String/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/value-of.html
 $dokka.location:com.github.mrbean355.dota2.item/BottledRune/values/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-bottled-rune/values.html
 $dokka.location:com.github.mrbean355.dota2.item/Item///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/index.html
+$dokka.location:com.github.mrbean355.dota2.item/Item/abilityCharges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/ability-charges.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/bottledRune/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/bottled-rune.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/canCast/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/can-cast.html
+$dokka.location:com.github.mrbean355.dota2.item/Item/chargeCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/charge-cooldown.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/charges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/charges.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/cooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/cooldown.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/isPassive/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/is-passive.html
+$dokka.location:com.github.mrbean355.dota2.item/Item/itemCharges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/item-charges.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/level/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/level.html
+$dokka.location:com.github.mrbean355.dota2.item/Item/maxCharges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/max-charges.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/name/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/name.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/purchaser/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/purchaser.html
 $dokka.location:com.github.mrbean355.dota2.item/Items///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/index.html
-$dokka.location:com.github.mrbean355.dota2.item/Items/Items/#kotlin.collections.List[com.github.mrbean355.dota2.item.Item]#kotlin.collections.List[com.github.mrbean355.dota2.item.Item]#com.github.mrbean355.dota2.item.Item#com.github.mrbean355.dota2.item.Item/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/-items.html
+$dokka.location:com.github.mrbean355.dota2.item/Items/Items/#kotlin.collections.List[com.github.mrbean355.dota2.item.Item]#kotlin.collections.List[com.github.mrbean355.dota2.item.Item]#com.github.mrbean355.dota2.item.Item#com.github.mrbean355.dota2.item.Item#com.github.mrbean355.dota2.item.Item#kotlin.collections.List[com.github.mrbean355.dota2.item.Item]/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/-items.html
 $dokka.location:com.github.mrbean355.dota2.item/Items/inventory/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/inventory.html
 $dokka.location:com.github.mrbean355.dota2.item/Items/neutral/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/neutral.html
+$dokka.location:com.github.mrbean355.dota2.item/Items/neutralEnchantment/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/neutral-enchantment.html
+$dokka.location:com.github.mrbean355.dota2.item/Items/preservedNeutrals/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/preserved-neutrals.html
 $dokka.location:com.github.mrbean355.dota2.item/Items/stash/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/stash.html
 $dokka.location:com.github.mrbean355.dota2.item/Items/teleport/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/teleport.html
 $dokka.location:com.github.mrbean355.dota2.map////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/index.html
@@ -263,4 +269,3 @@ com.github.mrbean355.dota2.map
 com.github.mrbean355.dota2.player
 com.github.mrbean355.dota2.provider
 com.github.mrbean355.dota2.server
-
