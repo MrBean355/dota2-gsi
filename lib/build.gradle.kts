@@ -59,7 +59,7 @@ tasks.test {
 }
 
 jacoco {
-    toolVersion = "0.8.12"
+    toolVersion = "0.8.14"
 }
 
 tasks.withType(JacocoReport::class.java) {
