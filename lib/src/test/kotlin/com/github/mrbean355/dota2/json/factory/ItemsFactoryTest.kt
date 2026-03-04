@@ -177,6 +177,7 @@ internal class ItemsFactoryTest {
             assertNull(bottledRune)
             assertFalse(canCast!!)
             assertEquals(0, cooldown)
+            assertEquals(100, maxCooldown)
             assertFalse(isPassive!!)
             assertNull(itemCharges)
             assertNull(abilityCharges)

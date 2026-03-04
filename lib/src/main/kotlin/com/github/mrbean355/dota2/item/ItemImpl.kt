@@ -27,6 +27,7 @@ internal data class ItemImpl(
     @SerialName("contains_rune") override val bottledRune: BottledRune? = null,
     @SerialName("can_cast") override val canCast: Boolean? = null,
     @SerialName("cooldown") override val cooldown: Int? = null,
+    @SerialName("max_cooldown") override val maxCooldown: Int? = null,
     @SerialName("passive") override val isPassive: Boolean? = null,
     @SerialName("item_charges") override val itemCharges: Int? = null,
     @SerialName("ability_charges") override val abilityCharges: Int? = null,

@@ -16,6 +16,71 @@
     "dire_ward_purchase_cooldown": 2,
     "roshan_state": "string",
     "roshan_state_end_seconds": 3,
+    "tormentor_state": "respawning",
+    "tormentor_state_end_seconds": 303,
+    "tormentor_state_location": "bottom",
+    "radiant_glyph_cooldown": 283.935546875,
+    "dire_glyph_cooldown": 285.46875,
+    "radiant_scan_cooldown": 74.2353515625,
+    "radiant_scan_charges": 0,
+    "dire_scan_cooldown": 110.368896484375,
+    "dire_scan_charges": 1,
+    "radiant_wisdom_shrine": false,
+    "dire_wisdom_shrine": true,
+    "radiant_lotus_pool_count": 2,
+    "dire_lotus_pool_count": 2,
+    "watchers": {
+      "watcher0": {
+        "location_x": 7917,
+        "location_y": -1524,
+        "capture_state": "radiant"
+      },
+      "watcher1": {
+        "location_x": -6861,
+        "location_y": 6254,
+        "capture_state": "radiant"
+      },
+      "watcher2": {
+        "location_x": 2717,
+        "location_y": -658,
+        "capture_state": "not_captured"
+      },
+      "watcher3": {
+        "location_x": -3484,
+        "location_y": 34,
+        "capture_state": "not_captured"
+      },
+      "watcher4": {
+        "location_x": 1032,
+        "location_y": -4261,
+        "capture_state": "radiant"
+      },
+      "watcher5": {
+        "location_x": 6614,
+        "location_y": -6272,
+        "capture_state": "not_captured"
+      },
+      "watcher6": {
+        "location_x": 768,
+        "location_y": -7648,
+        "capture_state": "radiant"
+      },
+      "watcher7": {
+        "location_x": -671,
+        "location_y": 7129,
+        "capture_state": "not_captured"
+      },
+      "watcher8": {
+        "location_x": -1528,
+        "location_y": 3925,
+        "capture_state": "dire"
+      },
+      "watcher9": {
+        "location_x": -7773,
+        "location_y": 1088,
+        "capture_state": "radiant"
+      }
+    },
     "radiant_win_chance": 4
   }
 }

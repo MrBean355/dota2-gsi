@@ -27,6 +27,11 @@
     "aghanims_scepter": true,
     "aghanims_shard": false,
     "smoked": true,
+    "permanent_buffs": {
+      "modifier_item_aghanims_shard": {
+        "stack_count": 0
+      }
+    },
     "has_debuff": false,
     "talent_1": true,
     "talent_2": false,

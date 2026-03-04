@@ -31,10 +31,24 @@ interface SpectatedPlayer : Player {
     val wardsPlaced: Int
     val wardsDestroyed: Int
     val runesActivated: Int
+    val waterRunesActivated: Int
+    val bountyRunesActivated: Int
     val campsStacked: Int
     val supportGoldSpent: Int
     val consumableGoldSpent: Int
     val itemGoldSpent: Int
     val goldLostToDeath: Int
     val goldSpentOnBuybacks: Int
+    val damageReceivedPreReductionPhysical: Int
+    val damageReceivedPreReductionMagical: Int
+    val damageReceivedPreReductionPure: Int
+    val damageReceivedPostReductionPhysical: Int
+    val damageReceivedPostReductionMagical: Int
+    val damageReceivedPostReductionPure: Int
+    val damageOutgoingPreReductionPhysical: Int
+    val damageOutgoingPreReductionMagical: Int
+    val damageOutgoingPreReductionPure: Int
+    val damageOutgoingPostReductionPhysical: Int
+    val damageOutgoingPostReductionMagical: Int
+    val damageOutgoingPostReductionPure: Int
 }

@@ -88,6 +88,24 @@ internal class MapFactoryTest {
             assertEquals(2, direWardPurchaseCooldown)
             assertEquals("string", roshanState)
             assertEquals(3, roshanStateEndTimer)
+            assertEquals("respawning", tormentorState)
+            assertEquals(303, tormentorStateEndSeconds)
+            assertEquals("bottom", tormentorStateLocation)
+            assertEquals(283.935546875, radiantGlyphCooldown)
+            assertEquals(285.46875, direGlyphCooldown)
+            assertEquals(74.2353515625, radiantScanCooldown)
+            assertEquals(0, radiantScanCharges)
+            assertEquals(110.368896484375, direScanCooldown)
+            assertEquals(1, direScanCharges)
+            assertFalse(radiantWisdomShrine)
+            assertTrue(direWisdomShrine)
+            assertEquals(2, radiantLotusPoolCount)
+            assertEquals(2, direLotusPoolCount)
+            with(watchers.getValue("watcher0")) {
+                assertEquals(7917, locationX)
+                assertEquals(-1524, locationY)
+                assertEquals("radiant", captureState)
+            }
             assertEquals(4, radiantWinChance)
         }
     }

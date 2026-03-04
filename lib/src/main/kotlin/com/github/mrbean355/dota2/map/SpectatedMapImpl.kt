@@ -16,6 +16,7 @@
 
 package com.github.mrbean355.dota2.map
 
+import com.github.mrbean355.dota2.map.watcher.WatcherImpl
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -37,5 +38,19 @@ internal data class SpectatedMapImpl(
     @SerialName("dire_ward_purchase_cooldown") override val direWardPurchaseCooldown: Int,
     @SerialName("roshan_state") override val roshanState: String,
     @SerialName("roshan_state_end_seconds") override val roshanStateEndTimer: Int,
+    @SerialName("tormentor_state") override val tormentorState: String,
+    @SerialName("tormentor_state_end_seconds") override val tormentorStateEndSeconds: Int,
+    @SerialName("tormentor_state_location") override val tormentorStateLocation: String,
+    @SerialName("radiant_glyph_cooldown") override val radiantGlyphCooldown: Double,
+    @SerialName("dire_glyph_cooldown") override val direGlyphCooldown: Double,
+    @SerialName("radiant_scan_cooldown") override val radiantScanCooldown: Double,
+    @SerialName("radiant_scan_charges") override val radiantScanCharges: Int,
+    @SerialName("dire_scan_cooldown") override val direScanCooldown: Double,
+    @SerialName("dire_scan_charges") override val direScanCharges: Int,
+    @SerialName("radiant_wisdom_shrine") override val radiantWisdomShrine: Boolean,
+    @SerialName("dire_wisdom_shrine") override val direWisdomShrine: Boolean,
+    @SerialName("radiant_lotus_pool_count") override val radiantLotusPoolCount: Int,
+    @SerialName("dire_lotus_pool_count") override val direLotusPoolCount: Int,
+    @SerialName("watchers") override val watchers: Map<String, WatcherImpl>,
     @SerialName("radiant_win_chance") override val radiantWinChance: Int? = null,
 ) : SpectatedMap
