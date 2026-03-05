@@ -13,6 +13,7 @@
       "purchaser": 0,
       "can_cast": false,
       "cooldown": 0,
+      "max_cooldown": 100,
       "passive": false,
       "charges": 0
     },

@@ -49,6 +49,7 @@ internal data class HeroImpl(
     @SerialName("aghanims_scepter") override val hasAghanimsScepter: Boolean,
     @SerialName("aghanims_shard") override val hasAghanimsShard: Boolean,
     @SerialName("smoked") override val isSmoked: Boolean,
+    @SerialName("permanent_buffs") override val permanentBuffs: Map<String, Map<String, Int>>?,
     @SerialName("has_debuff") override val hasDebuff: Boolean,
     @SerialName("talentTree") override val talentTree: TalentTreeImpl,
     @SerialName("attributes_level") override val attributesLevel: Int,

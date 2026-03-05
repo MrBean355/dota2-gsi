@@ -21,7 +21,6 @@ import com.github.mrbean355.dota2.hero.SpectatedHeroImpl
 import com.github.mrbean355.dota2.json.ClientMode
 import com.github.mrbean355.dota2.testutil.jsonObject
 import kotlinx.serialization.json.Json
-
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertNull
@@ -84,6 +83,7 @@ internal class HeroFactoryTest {
             assertTrue(hasAghanimsScepter)
             assertFalse(hasAghanimsShard)
             assertTrue(isSmoked)
+            assertEquals(mapOf("modifier_item_aghanims_shard" to mapOf("stack_count" to 0)), permanentBuffs)
             assertFalse(hasDebuff)
             with(talentTree) {
                 assertFalse(level10.hasLeft)
@@ -156,6 +156,7 @@ internal class HeroFactoryTest {
             assertTrue(hasAghanimsScepter)
             assertFalse(hasAghanimsShard)
             assertTrue(isSmoked)
+            assertEquals(mapOf("modifier_item_aghanims_shard" to mapOf("stack_count" to 0)), permanentBuffs)
             assertFalse(hasDebuff)
             assertTrue(isSelectedUnit)
             with(talentTree) {

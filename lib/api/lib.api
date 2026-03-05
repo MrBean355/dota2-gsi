@@ -96,6 +96,7 @@ public abstract interface class com/github/mrbean355/dota2/hero/Hero {
 	public abstract fun getMaxHealth ()I
 	public abstract fun getMaxMana ()I
 	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getPermanentBuffs ()Ljava/util/Map;
 	public abstract fun getRespawnTimer ()I
 	public abstract fun getTalentTree ()Lcom/github/mrbean355/dota2/hero/talent/TalentTree;
 	public abstract fun getXPos ()I
@@ -159,6 +160,7 @@ public abstract interface class com/github/mrbean355/dota2/item/Item {
 	public abstract fun getItemCharges ()Ljava/lang/Integer;
 	public abstract fun getLevel ()Ljava/lang/Integer;
 	public abstract fun getMaxCharges ()Ljava/lang/Integer;
+	public abstract fun getMaxCooldown ()Ljava/lang/Integer;
 	public abstract fun getName ()Ljava/lang/String;
 	public abstract fun getPurchaser ()Ljava/lang/Integer;
 	public abstract fun isPassive ()Ljava/lang/Boolean;
@@ -228,11 +230,25 @@ public abstract interface class com/github/mrbean355/dota2/map/PlayingMap : com/
 }
 
 public abstract interface class com/github/mrbean355/dota2/map/SpectatedMap : com/github/mrbean355/dota2/map/DotaMap {
+	public abstract fun getDireGlyphCooldown ()D
+	public abstract fun getDireLotusPoolCount ()I
+	public abstract fun getDireScanCharges ()I
+	public abstract fun getDireScanCooldown ()D
 	public abstract fun getDireWardPurchaseCooldown ()I
+	public abstract fun getDireWisdomShrine ()Z
+	public abstract fun getRadiantGlyphCooldown ()D
+	public abstract fun getRadiantLotusPoolCount ()I
+	public abstract fun getRadiantScanCharges ()I
+	public abstract fun getRadiantScanCooldown ()D
 	public abstract fun getRadiantWardPurchaseCooldown ()I
 	public abstract fun getRadiantWinChance ()Ljava/lang/Integer;
+	public abstract fun getRadiantWisdomShrine ()Z
 	public abstract fun getRoshanState ()Ljava/lang/String;
 	public abstract fun getRoshanStateEndTimer ()I
+	public abstract fun getTormentorState ()Ljava/lang/String;
+	public abstract fun getTormentorStateEndSeconds ()I
+	public abstract fun getTormentorStateLocation ()Ljava/lang/String;
+	public abstract fun getWatchers ()Ljava/util/Map;
 }
 
 public final class com/github/mrbean355/dota2/map/Team : java/lang/Enum {
@@ -248,6 +264,12 @@ public final class com/github/mrbean355/dota2/map/Team : java/lang/Enum {
 
 public final class com/github/mrbean355/dota2/map/Team$Companion {
 	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public abstract interface class com/github/mrbean355/dota2/map/watcher/Watcher {
+	public abstract fun getCaptureState ()Ljava/lang/String;
+	public abstract fun getLocationX ()I
+	public abstract fun getLocationY ()I
 }
 
 public abstract interface class com/github/mrbean355/dota2/player/Player {
@@ -278,8 +300,21 @@ public abstract interface class com/github/mrbean355/dota2/player/Player {
 }
 
 public abstract interface class com/github/mrbean355/dota2/player/SpectatedPlayer : com/github/mrbean355/dota2/player/Player {
+	public abstract fun getBountyRunesActivated ()I
 	public abstract fun getCampsStacked ()I
 	public abstract fun getConsumableGoldSpent ()I
+	public abstract fun getDamageOutgoingPostReductionMagical ()I
+	public abstract fun getDamageOutgoingPostReductionPhysical ()I
+	public abstract fun getDamageOutgoingPostReductionPure ()I
+	public abstract fun getDamageOutgoingPreReductionMagical ()I
+	public abstract fun getDamageOutgoingPreReductionPhysical ()I
+	public abstract fun getDamageOutgoingPreReductionPure ()I
+	public abstract fun getDamageReceivedPostReductionMagical ()I
+	public abstract fun getDamageReceivedPostReductionPhysical ()I
+	public abstract fun getDamageReceivedPostReductionPure ()I
+	public abstract fun getDamageReceivedPreReductionMagical ()I
+	public abstract fun getDamageReceivedPreReductionPhysical ()I
+	public abstract fun getDamageReceivedPreReductionPure ()I
 	public abstract fun getGoldLostToDeath ()I
 	public abstract fun getGoldSpentOnBuybacks ()I
 	public abstract fun getHeroDamage ()I
@@ -293,6 +328,7 @@ public abstract interface class com/github/mrbean355/dota2/player/SpectatedPlaye
 	public abstract fun getWardsDestroyed ()I
 	public abstract fun getWardsPlaced ()I
 	public abstract fun getWardsPurchased ()I
+	public abstract fun getWaterRunesActivated ()I
 }
 
 public abstract interface class com/github/mrbean355/dota2/provider/Provider {

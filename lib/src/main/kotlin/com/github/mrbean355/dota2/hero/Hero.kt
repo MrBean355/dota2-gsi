@@ -49,6 +49,7 @@ interface Hero {
     val hasAghanimsScepter: Boolean
     val hasAghanimsShard: Boolean
     val isSmoked: Boolean
+    val permanentBuffs: Map<String, Map<String, Int>>?
     val hasDebuff: Boolean
     val talentTree: TalentTree
     val attributesLevel: Int

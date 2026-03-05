@@ -26,6 +26,7 @@ interface Item {
     val bottledRune: BottledRune?
     val canCast: Boolean?
     val cooldown: Int?
+    val maxCooldown: Int?
     val isPassive: Boolean?
     val itemCharges: Int?
     val abilityCharges: Int?

@@ -16,6 +16,8 @@
 
 package com.github.mrbean355.dota2.map
 
+import com.github.mrbean355.dota2.map.watcher.Watcher
+
 /**
  * Some general information about the map when the client is **spectating** the match.
  *
@@ -26,6 +28,20 @@ interface SpectatedMap : DotaMap {
     val direWardPurchaseCooldown: Int
     val roshanState: String
     val roshanStateEndTimer: Int
+    val tormentorState: String
+    val tormentorStateEndSeconds: Int
+    val tormentorStateLocation: String
+    val radiantGlyphCooldown: Double
+    val direGlyphCooldown: Double
+    val radiantScanCooldown: Double
+    val radiantScanCharges: Int
+    val direScanCooldown: Double
+    val direScanCharges: Int
+    val radiantWisdomShrine: Boolean
+    val direWisdomShrine: Boolean
+    val radiantLotusPoolCount: Int
+    val direLotusPoolCount: Int
+    val watchers: Map<String, Watcher>
 
     /** Probably requires Dota Plus and will be null if it's not owned. */
     val radiantWinChance: Int?

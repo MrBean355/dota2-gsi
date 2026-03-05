@@ -1,6 +1,6 @@
 # Dota 2 - Game State Integration - JVM
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mrbean355/dota2-gsi/badge.png)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.mrbean355/dota2-gsi)](https://search.maven.org/artifact/com.github.mrbean355/dota2-gsi)
 [![Documentation](https://img.shields.io/badge/KDoc-GitHub%20Pages-B125EA)](https://mrbean355.github.io/dota2-gsi)
 [![Build project](https://github.com/MrBean355/dota2-gsi/actions/workflows/build-project.yml/badge.svg?branch=main)](https://github.com/MrBean355/dota2-gsi/actions/workflows/build-project.yml)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=MrBean355_dota2-gsi&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=MrBean355_dota2-gsi)
@@ -85,6 +85,7 @@ your project, they will probably be transitively upgraded to the version used by
 
 | Library version | Kotlin version | Ktor version | KotlinX Serialization version |
 |-----------------|----------------|--------------|-------------------------------|
+| 2.6.x           | 1.9.25         | 2.3.13       | 1.6.3                         |
 | 2.5.x           | 1.9.25         | 2.3.13       | 1.6.3                         |
 | 2.4.x           | 1.8.22         | 2.3.5        | 1.5.1                         |
 | 2.3.x           | 1.8.21         | 2.3.0        | 1.5.0                         |

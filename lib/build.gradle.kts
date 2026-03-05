@@ -13,7 +13,7 @@ plugins {
 
 group = "com.github.mrbean355"
 val artifactId by extra("dota2-gsi")
-version = "2.5.0"
+version = "2.6.0"
 
 dependencies {
     implementation(libs.ktor.server.netty)
@@ -59,7 +59,7 @@ tasks.test {
 }
 
 jacoco {
-    toolVersion = "0.8.12"
+    toolVersion = "0.8.14"
 }
 
 tasks.withType(JacocoReport::class.java) {
@@ -133,8 +133,8 @@ fun isReleaseBuild(): Boolean = !version.toString().endsWith("SNAPSHOT")
 
 fun mavenCentralUrl(): String {
     return if (isReleaseBuild()) {
-        "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+        "https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2/"
     } else {
-        "https://oss.sonatype.org/content/repositories/snapshots/"
+        "https://central.sonatype.com/repository/maven-snapshots/"
     }
 }
