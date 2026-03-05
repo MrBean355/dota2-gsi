@@ -22,16 +22,13 @@ import com.github.mrbean355.dota2.gamestate.PlayingGameState
 import com.github.mrbean355.dota2.gamestate.SpectatingGameState
 import com.github.mrbean355.dota2.json.parseGameState
 import io.ktor.http.HttpStatusCode
-import io.ktor.server.application.ApplicationCall
-import io.ktor.server.application.call
-import io.ktor.server.engine.ApplicationEngine
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import io.ktor.server.request.receiveText
 import io.ktor.server.response.respond
+import io.ktor.server.routing.RoutingContext
 import io.ktor.server.routing.post
 import io.ktor.server.routing.routing
-import io.ktor.util.pipeline.PipelineContext
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject
@@ -56,7 +53,7 @@ internal class GameStateServerImpl(
     private var authentication: Map<String, String> = emptyMap()
     private var json = createJson()
 
-    private val server: ApplicationEngine = embeddedServer(Netty, port) {
+    private val server = embeddedServer(Netty, port) {
         routing {
             post("/") {
                 handleGameStateRequest()
@@ -118,7 +115,7 @@ internal class GameStateServerImpl(
         return Json { ignoreUnknownKeys = lenient }
     }
 
-    private suspend fun PipelineContext<Unit, ApplicationCall>.handleGameStateRequest() {
+    private suspend fun RoutingContext.handleGameStateRequest() {
         val text = call.receiveText()
         try {
             val state = json.parseToJsonElement(text).jsonObject.let {

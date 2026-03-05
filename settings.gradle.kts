@@ -1,7 +1,7 @@
 pluginManagement {
     plugins {
-        kotlin("jvm") version "1.9.25"
-        kotlin("plugin.serialization") version "1.9.25"
+        kotlin("jvm") version "2.3.10"
+        kotlin("plugin.serialization") version "2.3.10"
         id("org.jetbrains.dokka") version "2.1.0"
         id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.18.1"
         id("org.sonarqube") version "7.2.3.7755"
@@ -15,17 +15,18 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            version("ktor", "2.3.13")
+            version("ktor", "3.4.1")
             library("ktor-server-netty", "io.ktor", "ktor-server-netty").versionRef("ktor")
             library("ktor-server-contentNegotiation", "io.ktor", "ktor-server-content-negotiation").versionRef("ktor")
             library("ktor-serialization-kotlinx-json", "io.ktor", "ktor-serialization-kotlinx-json").versionRef("ktor")
 
-            library("kotlinx-serialization-json", "org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+            library("kotlinx-serialization-json", "org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
         }
         create("testLibs") {
-            library("junit-bom", "org.junit:junit-bom:5.11.4")
+            library("junit-bom", "org.junit:junit-bom:6.0.3")
             library("junit-jupiter", "org.junit.jupiter", "junit-jupiter").withoutVersion()
-            library("mockK", "io.mockk:mockk:1.13.17")
+            library("junit-launcher", "org.junit.platform", "junit-platform-launcher").withoutVersion()
+            library("mockK", "io.mockk:mockk:1.14.9")
         }
     }
 }
