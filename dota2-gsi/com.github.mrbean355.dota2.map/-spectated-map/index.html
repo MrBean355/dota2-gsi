@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>SpectatedMap</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
 <script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
@@ -25,20 +25,18 @@
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
                     dota2-gsi
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -46,10 +44,10 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-2.5.0        </div>
+2.6.0        </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active=""
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
                         data-filter=":lib/main">JVM</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
@@ -59,9 +57,9 @@
                         aria-expanded="false"
                         aria-label="Toggle source sets"
                 ></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -76,7 +74,7 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -84,39 +82,41 @@
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
-                        data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     dota2-gsi
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="classlike" id="content" pageIds="dota2-gsi::com.github.mrbean355.dota2.map/SpectatedMap///PointingToDeclaration//-1253304749">
   <div class="breadcrumbs"><a href="../../../index.html">dota2-gsi</a><span class="delimiter">/</span><a href="../index.html">com.github.mrbean355.dota2.map</a><span class="delimiter">/</span><span class="current">SpectatedMap</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Spectated</span><wbr></wbr><span><span>Map</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">SpectatedMap</a> : <a href="../-dota-map/index.html">DotaMap</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/map/SpectatedMap.kt#L24">source</a>)</span></span></div><p class="paragraph">Some general information about the map when the client is <strong>spectating</strong> the match.</p><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-dota-map/index.html"><span>Dota</span><wbr></wbr><span><span>Map</span></span></a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">SpectatedMap</a> : <a href="../-dota-map/index.html">DotaMap</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/map/SpectatedMap.kt#L26">source</a>)</span></span></div><p class="paragraph">Some general information about the map when the client is <strong>spectating</strong> the match.</p><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-dota-map/index.html"><span>Dota</span><wbr></wbr><span><span>Map</span></span></a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
+        <h2 class="tableheader">Properties</h2>
         <div class="table"><a data-name="448118210%2FProperties%2F-1253304749" anchor-label="clockTime" id="448118210%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/clock-time.html"><span>clock</span><wbr></wbr><span><span>Time</span></span></a></div>
@@ -131,7 +131,7 @@
             </div>
           </div>
 <a data-name="-1161686609%2FProperties%2F-1253304749" anchor-label="customGameName" id="-1161686609%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/custom-game-name.html"><span>custom</span><wbr></wbr><span>Game</span><wbr></wbr><span><span>Name</span></span></a></div>
@@ -145,8 +145,68 @@
               </div>
             </div>
           </div>
+<a data-name="-937764345%2FProperties%2F-1253304749" anchor-label="direGlyphCooldown" id="-937764345%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dire-glyph-cooldown.html"><span>dire</span><wbr></wbr><span>Glyph</span><wbr></wbr><span><span>Cooldown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-937764345%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="dire-glyph-cooldown.html">direGlyphCooldown</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="477071320%2FProperties%2F-1253304749" anchor-label="direLotusPoolCount" id="477071320%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dire-lotus-pool-count.html"><span>dire</span><wbr></wbr><span>Lotus</span><wbr></wbr><span>Pool</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="477071320%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="dire-lotus-pool-count.html">direLotusPoolCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1803421092%2FProperties%2F-1253304749" anchor-label="direScanCharges" id="-1803421092%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dire-scan-charges.html"><span>dire</span><wbr></wbr><span>Scan</span><wbr></wbr><span><span>Charges</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1803421092%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="dire-scan-charges.html">direScanCharges</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-78027660%2FProperties%2F-1253304749" anchor-label="direScanCooldown" id="-78027660%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dire-scan-cooldown.html"><span>dire</span><wbr></wbr><span>Scan</span><wbr></wbr><span><span>Cooldown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-78027660%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="dire-scan-cooldown.html">direScanCooldown</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-1079350621%2FProperties%2F-1253304749" anchor-label="direScore" id="-1079350621%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/dire-score.html"><span>dire</span><wbr></wbr><span><span>Score</span></span></a></div>
@@ -161,7 +221,7 @@
             </div>
           </div>
 <a data-name="-1304502188%2FProperties%2F-1253304749" anchor-label="direWardPurchaseCooldown" id="-1304502188%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="dire-ward-purchase-cooldown.html"><span>dire</span><wbr></wbr><span>Ward</span><wbr></wbr><span>Purchase</span><wbr></wbr><span><span>Cooldown</span></span></a></div>
@@ -175,8 +235,23 @@
               </div>
             </div>
           </div>
+<a data-name="-1460018728%2FProperties%2F-1253304749" anchor-label="direWisdomShrine" id="-1460018728%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dire-wisdom-shrine.html"><span>dire</span><wbr></wbr><span>Wisdom</span><wbr></wbr><span><span>Shrine</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1460018728%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="dire-wisdom-shrine.html">direWisdomShrine</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-860681954%2FProperties%2F-1253304749" anchor-label="gameTime" id="-860681954%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/game-time.html"><span>game</span><wbr></wbr><span><span>Time</span></span></a></div>
@@ -191,7 +266,7 @@
             </div>
           </div>
 <a data-name="601629278%2FProperties%2F-1253304749" anchor-label="isDaytime" id="601629278%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/is-daytime.html"><span>is</span><wbr></wbr><span><span>Daytime</span></span></a></div>
@@ -206,7 +281,7 @@
             </div>
           </div>
 <a data-name="1408781187%2FProperties%2F-1253304749" anchor-label="isNightStalkerNight" id="1408781187%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/is-night-stalker-night.html"><span>is</span><wbr></wbr><span>Night</span><wbr></wbr><span>Stalker</span><wbr></wbr><span><span>Night</span></span></a></div>
@@ -221,7 +296,7 @@
             </div>
           </div>
 <a data-name="-372603355%2FProperties%2F-1253304749" anchor-label="isPaused" id="-372603355%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/is-paused.html"><span>is</span><wbr></wbr><span><span>Paused</span></span></a></div>
@@ -236,7 +311,7 @@
             </div>
           </div>
 <a data-name="1962156957%2FProperties%2F-1253304749" anchor-label="matchId" id="1962156957%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/match-id.html"><span>match</span><wbr></wbr><span><span>Id</span></span></a></div>
@@ -251,7 +326,7 @@
             </div>
           </div>
 <a data-name="-238632495%2FProperties%2F-1253304749" anchor-label="matchState" id="-238632495%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/match-state.html"><span>match</span><wbr></wbr><span><span>State</span></span></a></div>
@@ -266,7 +341,7 @@
             </div>
           </div>
 <a data-name="1728602610%2FProperties%2F-1253304749" anchor-label="name" id="1728602610%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/name.html"><span><span>name</span></span></a></div>
@@ -280,8 +355,68 @@
               </div>
             </div>
           </div>
+<a data-name="-1515691248%2FProperties%2F-1253304749" anchor-label="radiantGlyphCooldown" id="-1515691248%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="radiant-glyph-cooldown.html"><span>radiant</span><wbr></wbr><span>Glyph</span><wbr></wbr><span><span>Cooldown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1515691248%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="radiant-glyph-cooldown.html">radiantGlyphCooldown</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-258793489%2FProperties%2F-1253304749" anchor-label="radiantLotusPoolCount" id="-258793489%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="radiant-lotus-pool-count.html"><span>radiant</span><wbr></wbr><span>Lotus</span><wbr></wbr><span>Pool</span><wbr></wbr><span><span>Count</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-258793489%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="radiant-lotus-pool-count.html">radiantLotusPoolCount</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2000670299%2FProperties%2F-1253304749" anchor-label="radiantScanCharges" id="-2000670299%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="radiant-scan-charges.html"><span>radiant</span><wbr></wbr><span>Scan</span><wbr></wbr><span><span>Charges</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2000670299%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="radiant-scan-charges.html">radiantScanCharges</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1897785781%2FProperties%2F-1253304749" anchor-label="radiantScanCooldown" id="-1897785781%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="radiant-scan-cooldown.html"><span>radiant</span><wbr></wbr><span>Scan</span><wbr></wbr><span><span>Cooldown</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1897785781%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="radiant-scan-cooldown.html">radiantScanCooldown</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-479994082%2FProperties%2F-1253304749" anchor-label="radiantScore" id="-479994082%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/radiant-score.html"><span>radiant</span><wbr></wbr><span><span>Score</span></span></a></div>
@@ -296,7 +431,7 @@
             </div>
           </div>
 <a data-name="335530795%2FProperties%2F-1253304749" anchor-label="radiantWardPurchaseCooldown" id="335530795%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="radiant-ward-purchase-cooldown.html"><span>radiant</span><wbr></wbr><span>Ward</span><wbr></wbr><span>Purchase</span><wbr></wbr><span><span>Cooldown</span></span></a></div>
@@ -311,7 +446,7 @@
             </div>
           </div>
 <a data-name="1139825847%2FProperties%2F-1253304749" anchor-label="radiantWinChance" id="1139825847%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="radiant-win-chance.html"><span>radiant</span><wbr></wbr><span>Win</span><wbr></wbr><span><span>Chance</span></span></a></div>
@@ -325,8 +460,23 @@
               </div>
             </div>
           </div>
+<a data-name="1015190447%2FProperties%2F-1253304749" anchor-label="radiantWisdomShrine" id="1015190447%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="radiant-wisdom-shrine.html"><span>radiant</span><wbr></wbr><span>Wisdom</span><wbr></wbr><span><span>Shrine</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1015190447%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="radiant-wisdom-shrine.html">radiantWisdomShrine</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-1318543500%2FProperties%2F-1253304749" anchor-label="roshanState" id="-1318543500%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="roshan-state.html"><span>roshan</span><wbr></wbr><span><span>State</span></span></a></div>
@@ -341,7 +491,7 @@
             </div>
           </div>
 <a data-name="-181920662%2FProperties%2F-1253304749" anchor-label="roshanStateEndTimer" id="-181920662%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="roshan-state-end-timer.html"><span>roshan</span><wbr></wbr><span>State</span><wbr></wbr><span>End</span><wbr></wbr><span><span>Timer</span></span></a></div>
@@ -355,8 +505,68 @@
               </div>
             </div>
           </div>
+<a data-name="890890075%2FProperties%2F-1253304749" anchor-label="tormentorState" id="890890075%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tormentor-state.html"><span>tormentor</span><wbr></wbr><span><span>State</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="890890075%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="tormentor-state.html">tormentorState</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1260251881%2FProperties%2F-1253304749" anchor-label="tormentorStateEndSeconds" id="-1260251881%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tormentor-state-end-seconds.html"><span>tormentor</span><wbr></wbr><span>State</span><wbr></wbr><span>End</span><wbr></wbr><span><span>Seconds</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1260251881%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="tormentor-state-end-seconds.html">tormentorStateEndSeconds</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="574943014%2FProperties%2F-1253304749" anchor-label="tormentorStateLocation" id="574943014%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tormentor-state-location.html"><span>tormentor</span><wbr></wbr><span>State</span><wbr></wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="574943014%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="tormentor-state-location.html">tormentorStateLocation</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-662501443%2FProperties%2F-1253304749" anchor-label="watchers" id="-662501443%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="watchers.html"><span><span>watchers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-662501443%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="watchers.html">watchers</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><a href="../../com.github.mrbean355.dota2.map.watcher/-watcher/index.html">Watcher</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-310397712%2FProperties%2F-1253304749" anchor-label="winningTeam" id="-310397712%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-dota-map/winning-team.html"><span>winning</span><wbr></wbr><span><span>Team</span></span></a></div>
@@ -376,17 +586,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>© 2025 Copyright</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

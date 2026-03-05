@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>SpectatedPlayer</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
 <script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
@@ -25,20 +25,18 @@
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
                     dota2-gsi
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -46,10 +44,10 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-2.5.0        </div>
+2.6.0        </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active=""
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
                         data-filter=":lib/main">JVM</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
@@ -59,9 +57,9 @@
                         aria-expanded="false"
                         aria-label="Toggle source sets"
                 ></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -76,7 +74,7 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -84,39 +82,41 @@
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
-                        data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     dota2-gsi
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="classlike" id="content" pageIds="dota2-gsi::com.github.mrbean355.dota2.player/SpectatedPlayer///PointingToDeclaration//-1253304749">
   <div class="breadcrumbs"><a href="../../../index.html">dota2-gsi</a><span class="delimiter">/</span><a href="../index.html">com.github.mrbean355.dota2.player</a><span class="delimiter">/</span><span class="current">SpectatedPlayer</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Spectated</span><wbr></wbr><span><span>Player</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">SpectatedPlayer</a> : <a href="../-player/index.html">Player</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/player/SpectatedPlayer.kt#L24">source</a>)</span></span></div><p class="paragraph">A player involved in the match when the client is <strong>spectating</strong> the match.</p><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-player/index.html"><span><span>Player</span></span></a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">SpectatedPlayer</a> : <a href="../-player/index.html">Player</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/player/SpectatedPlayer.kt#L24">source</a>)</span></span></div><p class="paragraph">A player involved in the match when the client is <strong>spectating</strong> the match.</p><h4 class="tableheader">See also</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-player/index.html"><span><span>Player</span></span></a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
+        <h2 class="tableheader">Properties</h2>
         <div class="table"><a data-name="-889821385%2FProperties%2F-1253304749" anchor-label="accountId" id="-889821385%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/account-id.html"><span>account</span><wbr></wbr><span><span>Id</span></span></a></div>
@@ -131,7 +131,7 @@
             </div>
           </div>
 <a data-name="-688189268%2FProperties%2F-1253304749" anchor-label="activity" id="-688189268%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/activity.html"><span><span>activity</span></span></a></div>
@@ -146,7 +146,7 @@
             </div>
           </div>
 <a data-name="208019189%2FProperties%2F-1253304749" anchor-label="assists" id="208019189%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/assists.html"><span><span>assists</span></span></a></div>
@@ -160,8 +160,23 @@
               </div>
             </div>
           </div>
+<a data-name="-32659829%2FProperties%2F-1253304749" anchor-label="bountyRunesActivated" id="-32659829%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="bounty-runes-activated.html"><span>bounty</span><wbr></wbr><span>Runes</span><wbr></wbr><span><span>Activated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-32659829%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="bounty-runes-activated.html">bountyRunesActivated</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="1269166073%2FProperties%2F-1253304749" anchor-label="campsStacked" id="1269166073%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="camps-stacked.html"><span>camps</span><wbr></wbr><span><span>Stacked</span></span></a></div>
@@ -176,7 +191,7 @@
             </div>
           </div>
 <a data-name="158000744%2FProperties%2F-1253304749" anchor-label="commandsIssued" id="158000744%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/commands-issued.html"><span>commands</span><wbr></wbr><span><span>Issued</span></span></a></div>
@@ -191,7 +206,7 @@
             </div>
           </div>
 <a data-name="533165537%2FProperties%2F-1253304749" anchor-label="consumableGoldSpent" id="533165537%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="consumable-gold-spent.html"><span>consumable</span><wbr></wbr><span>Gold</span><wbr></wbr><span><span>Spent</span></span></a></div>
@@ -205,8 +220,188 @@
               </div>
             </div>
           </div>
+<a data-name="1326794830%2FProperties%2F-1253304749" anchor-label="damageOutgoingPostReductionMagical" id="1326794830%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-outgoing-post-reduction-magical.html"><span>damage</span><wbr></wbr><span>Outgoing</span><wbr></wbr><span>Post</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Magical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1326794830%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-outgoing-post-reduction-magical.html">damageOutgoingPostReductionMagical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-117895235%2FProperties%2F-1253304749" anchor-label="damageOutgoingPostReductionPhysical" id="-117895235%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-outgoing-post-reduction-physical.html"><span>damage</span><wbr></wbr><span>Outgoing</span><wbr></wbr><span>Post</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Physical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-117895235%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-outgoing-post-reduction-physical.html">damageOutgoingPostReductionPhysical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1081265212%2FProperties%2F-1253304749" anchor-label="damageOutgoingPostReductionPure" id="1081265212%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-outgoing-post-reduction-pure.html"><span>damage</span><wbr></wbr><span>Outgoing</span><wbr></wbr><span>Post</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Pure</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1081265212%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-outgoing-post-reduction-pure.html">damageOutgoingPostReductionPure</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1749932481%2FProperties%2F-1253304749" anchor-label="damageOutgoingPreReductionMagical" id="-1749932481%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-outgoing-pre-reduction-magical.html"><span>damage</span><wbr></wbr><span>Outgoing</span><wbr></wbr><span>Pre</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Magical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1749932481%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-outgoing-pre-reduction-magical.html">damageOutgoingPreReductionMagical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1007161364%2FProperties%2F-1253304749" anchor-label="damageOutgoingPreReductionPhysical" id="-1007161364%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-outgoing-pre-reduction-physical.html"><span>damage</span><wbr></wbr><span>Outgoing</span><wbr></wbr><span>Pre</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Physical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1007161364%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-outgoing-pre-reduction-physical.html">damageOutgoingPreReductionPhysical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="378477547%2FProperties%2F-1253304749" anchor-label="damageOutgoingPreReductionPure" id="378477547%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-outgoing-pre-reduction-pure.html"><span>damage</span><wbr></wbr><span>Outgoing</span><wbr></wbr><span>Pre</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Pure</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="378477547%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-outgoing-pre-reduction-pure.html">damageOutgoingPreReductionPure</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1577716729%2FProperties%2F-1253304749" anchor-label="damageReceivedPostReductionMagical" id="1577716729%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-received-post-reduction-magical.html"><span>damage</span><wbr></wbr><span>Received</span><wbr></wbr><span>Post</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Magical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1577716729%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-received-post-reduction-magical.html">damageReceivedPostReductionMagical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-929250958%2FProperties%2F-1253304749" anchor-label="damageReceivedPostReductionPhysical" id="-929250958%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-received-post-reduction-physical.html"><span>damage</span><wbr></wbr><span>Received</span><wbr></wbr><span>Post</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Physical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-929250958%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-received-post-reduction-physical.html">damageReceivedPostReductionPhysical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1387634801%2FProperties%2F-1253304749" anchor-label="damageReceivedPostReductionPure" id="1387634801%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-received-post-reduction-pure.html"><span>damage</span><wbr></wbr><span>Received</span><wbr></wbr><span>Post</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Pure</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1387634801%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-received-post-reduction-pure.html">damageReceivedPostReductionPure</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="613466420%2FProperties%2F-1253304749" anchor-label="damageReceivedPreReductionMagical" id="613466420%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-received-pre-reduction-magical.html"><span>damage</span><wbr></wbr><span>Received</span><wbr></wbr><span>Pre</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Magical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="613466420%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-received-pre-reduction-magical.html">damageReceivedPreReductionMagical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-756239465%2FProperties%2F-1253304749" anchor-label="damageReceivedPreReductionPhysical" id="-756239465%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-received-pre-reduction-physical.html"><span>damage</span><wbr></wbr><span>Received</span><wbr></wbr><span>Pre</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Physical</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-756239465%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-received-pre-reduction-physical.html">damageReceivedPreReductionPhysical</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1496739094%2FProperties%2F-1253304749" anchor-label="damageReceivedPreReductionPure" id="1496739094%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="damage-received-pre-reduction-pure.html"><span>damage</span><wbr></wbr><span>Received</span><wbr></wbr><span>Pre</span><wbr></wbr><span>Reduction</span><wbr></wbr><span><span>Pure</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1496739094%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="damage-received-pre-reduction-pure.html">damageReceivedPreReductionPure</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-1760594756%2FProperties%2F-1253304749" anchor-label="deaths" id="-1760594756%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/deaths.html"><span><span>deaths</span></span></a></div>
@@ -221,7 +416,7 @@
             </div>
           </div>
 <a data-name="-1422947343%2FProperties%2F-1253304749" anchor-label="denies" id="-1422947343%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/denies.html"><span><span>denies</span></span></a></div>
@@ -236,7 +431,7 @@
             </div>
           </div>
 <a data-name="-47468677%2FProperties%2F-1253304749" anchor-label="gold" id="-47468677%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gold.html"><span><span>gold</span></span></a></div>
@@ -251,7 +446,7 @@
             </div>
           </div>
 <a data-name="1938645245%2FProperties%2F-1253304749" anchor-label="goldFromCreepKills" id="1938645245%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gold-from-creep-kills.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span>Creep</span><wbr></wbr><span><span>Kills</span></span></a></div>
@@ -266,7 +461,7 @@
             </div>
           </div>
 <a data-name="-719039090%2FProperties%2F-1253304749" anchor-label="goldFromHeroKills" id="-719039090%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gold-from-hero-kills.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span>Hero</span><wbr></wbr><span><span>Kills</span></span></a></div>
@@ -281,7 +476,7 @@
             </div>
           </div>
 <a data-name="-445486264%2FProperties%2F-1253304749" anchor-label="goldFromIncome" id="-445486264%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gold-from-income.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Income</span></span></a></div>
@@ -296,7 +491,7 @@
             </div>
           </div>
 <a data-name="1710205964%2FProperties%2F-1253304749" anchor-label="goldFromShared" id="1710205964%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gold-from-shared.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Shared</span></span></a></div>
@@ -311,7 +506,7 @@
             </div>
           </div>
 <a data-name="-1252867593%2FProperties%2F-1253304749" anchor-label="goldLostToDeath" id="-1252867593%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-lost-to-death.html"><span>gold</span><wbr></wbr><span>Lost</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Death</span></span></a></div>
@@ -326,7 +521,7 @@
             </div>
           </div>
 <a data-name="1210097745%2FProperties%2F-1253304749" anchor-label="goldReliable" id="1210097745%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gold-reliable.html"><span>gold</span><wbr></wbr><span><span>Reliable</span></span></a></div>
@@ -341,7 +536,7 @@
             </div>
           </div>
 <a data-name="-1517465479%2FProperties%2F-1253304749" anchor-label="goldSpentOnBuybacks" id="-1517465479%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-spent-on-buybacks.html"><span>gold</span><wbr></wbr><span>Spent</span><wbr></wbr><span>On</span><wbr></wbr><span><span>Buybacks</span></span></a></div>
@@ -356,7 +551,7 @@
             </div>
           </div>
 <a data-name="1100061016%2FProperties%2F-1253304749" anchor-label="goldUnreliable" id="1100061016%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gold-unreliable.html"><span>gold</span><wbr></wbr><span><span>Unreliable</span></span></a></div>
@@ -371,7 +566,7 @@
             </div>
           </div>
 <a data-name="-429885509%2FProperties%2F-1253304749" anchor-label="gpm" id="-429885509%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/gpm.html"><span><span>gpm</span></span></a></div>
@@ -386,7 +581,7 @@
             </div>
           </div>
 <a data-name="-573798043%2FProperties%2F-1253304749" anchor-label="heroDamage" id="-573798043%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="hero-damage.html"><span>hero</span><wbr></wbr><span><span>Damage</span></span></a></div>
@@ -401,7 +596,7 @@
             </div>
           </div>
 <a data-name="992374956%2FProperties%2F-1253304749" anchor-label="heroHealing" id="992374956%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="hero-healing.html"><span>hero</span><wbr></wbr><span><span>Healing</span></span></a></div>
@@ -416,7 +611,7 @@
             </div>
           </div>
 <a data-name="-1994229357%2FProperties%2F-1253304749" anchor-label="id" id="-1994229357%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="id.html"><span><span>id</span></span></a></div>
@@ -431,7 +626,7 @@
             </div>
           </div>
 <a data-name="-1351123503%2FProperties%2F-1253304749" anchor-label="itemGoldSpent" id="-1351123503%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="item-gold-spent.html"><span>item</span><wbr></wbr><span>Gold</span><wbr></wbr><span><span>Spent</span></span></a></div>
@@ -446,7 +641,7 @@
             </div>
           </div>
 <a data-name="1134459711%2FProperties%2F-1253304749" anchor-label="killList" id="1134459711%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/kill-list.html"><span>kill</span><wbr></wbr><span><span>List</span></span></a></div>
@@ -461,7 +656,7 @@
             </div>
           </div>
 <a data-name="-620675030%2FProperties%2F-1253304749" anchor-label="kills" id="-620675030%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/kills.html"><span><span>kills</span></span></a></div>
@@ -476,7 +671,7 @@
             </div>
           </div>
 <a data-name="-1089650593%2FProperties%2F-1253304749" anchor-label="killStreak" id="-1089650593%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/kill-streak.html"><span>kill</span><wbr></wbr><span><span>Streak</span></span></a></div>
@@ -491,7 +686,7 @@
             </div>
           </div>
 <a data-name="-1443939675%2FProperties%2F-1253304749" anchor-label="lastHits" id="-1443939675%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/last-hits.html"><span>last</span><wbr></wbr><span><span>Hits</span></span></a></div>
@@ -506,7 +701,7 @@
             </div>
           </div>
 <a data-name="773254064%2FProperties%2F-1253304749" anchor-label="name" id="773254064%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/name.html"><span><span>name</span></span></a></div>
@@ -521,7 +716,7 @@
             </div>
           </div>
 <a data-name="-1028459075%2FProperties%2F-1253304749" anchor-label="netWorth" id="-1028459075%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="net-worth.html"><span>net</span><wbr></wbr><span><span>Worth</span></span></a></div>
@@ -536,7 +731,7 @@
             </div>
           </div>
 <a data-name="972591548%2FProperties%2F-1253304749" anchor-label="playerSlot" id="972591548%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/player-slot.html"><span>player</span><wbr></wbr><span><span>Slot</span></span></a></div>
@@ -551,7 +746,7 @@
             </div>
           </div>
 <a data-name="1045262966%2FProperties%2F-1253304749" anchor-label="runesActivated" id="1045262966%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="runes-activated.html"><span>runes</span><wbr></wbr><span><span>Activated</span></span></a></div>
@@ -566,7 +761,7 @@
             </div>
           </div>
 <a data-name="-8191308%2FProperties%2F-1253304749" anchor-label="steamId" id="-8191308%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/steam-id.html"><span>steam</span><wbr></wbr><span><span>Id</span></span></a></div>
@@ -581,7 +776,7 @@
             </div>
           </div>
 <a data-name="1153438607%2FProperties%2F-1253304749" anchor-label="supportGoldSpent" id="1153438607%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="support-gold-spent.html"><span>support</span><wbr></wbr><span>Gold</span><wbr></wbr><span><span>Spent</span></span></a></div>
@@ -596,7 +791,7 @@
             </div>
           </div>
 <a data-name="1211642910%2FProperties%2F-1253304749" anchor-label="team" id="1211642910%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/team.html"><span><span>team</span></span></a></div>
@@ -611,7 +806,7 @@
             </div>
           </div>
 <a data-name="-1199752384%2FProperties%2F-1253304749" anchor-label="teamSlot" id="-1199752384%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/team-slot.html"><span>team</span><wbr></wbr><span><span>Slot</span></span></a></div>
@@ -626,7 +821,7 @@
             </div>
           </div>
 <a data-name="-1383315596%2FProperties%2F-1253304749" anchor-label="towerDamage" id="-1383315596%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="tower-damage.html"><span>tower</span><wbr></wbr><span><span>Damage</span></span></a></div>
@@ -641,7 +836,7 @@
             </div>
           </div>
 <a data-name="1876833452%2FProperties%2F-1253304749" anchor-label="wardsDestroyed" id="1876833452%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="wards-destroyed.html"><span>wards</span><wbr></wbr><span><span>Destroyed</span></span></a></div>
@@ -656,7 +851,7 @@
             </div>
           </div>
 <a data-name="-1025127880%2FProperties%2F-1253304749" anchor-label="wardsPlaced" id="-1025127880%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="wards-placed.html"><span>wards</span><wbr></wbr><span><span>Placed</span></span></a></div>
@@ -671,7 +866,7 @@
             </div>
           </div>
 <a data-name="1361984130%2FProperties%2F-1253304749" anchor-label="wardsPurchased" id="1361984130%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="wards-purchased.html"><span>wards</span><wbr></wbr><span><span>Purchased</span></span></a></div>
@@ -685,8 +880,23 @@
               </div>
             </div>
           </div>
+<a data-name="137818589%2FProperties%2F-1253304749" anchor-label="waterRunesActivated" id="137818589%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="water-runes-activated.html"><span>water</span><wbr></wbr><span>Runes</span><wbr></wbr><span><span>Activated</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="137818589%2FProperties%2F-1253304749"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">val </span><a href="water-runes-activated.html">waterRunesActivated</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-465439478%2FProperties%2F-1253304749" anchor-label="xpm" id="-465439478%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="../-player/xpm.html"><span><span>xpm</span></span></a></div>
@@ -706,17 +916,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>© 2025 Copyright</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

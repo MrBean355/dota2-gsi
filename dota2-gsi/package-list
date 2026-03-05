@@ -101,6 +101,7 @@ $dokka.location:com.github.mrbean355.dota2.hero/Hero/manaPercent/#/PointingToDec
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/maxHealth/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/max-health.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/maxMana/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/max-mana.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/name/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/name.html
+$dokka.location:com.github.mrbean355.dota2.hero/Hero/permanentBuffs/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/permanent-buffs.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/respawnTimer/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/respawn-timer.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/talentTree/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/talent-tree.html
 $dokka.location:com.github.mrbean355.dota2.hero/Hero/xPos/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.hero/-hero/x-pos.html
@@ -134,6 +135,7 @@ $dokka.location:com.github.mrbean355.dota2.item/Item/isPassive/#/PointingToDecla
 $dokka.location:com.github.mrbean355.dota2.item/Item/itemCharges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/item-charges.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/level/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/level.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/maxCharges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/max-charges.html
+$dokka.location:com.github.mrbean355.dota2.item/Item/maxCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/max-cooldown.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/name/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/name.html
 $dokka.location:com.github.mrbean355.dota2.item/Item/purchaser/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-item/purchaser.html
 $dokka.location:com.github.mrbean355.dota2.item/Items///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/index.html
@@ -144,6 +146,11 @@ $dokka.location:com.github.mrbean355.dota2.item/Items/neutralEnchantment/#/Point
 $dokka.location:com.github.mrbean355.dota2.item/Items/preservedNeutrals/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/preserved-neutrals.html
 $dokka.location:com.github.mrbean355.dota2.item/Items/stash/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/stash.html
 $dokka.location:com.github.mrbean355.dota2.item/Items/teleport/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.item/-items/teleport.html
+$dokka.location:com.github.mrbean355.dota2.map.watcher////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map.watcher/index.html
+$dokka.location:com.github.mrbean355.dota2.map.watcher/Watcher///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map.watcher/-watcher/index.html
+$dokka.location:com.github.mrbean355.dota2.map.watcher/Watcher/captureState/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map.watcher/-watcher/capture-state.html
+$dokka.location:com.github.mrbean355.dota2.map.watcher/Watcher/locationX/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map.watcher/-watcher/location-x.html
+$dokka.location:com.github.mrbean355.dota2.map.watcher/Watcher/locationY/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map.watcher/-watcher/location-y.html
 $dokka.location:com.github.mrbean355.dota2.map////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/index.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/index.html
 $dokka.location:com.github.mrbean355.dota2.map/DotaMap/clockTime/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-dota-map/clock-time.html
@@ -177,11 +184,25 @@ $dokka.location:com.github.mrbean355.dota2.map/MatchState/values/#/PointingToDec
 $dokka.location:com.github.mrbean355.dota2.map/PlayingMap///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-playing-map/index.html
 $dokka.location:com.github.mrbean355.dota2.map/PlayingMap/wardPurchaseCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-playing-map/ward-purchase-cooldown.html
 $dokka.location:com.github.mrbean355.dota2.map/SpectatedMap///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/index.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/direGlyphCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/dire-glyph-cooldown.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/direLotusPoolCount/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/dire-lotus-pool-count.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/direScanCharges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/dire-scan-charges.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/direScanCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/dire-scan-cooldown.html
 $dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/direWardPurchaseCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/dire-ward-purchase-cooldown.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/direWisdomShrine/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/dire-wisdom-shrine.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/radiantGlyphCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/radiant-glyph-cooldown.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/radiantLotusPoolCount/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/radiant-lotus-pool-count.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/radiantScanCharges/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/radiant-scan-charges.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/radiantScanCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/radiant-scan-cooldown.html
 $dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/radiantWardPurchaseCooldown/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/radiant-ward-purchase-cooldown.html
 $dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/radiantWinChance/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/radiant-win-chance.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/radiantWisdomShrine/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/radiant-wisdom-shrine.html
 $dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/roshanState/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/roshan-state.html
 $dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/roshanStateEndTimer/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/roshan-state-end-timer.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/tormentorState/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/tormentor-state.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/tormentorStateEndSeconds/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/tormentor-state-end-seconds.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/tormentorStateLocation/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/tormentor-state-location.html
+$dokka.location:com.github.mrbean355.dota2.map/SpectatedMap/watchers/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.map/-spectated-map/watchers.html
 $dokka.location:com.github.mrbean355.dota2.map/Team.Dire///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-team/-dire/index.html
 $dokka.location:com.github.mrbean355.dota2.map/Team.None///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-team/-none/index.html
 $dokka.location:com.github.mrbean355.dota2.map/Team.Radiant///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}dota2-gsi/com.github.mrbean355.dota2.map/-team/-radiant/index.html
@@ -217,8 +238,21 @@ $dokka.location:com.github.mrbean355.dota2.player/Player/team/#/PointingToDeclar
 $dokka.location:com.github.mrbean355.dota2.player/Player/teamSlot/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-player/team-slot.html
 $dokka.location:com.github.mrbean355.dota2.player/Player/xpm/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-player/xpm.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/index.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/bountyRunesActivated/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/bounty-runes-activated.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/campsStacked/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/camps-stacked.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/consumableGoldSpent/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/consumable-gold-spent.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageOutgoingPostReductionMagical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-outgoing-post-reduction-magical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageOutgoingPostReductionPhysical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-outgoing-post-reduction-physical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageOutgoingPostReductionPure/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-outgoing-post-reduction-pure.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageOutgoingPreReductionMagical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-outgoing-pre-reduction-magical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageOutgoingPreReductionPhysical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-outgoing-pre-reduction-physical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageOutgoingPreReductionPure/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-outgoing-pre-reduction-pure.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageReceivedPostReductionMagical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-received-post-reduction-magical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageReceivedPostReductionPhysical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-received-post-reduction-physical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageReceivedPostReductionPure/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-received-post-reduction-pure.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageReceivedPreReductionMagical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-received-pre-reduction-magical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageReceivedPreReductionPhysical/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-received-pre-reduction-physical.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/damageReceivedPreReductionPure/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/damage-received-pre-reduction-pure.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/goldLostToDeath/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/gold-lost-to-death.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/goldSpentOnBuybacks/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/gold-spent-on-buybacks.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/heroDamage/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/hero-damage.html
@@ -232,6 +266,7 @@ $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/towerDamage/#/
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/wardsDestroyed/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/wards-destroyed.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/wardsPlaced/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/wards-placed.html
 $dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/wardsPurchased/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/wards-purchased.html
+$dokka.location:com.github.mrbean355.dota2.player/SpectatedPlayer/waterRunesActivated/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.player/-spectated-player/water-runes-activated.html
 $dokka.location:com.github.mrbean355.dota2.provider////PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.provider/index.html
 $dokka.location:com.github.mrbean355.dota2.provider/Provider///PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.provider/-provider/index.html
 $dokka.location:com.github.mrbean355.dota2.provider/Provider/appId/#/PointingToDeclaration/dota2-gsi/com.github.mrbean355.dota2.provider/-provider/app-id.html
@@ -266,6 +301,7 @@ com.github.mrbean355.dota2.hero
 com.github.mrbean355.dota2.hero.talent
 com.github.mrbean355.dota2.item
 com.github.mrbean355.dota2.map
+com.github.mrbean355.dota2.map.watcher
 com.github.mrbean355.dota2.player
 com.github.mrbean355.dota2.provider
 com.github.mrbean355.dota2.server

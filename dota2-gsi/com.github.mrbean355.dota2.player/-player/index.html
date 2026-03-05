@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>Player</title>
     <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
-    <script>var pathToRoot = "../../../";</script>
-    <script>document.documentElement.classList.replace("no-js","js");</script>
+        <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
     <script>const storage = localStorage.getItem("dokka-dark-mode")
-    if (storage == null) {
+      if (storage == null) {
         const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
         if (osDarkSchemePreferred === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    } else {
+      } else {
         const savedDarkMode = JSON.parse(storage)
-        if(savedDarkMode === true) {
-            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
         }
-    }
+      }
     </script>
 <script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
@@ -25,20 +25,18 @@
 <link href="../../../styles/main.css" rel="Stylesheet">
 <link href="../../../styles/prism.css" rel="Stylesheet">
 <link href="../../../styles/logo-styles.css" rel="Stylesheet">
-<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
 <link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
-<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
 <script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
 <script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
-<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 </head>
 <body>
-    <div class="root">
-    <nav class="navigation theme-dark" id="navigation-wrapper">
-            <a class="library-name--link" href="../../../index.html">
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="../../../index.html" tabindex="1">
                     dota2-gsi
             </a>
         <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
@@ -46,10 +44,10 @@
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
         <div class="library-version" id="library-version">
-2.5.0        </div>
+2.6.0        </div>
         <div class="navigation-controls">
-        <div class="filter-section filter-section_loading" id="filter-section">
-                <button class="platform-tag platform-selector jvm-like" data-active=""
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true"
                         data-filter=":lib/main">JVM</button>
             <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
                 <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
@@ -59,9 +57,9 @@
                         aria-expanded="false"
                         aria-label="Toggle source sets"
                 ></button>
-                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
-                    <div class="dropdown--header"><span>Platform filter</span>
-                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
                             <i class="ui-kit-icon ui-kit-icon_cross"></i>
                         </button>
                     </div>
@@ -76,7 +74,7 @@
                 </ul>
                 <div class="dropdown--overlay"></div>
             </div>
-        </div>
+        </ul>
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
             </button>
@@ -84,39 +82,41 @@
                 API
             </div>
         </div>
-    </nav>
-        <div id="container">
-            <div class="sidebar" id="leftColumn">
-                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
-                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
-                        data-role="dropdown-listbox">
-                        <div class="dropdown--header">
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
                             <span>
                                     dota2-gsi
                             </span>
-                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
-                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
-                            </button>
-                        </div>
-                        <div class="sidebar--inner" id="sideMenu"></div>
-                    </ul>
-                    <div class="dropdown--overlay"></div>
-                </div>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
             </div>
-            <div id="main">
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
 <div class="main-content" data-page-type="classlike" id="content" pageIds="dota2-gsi::com.github.mrbean355.dota2.player/Player///PointingToDeclaration//-1253304749">
   <div class="breadcrumbs"><a href="../../../index.html">dota2-gsi</a><span class="delimiter">/</span><a href="../index.html">com.github.mrbean355.dota2.player</a><span class="delimiter">/</span><span class="current">Player</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Player</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">Player</a><span class="clearfix"><span class="floating-right">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/player/Player.kt#L24">source</a>)</span></span></div><p class="paragraph">A player involved in the match.</p><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-spectated-player/index.html">SpectatedPlayer</a></div></span></div><div></div></div></div></div></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">Player</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/MrBean355/dota2-gsi/blob/main/lib/src/main/kotlin/com/github/mrbean355/dota2/player/Player.kt#L24">source</a>)</span></span></div><p class="paragraph">A player involved in the match.</p><h4 class="tableheader">Inheritors</h4><div class="table"><div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-spectated-player/index.html">SpectatedPlayer</a></div></span></div><div></div></div></div></div></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
     <div class="tabs-section-body">
       <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
+        <h2 class="tableheader">Properties</h2>
         <div class="table"><a data-name="-889821385%2FProperties%2F-1253304749" anchor-label="accountId" id="-889821385%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="account-id.html"><span>account</span><wbr></wbr><span><span>Id</span></span></a></div>
@@ -131,7 +131,7 @@
             </div>
           </div>
 <a data-name="-688189268%2FProperties%2F-1253304749" anchor-label="activity" id="-688189268%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="activity.html"><span><span>activity</span></span></a></div>
@@ -146,7 +146,7 @@
             </div>
           </div>
 <a data-name="208019189%2FProperties%2F-1253304749" anchor-label="assists" id="208019189%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="assists.html"><span><span>assists</span></span></a></div>
@@ -161,7 +161,7 @@
             </div>
           </div>
 <a data-name="158000744%2FProperties%2F-1253304749" anchor-label="commandsIssued" id="158000744%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="commands-issued.html"><span>commands</span><wbr></wbr><span><span>Issued</span></span></a></div>
@@ -176,7 +176,7 @@
             </div>
           </div>
 <a data-name="-1760594756%2FProperties%2F-1253304749" anchor-label="deaths" id="-1760594756%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="deaths.html"><span><span>deaths</span></span></a></div>
@@ -191,7 +191,7 @@
             </div>
           </div>
 <a data-name="-1422947343%2FProperties%2F-1253304749" anchor-label="denies" id="-1422947343%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="denies.html"><span><span>denies</span></span></a></div>
@@ -206,7 +206,7 @@
             </div>
           </div>
 <a data-name="-47468677%2FProperties%2F-1253304749" anchor-label="gold" id="-47468677%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold.html"><span><span>gold</span></span></a></div>
@@ -221,7 +221,7 @@
             </div>
           </div>
 <a data-name="1938645245%2FProperties%2F-1253304749" anchor-label="goldFromCreepKills" id="1938645245%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-from-creep-kills.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span>Creep</span><wbr></wbr><span><span>Kills</span></span></a></div>
@@ -236,7 +236,7 @@
             </div>
           </div>
 <a data-name="-719039090%2FProperties%2F-1253304749" anchor-label="goldFromHeroKills" id="-719039090%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-from-hero-kills.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span>Hero</span><wbr></wbr><span><span>Kills</span></span></a></div>
@@ -251,7 +251,7 @@
             </div>
           </div>
 <a data-name="-445486264%2FProperties%2F-1253304749" anchor-label="goldFromIncome" id="-445486264%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-from-income.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Income</span></span></a></div>
@@ -266,7 +266,7 @@
             </div>
           </div>
 <a data-name="1710205964%2FProperties%2F-1253304749" anchor-label="goldFromShared" id="1710205964%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-from-shared.html"><span>gold</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Shared</span></span></a></div>
@@ -281,7 +281,7 @@
             </div>
           </div>
 <a data-name="1210097745%2FProperties%2F-1253304749" anchor-label="goldReliable" id="1210097745%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-reliable.html"><span>gold</span><wbr></wbr><span><span>Reliable</span></span></a></div>
@@ -296,7 +296,7 @@
             </div>
           </div>
 <a data-name="1100061016%2FProperties%2F-1253304749" anchor-label="goldUnreliable" id="1100061016%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gold-unreliable.html"><span>gold</span><wbr></wbr><span><span>Unreliable</span></span></a></div>
@@ -311,7 +311,7 @@
             </div>
           </div>
 <a data-name="-429885509%2FProperties%2F-1253304749" anchor-label="gpm" id="-429885509%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="gpm.html"><span><span>gpm</span></span></a></div>
@@ -326,7 +326,7 @@
             </div>
           </div>
 <a data-name="1134459711%2FProperties%2F-1253304749" anchor-label="killList" id="1134459711%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="kill-list.html"><span>kill</span><wbr></wbr><span><span>List</span></span></a></div>
@@ -341,7 +341,7 @@
             </div>
           </div>
 <a data-name="-620675030%2FProperties%2F-1253304749" anchor-label="kills" id="-620675030%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="kills.html"><span><span>kills</span></span></a></div>
@@ -356,7 +356,7 @@
             </div>
           </div>
 <a data-name="-1089650593%2FProperties%2F-1253304749" anchor-label="killStreak" id="-1089650593%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="kill-streak.html"><span>kill</span><wbr></wbr><span><span>Streak</span></span></a></div>
@@ -371,7 +371,7 @@
             </div>
           </div>
 <a data-name="-1443939675%2FProperties%2F-1253304749" anchor-label="lastHits" id="-1443939675%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="last-hits.html"><span>last</span><wbr></wbr><span><span>Hits</span></span></a></div>
@@ -386,7 +386,7 @@
             </div>
           </div>
 <a data-name="773254064%2FProperties%2F-1253304749" anchor-label="name" id="773254064%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="name.html"><span><span>name</span></span></a></div>
@@ -401,7 +401,7 @@
             </div>
           </div>
 <a data-name="972591548%2FProperties%2F-1253304749" anchor-label="playerSlot" id="972591548%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="player-slot.html"><span>player</span><wbr></wbr><span><span>Slot</span></span></a></div>
@@ -416,7 +416,7 @@
             </div>
           </div>
 <a data-name="-8191308%2FProperties%2F-1253304749" anchor-label="steamId" id="-8191308%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="steam-id.html"><span>steam</span><wbr></wbr><span><span>Id</span></span></a></div>
@@ -431,7 +431,7 @@
             </div>
           </div>
 <a data-name="1211642910%2FProperties%2F-1253304749" anchor-label="team" id="1211642910%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="team.html"><span><span>team</span></span></a></div>
@@ -446,7 +446,7 @@
             </div>
           </div>
 <a data-name="-1199752384%2FProperties%2F-1253304749" anchor-label="teamSlot" id="-1199752384%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="team-slot.html"><span>team</span><wbr></wbr><span><span>Slot</span></span></a></div>
@@ -461,7 +461,7 @@
             </div>
           </div>
 <a data-name="-465439478%2FProperties%2F-1253304749" anchor-label="xpm" id="-465439478%2FProperties%2F-1253304749" data-filterable-set=":lib/main"></a>
-          <div class="table-row" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
+          <div class="table-row table-row_content" data-filterable-current=":lib/main" data-filterable-set=":lib/main">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="xpm.html"><span><span>xpm</span></span></a></div>
@@ -481,17 +481,21 @@
   </div>
 </div>
     <div class="footer">
-        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
-        <span>© 2025 Copyright</span>
-        <span class="pull-right">
-            <span>Generated by </span>
-            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
-                <span>dokka</span>
-            </a>
-        </span>
-    </div>
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>© 2026 Copyright</div>
+                </div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
