@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import java.net.URI
 
 plugins {
@@ -13,7 +14,7 @@ plugins {
 
 group = "com.github.mrbean355"
 val artifactId by extra("dota2-gsi")
-version = "2.6.0"
+version = "3.0.0"
 
 dependencies {
     implementation(libs.ktor.server.netty)
@@ -23,17 +24,20 @@ dependencies {
 
     testImplementation(platform(testLibs.junit.bom))
     testImplementation(testLibs.junit.jupiter)
+    testImplementation(testLibs.junit.launcher)
     testImplementation(testLibs.mockK)
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-    kotlinOptions.freeCompilerArgs += "-opt-in=com.github.mrbean355.dota2.annotation.ExperimentalGameState"
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_17
+        freeCompilerArgs.add("-opt-in=com.github.mrbean355.dota2.annotation.ExperimentalGameState")
+    }
 }
 
 tasks.withType<Jar> {

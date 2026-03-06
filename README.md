@@ -78,10 +78,20 @@ public class GsiDemo {
 
 ## Compatibility
 
-The library requires at least **Java 8** to compile.
+The library depends on a few third party dependencies. If you use older versions of these dependencies in your project,
+they will probably be transitively upgraded to the version used by this library, so beware.
 
-Additionally, the library depends on a few third party dependencies. If you use older versions of these dependencies in
-your project, they will probably be transitively upgraded to the version used by this library, so beware.
+### Version 3
+
+These versions require at least **Java 17** to compile.
+
+| Library version | Kotlin version | Ktor version | KotlinX Serialization version |
+|-----------------|----------------|--------------|-------------------------------|
+| 3.0.x           | 2.3.10         | 3.4.1        | 1.10.0                        |
+
+### Version 2
+
+These versions require at least **Java 8** to compile.
 
 | Library version | Kotlin version | Ktor version | KotlinX Serialization version |
 |-----------------|----------------|--------------|-------------------------------|
@@ -92,9 +102,16 @@ your project, they will probably be transitively upgraded to the version used by
 | 2.2.x           | 1.8.20         | 2.3.0        | 1.5.0                         |
 | 2.1.x           | 1.7.10         | 2.0.3        | 1.3.3                         |
 | 2.0.x           | 1.7.10         | 2.0.3        | 1.3.3                         |
-| 1.2.x           | 1.7.10         | 2.0.3        | -                             |
-| 1.1.x           | 1.5.31         | 1.6.4        | -                             |
-| 1.0.x           | 1.4.21         | 1.4.3        | -                             |
+
+### Version 1
+
+These versions require at least **Java 8** to compile.
+
+| Library version | Kotlin version | Ktor version |
+|-----------------|----------------|--------------|
+| 1.2.x           | 1.7.10         | 2.0.3        |
+| 1.1.x           | 1.5.31         | 1.6.4        |
+| 1.0.x           | 1.4.21         | 1.4.3        |
 
 ## Snapshots
 
